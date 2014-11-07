@@ -161,7 +161,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </ref>
     </xsl:template>
 
-    <!-- dsc orphan elements -->
+    <!-- descgrp orphan elements -->
 
     <xsl:template
         match="descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table">
@@ -180,7 +180,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- REVISED CONTENT MODELS                          -->
     <!-- ############################################### -->
 
+
     <!-- m.refs from container -->
+    <!--
     <xsl:template
         match="container/ref | container/extref | container/linkgrp | container/bibref | container/title | container/archref">
         <xsl:comment>
@@ -190,7 +192,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:call-template name="removedElement"/>
         </xsl:message>
     </xsl:template>
-
+-->
 
 
 
