@@ -57,6 +57,10 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
 
+    <!-- ############################################### -->
+    <!-- TOP LEVEL PARAMETERS                            -->
+    <!-- ############################################### -->
+
     <!-- user parameter for control/eventType -->
     <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
     <xsl:param name="eventType" select="'derived'"/>
@@ -71,9 +75,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:param name="eadxmlns" select="'http://ead3.archivists.org/schema/'"/>
 
+<!-- create namespace stripped version of input document -->
+
     <xsl:variable name="instance-ns-stripped">
         <xsl:apply-templates select="/" mode="strip-ns"/>
     </xsl:variable>
+
+<!-- MAIN TEMPLATE: operates on namespace-stripped document -->
 
     <xsl:template match="/">
         <xsl:processing-instruction name="xml-model">
@@ -128,8 +136,6 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:call-template name="removedElement"/>
         </xsl:message>
     </xsl:template>
-
-    <xsl:template match="archdesc/@type"/>
 
     <!-- SKIP -->
     <xsl:template
