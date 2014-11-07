@@ -22,7 +22,11 @@
             </editionstmt>
             <publicationstmt>
                 <p>
-                    <ref/>
+                    <ref xmlns:ns2="http://www.w3.org/1999/xlink"
+                    ns2:type="simple"
+                    ns2:actuate="onLoad"
+                    ns2:show="embed"
+                    ns2:href="http://nrs.harvard.edu/urn-3:HUL.OIS:hu_archive_shield"/>
                 </p>
                 <publisher>Harvard University Archives</publisher>
                 <address>
@@ -52,7 +56,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-11-07T14:12:32.649-05:00</eventdatetime>
+            <eventdatetime>2014-11-07T15:32:09.292-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -198,7 +202,11 @@
             </corpname>
                 <date calendar="gregorian" normal="1900" era="ce">content in date|||</date>
                 <emph render="bolditalic">content in emph with bold italic selected |||</emph>
-                <ref>content in extref
+                <ref xmlns:ns2="http://www.w3.org/1999/xlink"
+                 ns2:actuate="onRequest"
+                 ns2:show="new"
+                 ns2:title="Harvard University Archives Home Page|||"
+                 ns2:href="http://nrs.harvard.edu/urn-3:hul.eresource:archives">content in extref
                     |||</ref>
                 <!--Added child part element to famname--><famname rules="AACR2" source="NAF" relator="origination">
                <part>content in

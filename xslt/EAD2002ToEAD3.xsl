@@ -141,7 +141,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
-        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (did)] | title[parent::descrules]">
+        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (//did)] | title[parent::descrules]">
         <xsl:comment>
             <xsl:call-template name="removedElement"/>
         </xsl:comment>
@@ -600,7 +600,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 <!-- keep contents of unitdate, move unitdate element outside unittitle -->
     <xsl:template match="unittitle[parent::did]">
         <unittitle>
-            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="child::node() except (unitdate)"/>
         </unittitle>
         <xsl:apply-templates select="unitdate"/>
@@ -696,7 +696,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:call-template name="nowOdd"/>
     </xsl:template>
 
-    <xsl:template match="*/@role[parent::* except (dao, ref, extref)]">
+    <xsl:template match="*[parent::* except (//dao, //ref, //extref)]/@role">
         <xsl:attribute name="relator">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -932,6 +932,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="extref">
         <ref>
+            <xsl:apply-templates select="@*"/>
             <xsl:value-of select="."/>
         </ref>
     </xsl:template>
@@ -942,8 +943,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         </ptr>
     </xsl:template>
 
-    <xsl:template match="@actuate">
-        <xsl:attribute name="actuate">
+    <xsl:template match="@*[name() = 'xlink:type']">
+    </xsl:template>
+   
+    <xsl:template match="@*[starts-with(name(), 'xlink')][name() != 'xlink:type']">
+        <xsl:attribute name="{substring-after(name(), ':')}">
             <xsl:value-of select="lower-case(.)"/>
         </xsl:attribute>
     </xsl:template>

@@ -30,7 +30,9 @@
             <date localtype="revised" normal="2006-10">October 2006</date>
             <date localtype="ead" normal="2006/2007">2006-2007</date>
             <p>
-               <ref>Copyright © 1996-2007 by the Yale University Library.</ref>
+               <ref actuate="onrequest"
+                    show="new"
+                    href="http://hdl.handle.net/10079/9p8czk9">Copyright © 1996-2007 by the Yale University Library.</ref>
             </p>
          </publicationstmt>
          <notestmt>
@@ -59,7 +61,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-11-07T14:12:29.844-05:00</eventdatetime>
+            <eventdatetime>2014-11-07T15:32:06.413-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -167,9 +169,7 @@
          </prefercite>
          <accessrestrict id="arest">
             <head>Information about Access</head>
-            <p> This collection is open for research. <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            <p> This collection is open for research. <!--Added child part element to title--><title render="italic">
                <part>Restricted Fragile Oversize</part>
             </title> in box 7 may only be consulted with
                permission of the appropriate curator. Preservation photocopies or photographic
@@ -181,30 +181,20 @@
          <p>Abraham Hayward, 1801-1884, was an English essayist and translator. Born in Wiltshire,
             Hayward studied at several schools, including Blundell's School in Tiverton, before
             moving to London and enrolling at the Inner Temple in 1824. He was called to the bar in
-            1832, but after the success of his 1833 translation of Goethe's <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            1832, but after the success of his 1833 translation of Goethe's <!--Added child part element to title--><title render="italic">
                <part>Faust</part>
-            </title>, the first translation of <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            </title>, the first translation of <!--Added child part element to title--><title render="italic">
                <part>Faust</part>
             </title> into English, he pursued a career
             in journalism and literature. He never married. </p>
          <p>Residing in London for the rest of his life, Hayward was well-connected in literary and
             political circles, counting among his acquaintances Thomas Babington Macaulay, William
             Makepeace Thackeray, W. E. Gladstone, and others. He contributed to many periodicals,
-            including <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            including <!--Added child part element to title--><title render="italic">
                <part>Quarterly Review</part>
-            </title>, <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            </title>, <!--Added child part element to title--><title render="italic">
                <part>Monthly Magazine</part>
-            </title>, and <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            </title>, and <!--Added child part element to title--><title render="italic">
                <part>Edinburgh Review</part>
             </title>, and wrote several
             books, including collections of essays and biographies of Goethe and Mrs. Thrale (a
@@ -222,35 +212,21 @@
             and translator, as well as the research papers of Brian Roberts, who started but
             abandoned a biography of Hayward in the 1950s. The papers, which span the years
             1791-1962, are stored in seven boxes (including 3 oversize), and are organized into five
-            series: <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            series: <!--Added child part element to title--><title render="italic">
                <part>Correspondence</part>
-            </title>, <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            </title>, <!--Added child part element to title--><title render="italic">
                <part>Printed Materials</part>
-            </title>, <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            </title>, <!--Added child part element to title--><title render="italic">
                <part>Other Papers</part>
-            </title>, <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            </title>, <!--Added child part element to title--><title render="italic">
                <part>Photographs</part>
-            </title>, and <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                   xlink:type="simple"
-                   render="italic">
+            </title>, and <!--Added child part element to title--><title render="italic">
                <part>Brian Roberts Research Materials</part>
             </title>. The papers document Hayward's familial
             relations, the literary and political circles of mid-nineteeth century London, and a
             controversy involving Hayward and the Inner Temple. </p>
          <p>
-            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xlink:type="simple"
-                 xlink:actuate="onRequest"
-                 xlink:show="replace"
-                 target="SI">Series I, <!--Added child part element to title--><title xlink:type="simple" render="italic">
+            <ref actuate="onrequest" show="replace" target="SI">Series I, <!--Added child part element to title--><title render="italic">
                   <part>Correspondence</part>
                </title>
             </ref>, is arranged alphabetically in three subseries: Outgoing, Incoming, and Third
@@ -267,11 +243,7 @@
             of the third party correspondence is to Fanny Hayward a decade after Abraham Hayward's
             death. </p>
          <p>
-            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xlink:type="simple"
-                 xlink:actuate="onRequest"
-                 xlink:show="replace"
-                 target="SII">Series II, <!--Added child part element to title--><title xlink:type="simple" render="italic">
+            <ref actuate="onrequest" show="replace" target="SII">Series II, <!--Added child part element to title--><title render="italic">
                   <part>Printed Materials</part>
                </title>
             </ref>, is arranged chronologically in two subseries: Inner Temple Affair and Other
@@ -281,11 +253,7 @@
             menu from the Café de Paris, clippings, a circular on John Stuart Mill's antipopulation
             theory, and a broadside, "Men of the Day, No. 117, Mr. Abraham Hayward, Q.C." </p>
          <p>
-            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xlink:type="simple"
-                 xlink:actuate="onRequest"
-                 xlink:show="replace"
-                 target="SIII">Series III, <!--Added child part element to title--><title xlink:type="simple" render="italic">
+            <ref actuate="onrequest" show="replace" target="SIII">Series III, <!--Added child part element to title--><title render="italic">
                   <part>Other Papers</part>
                </title>
             </ref>, is arranged chronologically and includes the following: an account of the estate
@@ -294,22 +262,14 @@
             design for a fruit garden or orchard; manuscript copies of poems by Caroline Sheridan
             Norton, Rev. E.D. Rhodes, and others; and whist instructions. </p>
          <p>
-            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xlink:type="simple"
-                 xlink:actuate="onRequest"
-                 xlink:show="replace"
-                 target="SIV">Series IV, <!--Added child part element to title--><title xlink:type="simple" render="italic">
+            <ref actuate="onrequest" show="replace" target="SIV">Series IV, <!--Added child part element to title--><title render="italic">
                   <part>Photographs</part>
                </title>
             </ref>, consists of a carte-de-visite album containing 12 cartes-de-visite of Abraham
             Hayward and eleven women, including Mrs. Cornwallis West, Mrs. Wheeler, Olive Campbell,
             Florence de Bretton, Madaillae Florian, and Countess Fanny Karolyi. </p>
          <p>
-            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xlink:type="simple"
-                 xlink:actuate="onRequest"
-                 xlink:show="replace"
-                 target="SV">Series V, <!--Added child part element to title--><title xlink:type="simple" render="italic">
+            <ref actuate="onrequest" show="replace" target="SV">Series V, <!--Added child part element to title--><title render="italic">
                   <part>Brian Roberts Research
                   Materials</part>
                </title>
@@ -325,20 +285,12 @@
             include typescript transcriptions, a biographical timeline, a research notebook
             containing transcriptions of letters present in Series I, and note cards. </p>
          <p>
-            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xlink:type="simple"
-                 xlink:actuate="onRequest"
-                 xlink:show="replace"
-                 target="OS">
-               <!--Added child part element to title--><title xlink:type="simple" render="italic">
+            <ref actuate="onrequest" show="replace" target="OS">
+               <!--Added child part element to title--><title render="italic">
                   <part>Oversize</part>
                </title>
-            </ref> material is housed in boxes 5 and 6.  <ref xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xlink:type="simple"
-                 xlink:actuate="onRequest"
-                 xlink:show="replace"
-                 target="RFO">
-               <!--Added child part element to title--><title xlink:type="simple" render="italic">
+            </ref> material is housed in boxes 5 and 6.  <ref actuate="onrequest" show="replace" target="RFO">
+               <!--Added child part element to title--><title render="italic">
                   <part>Restricted Fragile Oversize</part>
                </title>
             </ref> material is stored in box 7 and contains oversize fragile originals for which
@@ -348,7 +300,9 @@
       <controlaccess id="ca">
          <head>Access Terms</head>
          <p>This collection is indexed under the following access points in 
-            <ref>Orbis</ref>, 
+            <ref actuate="onrequest"
+                 show="new"
+                 href="http://orbis.library.yale.edu/">Orbis</ref>, 
             the Yale University Library online catalog.</p>
          <controlaccess>
             <head>Subjects</head>
@@ -443,7 +397,7 @@
          <c01 id="SI" level="series">
             <did>
                <unitid>Series I.</unitid>
-               <unittitle type="head"> Correspondence </unittitle>
+               <unittitle localtype="head"> Correspondence </unittitle>
                <unitdate>1833-1896</unitdate>
                <physdesc>
                   <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->0.21' (43 folders)
@@ -455,13 +409,13 @@
             </scopecontent>
             <c02 id="d0e205" level="subseries">
                <did>
-                  <unittitle type="head"> OUTGOING </unittitle>
+                  <unittitle localtype="head"> OUTGOING </unittitle>
                </did>
                <c03 id="f1" level="file">
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">1</container>
-                     <unittitle type="genericfolder"> Bentley, [Richard] </unittitle>
+                     <unittitle localtype="genericfolder"> Bentley, [Richard] </unittitle>
                      <unitdate>1873-83</unitdate>
                   </did>
                </c03>
@@ -469,7 +423,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">2</container>
-                     <unittitle type="genericfolder"> Boyes, ---- </unittitle>
+                     <unittitle localtype="genericfolder"> Boyes, ---- </unittitle>
                      <unitdate>n.y. Nov 3</unitdate>
                   </did>
                </c03>
@@ -477,20 +431,20 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">3-7</container>
-                     <unittitle type="genericfolder"> Hayward, Fanny; Hayward, Mary Anne </unittitle>
+                     <unittitle localtype="genericfolder"> Hayward, Fanny; Hayward, Mary Anne </unittitle>
                      <unitdate>1854-82, n.d.</unitdate>
                   </did>
                </c03>
             </c02>
             <c02 id="d0e246" level="subseries">
                <did>
-                  <unittitle type="head"> INCOMING </unittitle>
+                  <unittitle localtype="head"> INCOMING </unittitle>
                </did>
                <c03 id="f8" level="file">
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">8</container>
-                     <unittitle type="genericfolder"> Bancroft, B. </unittitle>
+                     <unittitle localtype="genericfolder"> Bancroft, B. </unittitle>
                      <unitdate>1881 Dec 17</unitdate>
                   </did>
                </c03>
@@ -498,7 +452,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">9</container>
-                     <unittitle type="genericfolder"> Bentley, George </unittitle>
+                     <unittitle localtype="genericfolder"> Bentley, George </unittitle>
                      <unitdate>n.y. Oct 21</unitdate>
                   </did>
                </c03>
@@ -506,7 +460,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">10</container>
-                     <unittitle type="genericfolder"> Blessington, Marguerite, Countess of </unittitle>
+                     <unittitle localtype="genericfolder"> Blessington, Marguerite, Countess of </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
@@ -514,7 +468,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">11</container>
-                     <unittitle type="genericfolder"> Brougham and Vaux, Henry Brougham, Baron </unittitle>
+                     <unittitle localtype="genericfolder"> Brougham and Vaux, Henry Brougham, Baron </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
@@ -522,7 +476,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">12</container>
-                     <unittitle type="genericfolder"> Caldwell, Anita S. </unittitle>
+                     <unittitle localtype="genericfolder"> Caldwell, Anita S. </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
@@ -530,7 +484,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">13</container>
-                     <unittitle type="genericfolder"> [Cornwallis?], ---- </unittitle>
+                     <unittitle localtype="genericfolder"> [Cornwallis?], ---- </unittitle>
                      <unitdate>1867 Jun 6</unitdate>
                   </did>
                </c03>
@@ -538,7 +492,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">14</container>
-                     <unittitle type="genericfolder"> Delane, John Thaddeus </unittitle>
+                     <unittitle localtype="genericfolder"> Delane, John Thaddeus </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
@@ -546,7 +500,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">15</container>
-                     <unittitle type="genericfolder"> Everett, Edward </unittitle>
+                     <unittitle localtype="genericfolder"> Everett, Edward </unittitle>
                      <unitdate>1844 Mar 2</unitdate>
                   </did>
                </c03>
@@ -554,7 +508,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">16</container>
-                     <unittitle type="genericfolder"> Froude, [James Anthony] </unittitle>
+                     <unittitle localtype="genericfolder"> Froude, [James Anthony] </unittitle>
                      <unitdate>n.y. Oct 12</unitdate>
                   </did>
                </c03>
@@ -562,7 +516,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">17</container>
-                     <unittitle type="genericfolder"> Harvey, A. </unittitle>
+                     <unittitle localtype="genericfolder"> Harvey, A. </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
@@ -570,7 +524,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">18</container>
-                     <unittitle type="genericfolder"> Hawtrey, [Edward Craven] </unittitle>
+                     <unittitle localtype="genericfolder"> Hawtrey, [Edward Craven] </unittitle>
                      <unitdate>1833 Dec 28</unitdate>
                   </did>
                </c03>
@@ -578,7 +532,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">19</container>
-                     <unittitle type="genericfolder"> Hayter, William Goodenough, Sir </unittitle>
+                     <unittitle localtype="genericfolder"> Hayter, William Goodenough, Sir </unittitle>
                      <unitdate>n.y. Aug 19</unitdate>
                   </did>
                </c03>
@@ -586,7 +540,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">20</container>
-                     <unittitle type="genericfolder"> Kinglake, [Alexander William] </unittitle>
+                     <unittitle localtype="genericfolder"> Kinglake, [Alexander William] </unittitle>
                      <unitdate>1853</unitdate>
                   </did>
                </c03>
@@ -594,7 +548,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">21</container>
-                     <unittitle type="genericfolder"> Lhwyd, Angharad </unittitle>
+                     <unittitle localtype="genericfolder"> Lhwyd, Angharad </unittitle>
                      <unitdate>n.y. Sep 11</unitdate>
                   </did>
                </c03>
@@ -602,7 +556,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">22</container>
-                     <unittitle type="genericfolder"> Lowe, [Robert, Viscount Sherbrooke] </unittitle>
+                     <unittitle localtype="genericfolder"> Lowe, [Robert, Viscount Sherbrooke] </unittitle>
                      <unitdate>1857 Feb 6</unitdate>
                   </did>
                </c03>
@@ -610,7 +564,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">23</container>
-                     <unittitle type="genericfolder"> Lytton, [Rosina Bulwer Lytton, Baroness?] </unittitle>
+                     <unittitle localtype="genericfolder"> Lytton, [Rosina Bulwer Lytton, Baroness?] </unittitle>
                      <unitdate>1872 Aug 20</unitdate>
                   </did>
                </c03>
@@ -618,7 +572,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">24</container>
-                     <unittitle type="genericfolder"> Murray, John </unittitle>
+                     <unittitle localtype="genericfolder"> Murray, John </unittitle>
                      <unitdate>1863 May 4</unitdate>
                   </did>
                </c03>
@@ -626,7 +580,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">25</container>
-                     <unittitle type="genericfolder"> Newcastle, [Henry Pelham, Duke of] </unittitle>
+                     <unittitle localtype="genericfolder"> Newcastle, [Henry Pelham, Duke of] </unittitle>
                      <unitdate>1858 Nov 6</unitdate>
                   </did>
                </c03>
@@ -634,7 +588,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">26</container>
-                     <unittitle type="genericfolder"> Palmerston, [Emily Lamb, Viscountess] </unittitle>
+                     <unittitle localtype="genericfolder"> Palmerston, [Emily Lamb, Viscountess] </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
@@ -642,7 +596,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">27</container>
-                     <unittitle type="genericfolder"> Peel, Emily, Lady </unittitle>
+                     <unittitle localtype="genericfolder"> Peel, Emily, Lady </unittitle>
                      <unitdate>1859 Feb 6</unitdate>
                   </did>
                </c03>
@@ -650,7 +604,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">28</container>
-                     <unittitle type="genericfolder"> Platt, Thomas Joshua, Sir </unittitle>
+                     <unittitle localtype="genericfolder"> Platt, Thomas Joshua, Sir </unittitle>
                      <unitdate>1846 May 25</unitdate>
                   </did>
                </c03>
@@ -658,7 +612,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">29</container>
-                     <unittitle type="genericfolder"> Smith, Horace </unittitle>
+                     <unittitle localtype="genericfolder"> Smith, Horace </unittitle>
                      <unitdate>1840 Jan 22</unitdate>
                   </did>
                </c03>
@@ -666,7 +620,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">30</container>
-                     <unittitle type="genericfolder"> Stirling-Maxwell, William, Sir </unittitle>
+                     <unittitle localtype="genericfolder"> Stirling-Maxwell, William, Sir </unittitle>
                      <unitdate>1868 Nov 8</unitdate>
                   </did>
                </c03>
@@ -674,7 +628,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">31</container>
-                     <unittitle type="genericfolder"> Wellesley, [Henry] </unittitle>
+                     <unittitle localtype="genericfolder"> Wellesley, [Henry] </unittitle>
                      <unitdate>1861 Mar 7</unitdate>
                   </did>
                </c03>
@@ -682,20 +636,20 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">32</container>
-                     <unittitle type="genericfolder"> Unidentified </unittitle>
+                     <unittitle localtype="genericfolder"> Unidentified </unittitle>
                      <unitdate>1834-80</unitdate>
                   </did>
                </c03>
             </c02>
             <c02 id="d0e475" level="subseries">
                <did>
-                  <unittitle type="head"> THIRD PARTY </unittitle>
+                  <unittitle localtype="head"> THIRD PARTY </unittitle>
                </did>
                <c03 id="f33" level="file">
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">33</container>
-                     <unittitle type="genericfolder"> De Limberg Hiram, S. J., to Fanny Hayward </unittitle>
+                     <unittitle localtype="genericfolder"> De Limberg Hiram, S. J., to Fanny Hayward </unittitle>
                      <unitdate>1894 Dec 22</unitdate>
                   </did>
                </c03>
@@ -703,7 +657,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">34</container>
-                     <unittitle type="genericfolder"> Eaton, Alfred E., to [Fanny] Hayward </unittitle>
+                     <unittitle localtype="genericfolder"> Eaton, Alfred E., to [Fanny] Hayward </unittitle>
                      <unitdate>1896 Dec 18</unitdate>
                   </did>
                </c03>
@@ -711,7 +665,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">35</container>
-                     <unittitle type="genericfolder"> Escott, T. H. S. (Thomas Hay Sweet) to [Fanny
+                     <unittitle localtype="genericfolder"> Escott, T. H. S. (Thomas Hay Sweet) to [Fanny
                         Hayward] </unittitle>
                      <unitdate>1895</unitdate>
                   </did>
@@ -720,7 +674,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">36</container>
-                     <unittitle type="genericfolder"> Farmer, E., to [Fanny] Hayward </unittitle>
+                     <unittitle localtype="genericfolder"> Farmer, E., to [Fanny] Hayward </unittitle>
                      <unitdate>1893 Aug 12</unitdate>
                   </did>
                </c03>
@@ -728,7 +682,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">37</container>
-                     <unittitle type="genericfolder"> Hayward, J., to Mr. Pearce </unittitle>
+                     <unittitle localtype="genericfolder"> Hayward, J., to Mr. Pearce </unittitle>
                      <unitdate>1896 Mar 31</unitdate>
                   </did>
                </c03>
@@ -736,23 +690,19 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">38</container>
-                     <unittitle type="genericfolder"> Mills, Dudley, to Fanny Hayward </unittitle>
+                     <unittitle localtype="genericfolder"> Mills, Dudley, to Fanny Hayward </unittitle>
                      <unitdate>n.y. Mar 27</unitdate>
                   </did>
                </c03>
                <c03 id="d0e533" level="file">
                   <did>
-                     <unittitle type="genericfolder"> Shearer, George, to Herman Merivale and Henry
+                     <unittitle localtype="genericfolder"> Shearer, George, to Herman Merivale and Henry
                         Davison </unittitle>
                      <unitdate>1846 Jan</unitdate>
                   </did>
                   <relatedmaterial>
                      <p>
-                        <ref xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:type="simple"
-                             xlink:actuate="onRequest"
-                             xlink:show="replace"
-                             target="f44"> See: Series II. <!--Added child part element to title--><title xlink:type="simple" render="italic">
+                        <ref actuate="onrequest" show="replace" target="f44"> See: Series II. <!--Added child part element to title--><title render="italic">
                               <part>Printed Materials</part>
                            </title>, Petition, Box 1, folder 44 </ref>
                      </p>
@@ -762,7 +712,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">39</container>
-                     <unittitle type="genericfolder"> Unidentified niece to [Fanny] Hayward </unittitle>
+                     <unittitle localtype="genericfolder"> Unidentified niece to [Fanny] Hayward </unittitle>
                      <unitdate>1893</unitdate>
                   </did>
                </c03>
@@ -770,7 +720,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">40</container>
-                     <unittitle type="genericfolder"> Unidentified to [L. Waldgren?] </unittitle>
+                     <unittitle localtype="genericfolder"> Unidentified to [L. Waldgren?] </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
@@ -779,7 +729,7 @@
          <c01 id="SII" level="series">
             <did>
                <unitid>Series II.</unitid>
-               <unittitle type="head"> Printed Materials </unittitle>
+               <unittitle localtype="head"> Printed Materials </unittitle>
                <unitdate>1791-1896</unitdate>
                <physdesc>
                   <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->0.21' (11 folders)
@@ -791,13 +741,13 @@
             </scopecontent>
             <c02 id="d0e592" level="subseries">
                <did>
-                  <unittitle type="head"> INNER TEMPLE AFFAIR </unittitle>
+                  <unittitle localtype="head"> INNER TEMPLE AFFAIR </unittitle>
                </did>
                <c03 id="f41" level="file">
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">41</container>
-                     <unittitle type="genericfolder"> Pamphlet, "Remarks on the Mode of Electing
+                     <unittitle localtype="genericfolder"> Pamphlet, "Remarks on the Mode of Electing
                         Benchers at the Inner Temple," annotated </unittitle>
                      <unitdate>1845</unitdate>
                   </did>
@@ -809,7 +759,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">42</container>
-                     <unittitle type="genericfolder"> Untitled pamphlet by Abraham Hayward
+                     <unittitle localtype="genericfolder"> Untitled pamphlet by Abraham Hayward
                         concerning the Inner Temple Affair </unittitle>
                      <unitdate>1845</unitdate>
                   </did>
@@ -818,7 +768,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">43</container>
-                     <unittitle type="genericfolder"> Clippings related to the Inner Temple Affair </unittitle>
+                     <unittitle localtype="genericfolder"> Clippings related to the Inner Temple Affair </unittitle>
                      <unitdate>[ca. 1845]</unitdate>
                   </did>
                </c03>
@@ -826,7 +776,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">44</container>
-                     <unittitle type="genericfolder"> Petition, "To The Benchers of the Honorable
+                     <unittitle localtype="genericfolder"> Petition, "To The Benchers of the Honorable
                         Society of the Inner Temple," signed </unittitle>
                      <unitdate>1846 Jan</unitdate>
                   </did>
@@ -838,15 +788,13 @@
             </c02>
             <c02 id="d0e655" level="subseries">
                <did>
-                  <unittitle type="head"> OTHER PRINTED MATERIALS </unittitle>
+                  <unittitle localtype="head"> OTHER PRINTED MATERIALS </unittitle>
                </did>
                <c03 id="f45" level="file">
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">45</container>
-                     <unittitle type="genericfolder"> Titlepage, <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                               xlink:type="simple"
-                               render="italic">
+                     <unittitle localtype="genericfolder"> Titlepage, <!--Added child part element to title--><title render="italic">
                            <part>Commentaries on the Laws of England</part>
                         </title>, by Sir
                         William Blackstone, signed "A. Hayward" </unittitle>
@@ -864,9 +812,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">46</container>
-                     <unittitle type="genericfolder"> Titlepage, <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                               xlink:type="simple"
-                               render="italic">
+                     <unittitle localtype="genericfolder"> Titlepage, <!--Added child part element to title--><title render="italic">
                            <part>Discours de M. Thiers sur le Régime Commercial de la
                            France</part>
                         </title>, signed "Monsier Hayward" by M. Thiers </unittitle>
@@ -880,7 +826,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">47</container>
-                     <unittitle type="genericfolder"> Theater program, "87 Eaton Place" </unittitle>
+                     <unittitle localtype="genericfolder"> Theater program, "87 Eaton Place" </unittitle>
                      <unitdate>1867 Jun 20</unitdate>
                   </did>
                </c03>
@@ -888,7 +834,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">48</container>
-                     <unittitle type="genericfolder"> Calling and invitation cards </unittitle>
+                     <unittitle localtype="genericfolder"> Calling and invitation cards </unittitle>
                      <unitdate>1873, n.d.</unitdate>
                   </did>
                </c03>
@@ -896,7 +842,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">49-52</container>
-                     <unittitle type="genericfolder"> Clippings related to Hayward </unittitle>
+                     <unittitle localtype="genericfolder"> Clippings related to Hayward </unittitle>
                      <unitdate>1863-[74]</unitdate>
                   </did>
                </c03>
@@ -904,7 +850,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">53</container>
-                     <unittitle type="genericfolder"> Menu, "Café de Paris, Angilbert et Guerraz,
+                     <unittitle localtype="genericfolder"> Menu, "Café de Paris, Angilbert et Guerraz,
                         Glaciers-Restauranteurs," signed "A. Hayward" </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
@@ -917,7 +863,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">54</container>
-                     <unittitle type="genericfolder"> Circular, "John Stuart Mill's Antipopulation
+                     <unittitle localtype="genericfolder"> Circular, "John Stuart Mill's Antipopulation
                         Theory the result of paternal teaching..." </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
@@ -929,7 +875,7 @@
                </c03>
                <c03 id="d0e763" level="file">
                   <did>
-                     <unittitle type="genericfolder"> Broadside, "Men of the Day, No. 117, Mr.
+                     <unittitle localtype="genericfolder"> Broadside, "Men of the Day, No. 117, Mr.
                         Abraham Hayward, Q.C." </unittitle>
                      <unitdate>n.d.</unitdate>
                      <physloc> Stored in: Oversize, Box 5, folder 101 </physloc>
@@ -940,7 +886,7 @@
          <c01 id="SIII" level="series">
             <did>
                <unitid>Series III.</unitid>
-               <unittitle type="head"> Other Papers </unittitle>
+               <unittitle localtype="head"> Other Papers </unittitle>
                <unitdate>1833-1885</unitdate>
                <physdesc>
                   <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->0.21' (1 box)
@@ -951,7 +897,7 @@
             </arrangement>
             <c02 id="d0e809" level="file">
                <did>
-                  <unittitle type="psh1"> Account of the estate of Robert Abraham </unittitle>
+                  <unittitle localtype="psh1"> Account of the estate of Robert Abraham </unittitle>
                   <unitdate>1833-38</unitdate>
                   <physloc> Stored in: Oversize, Box 5, folder 102 </physloc>
                </did>
@@ -960,7 +906,7 @@
                <did>
                   <container localtype="Box">2</container>
                   <container localtype="Folder">55</container>
-                  <unittitle type="genericfolder"> Walland and Son timber account </unittitle>
+                  <unittitle localtype="genericfolder"> Walland and Son timber account </unittitle>
                   <unitdate>1841 Jan 25</unitdate>
                </did>
             </c02>
@@ -968,7 +914,7 @@
                <did>
                   <container localtype="Box">2</container>
                   <container localtype="Folder">56</container>
-                  <unittitle type="genericfolder"> Abraham Hayward passport </unittitle>
+                  <unittitle localtype="genericfolder"> Abraham Hayward passport </unittitle>
                   <unitdate>1862-71</unitdate>
                </did>
                <scopecontent>
@@ -979,7 +925,7 @@
                <did>
                   <container localtype="Box">2</container>
                   <container localtype="Folder">57</container>
-                  <unittitle type="genericfolder"> Blundell's School, Tiverton. Manuscript copy of
+                  <unittitle localtype="genericfolder"> Blundell's School, Tiverton. Manuscript copy of
                      Abraham Hayward's entry in the school registry </unittitle>
                   <unitdate>1885 May 18</unitdate>
                </did>
@@ -988,7 +934,7 @@
                <did>
                   <container localtype="Box">2</container>
                   <container localtype="Folder">58</container>
-                  <unittitle type="genericfolder"> Garden plan, "A Sketch or design for an orchard
+                  <unittitle localtype="genericfolder"> Garden plan, "A Sketch or design for an orchard
                      and Fruit Garden" </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -997,7 +943,7 @@
                <did>
                   <container localtype="Box">2</container>
                   <container localtype="Folder">59</container>
-                  <unittitle type="genericfolder"> Manuscript copies of poems </unittitle>
+                  <unittitle localtype="genericfolder"> Manuscript copies of poems </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
                <scopecontent>
@@ -1008,7 +954,7 @@
                <did>
                   <container localtype="Box">2</container>
                   <container localtype="Folder">60</container>
-                  <unittitle type="genericfolder"> Manuscript whist instructions </unittitle>
+                  <unittitle localtype="genericfolder"> Manuscript whist instructions </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
             </c02>
@@ -1016,7 +962,7 @@
                <did>
                   <container localtype="Box">2</container>
                   <container localtype="Folder">61</container>
-                  <unittitle type="genericfolder"> Note enclosing feathers </unittitle>
+                  <unittitle localtype="genericfolder"> Note enclosing feathers </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
             </c02>
@@ -1024,7 +970,7 @@
          <c01 id="SIV" level="series">
             <did>
                <unitid>Series IV.</unitid>
-               <unittitle type="head"> Photographs </unittitle>
+               <unittitle localtype="head"> Photographs </unittitle>
                <unitdate>1875-1878</unitdate>
                <physdesc>
                   <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->0.21' (1 box)
@@ -1034,7 +980,7 @@
                <did>
                   <container localtype="Box">3</container>
                   <container localtype="Folder">62</container>
-                  <unittitle type="genericfolder"> Carte-de-visite album </unittitle>
+                  <unittitle localtype="genericfolder"> Carte-de-visite album </unittitle>
                   <unitdate>1875-78</unitdate>
                </did>
                <scopecontent>
@@ -1047,7 +993,7 @@
          <c01 id="SV" level="series">
             <did>
                <unitid>Series V.</unitid>
-               <unittitle type="head"> Brian Roberts Research Materials </unittitle>
+               <unittitle localtype="head"> Brian Roberts Research Materials </unittitle>
                <unitdate>1943-1962</unitdate>
                <physdesc>
                   <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->0.42' (1 box)
@@ -1061,13 +1007,13 @@
             </arrangement>
             <c02 id="d0e965" level="subseries">
                <did>
-                  <unittitle type="head"> CORRESPONDENCE </unittitle>
+                  <unittitle localtype="head"> CORRESPONDENCE </unittitle>
                </did>
                <c03 id="f63" level="file">
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">63-64</container>
-                     <unittitle type="genericfolder"> Abbot-Anderson, Muriel </unittitle>
+                     <unittitle localtype="genericfolder"> Abbot-Anderson, Muriel </unittitle>
                      <unitdate>1958-59</unitdate>
                   </did>
                </c03>
@@ -1075,7 +1021,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">65</container>
-                     <unittitle type="genericfolder"> Beale, Colin </unittitle>
+                     <unittitle localtype="genericfolder"> Beale, Colin </unittitle>
                      <unitdate>1958 May</unitdate>
                   </did>
                </c03>
@@ -1083,7 +1029,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">66</container>
-                     <unittitle type="genericfolder"> Blake, Humphrey </unittitle>
+                     <unittitle localtype="genericfolder"> Blake, Humphrey </unittitle>
                      <unitdate>1958 Oct 16</unitdate>
                   </did>
                </c03>
@@ -1091,7 +1037,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">67</container>
-                     <unittitle type="genericfolder"> Elliot, Inez R. </unittitle>
+                     <unittitle localtype="genericfolder"> Elliot, Inez R. </unittitle>
                      <unitdate>1959 Jan 7</unitdate>
                   </did>
                </c03>
@@ -1099,7 +1045,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">68</container>
-                     <unittitle type="genericfolder"> Hart, E. A. P. </unittitle>
+                     <unittitle localtype="genericfolder"> Hart, E. A. P. </unittitle>
                      <unitdate>1958 Aug 27</unitdate>
                   </did>
                </c03>
@@ -1107,7 +1053,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">69</container>
-                     <unittitle type="genericfolder"> Hayward, J. C. </unittitle>
+                     <unittitle localtype="genericfolder"> Hayward, J. C. </unittitle>
                      <unitdate>1958 Jun 4</unitdate>
                   </did>
                </c03>
@@ -1115,7 +1061,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">70</container>
-                     <unittitle type="genericfolder"> Hayward, John </unittitle>
+                     <unittitle localtype="genericfolder"> Hayward, John </unittitle>
                      <unitdate>1958-59</unitdate>
                   </did>
                </c03>
@@ -1123,7 +1069,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">71</container>
-                     <unittitle type="genericfolder"> Hayward, Margaret </unittitle>
+                     <unittitle localtype="genericfolder"> Hayward, Margaret </unittitle>
                      <unitdate>1958</unitdate>
                   </did>
                </c03>
@@ -1131,7 +1077,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">72</container>
-                     <unittitle type="genericfolder"> Hayward, Mary M. </unittitle>
+                     <unittitle localtype="genericfolder"> Hayward, Mary M. </unittitle>
                      <unitdate>1958 Oct</unitdate>
                   </did>
                </c03>
@@ -1139,7 +1085,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">73</container>
-                     <unittitle type="genericfolder"> Holden, Bill </unittitle>
+                     <unittitle localtype="genericfolder"> Holden, Bill </unittitle>
                      <unitdate>1958</unitdate>
                   </did>
                </c03>
@@ -1147,7 +1093,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">74</container>
-                     <unittitle type="genericfolder"> Long, L. J. </unittitle>
+                     <unittitle localtype="genericfolder"> Long, L. J. </unittitle>
                      <unitdate>1958 May 20</unitdate>
                   </did>
                </c03>
@@ -1155,7 +1101,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">75</container>
-                     <unittitle type="genericfolder"> Mahood, A. S. </unittitle>
+                     <unittitle localtype="genericfolder"> Mahood, A. S. </unittitle>
                      <unitdate>1957 Nov 6</unitdate>
                   </did>
                </c03>
@@ -1163,7 +1109,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">76</container>
-                     <unittitle type="genericfolder"> Mineka, Francis E. </unittitle>
+                     <unittitle localtype="genericfolder"> Mineka, Francis E. </unittitle>
                      <unitdate>1958 Aug 19</unitdate>
                   </did>
                </c03>
@@ -1171,7 +1117,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">77</container>
-                     <unittitle type="genericfolder"> Moody, Graham C. </unittitle>
+                     <unittitle localtype="genericfolder"> Moody, Graham C. </unittitle>
                      <unitdate>1958</unitdate>
                   </did>
                </c03>
@@ -1179,7 +1125,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">78</container>
-                     <unittitle type="genericfolder"> [Pauly?], C. F. </unittitle>
+                     <unittitle localtype="genericfolder"> [Pauly?], C. F. </unittitle>
                      <unitdate>1958 Mar 26</unitdate>
                   </did>
                </c03>
@@ -1187,7 +1133,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">79</container>
-                     <unittitle type="genericfolder"> Pauly, Michael St. John </unittitle>
+                     <unittitle localtype="genericfolder"> Pauly, Michael St. John </unittitle>
                      <unitdate>1958 May 29</unitdate>
                   </did>
                </c03>
@@ -1195,7 +1141,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">80</container>
-                     <unittitle type="genericfolder"> Rathbone, Maurice G. </unittitle>
+                     <unittitle localtype="genericfolder"> Rathbone, Maurice G. </unittitle>
                      <unitdate>1958 Aug 29</unitdate>
                   </did>
                </c03>
@@ -1203,7 +1149,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">81</container>
-                     <unittitle type="genericfolder"> Roberts, T. V. </unittitle>
+                     <unittitle localtype="genericfolder"> Roberts, T. V. </unittitle>
                      <unitdate>1961-62</unitdate>
                   </did>
                </c03>
@@ -1211,7 +1157,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">82</container>
-                     <unittitle type="genericfolder"> Sandell, Richard E. </unittitle>
+                     <unittitle localtype="genericfolder"> Sandell, Richard E. </unittitle>
                      <unitdate>1957 Dec 9</unitdate>
                   </did>
                </c03>
@@ -1219,7 +1165,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">83</container>
-                     <unittitle type="genericfolder"> Scott, Joseph W. </unittitle>
+                     <unittitle localtype="genericfolder"> Scott, Joseph W. </unittitle>
                      <unitdate>1958 May 19</unitdate>
                   </did>
                </c03>
@@ -1227,7 +1173,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">84</container>
-                     <unittitle type="genericfolder"> Steele, Edwin H. </unittitle>
+                     <unittitle localtype="genericfolder"> Steele, Edwin H. </unittitle>
                      <unitdate>1958 Dec 5</unitdate>
                   </did>
                </c03>
@@ -1235,7 +1181,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">85</container>
-                     <unittitle type="genericfolder"> Stuart, D. W. </unittitle>
+                     <unittitle localtype="genericfolder"> Stuart, D. W. </unittitle>
                      <unitdate>1958 May 10</unitdate>
                   </did>
                </c03>
@@ -1243,7 +1189,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">86</container>
-                     <unittitle type="genericfolder"> Walker, E. </unittitle>
+                     <unittitle localtype="genericfolder"> Walker, E. </unittitle>
                      <unitdate>1958 Apr 17</unitdate>
                   </did>
                </c03>
@@ -1251,7 +1197,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">87</container>
-                     <unittitle type="genericfolder"> Wyck, ---- </unittitle>
+                     <unittitle localtype="genericfolder"> Wyck, ---- </unittitle>
                      <unitdate>1958 Feb 4</unitdate>
                   </did>
                </c03>
@@ -1259,7 +1205,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">88</container>
-                     <unittitle type="genericfolder"> ----, Donald </unittitle>
+                     <unittitle localtype="genericfolder"> ----, Donald </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
@@ -1267,24 +1213,24 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">89</container>
-                     <unittitle type="genericfolder"> Unidentified </unittitle>
+                     <unittitle localtype="genericfolder"> Unidentified </unittitle>
                      <unitdate>1958</unitdate>
                   </did>
                </c03>
             </c02>
             <c02 id="d0e1213" level="subseries">
                <did>
-                  <unittitle type="head"> WRITINGS </unittitle>
+                  <unittitle localtype="head"> WRITINGS </unittitle>
                </did>
                <c03 id="d0e1217" level="subseries">
                   <did>
-                     <unittitle type="head"> Biography of Abraham Hayward </unittitle>
+                     <unittitle localtype="head"> Biography of Abraham Hayward </unittitle>
                   </did>
                   <c04 id="f90" level="file">
                      <did>
                         <container localtype="Box">4</container>
                         <container localtype="Folder">90</container>
-                        <unittitle type="genericfolder"> Typescript, "Chapter 1" </unittitle>
+                        <unittitle localtype="genericfolder"> Typescript, "Chapter 1" </unittitle>
                         <unitdate>n.d.</unitdate>
                      </did>
                   </c04>
@@ -1292,7 +1238,7 @@
                      <did>
                         <container localtype="Box">4</container>
                         <container localtype="Folder">91</container>
-                        <unittitle type="genericfolder"> Typescript, "Chapter 2" </unittitle>
+                        <unittitle localtype="genericfolder"> Typescript, "Chapter 2" </unittitle>
                         <unitdate>n.d.</unitdate>
                      </did>
                   </c04>
@@ -1300,7 +1246,7 @@
                      <did>
                         <container localtype="Box">4</container>
                         <container localtype="Folder">92</container>
-                        <unittitle type="genericfolder"> Typescript, "Chapter 2" </unittitle>
+                        <unittitle localtype="genericfolder"> Typescript, "Chapter 2" </unittitle>
                         <unitdate>n.d.</unitdate>
                      </did>
                   </c04>
@@ -1308,7 +1254,7 @@
                      <did>
                         <container localtype="Box">4</container>
                         <container localtype="Folder">93</container>
-                        <unittitle type="genericfolder"> Typescript, "Chapter 3" </unittitle>
+                        <unittitle localtype="genericfolder"> Typescript, "Chapter 3" </unittitle>
                         <unitdate>n.d.</unitdate>
                      </did>
                   </c04>
@@ -1316,14 +1262,14 @@
             </c02>
             <c02 id="d0e1257" level="subseries">
                <did>
-                  <unittitle type="head"> NOTES </unittitle>
+                  <unittitle localtype="head"> NOTES </unittitle>
                </did>
                <scopecontent>
                   <p> Manuscript transcriptions </p>
                </scopecontent>
                <c03 id="d0e1268" level="file">
                   <did>
-                     <unittitle type="psh1"> Writings and correspondence related to Hayward
+                     <unittitle localtype="psh1"> Writings and correspondence related to Hayward
                         (1820s-1950s, n.d.) </unittitle>
                      <unitdate>n.d.</unitdate>
                      <physloc> Stored in: Oversize, Box 6, folders 103-116 </physloc>
@@ -1333,7 +1279,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">94</container>
-                     <unittitle type="genericfolder"> Typescript transcriptions of writings and
+                     <unittitle localtype="genericfolder"> Typescript transcriptions of writings and
                         correspondence related to Hayward </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
@@ -1342,7 +1288,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">95</container>
-                     <unittitle type="genericfolder"> Hayward timeline notes (1834-72) </unittitle>
+                     <unittitle localtype="genericfolder"> Hayward timeline notes (1834-72) </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
@@ -1350,7 +1296,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">96</container>
-                     <unittitle type="genericfolder"> Research notebook </unittitle>
+                     <unittitle localtype="genericfolder"> Research notebook </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                   <scopecontent>
@@ -1362,23 +1308,21 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">97</container>
-                     <unittitle type="genericfolder"> Note cards </unittitle>
+                     <unittitle localtype="genericfolder"> Note cards </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
             </c02>
             <c02 id="d0e1326" level="subseries">
                <did>
-                  <unittitle type="head"> OTHER PAPERS </unittitle>
+                  <unittitle localtype="head"> OTHER PAPERS </unittitle>
                </did>
                <c03 id="f98" level="file">
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">98</container>
-                     <unittitle type="genericfolder"> British Museum application for photography of
-                           <!--Added child part element to title--><title xmlns:xlink="http://www.w3.org/1999/xlink"
-                               xlink:type="simple"
-                               render="italic">
+                     <unittitle localtype="genericfolder"> British Museum application for photography of
+                           <!--Added child part element to title--><title render="italic">
                            <part>Vanity Fair</part>
                         </title> cartoons </unittitle>
                      <unitdate>1943 Nov 13</unitdate>
@@ -1388,7 +1332,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">99</container>
-                     <unittitle type="genericfolder"> Invoice for purchase of "Hayward colln" </unittitle>
+                     <unittitle localtype="genericfolder"> Invoice for purchase of "Hayward colln" </unittitle>
                      <unitdate>1959 Dec 15</unitdate>
                   </did>
                </c03>
@@ -1396,7 +1340,7 @@
                   <did>
                      <container localtype="Box">4</container>
                      <container localtype="Folder">100</container>
-                     <unittitle type="genericfolder"> Prints of a portrait of Laura Bell </unittitle>
+                     <unittitle localtype="genericfolder"> Prints of a portrait of Laura Bell </unittitle>
                      <unitdate>n.d.</unitdate>
                   </did>
                </c03>
@@ -1404,7 +1348,7 @@
          </c01>
          <c01 id="OS" level="series">
             <did>
-               <unittitle type="head"> Oversize </unittitle>
+               <unittitle localtype="head"> Oversize </unittitle>
                <physdesc>
                   <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->1.67' (1 box)
                </physdesc>
@@ -1413,7 +1357,7 @@
                <did>
                   <container localtype="Box">5</container>
                   <container localtype="Folder">101</container>
-                  <unittitle type="genericfolder"> Broadside, "Men of the Day, No. 117, Mr. Abraham
+                  <unittitle localtype="genericfolder"> Broadside, "Men of the Day, No. 117, Mr. Abraham
                      Hayward, Q.C." (in Series II) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1422,7 +1366,7 @@
                <did>
                   <container localtype="Box">5</container>
                   <container localtype="Folder">102</container>
-                  <unittitle type="genericfolder"> Account of the estate of Robert Abraham (in
+                  <unittitle localtype="genericfolder"> Account of the estate of Robert Abraham (in
                      Series III) </unittitle>
                   <unitdate>1833-38</unitdate>
                </did>
@@ -1431,7 +1375,7 @@
                <did>
                   <container localtype="Box">6</container>
                   <container localtype="Folder">103</container>
-                  <unittitle type="genericfolder"> Writings and correspondence related to Hayward
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
                      (1820s-30s) (in Series V) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1440,7 +1384,7 @@
                <did>
                   <container localtype="Box">6</container>
                   <container localtype="Folder">104-106</container>
-                  <unittitle type="genericfolder"> Writings and correspondence related to Hayward
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
                      (1840s) (in Series V) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1449,7 +1393,7 @@
                <did>
                   <container localtype="Box">6</container>
                   <container localtype="Folder">107</container>
-                  <unittitle type="genericfolder"> Writings and correspondence related to Hayward
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
                      (1850s) (in Series V) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1458,7 +1402,7 @@
                <did>
                   <container localtype="Box">6</container>
                   <container localtype="Folder">108</container>
-                  <unittitle type="genericfolder"> Writings and correspondence related to Hayward
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
                      (1860s) (in Series V) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1467,7 +1411,7 @@
                <did>
                   <container localtype="Box">6</container>
                   <container localtype="Folder">109-110</container>
-                  <unittitle type="genericfolder"> Writings and correspondence related to Hayward
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
                      (1870s) (in Series V) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1476,7 +1420,7 @@
                <did>
                   <container localtype="Box">6</container>
                   <container localtype="Folder">111</container>
-                  <unittitle type="genericfolder"> Writings and correspondence related to Hayward
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
                      (1880s) (in Series V) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1485,7 +1429,7 @@
                <did>
                   <container localtype="Box">6</container>
                   <container localtype="Folder">112</container>
-                  <unittitle type="genericfolder"> Writings and correspondence related to Hayward
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
                      (1890s) (in Series V) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1494,7 +1438,7 @@
                <did>
                   <container localtype="Box">6</container>
                   <container localtype="Folder">113</container>
-                  <unittitle type="genericfolder"> Writings and correspondence related to Hayward
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
                      (1900s-10s) (in Series V) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1503,7 +1447,7 @@
                <did>
                   <container localtype="Box">6</container>
                   <container localtype="Folder">114</container>
-                  <unittitle type="genericfolder"> Writings and correspondence related to Hayward
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
                      (1920s-50s) (in Series V) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1512,7 +1456,7 @@
                <did>
                   <container localtype="Box">6</container>
                   <container localtype="Folder">115-116</container>
-                  <unittitle type="genericfolder"> Writings and correspondence related to Hayward
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
                      (n.d.) (in Series V) </unittitle>
                   <unitdate>n.d.</unitdate>
                </did>
@@ -1520,7 +1464,7 @@
          </c01>
          <c01 id="RFO" level="series">
             <did>
-               <unittitle type="head"> Restricted Fragile Oversize </unittitle>
+               <unittitle localtype="head"> Restricted Fragile Oversize </unittitle>
                <physdesc>
                   <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->1.67' (1 box)
                </physdesc>
@@ -1535,28 +1479,28 @@
                <did>
                   <container localtype="Box">7</container>
                   <container localtype="Folder">117</container>
-                  <unittitle type="genericfolder"> Box 1, folder 49 </unittitle>
+                  <unittitle localtype="genericfolder"> Box 1, folder 49 </unittitle>
                </did>
             </c02>
             <c02 id="f118" level="file">
                <did>
                   <container localtype="Box">7</container>
                   <container localtype="Folder">118</container>
-                  <unittitle type="genericfolder"> Box 1, folder 50 </unittitle>
+                  <unittitle localtype="genericfolder"> Box 1, folder 50 </unittitle>
                </did>
             </c02>
             <c02 id="f119" level="file">
                <did>
                   <container localtype="Box">7</container>
                   <container localtype="Folder">119</container>
-                  <unittitle type="genericfolder"> Box 1, folder 51 </unittitle>
+                  <unittitle localtype="genericfolder"> Box 1, folder 51 </unittitle>
                </did>
             </c02>
             <c02 id="f120" level="file">
                <did>
                   <container localtype="Box">7</container>
                   <container localtype="Folder">120</container>
-                  <unittitle type="genericfolder"> Box 1, folder 52 </unittitle>
+                  <unittitle localtype="genericfolder"> Box 1, folder 52 </unittitle>
                </did>
             </c02>
          </c01>
