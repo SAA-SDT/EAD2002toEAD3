@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd xlink"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ead3.archivists.org/schema/"
     version="2.0">
     <xd:doc scope="stylesheet">
@@ -802,14 +803,15 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="@*|node()" mode="strip-ns"/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="xlink:*">
-        <xsl:attribute name="local-name()" namespace="" inherit-namespaces="no">
+<!--
+    <xsl:template match="xlink:*" mode="strip-ns">
+        <xsl:attribute name="{substring-after(name(), 6, )}" namespace="">
             <xsl:apply-templates/>
         </xsl:attribute>
     </xsl:template>
     <xsl:template match="@xsi:schemaLocation" mode="strip-ns"
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
-
+-->
 
     <!-- ############################################### -->
     <!-- @TYPE TO @LOCALTYPE                             -->
