@@ -139,7 +139,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- SKIP -->
     <xsl:template
-        match="descgrp | admininfo | titleproper/date | titleproper/num | 
+        match="descgrp | admininfo | titleproper/date | titleproper/num | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
         subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (did)] | title[parent::descrules]">
         <xsl:comment>
@@ -490,13 +490,16 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
             <xsl:apply-templates
-                select="parent::*/dao | parent::*/daogrp | child::dao | child::daogrp"
+                select="parent::*/dao | parent::*/daogrp | child::dao | child::daogrp | parent::*/scopecontent//dao | parent::*/bioghist//dao | parent::*/odd//dao | parent::*/scopecontent//daogrp | parent::*/bioghist//daogrp | parent::*/odd//daogrp"
                 mode="daoIndid"/>
         </did>
     </xsl:template>
 
-    <xsl:template match="dao | daogrp">
+    <xsl:template match="dao[not(parent::did)] | daogrp[not(parent::did)]">
         <xsl:comment>dao* outside did moved into did</xsl:comment>
+    </xsl:template>
+    
+    <xsl:template match="dao[parent::did] | daogrp[parent::did]">
     </xsl:template>
 
     <xsl:template match="daogrp[count(child::daoloc) &gt; 1]" mode="daoIndid">
@@ -571,36 +574,30 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
 
-
+<!-- if content is only a name element - copy and apply-templates
+     if only text content: create name/part element with entire text inside
+     if text and name elements ?
+-->
     <xsl:template match="origination">
-        <xsl:for-each select="corpname | name | persname | famname">
-            <origination>
+   <origination>
+    <!--        <xsl:for-each select="corpname | name | persname | famname">            
                 <xsl:apply-templates select="self::*"/>
                 <xsl:comment>
                     <xsl:value-of select="parent::origination//text()"/>
-                </xsl:comment>
-            </origination>
+                </xsl:comment>         
         </xsl:for-each>
-        <xsl:if test="empty(corpname | name | persname | famname)">
-            <origination>
-                <xsl:copy-of select="@*"/>
-                <name>
-                    <part>
-                        <xsl:apply-templates/>
-                    </part>
-                </name>
-            </origination>
-            <!--    <descriptivenote>
-                <xsl:value-of separator=" " select="node() except (corpname | name | persname | famname)"/>
-            </descriptivenote>
-         -->
-        </xsl:if>
+        
+                -->
+       <xsl:message>ORIGINATION NEEDS WORK</xsl:message>
+       <xsl:comment>ORIGINATION NEEDS WORK</xsl:comment>
+        </origination>
+
     </xsl:template>
 
 
 
 
-
+<!-- keep contents of unitdate, move unitdate element outside unittitle -->
     <xsl:template match="unittitle[parent::did]">
         <unittitle>
             <xsl:copy-of select="@*"/>
@@ -635,11 +632,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="physdesc">
-        <physdesc>
-            <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
-        </physdesc>
+<physdesc>
+            <xsl:apply-templates/>
+</physdesc> 
     </xsl:template>
 
+<!-- script attr becomes script element -->
     <xsl:template match="langmaterial">
         <langmaterial>
             <xsl:choose>
@@ -847,8 +845,10 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
 
+<!-- address now only in repository and publicationstmt -->
+
     <!-- ############################################### -->
-    <!-- ADDRESSLINE                                     -->
+    <!-- ADDRESS                                     -->
     <!-- ############################################### -->
     <!--
     <xsl:template match="address[not(parent::repository) and not(parent::publicationtmt)]">
@@ -884,6 +884,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:choose>
     </xsl:template>
 -->
+
+<!-- move element to sibling or skip? -->
     <!-- ############################################### -->
     <!-- ACCESSRESTRICT + LEGALSTATUS                    -->
     <!-- ############################################### -->
@@ -921,6 +923,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="custodhist/acqinfo"/>
 
 
+    <!-- process link attributes -->
     <!-- ############################################### -->
     <!-- LINK ELEMENTS and ATTRS                         -->
     <!-- ############################################### -->

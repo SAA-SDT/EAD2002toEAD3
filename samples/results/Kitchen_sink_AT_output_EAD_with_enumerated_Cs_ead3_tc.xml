@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?oxygen RNGSchema="../../ead3.rng" type="xml"?>
-<ead xmlns="http://ead3.archivists.org/schema/">
+<ead xmlns="http://ead3.archivists.org/schema/"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd">
     <!--eadheader now control: Inserting minimal control element--><control>
       <recordid>hua88888:HOLLISnumber|||</recordid>
       <filedesc>
@@ -50,7 +52,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-11-07T11:31:03.579-05:00</eventdatetime>
+            <eventdatetime>2014-11-07T14:12:32.649-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -95,8 +97,8 @@
             <container id="cid15001" localtype="Box" label="Mixed materials">Container 1 indicator (is
                 this container tag?) |||</container>
             <physdesc>
-                
-                
+                <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->1.0 Cubic feet
+                <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->Container summary|||
             </physdesc>
             <unitdate normal="1989/1999" unitdatetype="bulk">Bulk, 1989-1999</unitdate>
             <unitdate normal="1000/2000" unitdatetype="inclusive">Date expression (AT outputs this instead
@@ -106,10 +108,10 @@
             <abstract id="ref1" label="abstract label||| ">3rd note input : abstract
                 content|||</abstract>
             <physdesc>
-                
+                <dimensions>Dimensions note no label |||</dimensions>
             </physdesc>
             <physdesc>
-                
+                <dimensions>Dimensions note with label text of content|||</dimensions>
             </physdesc>
             <physdesc>General physical
                 description note no label |||</physdesc>
@@ -130,30 +132,10 @@
             <materialspec id="ref46" label="Material Specific Details note">Material specific
                 details note no label |||</materialspec>
             <physdesc>
-                
+                <physfacet>Physical facet note no label |||</physfacet>
             </physdesc>
-            <origination><!--Added child part element to persname-->
-            <persname rules="aacr" source="naf" relator="Creator (cre)">
-               <part>Bowers, Kate, 1963-
-                    |||</part>
-            </persname>
-            <!--
-                Bowers, Kate, 1963-
-                    |||
-            -->
-         </origination>
-            <origination><!--Added child part element to persname-->
-            <persname rules="local" source="local" relator="Originator (org)">
-               <part>Test|||, Name|||,
-                    Ms.|||, Number|||, Suffix|||, Title|||, (Fuller form|||), 1880-1980|||,
-                    qualifier|||</part>
-            </persname>
-            <!--
-                Test|||, Name|||,
-                    Ms.|||, Number|||, Suffix|||, Title|||, (Fuller form|||), 1880-1980|||,
-                    qualifier|||
-            -->
-         </origination>
+            <origination><!--ORIGINATION NEEDS WORK--></origination>
+            <origination><!--ORIGINATION NEEDS WORK--></origination>
         <!--dao--><!--added required attribute daotype with value "unknown"--><dao xmlns:ns2="http://www.w3.org/1999/xlink"
               daotype="unknown"
               ns2:actuate="onRequest"
@@ -419,13 +401,13 @@
                         |||</unittitle>
                     <unitid>Series I |||</unitid>
                     <physdesc>
-                        
+                        <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->2.0 Cubic feet
                     </physdesc>
                     <unitdate normal="1880/1900" unitdatetype="inclusive">1880-1900</unitdate>
                     <abstract id="ref123" label="Series-level abstract label|||">Series-level
                         abstract text|||</abstract>
                     <physdesc>
-                        
+                        <dimensions>Series-level dimensions text |||</dimensions>
                     </physdesc>
                     <physdesc>Series-level
                         general physical description text |||</physdesc>
@@ -439,16 +421,9 @@
                     <materialspec id="ref144" label="Series-level material specific details label|||">Series-level
                         material specific details text|||</materialspec>
                     <physdesc>
-                        
+                        <physfacet>Series-level physical facet text|||</physfacet>
                     </physdesc>
-                    <origination><!--Added child part element to persname-->
-                  <persname source="ingest">
-                     <part>Ginsburg, Ruth Bader|||</part>
-                  </persname>
-                  <!--
-                        Ginsburg, Ruth Bader|||
-                    -->
-               </origination>
+                    <origination><!--ORIGINATION NEEDS WORK--></origination>
                 </did>
                 <accruals id="ref124">
                     <head>Series-level accruals label|||</head>
@@ -545,12 +520,12 @@
                         labels|||</unittitle>
                     <unitid>Series II |||</unitid>
                     <physdesc>
-                        
+                        <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->3.0 Linear feet
                     </physdesc>
                     <abstract id="ref156" label="Abstract">abstract, series-level text, no label
                         |||</abstract>
                     <physdesc>
-                        
+                        <dimensions>dimensions, series-level text, no label |||</dimensions>
                     </physdesc>
                     <physdesc>general physical
                         description, series-level text, no label |||</physdesc>
@@ -565,7 +540,7 @@
                     <materialspec id="ref176" label="Material Specific Details note">material
                         specific details, series-level text, no label |||</materialspec>
                     <physdesc>
-                        
+                        <physfacet>physical facet, series-level text, no label |||</physfacet>
                     </physdesc>
                 </did>
                 <accruals id="ref157">
@@ -666,10 +641,11 @@
                         <abstract id="ref90" label="Abstract note label at folder level|||">Abstract
                             note content at folder level|||</abstract>
                         <physdesc>
-                            
+                            <dimensions>Dimensions note content at folder level, no label
+                                |||</dimensions>
                         </physdesc>
                         <physdesc>
-                            
+                            <dimensions>Dimensions note content at folder level |||</dimensions>
                         </physdesc>
                         <physdesc>General
                             physical description note content at folder level, no label
@@ -842,7 +818,7 @@
                             |||</unittitle>
                         <container id="cid16013" localtype="Box-folder" label="Mixed materials">1.7</container>
                         <physdesc>
-                            
+                            <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->2 folders
                         </physdesc>
                         <unitdate>no date</unitdate>
                     </did>
@@ -852,7 +828,7 @@
                         <unittitle>Folder title of Folder 8 (folder with a footage) |||</unittitle>
                         <container id="cid16014" localtype="Box-folder" label="Mixed materials">1.8</container>
                         <physdesc>
-                            
+                            <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->2.0 Linear feet
                         </physdesc>
                         <unitdate normal="1890/1890">[1890?]</unitdate>
                     </did>
@@ -867,7 +843,7 @@
                   </title>|||</unittitle>
                     <unitid>Series IV |||</unitid>
                     <physdesc>
-                        
+                        <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->1.0 Cubic feet
                     </physdesc>
                     <unitdate normal="1880/1900" unitdatetype="inclusive">ca. 1880-1900|||</unitdate>
                 </did>
@@ -878,7 +854,7 @@
                         <container id="cid16001" localtype="Box" label="Mixed materials">2</container>
                         <container parent="cid16001" localtype="Folder">1</container>
                         <physdesc>
-                            
+                            <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->0.1 Linear feet
                         </physdesc>
                         <unitdate normal="1880/1900" unitdatetype="inclusive">ca. 1880-1900</unitdate>
                     </did>
@@ -936,7 +912,7 @@
                         <container id="cid16015" localtype="Box" label="Mixed materials">2</container>
                         <container parent="cid16015" localtype="Folder">7</container>
                         <physdesc>
-                            
+                            <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->2 folders
                         </physdesc>
                         <unitdate normal="1890/1890">1890</unitdate>
                     </did>
@@ -948,7 +924,7 @@
                         <container id="cid16016" localtype="Box" label="Mixed materials">2</container>
                         <container parent="cid16016" localtype="Folder">8</container>
                         <physdesc>
-                            
+                            <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->2.0 Linear feet
                         </physdesc>
                         <unitdate normal="1890/1890">1890</unitdate>
                     </did>
@@ -1158,7 +1134,7 @@
                                 <unittitle>Watercolor drawing of Christ Church, ca. 1781</unittitle>
                                 <container id="cid19008" localtype="Folder" label="Graphic materials">1</container>
                                 <physdesc>
-                                    
+                                    <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED--> 1 drawing
                                 </physdesc>
                                 <unitdate normal="1781/1781">ca. 1781</unitdate>
                             </did>
@@ -1169,7 +1145,7 @@
                                     Place</unittitle>
                                 <container id="cid18001" localtype="Folder" label="Graphic materials">2</container>
                                 <physdesc>
-                                    
+                                    <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->1 drawing
                                 </physdesc>
                                 <unitdate>ca. 1781</unitdate>
                             </did>
@@ -1192,11 +1168,11 @@
                                     a principal part of the Buildings thereon</unittitle>
                                 <container id="cid19009" localtype="Folder" label="Graphic materials">3</container>
                                 <physdesc>
-                                    
+                                    <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED--> 1 drawing
                                 </physdesc>
                                 <unitdate normal="1781/1781">ca. 1781</unitdate>
                                 <physdesc>
-                                    
+                                    <dimensions>18 x 25.5 in.</dimensions>
                                 </physdesc>
                             </did>
                         </c04>
@@ -1206,11 +1182,11 @@
                                     about six acres as survey'd in June 1784</unittitle>
                                 <container id="cid19010" localtype="Folder" label="Graphic materials">4</container>
                                 <physdesc>
-                                    
+                                    <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->1 drawing
                                 </physdesc>
                                 <unitdate normal="1784/1784">June 1784</unitdate>
                                 <physdesc>
-                                    
+                                    <dimensions>10.25 x 19.5 in.</dimensions>
                                 </physdesc>
                             </did>
                         </c04>
@@ -1258,7 +1234,7 @@
                             <container id="cid18005" localtype="Folder" label="Text">14.20-14.21</container>
                             <unitdate normal="1982/1982">1982</unitdate>
                             <physdesc>
-                                
+                                <physfacet>[disassembled]</physfacet>
                             </physdesc>
                         </did>
                         <scopecontent id="ref200">

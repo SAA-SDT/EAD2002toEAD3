@@ -23,7 +23,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-11-07T11:31:04.457-05:00</eventdatetime>
+            <eventdatetime>2014-11-07T14:12:33.598-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -54,15 +54,8 @@
             <container>container||| </container>
             <!--ELEMENT note RENAMED as 'didnote'
 --><didnote>p in note||| </didnote>
-            <origination><!--Added child part element to persname-->
-            <persname>
-               <part>Bowers, Kate (persname)||| </part>
-            </persname>
-            <!--
-                Bowers, Kate (persname)||| 
-                (origination)||| -->
-         </origination>
-            <physdesc>physdesc||| 
+            <origination><!--ORIGINATION NEEDS WORK--></origination>
+            <physdesc>physdesc||| <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->extent||| 
             </physdesc>
             <physloc>physloc ||| </physloc>
             <repository><!--Added child part element to corpname-->
@@ -96,15 +89,19 @@
             <fileplan>
                 <p>p in fileplan in add||| </p>
             </fileplan>
-            <!--DEPRECATED ELEMENT OR ATTRIBUTE index REMOVED--><!--
-                 head in index in add|||  
-                 
-                    corpname in indexentry in add||| 
-                 
-                 
-                    subject in indexentry in add||| 
-                 
-            -->
+            <index>
+                <head>head in index in add||| </head>
+                <indexentry>
+                    <!--Added child part element to corpname--><corpname>
+               <part>corpname in indexentry in add||| </part>
+            </corpname>
+                </indexentry>
+                <indexentry>
+                    <!--Added child part element to subject--><subject>
+               <part>subject in indexentry in add||| </part>
+            </subject>
+                </indexentry>
+            </index>
             <!--DEPRECATED ELEMENT OR ATTRIBUTE list REMOVED--><!--
                  head in list in add|||  
                  item in list in add|||  
@@ -283,11 +280,7 @@
                     <container>container in did in series level c ||| </container>
                     <!--ELEMENT note RENAMED as 'didnote'
 --><didnote>p in note in did in series level c ||| </didnote>
-                    <origination>
-                  <name>
-                     <part>origination in did in series level c ||| </part>
-                  </name>
-               </origination>
+                    <origination><!--ORIGINATION NEEDS WORK--></origination>
                     <physdesc>physdesc in did in series level c ||| </physdesc>
                     <physloc>physloc in did in series level c ||| </physloc>
                     <repository>
@@ -322,16 +315,20 @@
                     <fileplan>
                         <p>p in fileplan in add||| </p>
                     </fileplan>
-                    <!--DEPRECATED ELEMENT OR ATTRIBUTE index REMOVED--><!--
-                         head in index in add|||  
-                         
-                            corpname in indexentry in add|||
-                            
-                         
-                         
-                            subject in indexentry in add||| 
-                         
-                    -->
+                    <index>
+                        <head>head in index in add||| </head>
+                        <indexentry>
+                            <!--Added child part element to corpname--><corpname>
+                     <part>corpname in indexentry in add|||
+                            </part>
+                  </corpname>
+                        </indexentry>
+                        <indexentry>
+                            <!--Added child part element to subject--><subject>
+                     <part>subject in indexentry in add||| </part>
+                  </subject>
+                        </indexentry>
+                    </index>
                     <!--DEPRECATED ELEMENT OR ATTRIBUTE list REMOVED--><!--
                          head in list in add|||  
                          item in list in add|||  
