@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?oxygen RNGSchema="../ead_revised.rng" type="xml"?>
+<?xml-model href="../../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?oxygen RNGSchema="../../ead_revised.rng" type="xml"?>
 <ead xmlns="http://ead3.archivists.org/schema/" id="beinecke.hayward">
    <!--eadheader now control: Inserting minimal control element--><control>
       <recordid>beinecke.hayward</recordid>

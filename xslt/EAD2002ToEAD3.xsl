@@ -76,10 +76,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="/">
         <xsl:processing-instruction name="xml-model">
-            <xsl:text>href="../ead_revised.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
+            <xsl:text>href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
         </xsl:processing-instruction>
         <xsl:processing-instruction name="oxygen">
-            <xsl:text>RNGSchema="../ead_revised.rng" type="xml"</xsl:text>
+            <xsl:text>RNGSchema="../../ead3.rng" type="xml"</xsl:text>
         </xsl:processing-instruction>
         <!--<xsl:copy-of select="$instance-ns-stripped"/>
         -->
