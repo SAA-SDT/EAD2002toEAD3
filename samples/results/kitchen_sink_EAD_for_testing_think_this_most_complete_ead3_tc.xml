@@ -23,7 +23,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-11-07T15:32:10.314-05:00</eventdatetime>
+            <eventdatetime>2014-11-07T16:18:40.802-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -122,8 +122,8 @@
             </otherfindaid>
             <otherfindaid>
                 <list>
-                    <item>item in list in otherfindaid in add||| </item>
-                </list>
+            <item>item in list in otherfindaid in add||| </item>
+         </list>
             </otherfindaid>
             <!--DEPRECATED ELEMENT OR ATTRIBUTE p REMOVED--><!--p in add||| -->
             <relatedmaterial>
@@ -134,12 +134,12 @@
                 <head>head in separatedmaterial in add||| </head>
                 <p>p in separatedmaterial in add||| </p>
                 <list altrender="table" listtype="deflist">
-                    <defitem>
+            <defitem>
                         <label>label in defitem in list in list in add (render =
                             table)||| </label>
                         <item>item in defitem in deflist in add||| </item>
                     </defitem>
-                </list>
+         </list>
             </separatedmaterial>
         
         <!--DEPRECATED ELEMENT OR ATTRIBUTE descgrp REMOVED-->
@@ -349,8 +349,8 @@
                     </otherfindaid>
                     <otherfindaid>
                         <list>
-                            <item>item in list in otherfindaid in add||| </item>
-                        </list>
+                  <item>item in list in otherfindaid in add||| </item>
+               </list>
                     </otherfindaid>
                     <!--DEPRECATED ELEMENT OR ATTRIBUTE p REMOVED--><!--p in add||| -->
                     <relatedmaterial>
@@ -361,13 +361,13 @@
                         <head>head in separatedmaterial in add||| </head>
                         <p>p in separatedmaterial in add||| </p>
                         <list altrender="table" listtype="deflist">
-                            <defitem>
+                  <defitem>
                                 <label>label in defitem in list in list in add
                                     (render = table)||| </label>
                                 <item>item in defitem in deflist in add|||
                                 </item>
                             </defitem>
-                        </list>
+               </list>
                     </separatedmaterial>
                 
                 <!--DEPRECATED ELEMENT OR ATTRIBUTE descgrp REMOVED-->

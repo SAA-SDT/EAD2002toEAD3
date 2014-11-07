@@ -2,14 +2,15 @@
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd xlink"
-    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ead3.archivists.org/schema/"
     version="2.0">
     <xd:doc scope="stylesheet">
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
-            <xd:p><xd:b>Last Updated: 2014-04-14</xd:b></xd:p>
+            <xd:p>
+                <xd:b>Last Updated: 2014-04-14</xd:b>
+            </xd:p>
             <xd:p><xd:b>Author:</xd:b> Terry Catapano</xd:p>
             <xd:p>Convert EAD2002 instance to EAD3</xd:p>
             <xd:p>To do: Add parameter to control inclusion of comments in output.</xd:p>
@@ -75,13 +76,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:param name="eadxmlns" select="'http://ead3.archivists.org/schema/'"/>
 
-<!-- create namespace stripped version of input document -->
+    <!-- create namespace stripped version of input document -->
 
     <xsl:variable name="instance-ns-stripped">
         <xsl:apply-templates select="/" mode="strip-ns"/>
     </xsl:variable>
 
-<!-- MAIN TEMPLATE: operates on namespace-stripped document -->
+    <!-- MAIN TEMPLATE: operates on namespace-stripped document -->
 
     <xsl:template match="/">
         <xsl:processing-instruction name="xml-model">
@@ -139,7 +140,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- SKIP -->
     <xsl:template
-        match="descgrp | admininfo | titleproper/date | titleproper/num | extent |
+        match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
         subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (//did)] | title[parent::descrules]">
         <xsl:comment>
@@ -457,23 +458,23 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- LIST                                            -->
     <!-- ############################################### -->
-    <!--
+
     <xsl:template match="list">
         <list>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="*"/>
         </list>
     </xsl:template>
--->
+
     <!-- ############################################### -->
     <!-- TABLE                                           -->
     <!-- ############################################### -->
 
-    <!--
-        <xsl:template match="table">
-        <xsl:call-template name="gonna-deal-with-this-later"/>
+
+    <xsl:template match="table">
+        <xsl:apply-templates/>
     </xsl:template>
-    -->
+
     <!-- ############################################### -->
     <!-- DID ELEMENTS                                    -->
     <!-- ############################################### -->
@@ -498,9 +499,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="dao[not(parent::did)] | daogrp[not(parent::did)]">
         <xsl:comment>dao* outside did moved into did</xsl:comment>
     </xsl:template>
-    
-    <xsl:template match="dao[parent::did] | daogrp[parent::did]">
-    </xsl:template>
+
+    <xsl:template match="dao[parent::did] | daogrp[parent::did]"> </xsl:template>
 
     <xsl:template match="daogrp[count(child::daoloc) &gt; 1]" mode="daoIndid">
         <xsl:comment>daogrp now daoset</xsl:comment>
@@ -574,13 +574,13 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
 
-<!-- if content is only a name element - copy and apply-templates
+    <!-- if content is only a name element - copy and apply-templates
      if only text content: create name/part element with entire text inside
      if text and name elements ?
 -->
     <xsl:template match="origination">
-   <origination>
-    <!--        <xsl:for-each select="corpname | name | persname | famname">            
+        <origination>
+            <!--        <xsl:for-each select="corpname | name | persname | famname">            
                 <xsl:apply-templates select="self::*"/>
                 <xsl:comment>
                     <xsl:value-of select="parent::origination//text()"/>
@@ -588,8 +588,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:for-each>
         
                 -->
-       <xsl:message>ORIGINATION NEEDS WORK</xsl:message>
-       <xsl:comment>ORIGINATION NEEDS WORK</xsl:comment>
+            <xsl:message>ORIGINATION NEEDS WORK</xsl:message>
+            <xsl:comment>ORIGINATION NEEDS WORK</xsl:comment>
         </origination>
 
     </xsl:template>
@@ -597,7 +597,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 
 
-<!-- keep contents of unitdate, move unitdate element outside unittitle -->
+    <!-- keep contents of unitdate, move unitdate element outside unittitle -->
     <xsl:template match="unittitle[parent::did]">
         <unittitle>
             <xsl:apply-templates select="@*"/>
@@ -631,13 +631,15 @@ For these and/or other purposes and motivations, and without any expectation of 
         </repository>
     </xsl:template>
 
+<!--
     <xsl:template match="physdesc">
-<physdesc>
+        <physdesc>
             <xsl:apply-templates/>
-</physdesc> 
+        </physdesc>
     </xsl:template>
-
-<!-- script attr becomes script element -->
+-->
+    
+    <!-- script attr becomes script element -->
     <xsl:template match="langmaterial">
         <langmaterial>
             <xsl:choose>
@@ -809,7 +811,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="@*|node()" mode="strip-ns"/>
         </xsl:copy>
     </xsl:template>
-<!--
+    <!--
     <xsl:template match="xlink:*" mode="strip-ns">
         <xsl:attribute name="{substring-after(name(), 6, )}" namespace="">
             <xsl:apply-templates/>
@@ -824,7 +826,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="abstract/@type | accessrestrict/@type | altformavail/@type |container/@type |
+        match="abstract/@type | accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
         phystech/@type | processinfo/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
         userestrict/@type | odd/@type | date/@type | name/@type |  persname/@type | famname/@type |
         corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type">
@@ -845,7 +847,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
 
-<!-- address now only in repository and publicationstmt -->
+    <!-- address now only in repository and publicationstmt -->
 
     <!-- ############################################### -->
     <!-- ADDRESS                                     -->
@@ -885,7 +887,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 -->
 
-<!-- move element to sibling or skip? -->
+    <!-- move element to sibling or skip? -->
     <!-- ############################################### -->
     <!-- ACCESSRESTRICT + LEGALSTATUS                    -->
     <!-- ############################################### -->
@@ -943,9 +945,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         </ptr>
     </xsl:template>
 
-    <xsl:template match="@*[name() = 'xlink:type']">
-    </xsl:template>
-   
+    <xsl:template match="@*[name() = 'xlink:type']"> </xsl:template>
+
     <xsl:template match="@*[starts-with(name(), 'xlink')][name() != 'xlink:type']">
         <xsl:attribute name="{substring-after(name(), ':')}">
             <xsl:value-of select="lower-case(.)"/>

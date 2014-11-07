@@ -2,8 +2,6 @@
 <?xml-model href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?oxygen RNGSchema="../../ead3.rng" type="xml"?>
 <ead xmlns="http://ead3.archivists.org/schema/"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.library.yale.edu/facc/schemas/ead/ead.xsd"
      id="beinecke.hayward">
    <!--eadheader now control: Inserting minimal control element--><control>
       <recordid>beinecke.hayward</recordid>
@@ -61,7 +59,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-11-07T15:32:06.413-05:00</eventdatetime>
+            <eventdatetime>2014-11-07T16:18:36.699-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -99,7 +97,7 @@
          </maintenanceevent>
       </maintenancehistory>
    </control>
-   <archdesc type="register" relatedencoding="MARC21" level="collection">
+   <archdesc localtype="register" relatedencoding="MARC21" level="collection">
       <did id="did">
          <head>Overview</head>
          <origination><!--ORIGINATION NEEDS WORK--></origination>
@@ -115,10 +113,10 @@
                    
      -->
          <unitid label="Call Number:" countrycode="US" repositorycode="US-CtY-BR">GEN MSS 553</unitid>
-         <physdesc>
+         <physdesc label="Physical Description:">
             <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->Total Boxes: 7 (incl. 3 oversize boxes)
          </physdesc>
-         <physdesc>
+         <physdesc label="Physical Description:">
             <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->Linear Feet: 5.51'
          </physdesc>
          <abstract label="Summary:">Correspondence, printed materials, other papers, and photographs related to Abraham Hayward, as well as the research materials of Hayward biographer Brian Roberts. Outgoing correspondence includes letters to Hayward's sisters Fanny and Mary Anne Hayward, as well as publisher Richard Bentley. Incoming correspondence primarily consists of letters from members of Hayward's literary and political circles, including George Bentley; John Thaddeus Delane; Edward Everett; Alexander William Kinglake; John Murray; Henry Pelham, Duke of Newcastle; Viscountess Emily Lamb Palmerston; Horace Smith, and others. Topics discussed in Hayward's corresondence include contemporary politics; publishing concerns; London society; and invitations to dine. Third party correspondence consists of letters to Fanny Hayward.<lb/>The bulk of the printed materials consists of pamphlets, a petition, and clippings related to a controversy over the Inner Temple's rules for election to the bench, which resulted from a dissenter rejecting Hayward. Printed materials also include title pages inscribed by and to Hayward; a theater program; calling cards; clippings; and a menu from the Café de Paris. Other papers include an account of the estate of Robert Abraham, for whom Hayward was the executor; Hayward's passport (1862-1871); a design for a fruit garden; and whist instructions. Photographs consist of 12 cartes-de-visite, including portraits of Abraham Hayward; Mrs. Cornwallis West; Mrs. Wheeler; Olive Campbell; Florence de Bretton; Madaillae Florian; and Countess Fanny Karolyi.<lb/>Brian Roberts research materials consist of correspondence; typescripts for three chapters of an unfinished biography of Hayward; manuscript and typescript transcriptions of correspondence and writings related to Hayward; a biographical timeline; and other research papers.</abstract>

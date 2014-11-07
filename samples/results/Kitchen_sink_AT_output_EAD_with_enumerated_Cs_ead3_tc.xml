@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?oxygen RNGSchema="../../ead3.rng" type="xml"?>
-<ead xmlns="http://ead3.archivists.org/schema/"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd">
+<ead xmlns="http://ead3.archivists.org/schema/">
     <!--eadheader now control: Inserting minimal control element--><control>
       <recordid>hua88888:HOLLISnumber|||</recordid>
       <filedesc>
@@ -56,7 +54,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-11-07T15:32:09.292-05:00</eventdatetime>
+            <eventdatetime>2014-11-07T16:18:39.675-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>
@@ -111,13 +109,13 @@
                 2nd note on "Notes etc" tab : |||</abstract>
             <abstract id="ref1" label="abstract label||| ">3rd note input : abstract
                 content|||</abstract>
-            <physdesc>
-                <dimensions>Dimensions note no label |||</dimensions>
+            <physdesc id="ref34" label="Dimensions note">
+                <!--DEPRECATED ELEMENT OR ATTRIBUTE dimensions REMOVED-->Dimensions note no label |||
             </physdesc>
-            <physdesc>
-                <dimensions>Dimensions note with label text of content|||</dimensions>
+            <physdesc id="ref243" label="Dimensions note label|||">
+                <!--DEPRECATED ELEMENT OR ATTRIBUTE dimensions REMOVED-->Dimensions note with label text of content|||
             </physdesc>
-            <physdesc>General physical
+            <physdesc id="ref43" label="General Physical Description note">General physical
                 description note no label |||</physdesc>
             <langmaterial>
             <descriptivenote>
@@ -135,8 +133,8 @@
                 (maybe physloc?) content. |||</physloc>
             <materialspec id="ref46" label="Material Specific Details note">Material specific
                 details note no label |||</materialspec>
-            <physdesc>
-                <physfacet>Physical facet note no label |||</physfacet>
+            <physdesc id="ref47" label="Physical Facet note">
+                <!--DEPRECATED ELEMENT OR ATTRIBUTE physfacet REMOVED-->Physical facet note no label |||
             </physdesc>
             <origination><!--ORIGINATION NEEDS WORK--></origination>
             <origination><!--ORIGINATION NEEDS WORK--></origination>
@@ -414,10 +412,10 @@
                     <unitdate normal="1880/1900" unitdatetype="inclusive">1880-1900</unitdate>
                     <abstract id="ref123" label="Series-level abstract label|||">Series-level
                         abstract text|||</abstract>
-                    <physdesc>
-                        <dimensions>Series-level dimensions text |||</dimensions>
+                    <physdesc id="ref132" label="Series-level dimensions label |||">
+                        <!--DEPRECATED ELEMENT OR ATTRIBUTE dimensions REMOVED-->Series-level dimensions text |||
                     </physdesc>
-                    <physdesc>Series-level
+                    <physdesc id="ref137" label="Series-level general physical description label |||">Series-level
                         general physical description text |||</physdesc>
                     <langmaterial>
                   <descriptivenote>
@@ -428,8 +426,8 @@
                         location text|||</physloc>
                     <materialspec id="ref144" label="Series-level material specific details label|||">Series-level
                         material specific details text|||</materialspec>
-                    <physdesc>
-                        <physfacet>Series-level physical facet text|||</physfacet>
+                    <physdesc id="ref147" label="Series-level physical facet label|||">
+                        <!--DEPRECATED ELEMENT OR ATTRIBUTE physfacet REMOVED-->Series-level physical facet text|||
                     </physdesc>
                     <origination><!--ORIGINATION NEEDS WORK--></origination>
                 </did>
@@ -532,10 +530,10 @@
                     </physdesc>
                     <abstract id="ref156" label="Abstract">abstract, series-level text, no label
                         |||</abstract>
-                    <physdesc>
-                        <dimensions>dimensions, series-level text, no label |||</dimensions>
+                    <physdesc id="ref165" label="Dimensions note">
+                        <!--DEPRECATED ELEMENT OR ATTRIBUTE dimensions REMOVED-->dimensions, series-level text, no label |||
                     </physdesc>
-                    <physdesc>general physical
+                    <physdesc id="ref170" label="General Physical Description note">general physical
                         description, series-level text, no label |||</physdesc>
                     <langmaterial>
                   <descriptivenote>
@@ -547,8 +545,8 @@
                         label |||</physloc>
                     <materialspec id="ref176" label="Material Specific Details note">material
                         specific details, series-level text, no label |||</materialspec>
-                    <physdesc>
-                        <physfacet>physical facet, series-level text, no label |||</physfacet>
+                    <physdesc id="ref179" label="Physical Facet note">
+                        <!--DEPRECATED ELEMENT OR ATTRIBUTE physfacet REMOVED-->physical facet, series-level text, no label |||
                     </physdesc>
                 </did>
                 <accruals id="ref157">
@@ -648,17 +646,18 @@
                             no label |||</abstract>
                         <abstract id="ref90" label="Abstract note label at folder level|||">Abstract
                             note content at folder level|||</abstract>
-                        <physdesc>
-                            <dimensions>Dimensions note content at folder level, no label
-                                |||</dimensions>
+                        <physdesc id="ref108" label="Dimensions note">
+                            <!--DEPRECATED ELEMENT OR ATTRIBUTE dimensions REMOVED-->Dimensions note content at folder level, no label
+                                |||
                         </physdesc>
-                        <physdesc>
-                            <dimensions>Dimensions note content at folder level |||</dimensions>
+                        <physdesc id="ref109" label="Dimensions note label at folder level |||">
+                            <!--DEPRECATED ELEMENT OR ATTRIBUTE dimensions REMOVED-->Dimensions note content at folder level |||
                         </physdesc>
-                        <physdesc>General
+                        <physdesc id="ref121" label="General Physical Description note">General
                             physical description note content at folder level, no label
                             |||</physdesc>
-                        <physdesc>General physical description note content at folder level
+                        <physdesc id="ref120"
+                            label="General physical description note label at folder level|||">General physical description note content at folder level
                             |||</physdesc>
                     </did>
                     <accruals id="ref93">
@@ -762,18 +761,18 @@
                     <odd id="ref119">
                         <head>Multi-part general note label |||</head>
                         <list listtype="ordered">
-                            <head>Ordered List title</head>
-                            <item>Ordered list <emph render="bold">item 1</emph>
+                     <head>Ordered List title</head>
+                     <item>Ordered list <emph render="bold">item 1</emph>
                      </item>
-                            <item>Ordered list <emph render="bold">item 2</emph>
+                     <item>Ordered list <emph render="bold">item 2</emph>
                      </item>
-                            <item>Ordered list <emph render="bold">item 3</emph>
+                     <item>Ordered list <emph render="bold">item 3</emph>
                      </item>
-                            <item>Ordered list <emph render="bold">item 4</emph>
+                     <item>Ordered list <emph render="bold">item 4</emph>
                      </item>
-                            <item>Ordered list <emph render="bold">item 5</emph>
+                     <item>Ordered list <emph render="bold">item 5</emph>
                      </item>
-                        </list>
+                  </list>
                     </odd>
                 </c02>
             </c01>
@@ -1103,12 +1102,12 @@
                         <scopecontent id="ref189">
                             <head>Scope and Contents note</head>
                             <list listtype="ordered">
-                                <head>Explanatory notes transcribed from folder front flap:</head>
-                                <item>Of the Original Contract</item>
-                                <item>Justice as An Artificial Virtue and Definition of
+                        <head>Explanatory notes transcribed from folder front flap:</head>
+                        <item>Of the Original Contract</item>
+                        <item>Justice as An Artificial Virtue and Definition of
                                     Property</item>
-                                <item>Judicious Spectator and Principle of Utility</item>
-                            </list>
+                        <item>Judicious Spectator and Principle of Utility</item>
+                     </list>
                         </scopecontent>
                         <odd id="ref208">
                             <head>Kate's -- note -- about -- input</head>
@@ -1179,8 +1178,8 @@
                                     <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED--> 1 drawing
                                 </physdesc>
                                 <unitdate normal="1781/1781">ca. 1781</unitdate>
-                                <physdesc>
-                                    <dimensions>18 x 25.5 in.</dimensions>
+                                <physdesc id="ref230" label="Dimensions note">
+                                    <!--DEPRECATED ELEMENT OR ATTRIBUTE dimensions REMOVED-->18 x 25.5 in.
                                 </physdesc>
                             </did>
                         </c04>
@@ -1193,8 +1192,8 @@
                                     <!--DEPRECATED ELEMENT OR ATTRIBUTE extent REMOVED-->1 drawing
                                 </physdesc>
                                 <unitdate normal="1784/1784">June 1784</unitdate>
-                                <physdesc>
-                                    <dimensions>10.25 x 19.5 in.</dimensions>
+                                <physdesc id="ref232" label="Dimensions note">
+                                    <!--DEPRECATED ELEMENT OR ATTRIBUTE dimensions REMOVED-->10.25 x 19.5 in.
                                 </physdesc>
                             </did>
                         </c04>
@@ -1241,8 +1240,8 @@
                             <unittitle>Complete level II training packet</unittitle>
                             <container id="cid18005" localtype="Folder" label="Text">14.20-14.21</container>
                             <unitdate normal="1982/1982">1982</unitdate>
-                            <physdesc>
-                                <physfacet>[disassembled]</physfacet>
+                            <physdesc id="ref205" label="Physical Facet note">
+                                <!--DEPRECATED ELEMENT OR ATTRIBUTE physfacet REMOVED-->[disassembled]
                             </physdesc>
                         </did>
                         <scopecontent id="ref200">
@@ -1378,31 +1377,31 @@
                 <odd id="ref241">
                     <head>Storage Units Summary</head>
                     <list listtype="deflist">
-                        <defitem>
+                  <defitem>
                             <label>File units:</label>
                             <item>1.1 through 28.2</item>
                         </defitem>
-                        <defitem>
+                  <defitem>
                             <label>Memorabilia:</label>
                             <item>85.1m</item>
                         </defitem>
-                        <defitem>
+                  <defitem>
                             <label>Oversized folders</label>
                             <item>Box 87, Folders 1-4</item>
                         </defitem>
-                        <defitem>
+                  <defitem>
                             <label>Oversized folders</label>
                             <item>Box F+87, Folders 1-4</item>
                         </defitem>
-                        <defitem>
+                  <defitem>
                             <label>Folio drawer</label>
                             <item>1</item>
                         </defitem>
-                        <defitem>
+                  <defitem>
                             <label>Audio tapes</label>
                             <item>T-354 reels 1 and 2</item>
                         </defitem>
-                    </list>
+               </list>
                 </odd>
             </c01>
         </dsc>
