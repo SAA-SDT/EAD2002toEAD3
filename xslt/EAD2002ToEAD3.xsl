@@ -65,8 +65,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:param name="agentType" select="'machine'"/>
 
     <!-- user parameter for control/publicationStatus -->
-    <!-- enumeration '[inProcess, approved]' -->
-    <xsl:param name="publicationStatus" select="'inProcess'"/>
+    <!-- enumeration '[inprocess, approved]' -->
+    <xsl:param name="publicationStatus" select="'inprocess'"/>
 
     <xsl:param name="eadxmlns" select="'http://ead3.archivists.org/schema/'"/>
 
