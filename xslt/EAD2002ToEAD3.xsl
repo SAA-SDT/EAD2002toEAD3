@@ -802,6 +802,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="@*|node()" mode="strip-ns"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="xlink:*">
+        <xsl:attribute name="local-name()" namespace="" inherit-namespaces="no">
+            <xsl:apply-templates/>
+        </xsl:attribute>
+    </xsl:template>
     <xsl:template match="@xsi:schemaLocation" mode="strip-ns"
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
 
