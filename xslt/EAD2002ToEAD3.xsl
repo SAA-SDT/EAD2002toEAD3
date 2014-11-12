@@ -963,6 +963,12 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:text>&#160;</xsl:text>
         <xsl:text>REMOVED</xsl:text>
     </xsl:template>
+    
+    <xsl:template name="commentAndMessage">
+        <xsl:param name="comment"/>
+        <xsl:comment><xsl:value-of select="$comment"/></xsl:comment>
+        <xsl:message><xsl:value-of select="$comment"/></xsl:message>
+    </xsl:template>
 
     <xsl:template name="nowOdd">
         <xsl:comment>
