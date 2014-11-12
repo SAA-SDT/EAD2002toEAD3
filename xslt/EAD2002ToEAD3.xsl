@@ -210,15 +210,13 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template match="eadheader">
-        <xsl:comment>
-            <xsl:text>eadheader now control: </xsl:text>
-            <xsl:text>Inserting minimal control element</xsl:text>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:text>eadheader now control: </xsl:text>
-            <xsl:text>Inserting minimal control element</xsl:text>
-        </xsl:message>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>eadheader replaced by control</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <control>
+            <xsl:copy-of select="@*[not(local-name()='findaidstatus')]"/>
             <xsl:if test="@encodinganalog">
                 <xsl:copy-of select="@encodinganalog"/>
             </xsl:if>
