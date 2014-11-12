@@ -231,6 +231,20 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="profiledesc/langusage/language"/>
             
             <xsl:apply-templates select="profiledesc/descrules"/>
+            
+            <xsl:if test="@findaidstatus">
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>@findaidstatus migrated to localcontrol/term but superseded by maintenancestatus</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
+                <localcontrol localtype="findaidstatus">
+                    <term>
+                        <xsl:value-of select="@findaidstatus"/>
+                    </term>
+                </localcontrol>
+                
+            </xsl:if>
 
             <maintenancehistory>
                 <xsl:if test="revisiondesc/@encodinganalog">
