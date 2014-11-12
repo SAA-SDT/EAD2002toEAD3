@@ -334,6 +334,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="eadid">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>eadid converted to recordid</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <recordid>
             <xsl:if test="@encodinganalog">
                 <xsl:copy-of select="@encodinganalog"/>
@@ -341,21 +346,41 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:value-of select="."/>
         </recordid>
         <xsl:if test="@publicid">
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>eadid/@publicid converted to otherrecordid</xsl:text>
+                </xsl:with-param>
+            </xsl:call-template>
             <otherrecordid localtype="eadidpublicid">
                 <xsl:value-of select="@publicid"/>
             </otherrecordid>
         </xsl:if>
         <xsl:if test="@identifier">
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>eadid/@identifier converted to otherrecordid</xsl:text>
+                </xsl:with-param>
+            </xsl:call-template>
             <otherrecordid localtype="eadididentifier">
                 <xsl:value-of select="@identifier"/>
             </otherrecordid>
         </xsl:if>
         <xsl:if test="@url">
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>eadid/@url converted to otherrecordid</xsl:text>
+                </xsl:with-param>
+            </xsl:call-template>
             <otherrecordid localtype="eadidurl">
                 <xsl:value-of select="@url"/>
             </otherrecordid>
         </xsl:if>
         <xsl:if test="@urn">
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>eadid/@urn converted to otherrecordid</xsl:text>
+                </xsl:with-param>
+            </xsl:call-template>
             <otherrecordid localtype="eadidurn">
                 <xsl:value-of select="@urn"/>
             </otherrecordid>
