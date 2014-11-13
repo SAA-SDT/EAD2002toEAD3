@@ -225,6 +225,24 @@ For these and/or other purposes and motivations, and without any expectation of 
             <maintenancestatus value="derived"/>
             
             <maintenanceagency>
+                <xsl:if test="eadid/@countrycode">
+                    <xsl:copy-of select="eadid/@countrycode"/>
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>eadid/@countrycode replaced with maintenanceagency/@countrycode</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
+                </xsl:if>
+                <xsl:if test="eadid/@mainagencycode">
+                    <agencycode>
+                        <xsl:value-of select="eadid/@mainagencycode"/>
+                    </agencycode>
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>eadid/@mainagencycode replaced with maintenanceagency/agencycode</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
+                </xsl:if>
                 <agencyname>[agency name]</agencyname>
             </maintenanceagency>
             
