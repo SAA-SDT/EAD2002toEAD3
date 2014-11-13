@@ -584,7 +584,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="dao/@role">
         <xsl:attribute name="linkrole">
-            <xsl:apply-templates/>
+            <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
 
