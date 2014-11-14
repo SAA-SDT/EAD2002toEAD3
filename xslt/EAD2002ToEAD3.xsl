@@ -62,7 +62,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     
     <!-- user parameter to control deprecation -->
-    <xsl:param name="undeprecated" select="false()"/>
+    <xsl:param name="outputUndeprecatedEAD3" select="false()"/>
     
     <!-- user parameter to control migration comments -->
     <xsl:param name="addMigrationComments" select="true()"/>
