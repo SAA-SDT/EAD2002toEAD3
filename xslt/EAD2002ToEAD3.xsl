@@ -137,12 +137,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- REMOVE COMPLETELY -->
     <xsl:template
         match="frontmatter | runner | accessrestrict/legalstatus| archdesc/address | dsc/address | @linktype | arc | resource">
-        <xsl:comment>
-            <xsl:call-template name="removedElement"/>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:call-template name="removedElement"/>
-        </xsl:message>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:call-template name="removedElement"/>
+            </xsl:with-param>
+        </xsl:call-template>
     </xsl:template>
 
     <!-- SKIP -->
@@ -150,12 +149,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
         subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (//did)] | title[parent::descrules]">
-        <xsl:comment>
-            <xsl:call-template name="removedElement"/>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:call-template name="removedElement"/>
-        </xsl:message>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:call-template name="removedElement"/>
+            </xsl:with-param>
+        </xsl:call-template>
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -173,12 +171,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template
         match="descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table">
-        <xsl:comment>
-            <xsl:call-template name="removedElement"/>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:call-template name="removedElement"/>
-        </xsl:message>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:call-template name="removedElement"/>
+            </xsl:with-param>
+        </xsl:call-template>
         <xsl:comment>
             <xsl:apply-templates/>
         </xsl:comment>
@@ -521,13 +518,17 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="dao[not(parent::did)] | daogrp[not(parent::did)]">
-        <xsl:comment>dao* outside did moved into did</xsl:comment>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment" select="'dao or daogrp outside did moved into did'"/>
+        </xsl:call-template>
     </xsl:template>
 
     <xsl:template match="dao[parent::did] | daogrp[parent::did]"> </xsl:template>
 
     <xsl:template match="daogrp[count(child::daoloc) &gt; 1]" mode="daoIndid">
-        <xsl:comment>daogrp now daoset</xsl:comment>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment" select="'daogrp now daoset'"/>
+        </xsl:call-template>
         <daoset>
             <xsl:attribute name="coverage">
                 <xsl:text>unknown</xsl:text>
@@ -561,10 +562,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="dao" mode="daoIndid">
         <xsl:comment>dao</xsl:comment>
-        <xsl:message>
-            <xsl:text>added required attribute daotype with value "unknown"</xsl:text>
-        </xsl:message>
-        <xsl:comment><xsl:text>added required attribute daotype with value "unknown"</xsl:text></xsl:comment>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>added required attribute daotype with value "unknown"</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <dao>
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
@@ -612,8 +614,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:for-each>
         
                 -->
-            <xsl:message>ORIGINATION NEEDS WORK</xsl:message>
-            <xsl:comment>ORIGINATION NEEDS WORK</xsl:comment>
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment" select="'ORIGINATION NEEDS WORK'"/>
+            </xsl:call-template>
         </origination>
 
     </xsl:template>
@@ -693,15 +696,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template
         match="corpname | famname | persname | name | subject | occupation | geogname | function | title | genreform">
-        <xsl:comment>
-            <xsl:text>Added child part element to </xsl:text>
-            <xsl:value-of select="local-name()"/>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:text>Added child part element to </xsl:text>
-            <xsl:value-of select="local-name()"/>
-        </xsl:message>
-
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>Added child part element to </xsl:text>
+                <xsl:value-of select="local-name()"/>
+            </xsl:with-param>
+        </xsl:call-template>
         <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
             <xsl:apply-templates select="@*"/>
             <part>
@@ -735,19 +735,15 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="daodesc">
-        <xsl:comment>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'descriptivenote'</xsl:text>   
-            <xsl:text>&#10;</xsl:text>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'descriptivenote'</xsl:text>
-        </xsl:message>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED as 'descriptivenote'</xsl:text>   
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <descriptivenote>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
@@ -763,19 +759,15 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template
         match="c/note | archdesc/note | descgrp/note | c01/note | c02/note | c03/note | c04/note | c05/note | c06/note | c07/note | c08/note | c09/note | c10/note | c11/note | c12/note">
-        <xsl:comment>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'odd'</xsl:text>
-            <xsl:text>&#10;</xsl:text>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'odd'</xsl:text>
-        </xsl:message>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED as 'odd'</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <xsl:element name="odd" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates/>
@@ -783,19 +775,15 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="did/note">
-        <xsl:comment>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'didnote'</xsl:text>
-            <xsl:text>&#10;</xsl:text>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'didnote'</xsl:text>
-        </xsl:message>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED as 'didnote'</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <didnote>
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates select="p" mode="skipP"/>
@@ -803,19 +791,15 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="notestmt/note">
-        <xsl:comment>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'controlnote'</xsl:text>
-            <xsl:text>&#10;</xsl:text>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'controlnote'</xsl:text>
-        </xsl:message>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED as 'controlnote'</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <controlnote>
             <xsl:apply-templates/>
         </controlnote>
@@ -999,19 +983,15 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template name="nowOdd">
-        <xsl:comment>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'odd'</xsl:text>   
-            <xsl:text>&#10;</xsl:text>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:text>ELEMENT </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>RENAMED as 'odd'</xsl:text>
-        </xsl:message>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED as 'odd'</xsl:text>   
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <xsl:element name="odd" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
             <xsl:copy-of select="@* except @type"/>
             <xsl:attribute name="localtype" select="@type"/>
