@@ -71,6 +71,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- user parameter to control migration messages -->
     <xsl:param name="addMigrationMessages" select="true()"/>
     
+    <!-- user parameter for control/maintenancestatus -->
+    <xsl:param name="maintenancestatus" select="'revised'"/>
+    
     <!-- user parameter for control/eventType -->
     <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
     <xsl:param name="eventType" select="'derived'"/>
@@ -231,7 +234,9 @@ For these and/or other purposes and motivations, and without any expectation of 
             
             <xsl:apply-templates select="filedesc"/>
             
-            <maintenancestatus value="derived"/>
+            <maintenancestatus>
+                <xsl:attribute name="value" select="$maintenancestatus"/>
+            </maintenancestatus>
             
             <maintenanceagency>
                 <xsl:if test="eadid/@countrycode">
