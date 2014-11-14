@@ -969,7 +969,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:text>DEPRECATED ELEMENT OR ATTRIBUTE </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
-        <xsl:text>REMOVED</xsl:text>
+        <xsl:text>REMOVED FROM </xsl:text>
+        <xsl:value-of select="parent::*/local-name()"/>
     </xsl:template>
     
     <xsl:template name="commentAndMessage">
