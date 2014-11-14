@@ -6,16 +6,22 @@
    <eadheader langencoding="iso639-2b" scriptencoding="iso15924" countryencoding="iso3166-1"
               repositoryencoding="iso15511"
               dateencoding="iso8601"
-              findaidstatus="edited-full-draft">
-      <eadid countrycode="US" mainagencycode="US-CtY-BR"
-             publicid="-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT (US::CtY-BR::::[ABRAHAM HAYWARD COLLECTION])//EN"
-             url="http://hdl.handle.net/10079/fa/beinecke.hayward">beinecke.hayward</eadid>
-      <filedesc>
-         <titlestmt>
-            <titleproper type="formal">Guide to the  Abraham Hayward Collection </titleproper>
-            <titleproper type="filing" render="altrender" altrender="nodisplay" audience="internal">
+              findaidstatus="edited-full-draft" altrender="eadheaderaltrender" audience="internal" encodinganalog="eadheader" id="eadheader" relatedencoding="DC">
+      <eadid countrycode="US" 
+         mainagencycode="US-CtY-BR" 
+         publicid="-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT (US::CtY-BR::::[ABRAHAM HAYWARD COLLECTION])//EN"
+         url="http://hdl.handle.net/10079/fa/beinecke.hayward"
+         encodinganalog="eadid"
+         identifier="eadid:identifier"
+         urn="eadid:urn">beinecke.hayward</eadid>
+      <filedesc altrender="filedesc" audience="external" encodinganalog="filedesc" id="filedesc1">
+         <titlestmt id="titlestmt1" encodinganalog="titlestmt" audience="external" altrender="titlestmt">
+            <titleproper type="formal" altrender="formal" audience="external" encodinganalog="formal" id="tpform" render="bold">Guide to the  Abraham Hayward Collection </titleproper>
+            <titleproper type="filing" render="altrender" altrender="nodisplay" audience="internal" id="tpfiling" encodinganalog="tpfiling">
                Hayward (Abraham) Collection </titleproper>
-            <author>by Michael Rush</author>
+            <subtitle encodinganalog="subtitle" id="subtitle" audience="external" altrender="subtitle">Hayward Subtitle</subtitle>
+            <author altrender="author" audience="external" id="author1" encodinganalog="author">by Michael Rush</author>
+            <sponsor encodinganalog="sponsor" id="sponsor1" audience="external" altrender="sponsor">Sponsored by your sponsor</sponsor>
          </titlestmt>
          <publicationstmt>
             <publisher>Yale University Library</publisher>
@@ -64,7 +70,7 @@
          </change>
       </revisiondesc>
    </eadheader>
-   <archdesc type="register" relatedencoding="MARC21" level="collection">
+   <archdesc type="register" relatedencoding="MARC21" level="otherlevel" id="archdesc" encodinganalog="archdesc" audience="internal" altrender="archdesc" otherlevel="archdesc">
       <did id="did">
          <head>Overview</head>
          <origination label="Creator:">
