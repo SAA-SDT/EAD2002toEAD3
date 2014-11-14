@@ -369,7 +369,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <xsl:text>eadid/@publicid converted to otherrecordid</xsl:text>
                 </xsl:with-param>
             </xsl:call-template>
-            <otherrecordid localtype="eadidpublicid">
+            <otherrecordid localtype="publicid">
                 <xsl:value-of select="@publicid"/>
             </otherrecordid>
         </xsl:if>
@@ -379,7 +379,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <xsl:text>eadid/@identifier converted to otherrecordid</xsl:text>
                 </xsl:with-param>
             </xsl:call-template>
-            <otherrecordid localtype="eadididentifier">
+            <otherrecordid localtype="identifier">
                 <xsl:value-of select="@identifier"/>
             </otherrecordid>
         </xsl:if>
@@ -389,7 +389,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <xsl:text>eadid/@url converted to otherrecordid</xsl:text>
                 </xsl:with-param>
             </xsl:call-template>
-            <otherrecordid localtype="eadidurl">
+            <otherrecordid localtype="url">
                 <xsl:value-of select="@url"/>
             </otherrecordid>
         </xsl:if>
@@ -399,7 +399,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <xsl:text>eadid/@urn converted to otherrecordid</xsl:text>
                 </xsl:with-param>
             </xsl:call-template>
-            <otherrecordid localtype="eadidurn">
+            <otherrecordid localtype="urn">
                 <xsl:value-of select="@urn"/>
             </otherrecordid>
         </xsl:if>
