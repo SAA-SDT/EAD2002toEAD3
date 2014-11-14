@@ -9,11 +9,10 @@
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
             <xd:p>
-                <xd:b>Last Updated: 2014-04-14</xd:b>
+                <xd:b>Last Updated: 2014-11-14</xd:b>
             </xd:p>
-            <xd:p><xd:b>Author:</xd:b> Terry Catapano</xd:p>
+            <xd:p><xd:b>Authors:</xd:b> Terry Catapano and Mike Rush</xd:p>
             <xd:p>Convert EAD2002 instance to EAD3</xd:p>
-            <xd:p>To do: Add parameter to control inclusion of comments in output.</xd:p>
             <xd:pre>
                 <!-- 
 	
