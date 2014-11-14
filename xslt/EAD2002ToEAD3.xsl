@@ -61,7 +61,16 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- TOP LEVEL PARAMETERS                            -->
     <!-- ############################################### -->
-
+    
+    <!-- user parameter to control deprecation -->
+    <xsl:param name="undeprecated" select="false()"/>
+    
+    <!-- user parameter to control migration comments -->
+    <xsl:param name="addMigrationComments" select="true()"/>
+    
+    <!-- user parameter to control migration messages -->
+    <xsl:param name="addMigrationMessages" select="true()"/>
+    
     <!-- user parameter for control/eventType -->
     <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
     <xsl:param name="eventType" select="'derived'"/>
@@ -981,8 +990,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <xsl:template name="commentAndMessage">
         <xsl:param name="comment"/>
-        <xsl:comment><xsl:value-of select="$comment"/></xsl:comment>
-        <xsl:message><xsl:value-of select="$comment"/></xsl:message>
+        <xsl:if test="$addMigrationComments">
+            <xsl:comment><xsl:value-of select="$comment"/></xsl:comment>
+        </xsl:if>
+        <xsl:if test="$addMigrationMessages">
+            <xsl:message><xsl:value-of select="$comment"/></xsl:message>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template name="nowOdd">
