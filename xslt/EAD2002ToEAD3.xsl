@@ -82,10 +82,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- enumeration '[human, machine]' -->
     <xsl:param name="agentType" select="'machine'"/>
 
-    <!-- user parameter for control/publicationStatus -->
-    <!-- enumeration '[inprocess, approved]' -->
-    <xsl:param name="publicationStatus" select="'inprocess'"/>
-
     <xsl:param name="eadxmlns" select="'http://ead3.archivists.org/schema/'"/>
 
     <!-- create namespace stripped version of input document -->
