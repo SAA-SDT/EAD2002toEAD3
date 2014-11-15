@@ -89,8 +89,18 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- user parameter for control/agenttype -->
     <!-- agenttype enumeration '[human, machine, unknown]' -->
     <xsl:param name="agenttypeValue" select="'machine'"/>
-
-    <xsl:param name="eadxmlns" select="'http://ead3.archivists.org/schema/'"/>
+    
+    <!-- param for EAD3 namespace -->
+    <xsl:param name="eadxmlns">
+        <xsl:choose>
+            <xsl:when test="$outputUndeprecatedEAD3=false()">
+                <xsl:value-of  select="'http://ead3.archivists.org/schema/'"/>
+            </xsl:when>
+            <xsl:when test="$outputUndeprecatedEAD3=true()">
+                <xsl:value-of  select="'http://ead3.archivists.org/schema/undeprecated/'"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:param>
 
     <!-- create namespace stripped version of input document -->
 
