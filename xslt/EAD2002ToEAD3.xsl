@@ -73,6 +73,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- user parameter for control/maintenancestatus -->
     <xsl:param name="maintenancestatus" select="'revised'"/>
     
+    <!-- user parameter for control/maintenanceagency/agencyname -->
+    <xsl:param name="agencyname"/>
+    
     <!-- user parameter for control/eventType -->
     <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
     <xsl:param name="eventType" select="'derived'"/>
@@ -249,7 +252,24 @@ For these and/or other purposes and motivations, and without any expectation of 
                         </xsl:with-param>
                     </xsl:call-template>
                 </xsl:if>
-                <agencyname>[agency name]</agencyname>
+                <agencyname>
+                    <xsl:choose>
+                        <xsl:when test="normalize-space($agencyname)">
+                            <xsl:value-of select="$agencyname"/>
+                        </xsl:when>
+                        <xsl:when test="filedesc/publicationstmt/publisher">
+                            <xsl:for-each select="filedesc/publicationstmt/publisher">
+                                <xsl:value-of select="normalize-space(.)"/>
+                                <xsl:if test="position()!=last()">
+                                    <xsl:text>, </xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>[Agency Name]</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </agencyname>
             </maintenanceagency>
             
             <xsl:apply-templates select="profiledesc/langusage/language"/>
