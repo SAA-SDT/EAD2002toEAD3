@@ -71,18 +71,24 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:param name="addMigrationMessages" select="true()"/>
     
     <!-- user parameter for control/maintenancestatus -->
-    <xsl:param name="maintenancestatus" select="'revised'"/>
+    <!-- maintenancestatus enumeration '[revised, deleted, new, 
+        deletedsplit, deletedmerged, deletedreplaced, cancelled, derived]' -->
+    <xsl:param name="maintenancestatusValue" select="'revised'"/>
+    
+    <!-- user parameter for control/publicationstatus -->
+    <!-- publicationstatus enumeration '[inprocess, approved, published]' -->
+    <xsl:param name="publicationstatusValue"/>
     
     <!-- user parameter for control/maintenanceagency/agencyname -->
-    <xsl:param name="agencyname"/>
+    <xsl:param name="agencynameValue"/>
     
-    <!-- user parameter for control/eventType -->
-    <!-- eventType enumeration '[created, revised, deleted, cancelled, derived, updated]'.  -->
-    <xsl:param name="eventType" select="'derived'"/>
+    <!-- user parameter for control/eventtype -->
+    <!-- eventtype enumeration '[created, revised, deleted, cancelled, derived, updated, unknown]'  -->
+    <xsl:param name="eventtypeValue" select="'derived'"/>
 
-    <!-- user parameter for control/agentType -->
-    <!-- enumeration '[human, machine]' -->
-    <xsl:param name="agentType" select="'machine'"/>
+    <!-- user parameter for control/agenttype -->
+    <!-- agenttype enumeration '[human, machine, unknown]' -->
+    <xsl:param name="agenttypeValue" select="'machine'"/>
 
     <xsl:param name="eadxmlns" select="'http://ead3.archivists.org/schema/'"/>
 
@@ -230,7 +236,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="filedesc"/>
             
             <maintenancestatus>
-                <xsl:attribute name="value" select="$maintenancestatus"/>
+                <xsl:attribute name="value" select="$maintenancestatusValue"/>
             </maintenancestatus>
             
             <maintenanceagency>
@@ -254,8 +260,8 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:if>
                 <agencyname>
                     <xsl:choose>
-                        <xsl:when test="normalize-space($agencyname)">
-                            <xsl:value-of select="$agencyname"/>
+                        <xsl:when test="normalize-space($agencynameValue)">
+                            <xsl:value-of select="$agencynameValue"/>
                         </xsl:when>
                         <xsl:when test="filedesc/publicationstmt/publisher">
                             <xsl:for-each select="filedesc/publicationstmt/publisher">
