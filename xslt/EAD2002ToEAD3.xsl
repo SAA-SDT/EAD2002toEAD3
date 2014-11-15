@@ -235,9 +235,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             
             <xsl:apply-templates select="filedesc"/>
             
-            <maintenancestatus>
-                <xsl:attribute name="value" select="$maintenancestatusValue"/>
-            </maintenancestatus>
+            <maintenancestatus value="{$maintenancestatusValue}"/>
+            
+            <xsl:if test="normalize-space($publicationstatusValue)">
+                <publicationstatus value="{$publicationstatusValue}"/>
+            </xsl:if>
             
             <maintenanceagency>
                 <xsl:if test="eadid/@countrycode">
