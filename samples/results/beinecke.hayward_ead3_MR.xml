@@ -92,19 +92,51 @@
       </maintenanceagency>
       <languagedeclaration altrender="langusage"
                            audience="external"
-                           encodinganalog="langusage"
-                           id="langusage">
+                           encodinganalog="langusage">
          <language langcode="eng">English</language>
          <script scriptcode="Latn">Latn</script>
          <descriptivenote>
             <p>
                <emph render="altrender">Finding aid </emph>written in
-            English and <!--<language langcode="fre" scriptcode="Latn">French</language>-->.
+            English and French.
          </p>
          </descriptivenote>
       </languagedeclaration>
-      <conventiondeclaration>
-         <citation>Finding aid prepared according to the Beinecke Manuscript Unit Archival Processing Manual. </citation>
+      <languagedeclaration altrender="langusage"
+                           audience="external"
+                           encodinganalog="langusage">
+         <language langcode="fre">French</language>
+         <script scriptcode="Latn">Latn</script>
+         <descriptivenote>
+            <p>
+               <emph render="altrender">Finding aid </emph>written in
+            English and French.
+         </p>
+         </descriptivenote>
+      </languagedeclaration>
+      <conventiondeclaration altrender="altrender"
+                             audience="external"
+                             encodinganalog="descrules">
+         <citation>Beinecke Manuscript Unit Archival Processing Manual</citation>
+         <descriptivenote>
+            <p>Finding aid prepared according to the <title render="italic">
+                  <part>Beinecke Manuscript Unit Archival Processing Manual</part>
+               </title> and <title>
+                  <part>DACS</part>
+               </title>. </p>
+         </descriptivenote>
+      </conventiondeclaration>
+      <conventiondeclaration altrender="altrender"
+                             audience="external"
+                             encodinganalog="descrules">
+         <citation>DACS</citation>
+         <descriptivenote>
+            <p>Finding aid prepared according to the <title render="italic">
+                  <part>Beinecke Manuscript Unit Archival Processing Manual</part>
+               </title> and <title>
+                  <part>DACS</part>
+               </title>. </p>
+         </descriptivenote>
       </conventiondeclaration>
       <localcontrol localtype="findaidstatus">
          <term>edited-full-draft</term>
@@ -112,7 +144,7 @@
       <maintenancehistory>
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-11-19T22:35:17.633-05:00</eventdatetime>
+            <eventdatetime>2014-11-20T00:11:45.786-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent/>
          </maintenanceevent>

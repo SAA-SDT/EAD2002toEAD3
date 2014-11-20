@@ -60,10 +60,13 @@
             encodinganalog="langusage"
             id="langusage">
             <emph render="altrender">Finding aid </emph>written in
-            <language langcode="eng" scriptcode="Latn">English</language> and <!--<language langcode="fre" scriptcode="Latn">French</language>-->.
+            <language langcode="eng" scriptcode="Latn">English</language> and <language langcode="fre" scriptcode="Latn">French</language>.
          </langusage>
-         <descrules>Finding aid prepared according to the <title xlink:type="simple" render="italic"
-               >Beinecke Manuscript Unit Archival Processing Manual</title>. </descrules>
+         <!--<descrules altrender="altrender" audience="external" encodinganalog="descrules" id="descrules">Finding aid prepared according to the <title xlink:type="simple" render="italic"
+               >Beinecke Manuscript Unit Archival Processing Manual</title>. </descrules>-->
+         <descrules altrender="altrender" audience="external" encodinganalog="descrules" id="descrules">Finding aid prepared according to the <title xlink:type="simple" render="italic"
+            >Beinecke Manuscript Unit Archival Processing Manual</title> and <title>DACS</title>. </descrules>
+<!--         <descrules altrender="altrender" audience="external" encodinganalog="descrules" id="descrules">Finding aid prepared according to the Beinecke Manuscript Unit Archival Processing Manual. </descrules>-->
       </profiledesc>
       <revisiondesc>
          <change>
