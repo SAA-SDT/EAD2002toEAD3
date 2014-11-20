@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.library.yale.edu/facc/schemas/ead/ead.xsd"
-     id="beinecke.hayward" altrender="altrender" audience="external" relatedencoding="enigma">
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.library.yale.edu/facc/schemas/ead/ead.xsd"
+   id="beinecke.hayward" altrender="altrender" audience="external" relatedencoding="enigma">
    <eadheader langencoding="iso639-2b" scriptencoding="iso15924" countryencoding="iso3166-1"
-              repositoryencoding="iso15511"
-              dateencoding="iso8601"
-              findaidstatus="edited-full-draft" altrender="eadheaderaltrender" audience="internal" encodinganalog="eadheader" id="eadheader" relatedencoding="DC">
-      <eadid countrycode="US" 
-         mainagencycode="US-CtY-BR" 
+      repositoryencoding="iso15511" dateencoding="iso8601" findaidstatus="edited-full-draft"
+      altrender="eadheaderaltrender" audience="internal" encodinganalog="eadheader" id="eadheader"
+      relatedencoding="DC">
+      <eadid countrycode="US" mainagencycode="US-CtY-BR"
          publicid="-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT (US::CtY-BR::::[ABRAHAM HAYWARD COLLECTION])//EN"
-         url="http://hdl.handle.net/10079/fa/beinecke.hayward"
-         encodinganalog="eadid"
-         identifier="eadid:identifier"
-         urn="eadid:urn">beinecke.hayward</eadid>
+         url="http://hdl.handle.net/10079/fa/beinecke.hayward" encodinganalog="eadid"
+         identifier="eadid:identifier" urn="eadid:urn">beinecke.hayward</eadid>
       <filedesc altrender="filedesc" audience="external" encodinganalog="filedesc" id="filedesc1">
-         <titlestmt id="titlestmt1" encodinganalog="titlestmt" audience="external" altrender="titlestmt">
-            <titleproper type="formal" altrender="formal" audience="external" encodinganalog="formal" id="tpform" render="bold">Guide to the  Abraham Hayward Collection </titleproper>
-            <titleproper type="filing" render="altrender" altrender="nodisplay" audience="internal" id="tpfiling" encodinganalog="tpfiling">
-               Hayward (Abraham) Collection </titleproper>
-            <subtitle encodinganalog="subtitle" id="subtitle" audience="external" altrender="subtitle">Hayward Subtitle</subtitle>
-            <author altrender="author" audience="external" id="author1" encodinganalog="author">by Michael Rush</author>
-            <sponsor encodinganalog="sponsor" id="sponsor1" audience="external" altrender="sponsor">Sponsored by your sponsor</sponsor>
+         <titlestmt id="titlestmt1" encodinganalog="titlestmt" audience="external"
+            altrender="titlestmt">
+            <titleproper type="formal" altrender="formal" audience="external"
+               encodinganalog="formal" id="tpform" render="bold">Guide to the Abraham Hayward
+               Collection, <num>1234</num>, <date>November 2014</date>
+            </titleproper>
+            <titleproper type="filing" render="altrender" altrender="nodisplay" audience="internal"
+               id="tpfiling" encodinganalog="tpfiling"> Hayward (Abraham) Collection </titleproper>
+            <subtitle encodinganalog="subtitle" id="subtitle" audience="external"
+               altrender="subtitle">Hayward Subtitle, <num>5678</num>,
+               <date>subtitledate</date></subtitle>
+            <author altrender="author" audience="external" id="author1" encodinganalog="author">by
+               Michael Rush</author>
+            <sponsor encodinganalog="sponsor" id="sponsor1" audience="external" altrender="sponsor"
+               >Sponsored by your sponsor</sponsor>
          </titlestmt>
          <publicationstmt>
             <publisher>Yale University Library</publisher>
@@ -35,7 +40,9 @@
             <date type="ead" normal="2006/2007">2006-2007</date>
             <p>
                <extref xlink:type="simple" xlink:actuate="onRequest" xlink:show="new"
-                       xlink:href="http://hdl.handle.net/10079/9p8czk9">Copyright © <date type="copyright" normal="1996/2007">1996-2007</date> by the Yale University Library.</extref>
+                  xlink:href="http://hdl.handle.net/10079/9p8czk9">Copyright © <date
+                     type="copyright" normal="1996/2007">1996-2007</date> by the Yale University
+                  Library.</extref>
             </p>
          </publicationstmt>
          <notestmt>
@@ -48,9 +55,15 @@
       <profiledesc>
          <creation>Finding aid encoded in EAD 1.0 by Manuscript Unit staff, Beinecke Library, with
             Edix/Wordix macros. </creation>
-         <langusage>Finding aid written in <language langcode="eng" scriptcode="Latn">English</language>
+         <langusage altrender="langusage" 
+            audience="external" 
+            encodinganalog="langusage"
+            id="langusage">
+            <emph render="altrender">Finding aid </emph>written in
+            <language langcode="eng" scriptcode="Latn">English</language> and <!--<language langcode="fre" scriptcode="Latn">French</language>-->.
          </langusage>
-         <descrules>Finding aid prepared according to the <title xlink:type="simple" render="italic">Beinecke Manuscript Unit Archival Processing Manual</title>. </descrules>
+         <descrules>Finding aid prepared according to the <title xlink:type="simple" render="italic"
+               >Beinecke Manuscript Unit Archival Processing Manual</title>. </descrules>
       </profiledesc>
       <revisiondesc>
          <change>
@@ -66,30 +79,56 @@
          </change>
          <change>
             <date normal="2010-02-10">2010-02-10</date>
-            <item>Transformed with yale.addEadidUrl.xsl. Adds @url with handle for finding aid. Overwrites @url if already present.</item>
+            <item>Transformed with yale.addEadidUrl.xsl. Adds @url with handle for finding aid.
+               Overwrites @url if already present.</item>
          </change>
       </revisiondesc>
    </eadheader>
-   <archdesc type="register" relatedencoding="MARC21" level="otherlevel" id="archdesc" encodinganalog="archdesc" audience="internal" altrender="archdesc" otherlevel="archdesc">
+   <archdesc type="register" relatedencoding="MARC21" level="otherlevel" id="archdesc"
+      encodinganalog="archdesc" audience="internal" altrender="archdesc" otherlevel="archdesc">
       <did id="did">
          <head>Overview</head>
          <origination label="Creator:">
             <persname encodinganalog="100">Hayward, A. (Abraham), 1801-1884.</persname>
          </origination>
-         <unittitle label="Title:">Abraham Hayward collection  <unitdate type="inclusive" datechar="creation" label="Dates:" normal="1791/1962" era="ce"
-            calendar="gregorian">1791-1962</unitdate></unittitle>
-     <!--    <unitdate type="inclusive" datechar="creation" label="Dates:" normal="1791/1962" era="ce"
+         <unittitle label="Title:">Abraham Hayward collection <unitdate type="inclusive"
+               datechar="creation" label="Dates:" normal="1791/1962" era="ce" calendar="gregorian"
+               >1791-1962</unitdate></unittitle>
+         <!--    <unitdate type="inclusive" datechar="creation" label="Dates:" normal="1791/1962" era="ce"
                    calendar="gregorian">1791-1962</unitdate>
                    
      -->
-         <unitid label="Call Number:" countrycode="US" repositorycode="US-CtY-BR">GEN MSS 553</unitid>
+         <unitid label="Call Number:" countrycode="US" repositorycode="US-CtY-BR">GEN MSS
+            553</unitid>
          <physdesc label="Physical Description:">
             <extent>Total Boxes: 7 (incl. 3 oversize boxes)</extent>
          </physdesc>
          <physdesc label="Physical Description:">
             <extent>Linear Feet: 5.51'</extent>
          </physdesc>
-         <abstract label="Summary:">Correspondence, printed materials, other papers, and photographs related to Abraham Hayward, as well as the research materials of Hayward biographer Brian Roberts. Outgoing correspondence includes letters to Hayward's sisters Fanny and Mary Anne Hayward, as well as publisher Richard Bentley. Incoming correspondence primarily consists of letters from members of Hayward's literary and political circles, including George Bentley; John Thaddeus Delane; Edward Everett; Alexander William Kinglake; John Murray; Henry Pelham, Duke of Newcastle; Viscountess Emily Lamb Palmerston; Horace Smith, and others. Topics discussed in Hayward's corresondence include contemporary politics; publishing concerns; London society; and invitations to dine. Third party correspondence consists of letters to Fanny Hayward.<lb/>The bulk of the printed materials consists of pamphlets, a petition, and clippings related to a controversy over the Inner Temple's rules for election to the bench, which resulted from a dissenter rejecting Hayward. Printed materials also include title pages inscribed by and to Hayward; a theater program; calling cards; clippings; and a menu from the Café de Paris. Other papers include an account of the estate of Robert Abraham, for whom Hayward was the executor; Hayward's passport (1862-1871); a design for a fruit garden; and whist instructions. Photographs consist of 12 cartes-de-visite, including portraits of Abraham Hayward; Mrs. Cornwallis West; Mrs. Wheeler; Olive Campbell; Florence de Bretton; Madaillae Florian; and Countess Fanny Karolyi.<lb/>Brian Roberts research materials consist of correspondence; typescripts for three chapters of an unfinished biography of Hayward; manuscript and typescript transcriptions of correspondence and writings related to Hayward; a biographical timeline; and other research papers.</abstract>
+         <abstract label="Summary:">Correspondence, printed materials, other papers, and photographs
+            related to Abraham Hayward, as well as the research materials of Hayward biographer
+            Brian Roberts. Outgoing correspondence includes letters to Hayward's sisters Fanny and
+            Mary Anne Hayward, as well as publisher Richard Bentley. Incoming correspondence
+            primarily consists of letters from members of Hayward's literary and political circles,
+            including George Bentley; John Thaddeus Delane; Edward Everett; Alexander William
+            Kinglake; John Murray; Henry Pelham, Duke of Newcastle; Viscountess Emily Lamb
+            Palmerston; Horace Smith, and others. Topics discussed in Hayward's corresondence
+            include contemporary politics; publishing concerns; London society; and invitations to
+            dine. Third party correspondence consists of letters to Fanny Hayward.<lb/>The bulk of
+            the printed materials consists of pamphlets, a petition, and clippings related to a
+            controversy over the Inner Temple's rules for election to the bench, which resulted from
+            a dissenter rejecting Hayward. Printed materials also include title pages inscribed by
+            and to Hayward; a theater program; calling cards; clippings; and a menu from the Café
+            de Paris. Other papers include an account of the estate of Robert Abraham, for whom
+            Hayward was the executor; Hayward's passport (1862-1871); a design for a fruit garden;
+            and whist instructions. Photographs consist of 12 cartes-de-visite, including portraits
+            of Abraham Hayward; Mrs. Cornwallis West; Mrs. Wheeler; Olive Campbell; Florence de
+            Bretton; Madaillae Florian; and Countess Fanny Karolyi.<lb/>Brian Roberts research
+            materials consist of correspondence; typescripts for three chapters of an unfinished
+            biography of Hayward; manuscript and typescript transcriptions of correspondence and
+            writings related to Hayward; a biographical timeline; and other research
+            papers.</abstract>
          <repository label="Repository:">
             <corpname>Beinecke Rare Book and Manuscript Library</corpname>
             <address>
@@ -115,8 +154,7 @@
             <p>The Abraham Hayward Collection is the physical property of the Beinecke Rare Book and
                Manuscript Library, Yale University. Literary rights, including copyright, belong to
                the authors or their legal heirs and assigns. For further information, consult the
-               appropriate curator.
-            </p>
+               appropriate curator. </p>
          </userestrict>
          <prefercite id="cite">
             <head>Cite As</head>
@@ -125,7 +163,8 @@
          </prefercite>
          <accessrestrict id="arest">
             <head>Information about Access</head>
-            <p> This collection is open for research. <title xlink:type="simple" render="italic">Restricted Fragile Oversize</title> in box 7 may only be consulted with
+            <p> This collection is open for research. <title xlink:type="simple" render="italic"
+                  >Restricted Fragile Oversize</title> in box 7 may only be consulted with
                permission of the appropriate curator. Preservation photocopies or photographic
                prints for reference use have been substituted in the main files. </p>
          </accessrestrict>
@@ -135,12 +174,16 @@
          <p>Abraham Hayward, 1801-1884, was an English essayist and translator. Born in Wiltshire,
             Hayward studied at several schools, including Blundell's School in Tiverton, before
             moving to London and enrolling at the Inner Temple in 1824. He was called to the bar in
-            1832, but after the success of his 1833 translation of Goethe's <title xlink:type="simple" render="italic">Faust</title>, the first translation of <title xlink:type="simple" render="italic">Faust</title> into English, he pursued a career
+            1832, but after the success of his 1833 translation of Goethe's <title
+               xlink:type="simple" render="italic">Faust</title>, the first translation of <title
+               xlink:type="simple" render="italic">Faust</title> into English, he pursued a career
             in journalism and literature. He never married. </p>
          <p>Residing in London for the rest of his life, Hayward was well-connected in literary and
             political circles, counting among his acquaintances Thomas Babington Macaulay, William
             Makepeace Thackeray, W. E. Gladstone, and others. He contributed to many periodicals,
-            including <title xlink:type="simple" render="italic">Quarterly Review</title>, <title xlink:type="simple" render="italic">Monthly Magazine</title>, and <title xlink:type="simple" render="italic">Edinburgh Review</title>, and wrote several
+            including <title xlink:type="simple" render="italic">Quarterly Review</title>, <title
+               xlink:type="simple" render="italic">Monthly Magazine</title>, and <title
+               xlink:type="simple" render="italic">Edinburgh Review</title>, and wrote several
             books, including collections of essays and biographies of Goethe and Mrs. Thrale (a
             friend of Dr. Johnson). </p>
          <p>Hayward was involved in a controversy in 1845 over the Inner Temple's rules governing
@@ -156,11 +199,16 @@
             and translator, as well as the research papers of Brian Roberts, who started but
             abandoned a biography of Hayward in the 1950s. The papers, which span the years
             1791-1962, are stored in seven boxes (including 3 oversize), and are organized into five
-            series: <title xlink:type="simple" render="italic">Correspondence</title>, <title xlink:type="simple" render="italic">Printed Materials</title>, <title xlink:type="simple" render="italic">Other Papers</title>, <title xlink:type="simple" render="italic">Photographs</title>, and <title xlink:type="simple" render="italic">Brian Roberts Research Materials</title>. The papers document Hayward's familial
+            series: <title xlink:type="simple" render="italic">Correspondence</title>, <title
+               xlink:type="simple" render="italic">Printed Materials</title>, <title
+               xlink:type="simple" render="italic">Other Papers</title>, <title xlink:type="simple"
+               render="italic">Photographs</title>, and <title xlink:type="simple" render="italic"
+               >Brian Roberts Research Materials</title>. The papers document Hayward's familial
             relations, the literary and political circles of mid-nineteeth century London, and a
             controversy involving Hayward and the Inner Temple. </p>
          <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SI">Series I, <title xlink:type="simple" render="italic">Correspondence</title>
+            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SI"
+               >Series I, <title xlink:type="simple" render="italic">Correspondence</title>
             </ref>, is arranged alphabetically in three subseries: Outgoing, Incoming, and Third
             Party Correspondence. The bulk of the outgoing correspondence consists of letters to
             Hayward's two sisters, Fanny and Mary Anne Hayward. In his letters to his sisters,
@@ -175,7 +223,8 @@
             of the third party correspondence is to Fanny Hayward a decade after Abraham Hayward's
             death. </p>
          <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SII">Series II, <title xlink:type="simple" render="italic">Printed Materials</title>
+            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SII"
+               >Series II, <title xlink:type="simple" render="italic">Printed Materials</title>
             </ref>, is arranged chronologically in two subseries: Inner Temple Affair and Other
             Printed Materials. Inner Temple Affair materials consist of two pamphlets, a petition,
             and clippings related to the controversy that arose from Hayward's failed election to
@@ -183,20 +232,22 @@
             menu from the Café de Paris, clippings, a circular on John Stuart Mill's antipopulation
             theory, and a broadside, "Men of the Day, No. 117, Mr. Abraham Hayward, Q.C." </p>
          <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace"
-                 target="SIII">Series III, <title xlink:type="simple" render="italic">Other Papers</title>
+            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SIII"
+               >Series III, <title xlink:type="simple" render="italic">Other Papers</title>
             </ref>, is arranged chronologically and includes the following: an account of the estate
             of Robert Abraham, for whom Abraham Hayward was an executor; Abraham Hayward's passport
             for the years 1862-1871; a copy of his entry in Blundell's School registry; an undated
             design for a fruit garden or orchard; manuscript copies of poems by Caroline Sheridan
             Norton, Rev. E.D. Rhodes, and others; and whist instructions. </p>
          <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SIV">Series IV, <title xlink:type="simple" render="italic">Photographs</title>
+            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SIV"
+               >Series IV, <title xlink:type="simple" render="italic">Photographs</title>
             </ref>, consists of a carte-de-visite album containing 12 cartes-de-visite of Abraham
             Hayward and eleven women, including Mrs. Cornwallis West, Mrs. Wheeler, Olive Campbell,
             Florence de Bretton, Madaillae Florian, and Countess Fanny Karolyi. </p>
          <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SV">Series V, <title xlink:type="simple" render="italic">Brian Roberts Research
+            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SV"
+               >Series V, <title xlink:type="simple" render="italic">Brian Roberts Research
                   Materials</title>
             </ref>, is arranged in four subseries: Correspondence, Writings, Notes, and Other
             Papers. Correspondence is arranged alphabetically and includes letters from many people
@@ -212,7 +263,8 @@
          <p>
             <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="OS">
                <title xlink:type="simple" render="italic">Oversize</title>
-            </ref> material is housed in boxes 5 and 6.  <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="RFO">
+            </ref> material is housed in boxes 5 and 6. <ref xlink:type="simple"
+               xlink:actuate="onRequest" xlink:show="replace" target="RFO">
                <title xlink:type="simple" render="italic">Restricted Fragile Oversize</title>
             </ref> material is stored in box 7 and contains oversize fragile originals for which
             preservation photocopies have been made for reference use and filed in the regular
@@ -220,31 +272,39 @@
       </scopecontent>
       <controlaccess id="ca">
          <head>Access Terms</head>
-         <p>This collection is indexed under the following access points in 
-            <extref xlink:type="simple" xlink:actuate="onRequest" xlink:show="new"
-                    xlink:href="http://orbis.library.yale.edu/">Orbis</extref>, 
-            the Yale University Library online catalog.</p>
+         <p>This collection is indexed under the following access points in <extref
+               xlink:type="simple" xlink:actuate="onRequest" xlink:show="new"
+               xlink:href="http://orbis.library.yale.edu/">Orbis</extref>, the Yale University
+            Library online catalog.</p>
          <controlaccess>
             <head>Subjects</head>
-            <persname encodinganalog="600" role="subject">Abraham, Robert, d. 1833 --Estate.</persname>
+            <persname encodinganalog="600" role="subject">Abraham, Robert, d. 1833
+               --Estate.</persname>
             <persname encodinganalog="600" role="subject">Bentley, George, 1828-1895.</persname>
             <persname encodinganalog="600" role="subject">Bentley, Richard, 1794-1871.</persname>
-            <persname encodinganalog="600" role="subject">Delane, John Thaddeus, 1817-1879.</persname>
+            <persname encodinganalog="600" role="subject">Delane, John Thaddeus,
+               1817-1879.</persname>
             <persname encodinganalog="600" role="subject">Everett, Edward, 1794-1865.</persname>
-            <persname encodinganalog="600" role="subject">Hayward, A. (Abraham), 1801-1884.</persname>
+            <persname encodinganalog="600" role="subject">Hayward, A. (Abraham),
+               1801-1884.</persname>
             <persname encodinganalog="600" role="subject">Hayward, Fanny, d. 1904.</persname>
             <persname encodinganalog="600" role="subject">Hayward, Mary Anne.</persname>
-            <persname encodinganalog="600" role="subject">Kinglake, Alexander William, 1809-1891.</persname>
+            <persname encodinganalog="600" role="subject">Kinglake, Alexander William,
+               1809-1891.</persname>
             <persname encodinganalog="600" role="subject">Murray, John, 1808-1892.</persname>
-            <persname encodinganalog="600" role="subject">Newcastle, Henry Pelham, Duke of, 1811-1864.</persname>
-            <persname encodinganalog="600" role="subject">Palmerston, Emily Lamb, Viscountess, 1787-1869.</persname>
+            <persname encodinganalog="600" role="subject">Newcastle, Henry Pelham, Duke of,
+               1811-1864.</persname>
+            <persname encodinganalog="600" role="subject">Palmerston, Emily Lamb, Viscountess,
+               1787-1869.</persname>
             <persname encodinganalog="600" role="subject">Roberts, Brian.</persname>
             <persname encodinganalog="600" role="subject">Smith, Horace, 1779-1849.</persname>
             <corpname encodinganalog="610" role="subject">Inner Temple (London, England)</corpname>
             <subject encodinganalog="650" source="lcsh">Authors, English --19th century.</subject>
             <subject encodinganalog="650" source="lcsh">Gardens --Design --England.</subject>
-            <subject encodinganalog="650" source="lcsh">Politics and culture --England --History --19th century.</subject>
-            <subject encodinganalog="650" source="lcsh">Publishers and publishing --England --History --19th century.</subject>
+            <subject encodinganalog="650" source="lcsh">Politics and culture --England --History
+               --19th century.</subject>
+            <subject encodinganalog="650" source="lcsh">Publishers and publishing --England
+               --History --19th century.</subject>
             <subject encodinganalog="650" source="lcsh">Whist.</subject>
             <genreform encodinganalog="655" source="aat">Cartes-de-visite.</genreform>
             <genreform encodinganalog="655" source="rbgenr">Menus --France --Paris.</genreform>
@@ -257,7 +317,8 @@
          </controlaccess>
          <controlaccess>
             <head>Occupations and Functions</head>
-            <occupation encodinganalog="656" source="lcsh">Authors --England --19th century.</occupation>
+            <occupation encodinganalog="656" source="lcsh">Authors --England --19th
+               century.</occupation>
          </controlaccess>
       </controlaccess>
       <dsc type="combined" id="dsc">
@@ -570,7 +631,9 @@
                   </did>
                   <relatedmaterial>
                      <p>
-                        <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="f44"> See: Series II. <title xlink:type="simple" render="italic">Printed Materials</title>, Petition, Box 1, folder 44 </ref>
+                        <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace"
+                           target="f44"> See: Series II. <title xlink:type="simple" render="italic"
+                              >Printed Materials</title>, Petition, Box 1, folder 44 </ref>
                      </p>
                   </relatedmaterial>
                </c03>
@@ -660,7 +723,8 @@
                   <did>
                      <container type="Box">1</container>
                      <container type="Folder">45</container>
-                     <unittitle type="genericfolder"> Titlepage, <title xlink:type="simple" render="italic">Commentaries on the Laws of England</title>, by Sir
+                     <unittitle type="genericfolder"> Titlepage, <title xlink:type="simple"
+                           render="italic">Commentaries on the Laws of England</title>, by Sir
                         William Blackstone, signed "A. Hayward" </unittitle>
                      <unitdate>1791</unitdate>
                   </did>
@@ -676,7 +740,8 @@
                   <did>
                      <container type="Box">1</container>
                      <container type="Folder">46</container>
-                     <unittitle type="genericfolder"> Titlepage, <title xlink:type="simple" render="italic">Discours de M. Thiers sur le Régime Commercial de la
+                     <unittitle type="genericfolder"> Titlepage, <title xlink:type="simple"
+                           render="italic">Discours de M. Thiers sur le Régime Commercial de la
                            France</title>, signed "Monsier Hayward" by M. Thiers </unittitle>
                      <unitdate>1851</unitdate>
                   </did>
