@@ -168,7 +168,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
         subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | 
-        unittitle[parent::* except (//did)] | title[parent::descrules] | langusage | language[parent::langusage]">
+        unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:call-template name="removedElement"/>
@@ -293,7 +293,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
             <xsl:call-template name="languagedeclaration"/>
 
-            <xsl:apply-templates select="profiledesc/descrules"/>
+            <xsl:call-template name="descrules"/>
 
             <xsl:if test="@findaidstatus">
                 <xsl:call-template name="commentAndMessage">
@@ -500,12 +500,46 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <!-- descrules -->
-    <xsl:template match="descrules">
-        <conventiondeclaration>
-            <citation>
-                <xsl:apply-templates/>
-            </citation>
-        </conventiondeclaration>
+    <xsl:template name="descrules">
+        <xsl:variable name="descrules">
+            <xsl:apply-templates select="profiledesc/descrules"/>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="profiledesc/descrules/title">
+                <xsl:for-each select="profiledesc/descrules/title">
+                    <conventiondeclaration>
+                        <xsl:choose>
+                            <xsl:when test="../title[2]">
+                                <xsl:apply-templates select="/ead//descrules/@*[not(local-name()='id')]"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates select="/ead//descrules/@*"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <citation>
+                            <xsl:value-of select="."/>
+                        </citation>
+                        <descriptivenote>
+                            <p>
+                                <xsl:copy-of select="$descrules"/>
+                            </p>
+                        </descriptivenote>
+                    </conventiondeclaration>
+                </xsl:for-each>
+            </xsl:when>
+            <xsl:when test="profiledesc/descrules[not(title)]">
+                <conventiondeclaration>
+                    <xsl:apply-templates select="/ead//descrules/@*"/>
+                    <citation/>
+                    <descriptivenote>
+                        <p>
+                            <xsl:copy-of select="$descrules"/>
+                        </p>
+                    </descriptivenote>
+                </conventiondeclaration>
+            </xsl:when>
+            <xsl:otherwise/>
+        </xsl:choose>
     </xsl:template>
 
     <!-- blockquote -->
