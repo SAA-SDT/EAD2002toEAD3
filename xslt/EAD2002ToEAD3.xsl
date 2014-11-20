@@ -60,28 +60,28 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- TOP LEVEL PARAMETERS                            -->
     <!-- ############################################### -->
-    
+
     <!-- user parameter to control deprecation -->
     <xsl:param name="outputUndeprecatedEAD3" select="false()"/>
-    
+
     <!-- user parameter to control migration comments -->
     <xsl:param name="addMigrationComments" select="true()"/>
-    
+
     <!-- user parameter to control migration messages -->
     <xsl:param name="addMigrationMessages" select="true()"/>
-    
+
     <!-- user parameter for control/maintenancestatus -->
     <!-- maintenancestatus enumeration '[revised, deleted, new, 
         deletedsplit, deletedmerged, deletedreplaced, cancelled, derived]' -->
     <xsl:param name="maintenancestatusValue" select="'revised'"/>
-    
+
     <!-- user parameter for control/publicationstatus -->
     <!-- publicationstatus enumeration '[inprocess, approved, published]' -->
     <xsl:param name="publicationstatusValue"/>
-    
+
     <!-- user parameter for control/maintenanceagency/agencyname -->
     <xsl:param name="agencynameValue"/>
-    
+
     <!-- user parameter for control/eventtype -->
     <!-- eventtype enumeration '[created, revised, deleted, cancelled, derived, updated, unknown]'  -->
     <xsl:param name="eventtypeValue" select="'derived'"/>
@@ -89,15 +89,15 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- user parameter for control/agenttype -->
     <!-- agenttype enumeration '[human, machine, unknown]' -->
     <xsl:param name="agenttypeValue" select="'machine'"/>
-    
+
     <!-- param for EAD3 namespace -->
     <xsl:param name="eadxmlns">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">
-                <xsl:value-of  select="'http://ead3.archivists.org/schema/'"/>
+                <xsl:value-of select="'http://ead3.archivists.org/schema/'"/>
             </xsl:when>
             <xsl:when test="$outputUndeprecatedEAD3=true()">
-                <xsl:value-of  select="'http://ead3.archivists.org/schema/undeprecated/'"/>
+                <xsl:value-of select="'http://ead3.archivists.org/schema/undeprecated/'"/>
             </xsl:when>
         </xsl:choose>
     </xsl:param>
@@ -167,7 +167,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
-        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | unittitle[parent::* except (//did)] | title[parent::descrules]">
+        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | 
+        unittitle[parent::* except (//did)] | title[parent::descrules] | langusage | language[parent::langusage]">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:call-template name="removedElement"/>
@@ -240,17 +241,17 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:call-template>
         <control>
             <xsl:copy-of select="@*[not(local-name()='findaidstatus')]"/>
-            
+
             <xsl:apply-templates select="eadid"/>
-            
+
             <xsl:apply-templates select="filedesc"/>
-            
+
             <maintenancestatus value="{$maintenancestatusValue}"/>
-            
+
             <xsl:if test="normalize-space($publicationstatusValue)">
                 <publicationstatus value="{$publicationstatusValue}"/>
             </xsl:if>
-            
+
             <maintenanceagency>
                 <xsl:if test="eadid/@countrycode">
                     <xsl:copy-of select="eadid/@countrycode"/>
@@ -289,11 +290,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </xsl:choose>
                 </agencyname>
             </maintenanceagency>
-            
-            <xsl:apply-templates select="profiledesc/langusage/language"/>
-            
+
+            <xsl:call-template name="languagedeclaration"/>
+
             <xsl:apply-templates select="profiledesc/descrules"/>
-            
+
             <xsl:if test="@findaidstatus">
                 <xsl:call-template name="commentAndMessage">
                     <xsl:with-param name="comment">
@@ -305,7 +306,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <xsl:value-of select="@findaidstatus"/>
                     </term>
                 </localcontrol>
-                
+
             </xsl:if>
 
             <maintenancehistory>
@@ -451,21 +452,51 @@ For these and/or other purposes and motivations, and without any expectation of 
 
 
     <!-- langusage -->
-    <xsl:template match="language[parent::langusage]">
-        <languagedeclaration>
-            <xsl:apply-templates select="@* except (@langcode | @scriptcode)"/>
-            <language>
-                <xsl:value-of select="@langcode"/>
-            </language>
-            <script>
-                <xsl:value-of select="@scriptcode"/>
-            </script>
-            <descriptivenote>
-                <p>XYZ--<xsl:apply-templates
-                        select="parent::langusage/node()[not(self::*)] | text()"/></p>
-            </descriptivenote>
-        </languagedeclaration>
-
+    <xsl:template name="languagedeclaration">
+        <xsl:variable name="langusage">
+            <xsl:apply-templates select="profiledesc/langusage"/>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="profiledesc/langusage/language">
+                <xsl:for-each select="profiledesc/langusage/language">
+                    <languagedeclaration>
+                        <xsl:choose>
+                            <xsl:when test="../language[2]">
+                                <xsl:apply-templates select="/ead//langusage/@*[not(local-name()='id')]"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates select="/ead//langusage/@*"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <language>
+                            <xsl:copy-of select="@*[not(local-name()='scriptcode')]"/>
+                            <xsl:value-of select="."/>
+                        </language>
+                        <script scriptcode="{@scriptcode}">
+                                <xsl:value-of select="@scriptcode"/>
+                            </script>
+                        <descriptivenote>
+                            <p>
+                                <xsl:copy-of select="$langusage"/>
+                            </p>
+                        </descriptivenote>
+                    </languagedeclaration>
+                </xsl:for-each>
+            </xsl:when>
+            <xsl:when test="profiledesc/langusage[not(language)]">
+                <languagedeclaration>
+                    <xsl:apply-templates select="/ead//langusage/@*"/>
+                    <language/>
+                    <script/>
+                    <descriptivenote>
+                        <p>
+                            <xsl:apply-templates select="profiledesc/langusage"/>
+                        </p>
+                    </descriptivenote>
+                </languagedeclaration>
+            </xsl:when>
+            <xsl:otherwise/>
+        </xsl:choose>
     </xsl:template>
 
     <!-- descrules -->
@@ -696,14 +727,14 @@ For these and/or other purposes and motivations, and without any expectation of 
         </repository>
     </xsl:template>
 
-<!--
+    <!--
     <xsl:template match="physdesc">
         <physdesc>
             <xsl:apply-templates/>
         </physdesc>
     </xsl:template>
 -->
-    
+
     <!-- script attr becomes script element -->
     <xsl:template match="langmaterial">
         <langmaterial>
@@ -778,7 +809,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:text>ELEMENT </xsl:text>
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>&#160;</xsl:text>
-                <xsl:text>RENAMED as 'descriptivenote'</xsl:text>   
+                <xsl:text>RENAMED as 'descriptivenote'</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:with-param>
         </xsl:call-template>
@@ -1010,14 +1041,16 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:text>REMOVED FROM </xsl:text>
         <xsl:value-of select="parent::*/local-name()"/>
     </xsl:template>
-    
+
     <xsl:template name="commentAndMessage">
         <xsl:param name="comment"/>
         <xsl:if test="$addMigrationComments">
             <xsl:comment><xsl:value-of select="$comment"/></xsl:comment>
         </xsl:if>
         <xsl:if test="$addMigrationMessages">
-            <xsl:message><xsl:value-of select="$comment"/></xsl:message>
+            <xsl:message>
+                <xsl:value-of select="$comment"/>
+            </xsl:message>
         </xsl:if>
     </xsl:template>
 
@@ -1027,7 +1060,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:text>ELEMENT </xsl:text>
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>&#160;</xsl:text>
-                <xsl:text>RENAMED as 'odd'</xsl:text>   
+                <xsl:text>RENAMED as 'odd'</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:with-param>
         </xsl:call-template>
