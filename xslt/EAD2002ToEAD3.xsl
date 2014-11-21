@@ -353,11 +353,13 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:if>
                 <xsl:for-each select="revisiondesc/change">
                     <maintenanceevent>
+                        <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
                         <eventdatetime>
+                            <xsl:copy-of select="date/@*[not(local-name()='calendar') and not(local-name()='era') and not(local-name()='certainty') and not(local-name()='type') and not(local-name()='normal')]"/>
                             <xsl:if test="date/@normal[not(contains(.,'/'))]">
                                 <xsl:attribute name="standarddatetime">
-                                    <xsl:value-of select="@normal"/>
+                                    <xsl:value-of select="date/@normal"/>
                                 </xsl:attribute>
                             </xsl:if>
                             <xsl:value-of select="date"/>
@@ -365,12 +367,14 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <agenttype value="unknown"/>
                         <agent/>
                         <eventdescription>
+                            <xsl:copy-of select="item/@*"/>
                             <xsl:value-of select="item"/>
                         </eventdescription>
                     </maintenanceevent>
                 </xsl:for-each>
                 <xsl:for-each select="revisiondesc/list/item">
                     <maintenanceevent>
+                        <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
                         <eventdatetime/>
                         <agenttype value="unknown"/>
@@ -382,11 +386,13 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:for-each>
                 <xsl:for-each select="revisiondesc/list/defitem">
                     <maintenanceevent>
+                        <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
                         <eventdatetime/>
                         <agenttype value="unknown"/>
                         <agent/>
                         <eventdescription>
+                            <xsl:copy-of select="item/@*"/>
                             <xsl:value-of select="label"/>
                             <xsl:text>: </xsl:text>
                             <xsl:value-of select="item"/>
