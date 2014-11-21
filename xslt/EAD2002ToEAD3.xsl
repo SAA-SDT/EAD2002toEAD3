@@ -325,14 +325,13 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </maintenanceevent>
                 <xsl:if test="profiledesc/creation">
                     <maintenanceevent>
-                        <xsl:if test="@encodinganalog">
-                            <xsl:copy-of select="@encodinganalog"/>
-                        </xsl:if>
+                        <xsl:copy-of select="profiledesc/creation/@*"/>
                         <eventtype value="created"/>
                         <eventdatetime>
                             <xsl:choose>
                                 <xsl:when
                                     test="profiledesc/creation/date and not(profiledesc/creation/date[2])">
+                                    <xsl:copy-of select="profiledesc/creation/date/@*[not(local-name()='calendar') and not(local-name()='era') and not(local-name()='certainty') and not(local-name()='type') and not(local-name()='normal')]"/>
                                     <xsl:if
                                         test="profiledesc/creation/date/@normal[not(contains(.,'/'))]">
                                         <xsl:attribute name="standarddatetime">
