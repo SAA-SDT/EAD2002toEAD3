@@ -82,13 +82,18 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- user parameter for control/maintenanceagency/agencyname -->
     <xsl:param name="agencynameValue"/>
 
-    <!-- user parameter for control/eventtype -->
+    <!-- user parameter for control/maintenancehistory/maintenanceevent/eventtype -->
     <!-- eventtype enumeration '[created, revised, deleted, cancelled, derived, updated, unknown]'  -->
     <xsl:param name="eventtypeValue" select="'derived'"/>
 
     <!-- user parameter for control/agenttype -->
     <!-- agenttype enumeration '[human, machine, unknown]' -->
     <xsl:param name="agenttypeValue" select="'machine'"/>
+    
+    <!-- user parameter for control/maintenancehistory/maintenanceevent/agent -->
+    <xsl:param name="agent">
+        <xsl:text>EAD 2002 to EAD3 Migration Style Sheet</xsl:text>
+    </xsl:param>
 
     <!-- param for EAD3 namespace -->
     <xsl:param name="eadxmlns">
