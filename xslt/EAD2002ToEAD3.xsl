@@ -92,7 +92,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <!-- user parameter for control/maintenancehistory/maintenanceevent/agent -->
     <xsl:param name="agent">
-        <xsl:text>EAD 2002 to EAD3 Migration Style Sheet</xsl:text>
+        <xsl:text>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</xsl:text>
     </xsl:param>
 
     <!-- param for EAD3 namespace -->
@@ -316,12 +316,12 @@ For these and/or other purposes and motivations, and without any expectation of 
             <maintenancehistory>
                 <xsl:copy-of select="revisiondesc/@*"/>
                 <maintenanceevent>
-                    <eventtype value="derived"/>
-                    <eventdatetime>
+                    <eventtype value="{$eventtypeValue}"/>
+                    <eventdatetime standarddatetime="{current-dateTime()}">
                         <xsl:value-of select="current-dateTime()"/>
                     </eventdatetime>
-                    <agenttype value="machine"/>
-                    <agent/>
+                    <agenttype value="{$agenttypeValue}"/>
+                    <agent><xsl:value-of select="$agent"/></agent>
                 </maintenanceevent>
                 <xsl:if test="profiledesc/creation">
                     <maintenanceevent>
