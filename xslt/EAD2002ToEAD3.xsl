@@ -173,7 +173,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
         subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | 
-        unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules | ead/@xsi:schemaLocation">
+        unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules | ead/@xsi:schemaLocation | 
+        notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:call-template name="removedElement"/>
@@ -910,6 +911,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:with-param>
         </xsl:call-template>
         <controlnote>
+            <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </controlnote>
     </xsl:template>
@@ -943,7 +945,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="abstract/@type | accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
+        match="notestmt/note/@type | abstract/@type | accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
         phystech/@type | processinfo/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
         userestrict/@type | odd/@type | date/@type | name/@type |  persname/@type | famname/@type |
         corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type">
