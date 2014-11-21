@@ -46,15 +46,15 @@
             </p>
          </publicationstmt>
          <notestmt>
-            <note type="bpg">
+            <note type="bpg" id="note1" audience="external" altrender="note" encodinganalog="note" actuate="onload" show="embed" label="note label">
                <p>This encoded finding aid is compliant with the Yale EAD Best Practice Guidelines,
                   Version 1.0.</p>
             </note>
          </notestmt>
       </filedesc>
       <profiledesc>
-         <creation>Finding aid encoded in EAD 1.0 by Manuscript Unit staff, Beinecke Library, with
-            Edix/Wordix macros. </creation>
+         <creation id="creation" encodinganalog="creation" audience="external" altrender="creation">Finding aid encoded in <title>EAD 1.0</title> by Manuscript Unit staff, Beinecke Library, with
+            Edix/Wordix macros, <date normal="2006" altrender="date" audience="external" encodinganalog="eventdate" id="eventdate" calendar="gregorian" certainty="approximate" era="ce" type="eventdate">2006</date>. </creation>
          <langusage altrender="langusage" 
             audience="external" 
             encodinganalog="langusage"
@@ -68,10 +68,29 @@
             >Beinecke Manuscript Unit Archival Processing Manual</title> and <title>DACS</title>. </descrules>
 <!--         <descrules altrender="altrender" audience="external" encodinganalog="descrules" id="descrules">Finding aid prepared according to the Beinecke Manuscript Unit Archival Processing Manual. </descrules>-->
       </profiledesc>
-      <revisiondesc>
-         <change>
-            <date normal="2007-08-13">2007-08-13</date>
-            <item>beinecke.hayward.xml converted for compliance with Yale EAD Best Practice
+      <revisiondesc altrender="revisiondesc" audience="external" encodinganalog="revisiondesc" id="revisiondesc">
+         <!--<list type="marked">
+            <head>List Head</head>
+            <item altrender="item" audience="external" id="item1">Test item</item>
+            <item>test item 2</item>
+         </list>-->
+         <list type="deflist">
+            <listhead>
+               <head01>Listhead01</head01>
+               <head02>Listhead02</head02>
+            </listhead>
+            <defitem id="defitem" audience="external" altrender="defitem">
+               <label>def label1</label>
+               <item altrender="defitemitem" audience="external" id="dii1">def item1</item>
+            </defitem>
+            <defitem>
+               <label>def label2</label>
+               <item>def item2</item>
+            </defitem>
+         </list>
+         <!--<change id="change" encodinganalog="change" audience="external" altrender="change">
+            <date normal="2007-08-13" type="changedate" id="changedate1" audience="external" altrender="changedate" encodinganalog="changedate" era="ce" certainty="approx" calendar="gregorian">2007-08-13</date>
+            <item altrender="item" audience="external" id="item1"><famname>beinecke.hayward.xml</famname> converted for compliance with Yale EAD Best Practice
                Guidelines with brbl-migrate-01.xsl (mr2007-08-13).</item>
          </change>
          <change>
@@ -84,7 +103,7 @@
             <date normal="2010-02-10">2010-02-10</date>
             <item>Transformed with yale.addEadidUrl.xsl. Adds @url with handle for finding aid.
                Overwrites @url if already present.</item>
-         </change>
+         </change>-->
       </revisiondesc>
    </eadheader>
    <archdesc type="register" relatedencoding="MARC21" level="otherlevel" id="archdesc"

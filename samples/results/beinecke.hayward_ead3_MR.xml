@@ -2,8 +2,6 @@
 <?xml-model href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?oxygen RNGSchema="../../ead3.rng" type="xml"?>
 <ead xmlns="http://ead3.archivists.org/schema/"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.library.yale.edu/facc/schemas/ead/ead.xsd"
      id="beinecke.hayward"
      altrender="altrender"
      audience="external"
@@ -78,7 +76,11 @@
             </p>
          </publicationstmt>
          <notestmt>
-            <controlnote>
+            <controlnote localtype="bpg"
+                         id="note1"
+                         audience="external"
+                         altrender="note"
+                         encodinganalog="note">
                <p>This encoded finding aid is compliant with the Yale EAD Best Practice Guidelines,
                   Version 1.0.</p>
             </controlnote>
@@ -141,45 +143,44 @@
       <localcontrol localtype="findaidstatus">
          <term>edited-full-draft</term>
       </localcontrol>
-      <maintenancehistory>
+      <maintenancehistory altrender="revisiondesc"
+                          audience="external"
+                          encodinganalog="revisiondesc"
+                          id="revisiondesc">
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime>2014-11-20T00:11:45.786-05:00</eventdatetime>
+            <eventdatetime standarddatetime="2014-11-20T23:57:51.814-05:00">2014-11-20T23:57:51.814-05:00</eventdatetime>
             <agenttype value="machine"/>
-            <agent/>
+            <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
          </maintenanceevent>
-         <maintenanceevent encodinganalog="eadheader">
+         <maintenanceevent id="creation"
+                           encodinganalog="creation"
+                           audience="external"
+                           altrender="creation">
             <eventtype value="created"/>
-            <eventdatetime/>
+            <eventdatetime altrender="date"
+                           audience="external"
+                           encodinganalog="eventdate"
+                           id="eventdate"
+                           standarddatetime="2006">2006</eventdatetime>
             <agenttype value="unknown"/>
             <agent/>
             <eventdescription>Finding aid encoded in EAD 1.0 by Manuscript Unit staff, Beinecke Library, with
-            Edix/Wordix macros. </eventdescription>
+            Edix/Wordix macros, 2006. </eventdescription>
+         </maintenanceevent>
+         <maintenanceevent id="defitem" audience="external" altrender="defitem">
+            <eventtype value="unknown"/>
+            <eventdatetime/>
+            <agenttype value="unknown"/>
+            <agent/>
+            <eventdescription altrender="defitemitem" audience="external" id="dii1">def label1: def item1</eventdescription>
          </maintenanceevent>
          <maintenanceevent>
             <eventtype value="unknown"/>
-            <eventdatetime standarddatetime="">2007-08-13</eventdatetime>
+            <eventdatetime/>
             <agenttype value="unknown"/>
             <agent/>
-            <eventdescription>beinecke.hayward.xml converted for compliance with Yale EAD Best Practice
-               Guidelines with brbl-migrate-01.xsl (mr2007-08-13).</eventdescription>
-         </maintenanceevent>
-         <maintenanceevent>
-            <eventtype value="unknown"/>
-            <eventdatetime standarddatetime="">July 26, 2007</eventdatetime>
-            <agenttype value="unknown"/>
-            <agent/>
-            <eventdescription>PUBLIC "-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT
-               (US::CtYBR::::[ABRAHAM HAYWARD COLLECTION ])//EN" "hayward.xml" converted from EAD
-               1.0 to 2002 by v1to02.xsl (sy2003-10-15).</eventdescription>
-         </maintenanceevent>
-         <maintenanceevent>
-            <eventtype value="unknown"/>
-            <eventdatetime standarddatetime="">2010-02-10</eventdatetime>
-            <agenttype value="unknown"/>
-            <agent/>
-            <eventdescription>Transformed with yale.addEadidUrl.xsl. Adds @url with handle for finding aid.
-               Overwrites @url if already present.</eventdescription>
+            <eventdescription>def label2: def item2</eventdescription>
          </maintenanceevent>
       </maintenancehistory>
    </control>
