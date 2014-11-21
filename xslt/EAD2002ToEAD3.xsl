@@ -168,12 +168,12 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:call-template>
     </xsl:template>
 
-    <!-- SKIP -->
+    <!-- SKIP ELEMENT OR ATTRIBUTE -->
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
         subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | 
-        unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules">
+        unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules | ead/@xsi:schemaLocation">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:call-template name="removedElement"/>
@@ -181,7 +181,6 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:call-template>
         <xsl:apply-templates/>
     </xsl:template>
-
 
     <!-- bibref -->
 
