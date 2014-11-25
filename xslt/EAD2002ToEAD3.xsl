@@ -1123,7 +1123,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template name="removedElement">
-        <xsl:text>DEPRECATED ELEMENT OR ATTRIBUTE </xsl:text>
+        <xsl:text>DEPRECATED ELEMENT </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>REMOVED FROM </xsl:text>
