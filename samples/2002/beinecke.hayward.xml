@@ -45,6 +45,13 @@
                   Library.</extref>
             </p>
          </publicationstmt>
+         <seriesstmt altrender="seriesstmt" audience="external" encodinganalog="seriesstmt" id="seriesstmt1">
+            <titleproper id="sttp1" encodinganalog="sttp" audience="external" altrender="sttp" render="bold" type="sttp">
+               Series Title Proper
+            </titleproper>
+            <num type="num" altrender="num" audience="external" encodinganalog="num" id="num1">12345</num>
+            <p id="stp1" audience="external" altrender="altp1">Paragraph inside series statement.</p>
+         </seriesstmt>
          <notestmt>
             <note type="bpg" id="note1" audience="external" altrender="note" encodinganalog="note" actuate="onload" show="embed" label="note label">
                <p>This encoded finding aid is compliant with the Yale EAD Best Practice Guidelines,
