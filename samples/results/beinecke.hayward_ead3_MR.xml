@@ -58,6 +58,17 @@
                      audience="external"
                      altrender="sponsor">Sponsored by your sponsor</sponsor>
          </titlestmt>
+         <editionstmt altrender="editionstmt"
+                      audience="external"
+                      id="edstmt1"
+                      encodinganalog="edstmt">
+            <edition altrender="edition"
+                     audience="external"
+                     id="ed1"
+                     encodinganalog="edition">1st edition.</edition>
+            <p id="edp" audience="external" altrender="editionp">Edition statement paragraph.</p>
+            <edition>Another edition.</edition>
+         </editionstmt>
          <publicationstmt>
             <publisher>Yale University Library</publisher>
             <publisher>Beinecke Rare Book and Manuscript Library</publisher>
@@ -75,6 +86,25 @@
                   Library.</ref>
             </p>
          </publicationstmt>
+         <seriesstmt altrender="seriesstmt"
+                     audience="external"
+                     encodinganalog="seriesstmt"
+                     id="seriesstmt1">
+            <titleproper id="sttp1"
+                         encodinganalog="sttp"
+                         audience="external"
+                         altrender="sttp"
+                         render="bold"
+                         localtype="sttp">
+               Series Title Proper
+            </titleproper>
+            <num localtype="num"
+                 altrender="num"
+                 audience="external"
+                 encodinganalog="num"
+                 id="num1">12345</num>
+            <p id="stp1" audience="external" altrender="altp1">Paragraph inside series statement.</p>
+         </seriesstmt>
          <notestmt>
             <controlnote localtype="bpg"
                          id="note1"
@@ -149,9 +179,10 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime standarddatetime="2014-11-24T21:53:26.628-05:00">2014-11-24T21:53:26.628-05:00</eventdatetime>
+            <eventdatetime standarddatetime="2014-11-24T22:52:39.678-05:00">2014-11-24T22:52:39.678-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
+            <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
          </maintenanceevent>
          <maintenanceevent id="creation"
                            encodinganalog="creation"

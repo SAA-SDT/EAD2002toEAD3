@@ -28,6 +28,11 @@
             <sponsor encodinganalog="sponsor" id="sponsor1" audience="external" altrender="sponsor"
                >Sponsored by your sponsor</sponsor>
          </titlestmt>
+         <editionstmt altrender="editionstmt" audience="external" id="edstmt1" encodinganalog="edstmt">
+            <edition altrender="edition" audience="external" id="ed1" encodinganalog="edition">1st edition.</edition>
+            <p id="edp" audience="external" altrender="editionp">Edition statement paragraph.</p>
+            <edition>Another edition.</edition>
+         </editionstmt>
          <publicationstmt>
             <publisher>Yale University Library</publisher>
             <publisher>Beinecke Rare Book and Manuscript Library</publisher>

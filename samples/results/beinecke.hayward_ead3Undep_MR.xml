@@ -78,6 +78,25 @@
                   Library.</ref>
             </p>
          </publicationstmt>
+         <seriesstmt altrender="seriesstmt"
+                     audience="external"
+                     encodinganalog="seriesstmt"
+                     id="seriesstmt1">
+            <titleproper id="sttp1"
+                         encodinganalog="sttp"
+                         audience="external"
+                         altrender="sttp"
+                         render="bold"
+                         localtype="sttp">
+               Series Title Proper
+            </titleproper>
+            <num type="num"
+                 altrender="num"
+                 audience="external"
+                 encodinganalog="num"
+                 id="num1">12345</num>
+            <p id="stp1" audience="external" altrender="altp1">Paragraph inside series statement.</p>
+         </seriesstmt>
          <notestmt>
             <controlnote xmlns="http://ead3.archivists.org/schema/"
                          localtype="bpg"
@@ -153,9 +172,10 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime standarddatetime="2014-11-24T21:53:26.862-05:00">2014-11-24T21:53:26.862-05:00</eventdatetime>
+            <eventdatetime standarddatetime="2014-11-24T22:23:51.219-05:00">2014-11-24T22:23:51.219-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
+            <eventdescription>EAD 2002 instanace migrated to EAD3 Undeprecated (http://ead3.archivists.org/schema/undeprecated/).</eventdescription>
          </maintenanceevent>
          <maintenanceevent id="creation"
                            encodinganalog="creation"
