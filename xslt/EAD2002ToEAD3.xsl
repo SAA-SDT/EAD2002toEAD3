@@ -204,7 +204,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- REMOVE COMPLETELY -->
     <xsl:template
-        match="accessrestrict/legalstatus| archdesc/address | dsc/address | @xlink:type | @linktype | arc | resource">
+        match="accessrestrict/legalstatus| archdesc/address | dsc/address | arc | resource | ead/@xsi:schemaLocation | 
+        notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | @xlink:type | @linktype">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
@@ -219,15 +220,12 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
         subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | 
-        unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules | ead/@xsi:schemaLocation | 
-        notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label">
-        <xsl:if test="node()=element()">
-            <xsl:call-template name="commentAndMessage">
-                <xsl:with-param name="comment">
-                    <xsl:call-template name="removedElement"/>
-                </xsl:with-param>
-            </xsl:call-template>
-        </xsl:if>
+        unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:call-template name="removedElement"/>
+            </xsl:with-param>
+        </xsl:call-template>
         <xsl:apply-templates/>
     </xsl:template>
 
