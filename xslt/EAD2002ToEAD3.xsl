@@ -136,7 +136,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     
     <xsl:template name="copyElement">
-        <xsl:element name="{local-name()}" namespace="http://ead3.archivists.org/schema/">
+        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
             <xsl:apply-templates select="@*|node()"/>
         </xsl:element>
     </xsl:template>
