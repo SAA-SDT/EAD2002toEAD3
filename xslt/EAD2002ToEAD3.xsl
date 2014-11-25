@@ -287,7 +287,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="eadheader">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
-                <xsl:text>eadheader replaced by control</xsl:text>
+                <xsl:text>ELEMENT eadheader REPLACED WITH control</xsl:text>
             </xsl:with-param>
         </xsl:call-template>
         <control>
@@ -296,32 +296,52 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="eadid"/>
 
             <xsl:apply-templates select="filedesc"/>
-
+            
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>ELEMENT maintenancestatus ADDED</xsl:text>
+                </xsl:with-param>
+            </xsl:call-template>
             <maintenancestatus value="{$maintenancestatusValue}"/>
 
             <xsl:if test="normalize-space($publicationstatusValue)">
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>ELEMENT publicationstatus ADDED</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
                 <publicationstatus value="{$publicationstatusValue}"/>
             </xsl:if>
-
+            
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>ELEMENT maintenanceagency ADDED</xsl:text>
+                </xsl:with-param>
+            </xsl:call-template>
             <maintenanceagency>
                 <xsl:if test="eadid/@countrycode">
                     <xsl:copy-of select="eadid/@countrycode"/>
                     <xsl:call-template name="commentAndMessage">
                         <xsl:with-param name="comment">
-                            <xsl:text>eadid/@countrycode replaced with maintenanceagency/@countrycode</xsl:text>
+                            <xsl:text>ATTRIBUTE eadid/@countrycode REPLACED WITH maintenanceagency/@countrycode</xsl:text>
                         </xsl:with-param>
                     </xsl:call-template>
                 </xsl:if>
                 <xsl:if test="eadid/@mainagencycode">
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>ATTRIBUTE eadid/@mainagencycode REPLACED WITH ELEMENT maintenanceagency/agencycode</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                     <agencycode>
                         <xsl:value-of select="eadid/@mainagencycode"/>
                     </agencycode>
-                    <xsl:call-template name="commentAndMessage">
-                        <xsl:with-param name="comment">
-                            <xsl:text>eadid/@mainagencycode replaced with maintenanceagency/agencycode</xsl:text>
-                        </xsl:with-param>
-                    </xsl:call-template>
                 </xsl:if>
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>ELEMENT agencyname ADDED</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
                 <agencyname>
                     <xsl:choose>
                         <xsl:when test="normalize-space($agencynameValue)">
@@ -349,7 +369,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:if test="@findaidstatus">
                 <xsl:call-template name="commentAndMessage">
                     <xsl:with-param name="comment">
-                        <xsl:text>@findaidstatus migrated to localcontrol/term but superseded by maintenancestatus</xsl:text>
+                        <xsl:text>ATTRIBUTE eadheader/@findaidstatus REPLACED WITH ELEMENT localcontrol/term</xsl:text>
                     </xsl:with-param>
                 </xsl:call-template>
                 <localcontrol localtype="findaidstatus">
@@ -358,9 +378,19 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </term>
                 </localcontrol>
             </xsl:if>
-
+            
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>ELEMENT maintenancehistory ADDED</xsl:text>
+                </xsl:with-param>
+            </xsl:call-template>
             <maintenancehistory>
                 <xsl:copy-of select="revisiondesc/@*"/>
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>ELEMENT maintenanceevent ADDED FOR THE EVENT OF MIGRATION TO EAD3</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
                 <maintenanceevent>
                     <eventtype value="{$eventtypeValue}"/>
                     <eventdatetime standarddatetime="{current-dateTime()}">
@@ -371,6 +401,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <eventdescription><xsl:value-of select="$eventdescriptionValue"/></eventdescription>
                 </maintenanceevent>
                 <xsl:if test="profiledesc/creation">
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>ELEMENT creation REPLACED WITH maintenanceevent</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                     <maintenanceevent>
                         <xsl:copy-of select="profiledesc/creation/@*"/>
                         <eventtype value="created"/>
@@ -399,6 +434,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </maintenanceevent>
                 </xsl:if>
                 <xsl:for-each select="revisiondesc/change">
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>ELEMENT change REPLACED WITH maintenanceevent</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                     <maintenanceevent>
                         <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
@@ -420,6 +460,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </maintenanceevent>
                 </xsl:for-each>
                 <xsl:for-each select="revisiondesc/list/item">
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>ELEMENT revisiondesc/list/item REPLACED WITH maintenanceevent</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                     <maintenanceevent>
                         <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
@@ -432,6 +477,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </maintenanceevent>
                 </xsl:for-each>
                 <xsl:for-each select="revisiondesc/list/defitem">
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>ELEMENT revisiondesc/list/defitem REPLACED WITH maintenanceevent</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                     <maintenanceevent>
                         <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
@@ -453,7 +503,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="eadid">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
-                <xsl:text>eadid converted to recordid</xsl:text>
+                <xsl:text>ELEMENT eadid REPLACED WITH recordid</xsl:text>
             </xsl:with-param>
         </xsl:call-template>
         <recordid>
@@ -465,7 +515,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:if test="@publicid">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
-                    <xsl:text>eadid/@publicid converted to otherrecordid</xsl:text>
+                    <xsl:text>ATTRIBUTE eadid/@publicid REPLACED WITH otherrecordid</xsl:text>
                 </xsl:with-param>
             </xsl:call-template>
             <otherrecordid localtype="publicid">
@@ -475,7 +525,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:if test="@identifier">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
-                    <xsl:text>eadid/@identifier converted to otherrecordid</xsl:text>
+                    <xsl:text>ATTRIBUTE eadid/@identifier REPLACED WITH otherrecordid</xsl:text>
                 </xsl:with-param>
             </xsl:call-template>
             <otherrecordid localtype="identifier">
@@ -485,7 +535,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:if test="@url">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
-                    <xsl:text>eadid/@url converted to otherrecordid</xsl:text>
+                    <xsl:text>ATTRIBUTE eadid/@url REPLACED WITH otherrecordid</xsl:text>
                 </xsl:with-param>
             </xsl:call-template>
             <otherrecordid localtype="url">
@@ -495,7 +545,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:if test="@urn">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
-                    <xsl:text>eadid/@urn converted to otherrecordid</xsl:text>
+                    <xsl:text>ATTRIBUTE eadid/@urn REPLACED WITH otherrecordid</xsl:text>
                 </xsl:with-param>
             </xsl:call-template>
             <otherrecordid localtype="urn">
@@ -513,6 +563,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:choose>
             <xsl:when test="profiledesc/langusage/language">
                 <xsl:for-each select="profiledesc/langusage/language">
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>ELEMENT langusage REPLACED WITH languagedeclaration</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                     <languagedeclaration>
                         <xsl:choose>
                             <xsl:when test="../language[2]">
@@ -538,6 +593,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:for-each>
             </xsl:when>
             <xsl:when test="profiledesc/langusage[not(language)]">
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>ELEMENT langusage REPLACED WITH languagedeclaration</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
                 <languagedeclaration>
                     <xsl:apply-templates select="/ead//langusage/@*"/>
                     <language/>
@@ -561,6 +621,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:choose>
             <xsl:when test="profiledesc/descrules/title">
                 <xsl:for-each select="profiledesc/descrules/title">
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>ELEMENT descrules REPLACED WITH conventiondeclaration</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                     <conventiondeclaration>
                         <xsl:choose>
                             <xsl:when test="../title[2]">
@@ -582,6 +647,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:for-each>
             </xsl:when>
             <xsl:when test="profiledesc/descrules[not(title)]">
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>ELEMENT descrules REPLACED WITH conventiondeclaration</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
                 <conventiondeclaration>
                     <xsl:apply-templates select="/ead//descrules/@*"/>
                     <citation/>
@@ -854,7 +924,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="corpname | famname | persname | name | subject | occupation | geogname | function | title | genreform">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
-                <xsl:text>Added child part element to </xsl:text>
+                <xsl:text>ADDED CHILD ELEMENT part TO </xsl:text>
                 <xsl:value-of select="local-name()"/>
             </xsl:with-param>
         </xsl:call-template>
@@ -1123,11 +1193,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template name="removedElement">
-        <xsl:text>DEPRECATED ELEMENT </xsl:text>
+        <xsl:text> DEPRECATED ELEMENT </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>REMOVED FROM </xsl:text>
         <xsl:value-of select="parent::*/local-name()"/>
+        <xsl:text> </xsl:text>
     </xsl:template>
 
     <xsl:template name="commentAndMessage">
