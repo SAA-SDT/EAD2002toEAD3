@@ -367,6 +367,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </eventdatetime>
                     <agenttype value="{$agenttypeValue}"/>
                     <agent><xsl:value-of select="$agent"/></agent>
+                    <eventdescription><xsl:value-of select="$eventdescriptionValue"/></eventdescription>
                 </maintenanceevent>
                 <xsl:if test="profiledesc/creation">
                     <maintenanceevent>
