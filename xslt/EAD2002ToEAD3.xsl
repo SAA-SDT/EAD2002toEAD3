@@ -168,7 +168,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:call-template name="copyElement"/>
     </xsl:template>
 
-    <!-- copy the attributes -->
+    <!-- copy attributes, text, comments, and processing instructions -->
     <xsl:template match="attribute()|text()|comment()|processing-instruction()">
         <xsl:copy/>
     </xsl:template>
