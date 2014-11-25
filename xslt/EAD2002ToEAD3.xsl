@@ -116,12 +116,24 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- MAIN TEMPLATE: operates on namespace-stripped document -->
 
     <xsl:template match="/">
-        <xsl:processing-instruction name="xml-model">
+        <xsl:choose>
+            <xsl:when test="$outputUndeprecatedEAD3=false()">
+                <xsl:processing-instruction name="xml-model">
             <xsl:text>href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
         </xsl:processing-instruction>
-        <xsl:processing-instruction name="oxygen">
+                <xsl:processing-instruction name="oxygen">
             <xsl:text>RNGSchema="../../ead3.rng" type="xml"</xsl:text>
         </xsl:processing-instruction>
+            </xsl:when>
+            <xsl:when test="$outputUndeprecatedEAD3=true()">
+                <xsl:processing-instruction name="xml-model">
+            <xsl:text>href="../../ead_revised_undeprecated.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
+        </xsl:processing-instruction>
+                <xsl:processing-instruction name="oxygen">
+            <xsl:text>RNGSchema="../../ead_revised_undeprecated.rng" type="xml"</xsl:text>
+        </xsl:processing-instruction>
+            </xsl:when>
+        </xsl:choose>
         <!--<xsl:copy-of select="$instance-ns-stripped"/>
         -->
         <!--<xsl:apply-templates select="/" mode="strip-ns"/>
@@ -173,7 +185,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:call-template>
             </xsl:when>
             <xsl:when test="$outputUndeprecatedEAD3=true()">
-                
+                <xsl:call-template name="copyElement"/>
             </xsl:when>
         </xsl:choose>
         
