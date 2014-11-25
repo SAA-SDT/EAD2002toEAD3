@@ -896,7 +896,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:text>ELEMENT </xsl:text>
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>&#160;</xsl:text>
-                <xsl:text>RENAMED as 'descriptivenote'</xsl:text>
+                <xsl:text>RENAMED AS 'descriptivenote'</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:with-param>
         </xsl:call-template>
