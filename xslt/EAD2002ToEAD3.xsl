@@ -204,12 +204,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- REMOVE COMPLETELY -->
     <xsl:template
-        match="accessrestrict/legalstatus| archdesc/address | dsc/address | @linktype | arc | resource">
-        <xsl:call-template name="commentAndMessage">
-            <xsl:with-param name="comment">
-                <xsl:call-template name="removedElement"/>
-            </xsl:with-param>
-        </xsl:call-template>
+        match="accessrestrict/legalstatus| archdesc/address | dsc/address | @xlink:type | @linktype | arc | resource">
+        <xsl:if test="node()=element()">
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:call-template name="removedElement"/>
+                </xsl:with-param>
+            </xsl:call-template>
+        </xsl:if>
     </xsl:template>
 
     <!-- SKIP ELEMENT OR ATTRIBUTE -->
@@ -219,11 +221,13 @@ For these and/or other purposes and motivations, and without any expectation of 
         subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | 
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules | ead/@xsi:schemaLocation | 
         notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label">
-        <!--<xsl:call-template name="commentAndMessage">
-            <xsl:with-param name="comment">
-                <xsl:call-template name="removedElement"/>
-            </xsl:with-param>
-        </xsl:call-template>-->
+        <xsl:if test="node()=element()">
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:call-template name="removedElement"/>
+                </xsl:with-param>
+            </xsl:call-template>
+        </xsl:if>
         <xsl:apply-templates/>
     </xsl:template>
 
