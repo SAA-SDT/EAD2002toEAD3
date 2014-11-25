@@ -157,10 +157,29 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- DEPRECATED ELEMENTS                             -->
     <!-- ############################################### -->
+    
+    <!-- REMOVE COMPLETELY IF NOT UNDEPRECATED -->
+    <xsl:template
+        match="frontmatter | runner">
+        <xsl:choose>
+            <xsl:when test="$outputUndeprecatedEAD3=false()">
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:call-template name="removedElement"/>
+                    </xsl:with-param>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="$outputUndeprecatedEAD3=true()">
+                
+            </xsl:when>
+        </xsl:choose>
+        
+    </xsl:template>
 
     <!-- REMOVE COMPLETELY -->
     <xsl:template
-        match="frontmatter | runner | accessrestrict/legalstatus| archdesc/address | dsc/address | @linktype | arc | resource">
+        match="accessrestrict/legalstatus| archdesc/address | dsc/address | @linktype | arc | resource">
+        
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:call-template name="removedElement"/>
