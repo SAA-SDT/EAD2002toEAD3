@@ -205,7 +205,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- REMOVE COMPLETELY -->
     <xsl:template
         match="accessrestrict/legalstatus| archdesc/address | dsc/address | @linktype | arc | resource">
-        
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:call-template name="removedElement"/>
@@ -220,11 +219,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | 
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules | ead/@xsi:schemaLocation | 
         notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label">
-        <xsl:call-template name="commentAndMessage">
+        <!--<xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:call-template name="removedElement"/>
             </xsl:with-param>
-        </xsl:call-template>
+        </xsl:call-template>-->
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -717,7 +716,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="dao" mode="daoIndid">
-        <xsl:comment>dao</xsl:comment>
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>added required attribute daotype with value "unknown"</xsl:text>
@@ -1132,10 +1130,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template name="commentAndMessage">
         <xsl:param name="comment"/>
-        <xsl:if test="$addMigrationComments">
+        <xsl:if test="$addMigrationComments=true()">
             <xsl:comment><xsl:value-of select="$comment"/></xsl:comment>
         </xsl:if>
-        <xsl:if test="$addMigrationMessages">
+        <xsl:if test="$addMigrationMessages=true()">
             <xsl:message>
                 <xsl:value-of select="$comment"/>
             </xsl:message>
