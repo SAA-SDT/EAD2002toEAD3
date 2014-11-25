@@ -134,12 +134,15 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- IDENTITY TEMPLATE                               -->
     <!-- ############################################### -->
-
-
-    <xsl:template match="element()">
+    
+    <xsl:template name="copyElement">
         <xsl:element name="{local-name()}" namespace="http://ead3.archivists.org/schema/">
             <xsl:apply-templates select="@*|node()"/>
         </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="element()">
+        <xsl:call-template name="copyElement"/>
     </xsl:template>
 
     <!-- copy the attributes -->
