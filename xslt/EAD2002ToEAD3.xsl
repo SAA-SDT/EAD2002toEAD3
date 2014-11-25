@@ -994,7 +994,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="notestmt/note/@type | abstract/@type | accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
         phystech/@type | processinfo/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
         userestrict/@type | odd/@type | date/@type | name/@type |  persname/@type | famname/@type |
-        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type">
+        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
