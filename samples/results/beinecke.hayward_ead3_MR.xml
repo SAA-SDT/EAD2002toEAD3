@@ -149,7 +149,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="derived"/>
-            <eventdatetime standarddatetime="2014-11-20T23:57:51.814-05:00">2014-11-20T23:57:51.814-05:00</eventdatetime>
+            <eventdatetime standarddatetime="2014-11-24T21:40:14.172-05:00">2014-11-24T21:40:14.172-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
          </maintenanceevent>
@@ -184,6 +184,7 @@
          </maintenanceevent>
       </maintenancehistory>
    </control>
+   
    <archdesc localtype="register"
              relatedencoding="MARC21"
              level="otherlevel"
