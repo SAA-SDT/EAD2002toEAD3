@@ -121,6 +121,41 @@
    <frontmatter>
       <titlepage>
          <titleproper>Guide to the Abraham Hayward Papers</titleproper>
+         <author>By John Steinbeck</author>
+         <bibseries>Bib series</bibseries>
+         <blockquote>
+            <p>Block quote</p>
+         </blockquote>
+         <date normal="2014-11-25">November 25, 2014</date>
+         <edition>Ice is back with a brand new edition!</edition>
+         <publisher>Publisher!!!</publisher>
+         <num>Number</num>
+         <sponsor>Sponsored by Dairy Queen</sponsor>
+         <subtitle>Subtitle: Sub Madness</subtitle>
+         <chronlist>
+            <chronitem>
+               <date>Today</date>
+               <event>Something happened</event>
+            </chronitem>
+         </chronlist>
+         <list type="ordered">
+            <item>Item 1</item>
+            <item>Item 2</item>
+         </list>
+         <table>
+            <tgroup cols="2">
+               <tbody>
+                  <row>
+                     <entry>Cell 1</entry>
+                     <entry>Cell 2</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <address>
+            <addressline>Address line 1</addressline>
+            <addressline>Address line 2</addressline>
+         </address>
       </titlepage>
    </frontmatter>
    <archdesc type="register" relatedencoding="MARC21" level="otherlevel" id="archdesc"
