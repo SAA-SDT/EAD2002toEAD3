@@ -84,7 +84,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- user parameter for control/maintenancehistory/maintenanceevent/eventtype -->
     <!-- eventtype enumeration '[created, revised, deleted, cancelled, derived, updated, unknown]'  -->
-    <xsl:param name="eventtypeValue" select="'derived'"/>
+    <xsl:param name="eventtypeValue" select="'updated'"/>
 
     <!-- user parameter for control/maintenancehistory/maintenanceevent/agenttype -->
     <!-- agenttype enumeration '[human, machine, unknown]' -->
