@@ -219,7 +219,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
-        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | abbr/* | expan/* | 
+        subtitle/num | subarea | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | expan/* | 
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
