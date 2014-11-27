@@ -554,7 +554,6 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:if>
     </xsl:template>
 
-
     <!-- langusage -->
     <xsl:template name="languagedeclaration">
         <xsl:variable name="langusage">
@@ -703,6 +702,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="chronlist">
         <xsl:call-template name="gonna-deal-with-this-later"/>
     </xsl:template>
+    
     <!-- ############################################### -->
     <!-- LIST                                            -->
     <!-- ############################################### -->
@@ -717,7 +717,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- TABLE                                           -->
     <!-- ############################################### -->
-
 
     <xsl:template match="table">
         <xsl:apply-templates/>
@@ -825,8 +824,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:attribute>
     </xsl:template>
 
-
-    <!-- if content is only a name element - copy and apply-templates
+<!-- if content is only a name element - copy and apply-templates
      if only text content: create name/part element with entire text inside
      if text and name elements ?
 -->
@@ -847,9 +845,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     </xsl:template>
 
-
-
-
     <!-- keep contents of unitdate, move unitdate element outside unittitle -->
     <xsl:template match="unittitle[parent::did]">
         <unittitle>
@@ -866,9 +861,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </unitdate>
     </xsl:template>
 
-
     <xsl:template match="repository">
-
         <repository>
             <xsl:if test="empty(corpname | name | persname | famname)">
                 <name>
@@ -883,14 +876,6 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:comment>
         </repository>
     </xsl:template>
-
-    <!--
-    <xsl:template match="physdesc">
-        <physdesc>
-            <xsl:apply-templates/>
-        </physdesc>
-    </xsl:template>
--->
 
     <!-- script attr becomes script element -->
     <xsl:template match="langmaterial">
@@ -914,14 +899,28 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
 
-
-
     <!-- ############################################### -->
     <!-- NAMES  AND CONTROLLACCESS                       -->
     <!-- ############################################### -->
 
     <xsl:template
-        match="corpname | famname | persname | name | subject | occupation | geogname | function | title | genreform">
+        match="famname | persname | name | subject | occupation | geogname | function | title | genreform">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ADDED CHILD ELEMENT part TO </xsl:text>
+                <xsl:value-of select="local-name()"/>
+            </xsl:with-param>
+        </xsl:call-template>
+        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+            <xsl:apply-templates select="@*"/>
+            <part>
+                <xsl:apply-templates/>
+            </part>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template
+        match="corpname">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>ADDED CHILD ELEMENT part TO </xsl:text>
