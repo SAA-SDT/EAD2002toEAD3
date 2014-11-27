@@ -182,8 +182,8 @@
                           encodinganalog="revisiondesc"
                           id="revisiondesc">
          <maintenanceevent>
-            <eventtype value="derived"/>
-            <eventdatetime standarddatetime="2014-11-25T21:25:09.328-05:00">2014-11-25T21:25:09.328-05:00</eventdatetime>
+            <eventtype value="updated"/>
+            <eventdatetime standarddatetime="2014-11-26T22:05:44.834-05:00">2014-11-26T22:05:44.834-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 Undeprecated (http://ead3.archivists.org/schema/undeprecated/).</eventdescription>
@@ -488,14 +488,17 @@
             preservation photocopies have been made for reference use and filed in the regular
             series run.</p>
       </scopecontent>
-      <controlaccess id="ca">
+      <controlaccess id="ca"
+                     altrender="controlaccess"
+                     audience="external"
+                     encodinganalog="controlaccess">
          <head>Access Terms</head>
          <p>This collection is indexed under the following access points in <ref xmlns="http://ead3.archivists.org/schema/"
                  actuate="onrequest"
                  show="new"
                  href="http://orbis.library.yale.edu/">Orbis</ref>, the Yale University
             Library online catalog.</p>
-         <controlaccess>
+         <controlaccess encodinganalog="ca" audience="external" altrender="ca" id="ca3">
             <head>Subjects</head>
             <persname encodinganalog="600" relator="subject">
                <part xmlns="http://ead3.archivists.org/schema/">Abraham, Robert, d. 1833

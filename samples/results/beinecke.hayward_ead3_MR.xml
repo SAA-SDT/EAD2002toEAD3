@@ -193,8 +193,8 @@
                           encodinganalog="revisiondesc"
                           id="revisiondesc"><!--ELEMENT maintenanceevent ADDED FOR THE EVENT OF MIGRATION TO EAD3-->
          <maintenanceevent>
-            <eventtype value="derived"/>
-            <eventdatetime standarddatetime="2014-11-25T21:25:08.189-05:00">2014-11-25T21:25:08.189-05:00</eventdatetime>
+            <eventtype value="updated"/>
+            <eventdatetime standarddatetime="2014-11-26T22:05:43.696-05:00">2014-11-26T22:05:43.696-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -461,13 +461,16 @@
             preservation photocopies have been made for reference use and filed in the regular
             series run.</p>
       </scopecontent>
-      <controlaccess id="ca">
+      <controlaccess id="ca"
+                     altrender="controlaccess"
+                     audience="external"
+                     encodinganalog="controlaccess">
          <head>Access Terms</head>
          <p>This collection is indexed under the following access points in <ref actuate="onrequest"
                  show="new"
                  href="http://orbis.library.yale.edu/">Orbis</ref>, the Yale University
             Library online catalog.</p>
-         <controlaccess>
+         <controlaccess encodinganalog="ca" audience="external" altrender="ca" id="ca3">
             <head>Subjects</head>
             <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
                <part>Abraham, Robert, d. 1833

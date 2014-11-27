@@ -344,13 +344,13 @@
             preservation photocopies have been made for reference use and filed in the regular
             series run.</p>
       </scopecontent>
-      <controlaccess id="ca">
+      <controlaccess id="ca" altrender="controlaccess" audience="external" encodinganalog="controlaccess">
          <head>Access Terms</head>
          <p>This collection is indexed under the following access points in <extref
                xlink:type="simple" xlink:actuate="onRequest" xlink:show="new"
                xlink:href="http://orbis.library.yale.edu/">Orbis</extref>, the Yale University
             Library online catalog.</p>
-         <controlaccess>
+         <controlaccess encodinganalog="ca" audience="external" altrender="ca" id="ca3">
             <head>Subjects</head>
             <persname encodinganalog="600" role="subject">Abraham, Robert, d. 1833
                --Estate.</persname>
