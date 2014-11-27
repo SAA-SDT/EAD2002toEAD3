@@ -944,9 +944,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <!-- the archaic add -->
-    <xsl:template match="add">
+    <!--<xsl:template match="add">
         <xsl:call-template name="nowOdd"/>
-    </xsl:template>
+    </xsl:template>-->
 
     <xsl:template match="*[parent::* except (//dao, //ref, //extref)]/@role">
         <xsl:attribute name="relator">
