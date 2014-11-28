@@ -1214,7 +1214,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="extptr">
         <ptr>
-            <xsl:value-of select="."/>
+            <xsl:apply-templates select="@*"/>
         </ptr>
     </xsl:template>
 
