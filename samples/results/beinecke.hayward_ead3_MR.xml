@@ -6,7 +6,7 @@
      altrender="altrender"
      audience="external"
      relatedencoding="enigma">
-   <!--ELEMENT eadheader REPLACED WITH control--><control langencoding="iso639-2b"
+   <control langencoding="iso639-2b"
             scriptencoding="iso15924"
             countryencoding="iso3166-1"
             repositoryencoding="iso15511"
@@ -15,15 +15,11 @@
             audience="internal"
             encodinganalog="eadheader"
             id="eadheader"
-            relatedencoding="DC"><!--ELEMENT eadid REPLACED WITH recordid-->
+            relatedencoding="DC">
       <recordid encodinganalog="eadid">beinecke.hayward</recordid>
-      <!--ATTRIBUTE eadid/@publicid REPLACED WITH otherrecordid-->
       <otherrecordid localtype="publicid">-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT (US::CtY-BR::::[ABRAHAM HAYWARD COLLECTION])//EN</otherrecordid>
-      <!--ATTRIBUTE eadid/@identifier REPLACED WITH otherrecordid-->
       <otherrecordid localtype="identifier">eadid:identifier</otherrecordid>
-      <!--ATTRIBUTE eadid/@url REPLACED WITH otherrecordid-->
       <otherrecordid localtype="url">http://hdl.handle.net/10079/fa/beinecke.hayward</otherrecordid>
-      <!--ATTRIBUTE eadid/@urn REPLACED WITH otherrecordid-->
       <otherrecordid localtype="urn">eadid:urn</otherrecordid>
       <filedesc altrender="filedesc"
                 audience="external"
@@ -39,7 +35,7 @@
                          encodinganalog="formal"
                          id="tpform"
                          render="bold">Guide to the Abraham Hayward
-               Collection, <!-- DEPRECATED ELEMENT num REMOVED FROM titleproper -->1234, <!-- DEPRECATED ELEMENT date REMOVED FROM titleproper -->November 2014
+               Collection, 1234, November 2014
             </titleproper>
             <titleproper localtype="filing"
                          render="altrender"
@@ -50,8 +46,8 @@
             <subtitle encodinganalog="subtitle"
                       id="subtitle"
                       audience="external"
-                      altrender="subtitle">Hayward Subtitle, <!-- DEPRECATED ELEMENT num REMOVED FROM subtitle -->5678,
-               <!-- DEPRECATED ELEMENT date REMOVED FROM subtitle -->subtitledate</subtitle>
+                      altrender="subtitle">Hayward Subtitle, 5678,
+               subtitledate</subtitle>
             <author altrender="author"
                     audience="external"
                     id="author1"
@@ -110,8 +106,7 @@
             <p id="stp1" audience="external" altrender="altp1">Paragraph inside series statement.</p>
          </seriesstmt>
          <notestmt>
-            <!--ELEMENT note RENAMED as 'controlnote'
---><controlnote localtype="bpg"
+            <controlnote localtype="bpg"
                          id="note1"
                          audience="external"
                          altrender="note"
@@ -121,85 +116,74 @@
             </controlnote>
          </notestmt>
       </filedesc>
-      <!--ELEMENT maintenancestatus ADDED-->
       <maintenancestatus value="revised"/>
-      <!--ELEMENT publicationstatus ADDED-->
       <publicationstatus value="published"/>
-      <!--ELEMENT maintenanceagency ADDED-->
-      <maintenanceagency countrycode="US"><!--ATTRIBUTE eadid/@countrycode REPLACED WITH maintenanceagency/@countrycode--><!--ATTRIBUTE eadid/@mainagencycode REPLACED WITH ELEMENT maintenanceagency/agencycode-->
+      <maintenanceagency countrycode="US">
          <agencycode>US-CtY-BR</agencycode>
-         <!--ELEMENT agencyname ADDED-->
          <agencyname>Beinecke Library</agencyname>
       </maintenanceagency>
-      <!--ELEMENT langusage REPLACED WITH languagedeclaration-->
       <languagedeclaration altrender="langusage"
                            audience="external"
                            encodinganalog="langusage">
          <language langcode="eng">English</language>
          <script scriptcode="Latn">Latn</script>
          <descriptivenote>
-            <p><!-- DEPRECATED ELEMENT langusage REMOVED FROM profiledesc -->
+            <p>
                <emph render="altrender">Finding aid </emph>written in
-            <!-- DEPRECATED ELEMENT language REMOVED FROM langusage -->English and <!-- DEPRECATED ELEMENT language REMOVED FROM langusage -->French.
+            English and French.
          </p>
          </descriptivenote>
       </languagedeclaration>
-      <!--ELEMENT langusage REPLACED WITH languagedeclaration-->
       <languagedeclaration altrender="langusage"
                            audience="external"
                            encodinganalog="langusage">
          <language langcode="fre">French</language>
          <script scriptcode="Latn">Latn</script>
          <descriptivenote>
-            <p><!-- DEPRECATED ELEMENT langusage REMOVED FROM profiledesc -->
+            <p>
                <emph render="altrender">Finding aid </emph>written in
-            <!-- DEPRECATED ELEMENT language REMOVED FROM langusage -->English and <!-- DEPRECATED ELEMENT language REMOVED FROM langusage -->French.
+            English and French.
          </p>
          </descriptivenote>
       </languagedeclaration>
-      <!--ELEMENT descrules REPLACED WITH conventiondeclaration-->
       <conventiondeclaration altrender="altrender"
                              audience="external"
                              encodinganalog="descrules">
          <citation>Beinecke Manuscript Unit Archival Processing Manual</citation>
          <descriptivenote>
-            <p><!-- DEPRECATED ELEMENT descrules REMOVED FROM profiledesc -->Finding aid prepared according to the <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <p>Finding aid prepared according to the <title render="italic">
                   <part>Beinecke Manuscript Unit Archival Processing Manual</part>
-               </title> and <!--ADDED CHILD ELEMENT part TO title--><title>
+               </title> and <title>
                   <part>DACS</part>
                </title>. </p>
          </descriptivenote>
       </conventiondeclaration>
-      <!--ELEMENT descrules REPLACED WITH conventiondeclaration-->
       <conventiondeclaration altrender="altrender"
                              audience="external"
                              encodinganalog="descrules">
          <citation>DACS</citation>
          <descriptivenote>
-            <p><!-- DEPRECATED ELEMENT descrules REMOVED FROM profiledesc -->Finding aid prepared according to the <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <p>Finding aid prepared according to the <title render="italic">
                   <part>Beinecke Manuscript Unit Archival Processing Manual</part>
-               </title> and <!--ADDED CHILD ELEMENT part TO title--><title>
+               </title> and <title>
                   <part>DACS</part>
                </title>. </p>
          </descriptivenote>
       </conventiondeclaration>
-      <!--ATTRIBUTE eadheader/@findaidstatus REPLACED WITH ELEMENT localcontrol/term-->
       <localcontrol localtype="findaidstatus">
          <term>edited-full-draft</term>
       </localcontrol>
-      <!--ELEMENT maintenancehistory ADDED-->
       <maintenancehistory altrender="revisiondesc"
                           audience="external"
                           encodinganalog="revisiondesc"
-                          id="revisiondesc"><!--ELEMENT maintenanceevent ADDED FOR THE EVENT OF MIGRATION TO EAD3-->
+                          id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2014-11-26T22:05:43.696-05:00">2014-11-26T22:05:43.696-05:00</eventdatetime>
+            <eventdatetime standarddatetime="2014-11-28T12:08:01.2-05:00">2014-11-28T12:08:01.2-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
          </maintenanceevent>
-         <!--ELEMENT creation REPLACED WITH maintenanceevent-->
          <maintenanceevent id="creation"
                            encodinganalog="creation"
                            audience="external"
@@ -215,7 +199,6 @@
             <eventdescription>Finding aid encoded in EAD 1.0 by Manuscript Unit staff, Beinecke Library, with
             Edix/Wordix macros, 2006. </eventdescription>
          </maintenanceevent>
-         <!--ELEMENT revisiondesc/list/defitem REPLACED WITH maintenanceevent-->
          <maintenanceevent id="defitem" audience="external" altrender="defitem">
             <eventtype value="unknown"/>
             <eventdatetime/>
@@ -223,7 +206,6 @@
             <agent/>
             <eventdescription altrender="defitemitem" audience="external" id="dii1">def label1: def item1</eventdescription>
          </maintenanceevent>
-         <!--ELEMENT revisiondesc/list/defitem REPLACED WITH maintenanceevent-->
          <maintenanceevent>
             <eventtype value="unknown"/>
             <eventdatetime/>
@@ -233,7 +215,7 @@
          </maintenanceevent>
       </maintenancehistory>
    </control>
-   <!-- DEPRECATED ELEMENT frontmatter REMOVED FROM ead -->
+   
    <archdesc localtype="register"
              relatedencoding="MARC21"
              level="otherlevel"
@@ -244,7 +226,7 @@
              otherlevel="archdesc">
       <did id="did">
          <head>Overview</head>
-         <origination><!--ORIGINATION NEEDS WORK--></origination>
+         <origination/>
          <unittitle label="Title:">Abraham Hayward collection </unittitle>
          <unitdate unitdatetype="inclusive"
                    datechar="creation"
@@ -259,10 +241,10 @@
          <unitid label="Call Number:" countrycode="US" repositorycode="US-CtY-BR">GEN MSS
             553</unitid>
          <physdesc label="Physical Description:">
-            <!-- DEPRECATED ELEMENT extent REMOVED FROM physdesc -->Total Boxes: 7 (incl. 3 oversize boxes)
+            Total Boxes: 7 (incl. 3 oversize boxes)
          </physdesc>
          <physdesc label="Physical Description:">
-            <!-- DEPRECATED ELEMENT extent REMOVED FROM physdesc -->Linear Feet: 5.51'
+            Linear Feet: 5.51'
          </physdesc>
          <abstract label="Summary:">Correspondence, printed materials, other papers, and photographs
             related to Abraham Hayward, as well as the research materials of Hayward biographer
@@ -287,7 +269,7 @@
             biography of Hayward; manuscript and typescript transcriptions of correspondence and
             writings related to Hayward; a biographical timeline; and other research
             papers.</abstract>
-         <repository><!--ADDED CHILD ELEMENT part TO corpname-->
+         <repository>
             <corpname>
                <part>Beinecke Rare Book and Manuscript Library</part>
             </corpname>
@@ -310,10 +292,10 @@
          -->
          </repository>
       </did>
-      <!-- DEPRECATED ELEMENT descgrp REMOVED FROM archdesc -->
-         <!-- DEPRECATED ELEMENT head REMOVED FROM descgrp --><!--Administrative Information-->
-         <!-- DEPRECATED ELEMENT descgrp REMOVED FROM descgrp -->
-            <!-- DEPRECATED ELEMENT head REMOVED FROM descgrp --><!--Provenance-->
+      
+         <!--Administrative Information-->
+         
+            <!--Provenance-->
             <acqinfo>
                <p>The Abraham Hayward Collection was acquired through purchase from Christopher
                   Edwards on the George Henry Nettleton Fund, 2003.</p>
@@ -333,7 +315,7 @@
          </prefercite>
          <accessrestrict id="arest">
             <head>Information about Access</head>
-            <p> This collection is open for research. <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <p> This collection is open for research. <title render="italic">
                <part>Restricted Fragile Oversize</part>
             </title> in box 7 may only be consulted with
                permission of the appropriate curator. Preservation photocopies or photographic
@@ -345,20 +327,20 @@
          <p>Abraham Hayward, 1801-1884, was an English essayist and translator. Born in Wiltshire,
             Hayward studied at several schools, including Blundell's School in Tiverton, before
             moving to London and enrolling at the Inner Temple in 1824. He was called to the bar in
-            1832, but after the success of his 1833 translation of Goethe's <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            1832, but after the success of his 1833 translation of Goethe's <title render="italic">
                <part>Faust</part>
-            </title>, the first translation of <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, the first translation of <title render="italic">
                <part>Faust</part>
             </title> into English, he pursued a career
             in journalism and literature. He never married. </p>
          <p>Residing in London for the rest of his life, Hayward was well-connected in literary and
             political circles, counting among his acquaintances Thomas Babington Macaulay, William
             Makepeace Thackeray, W. E. Gladstone, and others. He contributed to many periodicals,
-            including <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            including <title render="italic">
                <part>Quarterly Review</part>
-            </title>, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, <title render="italic">
                <part>Monthly Magazine</part>
-            </title>, and <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, and <title render="italic">
                <part>Edinburgh Review</part>
             </title>, and wrote several
             books, including collections of essays and biographies of Goethe and Mrs. Thrale (a
@@ -376,21 +358,21 @@
             and translator, as well as the research papers of Brian Roberts, who started but
             abandoned a biography of Hayward in the 1950s. The papers, which span the years
             1791-1962, are stored in seven boxes (including 3 oversize), and are organized into five
-            series: <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            series: <title render="italic">
                <part>Correspondence</part>
-            </title>, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, <title render="italic">
                <part>Printed Materials</part>
-            </title>, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, <title render="italic">
                <part>Other Papers</part>
-            </title>, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, <title render="italic">
                <part>Photographs</part>
-            </title>, and <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, and <title render="italic">
                <part>Brian Roberts Research Materials</part>
             </title>. The papers document Hayward's familial
             relations, the literary and political circles of mid-nineteeth century London, and a
             controversy involving Hayward and the Inner Temple. </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="SI">Series I, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <ref actuate="onrequest" show="replace" target="SI">Series I, <title render="italic">
                   <part>Correspondence</part>
                </title>
             </ref>, is arranged alphabetically in three subseries: Outgoing, Incoming, and Third
@@ -407,7 +389,7 @@
             of the third party correspondence is to Fanny Hayward a decade after Abraham Hayward's
             death. </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="SII">Series II, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <ref actuate="onrequest" show="replace" target="SII">Series II, <title render="italic">
                   <part>Printed Materials</part>
                </title>
             </ref>, is arranged chronologically in two subseries: Inner Temple Affair and Other
@@ -417,7 +399,7 @@
             menu from the Café de Paris, clippings, a circular on John Stuart Mill's antipopulation
             theory, and a broadside, "Men of the Day, No. 117, Mr. Abraham Hayward, Q.C." </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="SIII">Series III, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <ref actuate="onrequest" show="replace" target="SIII">Series III, <title render="italic">
                   <part>Other Papers</part>
                </title>
             </ref>, is arranged chronologically and includes the following: an account of the estate
@@ -426,14 +408,14 @@
             design for a fruit garden or orchard; manuscript copies of poems by Caroline Sheridan
             Norton, Rev. E.D. Rhodes, and others; and whist instructions. </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="SIV">Series IV, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <ref actuate="onrequest" show="replace" target="SIV">Series IV, <title render="italic">
                   <part>Photographs</part>
                </title>
             </ref>, consists of a carte-de-visite album containing 12 cartes-de-visite of Abraham
             Hayward and eleven women, including Mrs. Cornwallis West, Mrs. Wheeler, Olive Campbell,
             Florence de Bretton, Madaillae Florian, and Countess Fanny Karolyi. </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="SV">Series V, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <ref actuate="onrequest" show="replace" target="SV">Series V, <title render="italic">
                   <part>Brian Roberts Research
                   Materials</part>
                </title>
@@ -450,11 +432,11 @@
             containing transcriptions of letters present in Series I, and note cards. </p>
          <p>
             <ref actuate="onrequest" show="replace" target="OS">
-               <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+               <title render="italic">
                   <part>Oversize</part>
                </title>
             </ref> material is housed in boxes 5 and 6. <ref actuate="onrequest" show="replace" target="RFO">
-               <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+               <title render="italic">
                   <part>Restricted Fragile Oversize</part>
                </title>
             </ref> material is stored in box 7 and contains oversize fragile originals for which
@@ -472,96 +454,123 @@
             Library online catalog.</p>
          <controlaccess encodinganalog="ca" audience="external" altrender="ca" id="ca3">
             <head>Subjects</head>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Abraham, Robert, d. 1833
                --Estate.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Bentley, George, 1828-1895.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Bentley, Richard, 1794-1871.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Delane, John Thaddeus,
                1817-1879.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Everett, Edward, 1794-1865.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Hayward, A. (Abraham),
                1801-1884.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Hayward, Fanny, d. 1904.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Hayward, Mary Anne.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Kinglake, Alexander William,
                1809-1891.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Murray, John, 1808-1892.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Newcastle, Henry Pelham, Duke of,
                1811-1864.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Palmerston, Emily Lamb, Viscountess,
                1787-1869.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Roberts, Brian.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Smith, Horace, 1779-1849.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO corpname--><corpname encodinganalog="610" relator="subject">
-               <part>Inner Temple (London, England)</part>
+            <corpname encodinganalog="610"
+                      relator="subject"
+                      id="cn"
+                      altrender="corpname"
+                      audience="external"
+                      identifier="authfilenumber"
+                      normal="inner temple yall"
+                      rules="aacr2"
+                      source="lcnaf">
+               <part><!-- comment -->Inner Temple <ptr href="http://www.nytimes.com/"/>(London, England)</part>
             </corpname>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject encodinganalog="650" source="lcsh">
+            <corpname encodinganalog="610"
+                      relator="subject"
+                      id="cn2"
+                      altrender="corpname"
+                      audience="external"
+                      identifier="authfilenumber"
+                      normal="inner temple yall"
+                      rules="aacr2"
+                      source="lcnaf">
+               <part>Inner Temple </part>
+               <part audience="external"
+                     altrender="subarea"
+                     id="sa1"
+                     encodinganalog="subarea"
+                     localtype="subarea">(London, England)</part>
+               <part/>
+               <part localtype="subarea">(Great Britain, Europe)</part>
+               <part> (Earth, <emph render="bold">Solar</emph> System)</part>
+            </corpname>
+            <subject encodinganalog="650" source="lcsh">
                <part>Authors, English --19th century.</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject encodinganalog="650" source="lcsh">
+            <subject encodinganalog="650" source="lcsh">
                <part>Gardens --Design --England.</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject encodinganalog="650" source="lcsh">
+            <subject encodinganalog="650" source="lcsh">
                <part>Politics and culture --England --History
                --19th century.</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject encodinganalog="650" source="lcsh">
+            <subject encodinganalog="650" source="lcsh">
                <part>Publishers and publishing --England
                --History --19th century.</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject encodinganalog="650" source="lcsh">
+            <subject encodinganalog="650" source="lcsh">
                <part>Whist.</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO genreform--><genreform encodinganalog="655" source="aat">
+            <genreform encodinganalog="655" source="aat">
                <part>Cartes-de-visite.</part>
             </genreform>
-            <!--ADDED CHILD ELEMENT part TO genreform--><genreform encodinganalog="655" source="rbgenr">
+            <genreform encodinganalog="655" source="rbgenr">
                <part>Menus --France --Paris.</part>
             </genreform>
-            <!--ADDED CHILD ELEMENT part TO genreform--><genreform encodinganalog="655" source="aat">
+            <genreform encodinganalog="655" source="aat">
                <part>Passports.</part>
             </genreform>
          </controlaccess>
          <controlaccess>
             <head>Authors</head>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="100">
+            <persname encodinganalog="100">
                <part>Hayward, A. (Abraham), 1801-1884.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="700">
+            <persname encodinganalog="700">
                <part>Roberts, Brian.</part>
             </persname>
          </controlaccess>
          <controlaccess>
             <head>Occupations and Functions</head>
-            <!--ADDED CHILD ELEMENT part TO occupation--><occupation encodinganalog="656" source="lcsh">
+            <occupation encodinganalog="656" source="lcsh">
                <part>Authors --England --19th
                century.</part>
             </occupation>
@@ -575,7 +584,7 @@
                <unittitle localtype="head"> Correspondence </unittitle>
                <unitdate>1833-1896</unitdate>
                <physdesc>
-                  <!-- DEPRECATED ELEMENT extent REMOVED FROM physdesc -->0.21' (43 folders)
+                  0.21' (43 folders)
                </physdesc>
             </did>
             <scopecontent>
@@ -877,7 +886,7 @@
                   </did>
                   <relatedmaterial>
                      <p>
-                        <ref actuate="onrequest" show="replace" target="f44"> See: Series II. <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+                        <ref actuate="onrequest" show="replace" target="f44"> See: Series II. <title render="italic">
                               <part>Printed Materials</part>
                            </title>, Petition, Box 1, folder 44 </ref>
                      </p>
@@ -907,7 +916,7 @@
                <unittitle localtype="head"> Printed Materials </unittitle>
                <unitdate>1791-1896</unitdate>
                <physdesc>
-                  <!-- DEPRECATED ELEMENT extent REMOVED FROM physdesc -->0.21' (11 folders)
+                  0.21' (11 folders)
                </physdesc>
             </did>
             <scopecontent>
@@ -969,7 +978,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">45</container>
-                     <unittitle localtype="genericfolder"> Titlepage, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+                     <unittitle localtype="genericfolder"> Titlepage, <title render="italic">
                            <part>Commentaries on the Laws of England</part>
                         </title>, by Sir
                         William Blackstone, signed "A. Hayward" </unittitle>
@@ -987,7 +996,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">46</container>
-                     <unittitle localtype="genericfolder"> Titlepage, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+                     <unittitle localtype="genericfolder"> Titlepage, <title render="italic">
                            <part>Discours de M. Thiers sur le Régime Commercial de la
                            France</part>
                         </title>, signed "Monsier Hayward" by M. Thiers </unittitle>
@@ -1064,7 +1073,7 @@
                <unittitle localtype="head"> Other Papers </unittitle>
                <unitdate>1833-1885</unitdate>
                <physdesc>
-                  <!-- DEPRECATED ELEMENT extent REMOVED FROM physdesc -->0.21' (1 box)
+                  0.21' (1 box)
                </physdesc>
             </did>
             <arrangement>
@@ -1148,7 +1157,7 @@
                <unittitle localtype="head"> Photographs </unittitle>
                <unitdate>1875-1878</unitdate>
                <physdesc>
-                  <!-- DEPRECATED ELEMENT extent REMOVED FROM physdesc -->0.21' (1 box)
+                  0.21' (1 box)
                </physdesc>
             </did>
             <c02 id="f62" level="file">
@@ -1171,7 +1180,7 @@
                <unittitle localtype="head"> Brian Roberts Research Materials </unittitle>
                <unitdate>1943-1962</unitdate>
                <physdesc>
-                  <!-- DEPRECATED ELEMENT extent REMOVED FROM physdesc -->0.42' (1 box)
+                  0.42' (1 box)
                </physdesc>
             </did>
             <arrangement>
@@ -1497,7 +1506,7 @@
                      <container localtype="Box">4</container>
                      <container localtype="Folder">98</container>
                      <unittitle localtype="genericfolder"> British Museum application for photography of
-                           <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+                           <title render="italic">
                            <part>Vanity Fair</part>
                         </title> cartoons </unittitle>
                      <unitdate>1943 Nov 13</unitdate>
@@ -1525,7 +1534,7 @@
             <did>
                <unittitle localtype="head"> Oversize </unittitle>
                <physdesc>
-                  <!-- DEPRECATED ELEMENT extent REMOVED FROM physdesc -->1.67' (1 box)
+                  1.67' (1 box)
                </physdesc>
             </did>
             <c02 id="f101" level="file">
@@ -1641,7 +1650,7 @@
             <did>
                <unittitle localtype="head"> Restricted Fragile Oversize </unittitle>
                <physdesc>
-                  <!-- DEPRECATED ELEMENT extent REMOVED FROM physdesc -->1.67' (1 box)
+                  1.67' (1 box)
                </physdesc>
             </did>
             <scopecontent>

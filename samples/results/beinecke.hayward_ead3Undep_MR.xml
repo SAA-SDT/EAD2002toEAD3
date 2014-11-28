@@ -183,7 +183,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2014-11-26T22:05:44.834-05:00">2014-11-26T22:05:44.834-05:00</eventdatetime>
+            <eventdatetime standarddatetime="2014-11-26T23:34:07.101-05:00">2014-11-26T23:34:07.101-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 Undeprecated (http://ead3.archivists.org/schema/undeprecated/).</eventdescription>
@@ -548,9 +548,26 @@
             <persname encodinganalog="600" relator="subject">
                <part xmlns="http://ead3.archivists.org/schema/">Smith, Horace, 1779-1849.</part>
             </persname>
-            <corpname encodinganalog="610" relator="subject">
+            <corpname encodinganalog="610"
+                      relator="subject"
+                      id="cn"
+                      altrender="corpname"
+                      audience="external"
+                      identifier="authfilenumber"
+                      normal="inner temple yall"
+                      rules="aacr2"
+                      source="lcnaf">
                <part xmlns="http://ead3.archivists.org/schema/">Inner Temple (London, England)</part>
             </corpname>
+            <corpname encodinganalog="610"
+                      relator="subject"
+                      id="cn2"
+                      altrender="corpname"
+                      audience="external"
+                      identifier="authfilenumber"
+                      normal="inner temple yall"
+                      rules="aacr2"
+                      source="lcnaf"/>
             <subject encodinganalog="650" source="lcsh">
                <part xmlns="http://ead3.archivists.org/schema/">Authors, English --19th century.</part>
             </subject>
