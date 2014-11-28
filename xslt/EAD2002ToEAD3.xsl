@@ -1213,6 +1213,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="extptr">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT extptr CONVERTED TO ptr</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <ptr>
             <xsl:apply-templates select="@*"/>
         </ptr>
