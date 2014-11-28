@@ -950,7 +950,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     
     <xsl:template name="corpnameNode">
-        <xsl:if test="normalize-space(.)">
+        <xsl:if test="normalize-space(.) or local-name()='ptr' or local-name()='extptr' or local-name()='lb'">
             <xsl:apply-templates select="."/>
         </xsl:if>
         <xsl:if test="following-sibling::node()[1][not(local-name()='subarea')] and not(local-name()='subarea')">
