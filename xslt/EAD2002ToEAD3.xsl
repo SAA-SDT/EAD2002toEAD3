@@ -218,7 +218,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- SKIP ELEMENT OR ATTRIBUTE -->
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
-        accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | 
+        accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | corpname/subarea |
         subtitle/num | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | 
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules">
         <xsl:call-template name="commentAndMessage">
@@ -919,8 +919,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:element>
     </xsl:template>
     
-    <xsl:template
-        match="corpname">
+    <xsl:template match="corpname">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>ADDED CHILD ELEMENT part TO </xsl:text>
@@ -929,15 +928,55 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:call-template>
         <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
             <xsl:apply-templates select="@*"/>
-            <part>
-                <xsl:apply-templates/>
-            </part>
+            <xsl:for-each select="node()[position()=1]">
+                <xsl:call-template name="corpnamePart"/>
+            </xsl:for-each>
         </xsl:element>
     </xsl:template>
-
-
-
-
+    
+    <xsl:template name="corpnamePart">
+        <part>
+            <xsl:if test="local-name()='subarea'">
+                <xsl:apply-templates select="@*"/>
+                <xsl:attribute name="localtype" select="local-name()"/>
+            </xsl:if>
+            <xsl:call-template name="corpnameNode"/>
+        </part>
+        <xsl:if test="local-name()='subarea' or following-sibling::node()[1][local-name()='subarea']">
+            <xsl:for-each select="following-sibling::node()[1]">
+                <xsl:call-template name="corpnamePart"/>
+            </xsl:for-each>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="corpnameNode">
+        <xsl:if test="normalize-space(.)">
+            <xsl:apply-templates select="."/>
+        </xsl:if>
+        <xsl:if test="following-sibling::node()[1][not(local-name()='subarea')] and not(local-name()='subarea')">
+            <xsl:for-each select="following-sibling::node()[1]">
+                <xsl:call-template name="corpnameNode"/>
+            </xsl:for-each>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="repository/subarea">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>CHANGED repository/</xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text> TO repository/corpname/part</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
+        <corpname>
+            <part localtype="subarea">
+                <xsl:apply-templates select="@*"/>
+                <xsl:apply-templates/>
+            </part>
+        </corpname>
+    </xsl:template>
+    
+    
     <!-- ############################################### -->
     <!-- RENAMED ELEMENTS AND ATTRIBUTES                -->
     <!-- ############################################### -->
