@@ -904,7 +904,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="famname | persname | name | subject | occupation | geogname | function | title | genreform">
+        match="famname | persname | name | subject | occupation | geogname | function | genreform">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>ADDED CHILD ELEMENT part TO </xsl:text>
@@ -917,6 +917,70 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:apply-templates/>
             </part>
         </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="title">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ADDED CHILD ELEMENT part TO </xsl:text>
+                <xsl:value-of select="local-name()"/>
+            </xsl:with-param>
+        </xsl:call-template>
+        <xsl:choose>
+            <xsl:when test="@actuate or @xlink:actuate
+                or @arcrole or @xlink:arcrole
+                or @href or @xlink:href
+                or @role or @xlink:role
+                or @show or @xlink:show
+                or @title or @xlink:title
+                or @entityref or @xpointer">
+                <ref>
+                    <xsl:apply-templates select="@actuate | @xlink:actuate
+                        | @arcrole | @xlink:arcrole
+                        | @href | @xlink:href
+                        | @role | @xlink:role
+                        | @show | @xlink:show
+                        | @title | @xlink:title
+                        | @entityref | @xpointer"/>
+                    <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                        <xsl:apply-templates select="@altrender | @audience
+                            | @authfilenumber | @encodinganalog
+                            | @id | @normal
+                            | @render | @rules
+                            | @source | @type"/>
+                        <part>
+                            <xsl:apply-templates/>
+                        </part>
+                    </xsl:element>
+                </ref>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                    <xsl:apply-templates select="@*"/>
+                    <part>
+                        <xsl:apply-templates/>
+                    </part>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="refDecompose">
+        <ref>
+            <xsl:apply-templates select="@actuate | @xlink:actuate
+                | @arcrole | @xlink:arcrole
+                | @href | @xlink:href
+                | @role | @xlink:role
+                | @show | @xlink:show
+                | @title | @xlink:title
+                | @entityref
+                | @xpointer">
+            </xsl:apply-templates>
+            <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                <xsl:apply-templates select="@*"/>
+                <xsl:apply-templates/>
+            </xsl:element>
+        </ref>
     </xsl:template>
     
     <xsl:template match="corpname">
