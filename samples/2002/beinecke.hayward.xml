@@ -352,7 +352,13 @@
             Library online catalog.</p>
          <controlaccess encodinganalog="ca" audience="external" altrender="ca" id="ca3">
             <head>Subjects</head>
-            <persname encodinganalog="600" role="subject">Abraham, Robert, d. 1833
+            <title authfilenumber="title" normal="title" rules="title" source="title" audience="external"
+               altrender="title" id="title1" render="altrender" encodinganalog="title" type="titletype"
+               xlink:href="http://www.longform.com" xlink:actuate="none" xlink:arcrole="arcrole"
+               xlink:role="titlexlinkrole" xlink:show="none" xlink:title="titletitle" xlink:type="simple"
+               xpointer="#title">Moby-Dick, or The Whale</title>
+            <persname encodinganalog="600" role="subject" id="pers1" altrender="persname" audience="external"
+                source="persname" rules="persname" normal="Pers, Name" authfilenumber="1234">Abraham, Robert, d. 1833
                --Estate.</persname>
             <persname encodinganalog="600" role="subject">Bentley, George, 1828-1895.</persname>
             <persname encodinganalog="600" role="subject">Bentley, Richard, 1794-1871.</persname>

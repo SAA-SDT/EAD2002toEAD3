@@ -927,18 +927,17 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:with-param>
         </xsl:call-template>
         <xsl:choose>
-            <xsl:when test="@actuate or @xlink:actuate
+            <xsl:when test="(@actuate or @xlink:actuate
                 or @arcrole or @xlink:arcrole
                 or @href or @xlink:href
-                or @role or @xlink:role
                 or @show or @xlink:show
                 or @title or @xlink:title
-                or @entityref or @xpointer">
+                or @entityref or @xpointer)
+                and not(parent::controlaccess)">
                 <ref>
                     <xsl:apply-templates select="@actuate | @xlink:actuate
                         | @arcrole | @xlink:arcrole
                         | @href | @xlink:href
-                        | @role | @xlink:role
                         | @show | @xlink:show
                         | @title | @xlink:title
                         | @entityref | @xpointer"/>
@@ -947,6 +946,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                             | @authfilenumber | @encodinganalog
                             | @id | @normal
                             | @render | @rules
+                            | @role | @xlink:role
                             | @source | @type"/>
                         <part>
                             <xsl:apply-templates/>
@@ -956,7 +956,12 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-                    <xsl:apply-templates select="@*"/>
+                    <xsl:apply-templates select="@altrender | @audience
+                        | @authfilenumber | @encodinganalog
+                        | @id | @normal
+                        | @render | @rules
+                        | @role | @xlink:role
+                        | @source | @type"/>
                     <part>
                         <xsl:apply-templates/>
                     </part>
@@ -1050,7 +1055,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:call-template name="nowOdd"/>
     </xsl:template>-->
 
-    <xsl:template match="*[parent::* except (//dao, //ref, //extref)]/@role">
+    <xsl:template match="*[parent::* except (//dao, //ref, //extref)]/@role
+        | title/@xlink:role | archref/@xlink:role | bibref/@xlink:role">
         <xsl:attribute name="relator">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -1288,7 +1294,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="@*[name() = 'xlink:type']"> </xsl:template>
-
+    
+    <!-- Modify template to avoid ambigous match w/ title/@xlinl:  -->
     <xsl:template match="@*[starts-with(name(), 'xlink')][name() != 'xlink:type']">
         <xsl:attribute name="{substring-after(name(), ':')}">
             <xsl:value-of select="lower-case(.)"/>
