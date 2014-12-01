@@ -80,9 +80,10 @@
             <date localtype="revised" normal="2006-10">October 2006</date>
             <date localtype="ead" normal="2006/2007">2006-2007</date>
             <p>
-               <ref actuate="onrequest"
-                    show="new"
-                    href="http://hdl.handle.net/10079/9p8czk9">Copyright © 1996-2007 by the Yale University
+               <ref xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:actuate="onRequest"
+                    xlink:show="new"
+                    xlink:href="http://hdl.handle.net/10079/9p8czk9">Copyright © 1996-2007 by the Yale University
                   Library.</ref>
             </p>
          </publicationstmt>
@@ -179,7 +180,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2014-11-28T15:09:01.325-05:00">2014-11-28T15:09:01.325-05:00</eventdatetime>
+            <eventdatetime standarddatetime="2014-11-28T21:50:06.878-05:00">2014-11-28T21:50:06.878-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -372,7 +373,10 @@
             relations, the literary and political circles of mid-nineteeth century London, and a
             controversy involving Hayward and the Inner Temple. </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="SI">Series I, <title render="italic">
+            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:actuate="onRequest"
+                 xlink:show="replace"
+                 target="SI">Series I, <title render="italic">
                   <part>Correspondence</part>
                </title>
             </ref>, is arranged alphabetically in three subseries: Outgoing, Incoming, and Third
@@ -389,7 +393,10 @@
             of the third party correspondence is to Fanny Hayward a decade after Abraham Hayward's
             death. </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="SII">Series II, <title render="italic">
+            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:actuate="onRequest"
+                 xlink:show="replace"
+                 target="SII">Series II, <title render="italic">
                   <part>Printed Materials</part>
                </title>
             </ref>, is arranged chronologically in two subseries: Inner Temple Affair and Other
@@ -399,7 +406,10 @@
             menu from the Café de Paris, clippings, a circular on John Stuart Mill's antipopulation
             theory, and a broadside, "Men of the Day, No. 117, Mr. Abraham Hayward, Q.C." </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="SIII">Series III, <title render="italic">
+            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:actuate="onRequest"
+                 xlink:show="replace"
+                 target="SIII">Series III, <title render="italic">
                   <part>Other Papers</part>
                </title>
             </ref>, is arranged chronologically and includes the following: an account of the estate
@@ -408,14 +418,20 @@
             design for a fruit garden or orchard; manuscript copies of poems by Caroline Sheridan
             Norton, Rev. E.D. Rhodes, and others; and whist instructions. </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="SIV">Series IV, <title render="italic">
+            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:actuate="onRequest"
+                 xlink:show="replace"
+                 target="SIV">Series IV, <title render="italic">
                   <part>Photographs</part>
                </title>
             </ref>, consists of a carte-de-visite album containing 12 cartes-de-visite of Abraham
             Hayward and eleven women, including Mrs. Cornwallis West, Mrs. Wheeler, Olive Campbell,
             Florence de Bretton, Madaillae Florian, and Countess Fanny Karolyi. </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="SV">Series V, <title render="italic">
+            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:actuate="onRequest"
+                 xlink:show="replace"
+                 target="SV">Series V, <title render="italic">
                   <part>Brian Roberts Research
                   Materials</part>
                </title>
@@ -431,11 +447,17 @@
             include typescript transcriptions, a biographical timeline, a research notebook
             containing transcriptions of letters present in Series I, and note cards. </p>
          <p>
-            <ref actuate="onrequest" show="replace" target="OS">
+            <ref xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:actuate="onRequest"
+                 xlink:show="replace"
+                 target="OS">
                <title render="italic">
                   <part>Oversize</part>
                </title>
-            </ref> material is housed in boxes 5 and 6. <ref actuate="onrequest" show="replace" target="RFO">
+            </ref> material is housed in boxes 5 and 6. <ref xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:actuate="onRequest"
+                 xlink:show="replace"
+                 target="RFO">
                <title render="italic">
                   <part>Restricted Fragile Oversize</part>
                </title>
@@ -448,13 +470,35 @@
                      audience="external"
                      encodinganalog="controlaccess">
          <head>Access Terms</head>
-         <p>This collection is indexed under the following access points in <ref actuate="onrequest"
-                 show="new"
-                 href="http://orbis.library.yale.edu/">Orbis</ref>, the Yale University
+         <p>This collection is indexed under the following access points in <ref xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:actuate="onRequest"
+                 xlink:show="new"
+                 xlink:href="http://orbis.library.yale.edu/">Orbis</ref>, the Yale University
             Library online catalog.</p>
          <controlaccess encodinganalog="ca" audience="external" altrender="ca" id="ca3">
             <head>Subjects</head>
-            <persname encodinganalog="600" relator="subject">
+            <title identifier="title"
+                   normal="title"
+                   rules="title"
+                   source="title"
+                   audience="external"
+                   altrender="title"
+                   id="title1"
+                   render="altrender"
+                   encodinganalog="title"
+                   localtype="titletype"
+                   relator="titlexlinkrole">
+               <part>Moby-Dick, or The Whale</part>
+            </title>
+            <persname encodinganalog="600"
+                      relator="subject"
+                      id="pers1"
+                      altrender="persname"
+                      audience="external"
+                      source="persname"
+                      rules="persname"
+                      normal="Pers, Name"
+                      identifier="1234">
                <part>Abraham, Robert, d. 1833
                --Estate.</part>
             </persname>
@@ -511,7 +555,8 @@
                       normal="inner temple yall"
                       rules="aacr2"
                       source="lcnaf">
-               <part><!-- comment -->Inner Temple <ptr href="http://www.nytimes.com/"/>(London, England)</part>
+               <part><!-- comment -->Inner Temple <ptr xmlns:xlink="http://www.w3.org/1999/xlink"
+                       xlink:href="http://www.nytimes.com/"/>(London, England)</part>
             </corpname>
             <corpname encodinganalog="610"
                       relator="subject"
@@ -886,7 +931,10 @@
                   </did>
                   <relatedmaterial>
                      <p>
-                        <ref actuate="onrequest" show="replace" target="f44"> See: Series II. <title render="italic">
+                        <ref xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:actuate="onRequest"
+                             xlink:show="replace"
+                             target="f44"> See: Series II. <title render="italic">
                               <part>Printed Materials</part>
                            </title>, Petition, Box 1, folder 44 </ref>
                      </p>
