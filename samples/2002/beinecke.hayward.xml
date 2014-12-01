@@ -352,6 +352,17 @@
             Library online catalog.</p>
          <controlaccess encodinganalog="ca" audience="external" altrender="ca" id="ca3">
             <head>Subjects</head>
+            <name role="name" altrender="name" encodinganalog="name" id="n1" audience="external"
+               source="Name" rules="Name" normal="McNamerson, Name" authfilenumber="123">Name McNamerson</name>
+            <geogname authfilenumber="Boston" normal="Bahstun" rules="Fenway" source="RedSox" audience="external"
+               id="a617" encodinganalog="Beantown" altrender="wickedawesome" role="wickedpissah">Boston (Massachusetts).</geogname>
+            <genreform altrender="genreform" encodinganalog="genreform" id="gf1" audience="external"
+               source="genreform" rules="genreform" normal="Watercolors" authfilenumber="123" type="form">Watercolors</genreform>
+            <famname encodinganalog="famname" altrender="famname" id="fam1" audience="external" source="famname" 
+               rules="famname" normal="Rush family" authfilenumber="1234" role="famname">
+               Rush <emph render="bold">family</emph> of <lb/>New <ptr xlink:href="http://www.rushfamily.com"/>/> Hampshire</famname>
+            <function authfilenumber="function" normal="Entertaining" rules="lmnop" source="zyx" audience="external" 
+               id="fun1" altrender="function" encodinganalog="function"><emph render="bolditalic">Entertaining</emph><extptr xlink:href="http://function.com"/></function>
             <title authfilenumber="title" normal="title" rules="title" source="title" audience="external"
                altrender="title" id="title1" render="altrender" encodinganalog="title" type="titletype"
                xlink:href="http://www.longform.com" xlink:actuate="none" xlink:arcrole="arcrole"
@@ -382,7 +393,7 @@
                authfilenumber="authfilenumber" normal="inner temple yall" rules="aacr2" source="lcnaf"><!-- comment -->Inner Temple <extptr xlink:href="http://www.nytimes.com/"/>(London, England)</corpname>
             <corpname encodinganalog="610" role="subject" id="cn2" altrender="corpname" audience="external"
                authfilenumber="authfilenumber" normal="inner temple yall" rules="aacr2" source="lcnaf">Inner Temple <subarea audience="external" altrender="subarea" id="sa1" encodinganalog="subarea">(London, England)</subarea> <subarea>(Great Britain, Europe)</subarea> (Earth, <emph render="bold">Solar</emph> System)</corpname>
-            <subject encodinganalog="650" source="lcsh">Authors, English --19th century.</subject>
+            <subject encodinganalog="650" source="lcsh" altrender="subject" id="sub1" audience="external" rules="subject" normal="Authors" authfilenumber="1234">Authors, English --19th century.</subject>
             <subject encodinganalog="650" source="lcsh">Gardens --Design --England.</subject>
             <subject encodinganalog="650" source="lcsh">Politics and culture --England --History
                --19th century.</subject>
@@ -400,7 +411,8 @@
          </controlaccess>
          <controlaccess>
             <head>Occupations and Functions</head>
-            <occupation encodinganalog="656" source="lcsh">Authors --England --19th
+            <occupation encodinganalog="656" source="lcsh" authfilenumber="1234" normal="authors" rules="occ" 
+               audience="external" id="occ1" altrender="occupation">Authors --England --19th
                century.</occupation>
          </controlaccess>
       </controlaccess>
