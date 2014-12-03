@@ -855,13 +855,6 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:apply-templates select="unitdate"/>
     </xsl:template>
 
-    <xsl:template match="unitdate[parent::did]">
-        <unitdate>
-            <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates select="child::node() except (unitdate)"/>
-        </unitdate>
-    </xsl:template>
-
     <xsl:template match="repository">
         <repository>
             <xsl:if test="empty(corpname | name | persname | famname)">
