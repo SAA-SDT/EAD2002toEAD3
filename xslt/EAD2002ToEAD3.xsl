@@ -850,9 +850,29 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="unittitle[parent::did]">
         <unittitle>
             <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates select="child::node() except (unitdate)"/>
+            <xsl:apply-templates/>
         </unittitle>
-        <xsl:apply-templates select="unitdate"/>
+        <xsl:if test="$outputUndeprecatedEAD3=false()">
+            <xsl:for-each select="unitdate">
+                <xsl:call-template name="copyElement"/>
+            </xsl:for-each>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="unitdate[parent::unittitle]">
+        <xsl:choose>
+            <xsl:when test="$outputUndeprecatedEAD3=true()">
+                <xsl:call-template name="copyElement"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:choose>
+                    <xsl:when test="following-sibling::node()">
+                        <xsl:apply-templates/>
+                    </xsl:when>
+                    <xsl:otherwise/>
+                </xsl:choose>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="repository">
