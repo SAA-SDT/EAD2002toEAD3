@@ -220,7 +220,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | corpname/subarea |
         subtitle/num | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | 
-        unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules">
+        unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
+        unitdate/title">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:call-template name="removedElement"/>
