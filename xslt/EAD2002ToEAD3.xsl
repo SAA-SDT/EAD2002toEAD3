@@ -221,7 +221,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | corpname/subarea |
         subtitle/num | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | 
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
-        unitdate/title | unitid/title">
+        unitdate/title | unitid/title | physloc/title">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:call-template name="removedElement"/>
