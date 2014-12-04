@@ -162,6 +162,11 @@
       encodinganalog="archdesc" audience="internal" altrender="archdesc" otherlevel="archdesc">
       <did id="did">
          <head althead="View Over" altrender="head" audience="external" id="head1">Overview</head>
+         <physloc type="physloc" id="pl1" encodinganalog="physloc" audience="external" altrender="physloc"
+            label="Physical Location:">On the <title>shelf</title>.</physloc>
+         <unitid label="Call Number:" countrycode="US" repositorycode="US-CtY-BR" altrender="unitid"
+            audience="external" encodinganalog="unitid" id="ui1" identifier="unitid" type="unitid"><title>GEN MSS</title>
+            553</unitid>
          <origination label="Creator:">
             <persname encodinganalog="100">Hayward, A. (Abraham), 1801-1884.</persname>
          </origination>
@@ -172,8 +177,7 @@
                    calendar="gregorian">1791-<title>1962</title></unitdate>
                    
      
-         <unitid label="Call Number:" countrycode="US" repositorycode="US-CtY-BR">GEN MSS
-            553</unitid>
+         
          <physdesc label="Physical Description:">
             <extent>Total Boxes: 7 (incl. 3 oversize boxes)</extent>
          </physdesc>

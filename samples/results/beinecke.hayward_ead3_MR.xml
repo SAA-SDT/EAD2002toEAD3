@@ -179,7 +179,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2014-12-03T00:10:53.307-05:00">2014-12-03T00:10:53.307-05:00</eventdatetime>
+            <eventdatetime standarddatetime="2014-12-03T23:25:57.615-05:00">2014-12-03T23:25:57.615-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -229,6 +229,22 @@
                altrender="head"
                audience="external"
                id="head1">Overview</head>
+         <physloc localtype="physloc"
+                  id="pl1"
+                  encodinganalog="physloc"
+                  audience="external"
+                  altrender="physloc"
+                  label="Physical Location:">On the shelf.</physloc>
+         <unitid label="Call Number:"
+                 countrycode="US"
+                 repositorycode="US-CtY-BR"
+                 altrender="unitid"
+                 audience="external"
+                 encodinganalog="unitid"
+                 id="ui1"
+                 identifier="unitid"
+                 localtype="unitid">GEN MSS
+            553</unitid>
          <origination/>
          <unittitle label="Title:">Abraham Hayward collection 1791-1962 or something</unittitle>
          <unitdate unitdatetype="inclusive"
@@ -245,8 +261,7 @@
                    calendar="gregorian">1791-1962</unitdate>
                    
      
-         <unitid label="Call Number:" countrycode="US" repositorycode="US-CtY-BR">GEN MSS
-            553</unitid>
+         
          <physdesc label="Physical Description:">
             Total Boxes: 7 (incl. 3 oversize boxes)
          </physdesc>
