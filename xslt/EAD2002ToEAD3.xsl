@@ -186,7 +186,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <!-- REMOVE COMPLETELY IF NOT UNDEPRECATED -->
     <xsl:template
-        match="frontmatter | runner">
+        match="frontmatter | runner | @tpattern">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">
                 <xsl:call-template name="commentAndMessage">
