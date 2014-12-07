@@ -280,6 +280,10 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="dsc/@type | list/@type| unitdate/@type">
         <xsl:attribute name="{parent::*/local-name()}type" select="string(.)"/>
     </xsl:template>
+    
+    <xsl:template match="dsc/@othertype">
+        <xsl:attribute name="otherdsctype" select="string(.)"/>
+    </xsl:template>
 
     <!-- ############################################### -->
     <!-- EADHEADER to CONTROL -->
