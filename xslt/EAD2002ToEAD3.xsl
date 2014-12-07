@@ -1355,13 +1355,6 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:element>
     </xsl:template>
 
-    <!--<xsl:template name="dscOrphanElements">
-        <xsl:text>DSC CHILD ELEMENT </xsl:text>
-        <xsl:value-of select="local-name()"/>
-        <xsl:text>&#160;</xsl:text>
-        <xsl:text>ORPHANED BY DEPRECATION OF DSC. MIGRATION PATH PENDING</xsl:text>
-    </xsl:template>-->
-
     <xsl:template name="blockquoteOrphanElements">
         <xsl:text>INLINE BLOCKQUOTE CHILD ELEMENT </xsl:text>
         <xsl:value-of select="local-name()"/>
