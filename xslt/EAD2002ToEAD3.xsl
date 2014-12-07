@@ -720,14 +720,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <!-- ############################################### -->
-    <!-- TABLE                                           -->
-    <!-- ############################################### -->
-
-    <xsl:template match="table">
-        <xsl:apply-templates/>
-    </xsl:template>
-
-    <!-- ############################################### -->
     <!-- DID ELEMENTS                                    -->
     <!-- ############################################### -->
     <!-- origination:
