@@ -221,6 +221,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | corpname/subarea |
         subtitle/num | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | 
+        item/address | item/repository | item/unittitle |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
         unitdate/title | unitid/title | physloc/title">
         <xsl:call-template name="commentAndMessage">
@@ -327,11 +328,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             <maintenanceagency>
                 <xsl:if test="eadid/@countrycode">
                     <xsl:copy-of select="eadid/@countrycode"/>
-                    <xsl:call-template name="commentAndMessage">
-                        <xsl:with-param name="comment">
-                            <xsl:text>ATTRIBUTE eadid/@countrycode REPLACED WITH maintenanceagency/@countrycode</xsl:text>
-                        </xsl:with-param>
-                    </xsl:call-template>
+                        <xsl:call-template name="commentAndMessage">
+                            <xsl:with-param name="comment">
+                                <xsl:text>ATTRIBUTE eadid/@countrycode REPLACED WITH maintenanceagency/@countrycode</xsl:text>
+                            </xsl:with-param>
+                        </xsl:call-template>                  
                 </xsl:if>
                 <xsl:if test="eadid/@mainagencycode">
                     <xsl:call-template name="commentAndMessage">
@@ -722,6 +723,16 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="*"/>
         </list>
     </xsl:template>
+    
+    <xsl:template match="item">
+        <item>
+        <xsl:apply-templates select="node() except (blockquote, chronlist, table)"/>
+        </item>   
+    </xsl:template>
+    
+
+    
+    
 
     <!-- ############################################### -->
     <!-- DID ELEMENTS                                    -->
@@ -1098,7 +1109,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         </descriptivenote>
     </xsl:template>
 
-
+    <xsl:template match="item/unitdate">
+        <date>
+            <xsl:apply-templates select="node()"/>
+        </date>
+    </xsl:template>
 
 
     <!-- ############################################### -->
