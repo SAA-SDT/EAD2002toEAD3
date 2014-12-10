@@ -145,6 +145,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:processing-instruction>
             </xsl:when>
         </xsl:choose>
+
         <!--<xsl:copy-of select="$instance-ns-stripped"/>
         -->
         <!--<xsl:apply-templates select="/" mode="strip-ns"/>
@@ -277,7 +278,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- type attributes                            -->
     <!-- ############################################### -->
 
-    <xsl:template match="dsc/@type | list/@type| unitdate/@type">
+    <xsl:template match="dsc/@type | unitdate/@type">
         <xsl:attribute name="{parent::*/local-name()}type" select="string(.)"/>
     </xsl:template>
     
@@ -582,11 +583,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                             </xsl:otherwise>
                         </xsl:choose>
                         <language>
-                            <xsl:copy-of select="@*[not(local-name()='scriptcode')]"/>
+                            <xsl:copy-of select="@* except @scriptcode"/>
                             <xsl:value-of select="."/>
                         </language>
-                        <script scriptcode="{@scriptcode}">
-                                <xsl:value-of select="@scriptcode"/>
+                        <script scriptcode="{(@scriptcode, 'SCRIPTCODE NEEDED')}">
+                                <xsl:value-of select="(@scriptcode, 'SCRIPTCODE NEEDED')"/>
                             </script>
                         <descriptivenote>
                             <p>
@@ -714,7 +715,10 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="list">
         <list>
-            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates select="@* except (@type)"/>
+            <xsl:if test="@type">
+                <xsl:attribute name="listtype" select="replace(@type, 'simple', 'unordered')"/>
+            </xsl:if>
             <xsl:apply-templates select="*"/>
         </list>
     </xsl:template>
