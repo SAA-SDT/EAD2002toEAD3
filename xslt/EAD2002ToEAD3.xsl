@@ -726,7 +726,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <xsl:template match="item">
         <item>
-        <xsl:apply-templates select="node() except (blockquote, chronlist, table)"/>
+        <xsl:apply-templates select="node() except (chronlist, table)"/>
         </item>   
     </xsl:template>
     
