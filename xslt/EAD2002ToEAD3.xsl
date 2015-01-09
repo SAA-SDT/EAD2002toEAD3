@@ -1317,6 +1317,21 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:attribute>
     </xsl:template>
     
+    <xsl:template match="@colsep">
+        <xsl:variable name="colsepValue">
+            <xsl:value-of select="."/>
+        </xsl:variable>
+        <xsl:attribute name="colsep">
+            <xsl:choose>
+                <xsl:when test="$colsepValue='1'">
+                    <xsl:text>true</xsl:text>
+                </xsl:when>
+                <xsl:when test="$colsepValue='0'">
+                    <xsl:text>false</xsl:text>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:attribute>
+    </xsl:template>
 
 
     <!-- process link attributes -->
