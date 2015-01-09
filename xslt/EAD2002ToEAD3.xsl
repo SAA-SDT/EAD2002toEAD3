@@ -1332,6 +1332,22 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:choose>
         </xsl:attribute>
     </xsl:template>
+    
+    <xsl:template match="@rowsep">
+        <xsl:variable name="rowsepValue">
+            <xsl:value-of select="."/>
+        </xsl:variable>
+        <xsl:attribute name="colsep">
+            <xsl:choose>
+                <xsl:when test="$rowsepValue='1'">
+                    <xsl:text>true</xsl:text>
+                </xsl:when>
+                <xsl:when test="$rowsepValue='0'">
+                    <xsl:text>false</xsl:text>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:attribute>
+    </xsl:template>
 
 
     <!-- process link attributes -->
