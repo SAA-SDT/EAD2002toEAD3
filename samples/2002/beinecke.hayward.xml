@@ -420,9 +420,32 @@
                century.</occupation>
          </controlaccess>
       </controlaccess>
-      <dsc type="combined" id="dsc">
+      <dsc type="combined" id="dsc" tpattern="tpatterndsc" othertype="otherDSCtype">
          <head>Collection Contents</head>
-         <c01 id="SI" level="series">
+         <p>paragraph</p>
+         <address><addressline>DSC ADDRESS</addressline></address>
+         <blockquote>
+            <p>blockquote paragraph in dsc</p>
+         </blockquote>
+         <note>
+            <p>DSC Note paragraph</p>
+         </note>
+         <table>
+            <tgroup cols="1">
+               <tbody>
+                  <row>
+                     <entry>DSC TABLE</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <thead>
+            <row>
+               <entry>DSC</entry>
+               <entry>THEAD</entry>
+            </row>
+         </thead>
+         <c01 id="SI" level="series" tpattern="tpatternc01">
             <did>
                <unitid>Series I.</unitid>
                <unittitle type="head"> Correspondence </unittitle>

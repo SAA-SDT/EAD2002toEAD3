@@ -1295,6 +1295,59 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="custodhist/acqinfo"/>
+    
+    
+    <!-- ############################################### -->
+    <!-- UPDATE BOOLEAN TABLE ATTRS                      -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="@pgwide">
+        <xsl:variable name="pgwideValue">
+            <xsl:value-of select="."/>
+        </xsl:variable>
+        <xsl:attribute name="pgwide">
+            <xsl:choose>
+                <xsl:when test="$pgwideValue='1'">
+                    <xsl:text>true</xsl:text>
+                </xsl:when>
+                <xsl:when test="$pgwideValue='0'">
+                    <xsl:text>false</xsl:text>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:attribute>
+    </xsl:template>
+    
+    <xsl:template match="@colsep">
+        <xsl:variable name="colsepValue">
+            <xsl:value-of select="."/>
+        </xsl:variable>
+        <xsl:attribute name="colsep">
+            <xsl:choose>
+                <xsl:when test="$colsepValue='1'">
+                    <xsl:text>true</xsl:text>
+                </xsl:when>
+                <xsl:when test="$colsepValue='0'">
+                    <xsl:text>false</xsl:text>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:attribute>
+    </xsl:template>
+    
+    <xsl:template match="@rowsep">
+        <xsl:variable name="rowsepValue">
+            <xsl:value-of select="."/>
+        </xsl:variable>
+        <xsl:attribute name="colsep">
+            <xsl:choose>
+                <xsl:when test="$rowsepValue='1'">
+                    <xsl:text>true</xsl:text>
+                </xsl:when>
+                <xsl:when test="$rowsepValue='0'">
+                    <xsl:text>false</xsl:text>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:attribute>
+    </xsl:template>
 
 
     <!-- process link attributes -->
