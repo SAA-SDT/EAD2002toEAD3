@@ -1295,6 +1295,28 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="custodhist/acqinfo"/>
+    
+    
+    <!-- ############################################### -->
+    <!-- UPDATE BOOLEAN TABLE ATTRS                      -->
+    <!-- ############################################### -->
+    
+    <xsl:template match="@pgwide">
+        <xsl:variable name="pgwideValue">
+            <xsl:value-of select="."/>
+        </xsl:variable>
+        <xsl:attribute name="pgwide">
+            <xsl:choose>
+                <xsl:when test="$pgwideValue='1'">
+                    <xsl:text>true</xsl:text>
+                </xsl:when>
+                <xsl:when test="$pgwideValue='0'">
+                    <xsl:text>false</xsl:text>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:attribute>
+    </xsl:template>
+    
 
 
     <!-- process link attributes -->
