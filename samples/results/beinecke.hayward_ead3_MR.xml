@@ -230,7 +230,7 @@
                audience="external"
                id="head1">Overview</head>
          <physdescstructured coverage="whole" physdescstructuredtype="carrier">
-            <quantity approximate="yes"></quantity>
+            <quantity approximate="true"></quantity>
             <unittype>boxes</unittype>
          </physdescstructured>
          <physloc localtype="physloc"
