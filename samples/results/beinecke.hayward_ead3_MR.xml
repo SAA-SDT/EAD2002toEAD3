@@ -179,7 +179,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2014-12-03T23:25:57.615-05:00">2014-12-03T23:25:57.615-05:00</eventdatetime>
+            <eventdatetime standarddatetime="2014-12-07T00:09:24.592-05:00">2014-12-07T00:09:24.592-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -229,6 +229,10 @@
                altrender="head"
                audience="external"
                id="head1">Overview</head>
+         <physdescstructured coverage="whole" physdescstructuredtype="carrier">
+            <quantity approximate="yes"></quantity>
+            <unittype>boxes</unittype>
+         </physdescstructured>
          <physloc localtype="physloc"
                   id="pl1"
                   encodinganalog="physloc"
@@ -245,7 +249,6 @@
                  identifier="unitid"
                  localtype="unitid">GEN MSS
             553</unitid>
-         <origination/>
          <unittitle label="Title:">Abraham Hayward collection 1791-1962 or something</unittitle>
          <unitdate unitdatetype="inclusive"
                    datechar="creation"
@@ -691,8 +694,29 @@
             </occupation>
          </controlaccess>
       </controlaccess>
-      <dsc dsctype="combined" id="dsc">
+      <dsc dsctype="combined" id="dsc" otherdsctype="otherDSCtype">
          <head>Collection Contents</head>
+         <p>paragraph</p>
+         
+         <blockquote>
+            <p>blockquote paragraph in dsc</p>
+         </blockquote>
+         
+         <table>
+            <tgroup cols="1">
+               <tbody>
+                  <row>
+                     <entry>DSC TABLE</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <thead>
+            <row>
+               <entry>DSC</entry>
+               <entry>THEAD</entry>
+            </row>
+         </thead>
          <c01 id="SI" level="series">
             <did>
                <unitid>Series I.</unitid>
