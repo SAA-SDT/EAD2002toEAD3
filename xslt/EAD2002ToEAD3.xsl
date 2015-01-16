@@ -232,11 +232,20 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:apply-templates/>
     </xsl:template>
 
-    <!-- bibref -->
+    <!-- archref and bibref -->
 
     <xsl:template
-        match="bibref[parent::* except (separatedmaterial, relatedmaterial, otherfindaid, bibliography)]">
+        match="archref[not(parent::separatedmaterial)][not(parent::relatedmaterial)][not(parent::otherfindaid)][not(parent::bibliography)]">
         <ref>
+            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates/>
+        </ref>
+    </xsl:template>
+    
+    <xsl:template
+        match="bibref[not(parent::separatedmaterial)][not(parent::relatedmaterial)][not(parent::otherfindaid)][not(parent::bibliography)]">
+        <ref>
+            <xsl:copy-of select="@*"/>
             <xsl:apply-templates/>
         </ref>
     </xsl:template>
