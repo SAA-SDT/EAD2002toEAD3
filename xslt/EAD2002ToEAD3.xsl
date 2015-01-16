@@ -1334,12 +1334,12 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:variable name="rowsepValue">
             <xsl:value-of select="."/>
         </xsl:variable>
-        <xsl:attribute name="colsep">
+        <xsl:attribute name="rowsep">
             <xsl:choose>
                 <xsl:when test="$rowsepValue='1'">
                     <xsl:text>true</xsl:text>
                 </xsl:when>
-                <xsl:when test="$rowlsepValue='0'">
+                <xsl:when test="$rowsepValue='0'">
                     <xsl:text>false</xsl:text>
                 </xsl:when>
             </xsl:choose>
