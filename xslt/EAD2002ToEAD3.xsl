@@ -235,7 +235,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- bibref -->
 
     <xsl:template
-        match="bibref[parent::* except (separatedmaterials, relatedmaterials, otherfindaid, bibliography)]">
+        match="bibref[parent::* except (separatedmaterial, relatedmaterial, otherfindaid, bibliography)]">
         <ref>
             <xsl:apply-templates/>
         </ref>
