@@ -226,25 +226,110 @@
                <p>The Abraham Hayward Collection was acquired through purchase from Christopher
                   Edwards on the George Henry Nettleton Fund, 2003.</p>
             </acqinfo>
+            <custodhist>
+               <head>Custodial History</head>
+               <p>paragraph</p>
+               <acqinfo>
+                  <head>custodhist/acqinfo/head</head>
+                  <p>custodhist/acqinfo/p</p>
+                  <acqinfo>
+                     <head>custodhist/acqinfo/acqinfo/head</head>
+                     <p>custodhist/acqinfo/acqinfo/p</p>
+                  </acqinfo>
+               </acqinfo>
+            </custodhist>
          </descgrp>
-         <userestrict id="urest">
+         <altformavail encodinganalog="altform" type="altform" audience="internal" altrender="altform" id="altform">
+            <head>Alt Form</head>
+            <p>Alt Form paragraph</p>
+         </altformavail>
+         <accruals encodinganalog="accruals" audience="internal" altrender="accruals" id="accruals">
+            <head>Accruals</head>
+            <p>Accruals paragraph</p>
+         </accruals>
+         <appraisal encodinganalog="appraisal" audience="internal" altrender="appraisal" id="appraisal">
+            <head>Appraisal</head>
+            <p>Appraisal paragraph</p>
+         </appraisal>
+         <fileplan encodinganalog="fileplan" audience="internal" altrender="fileplan" id="fileplan">
+            <head>Fileplan</head>
+            <p>Fileplan paragraph</p>
+         </fileplan>
+         <originalsloc type="originalsloc" encodinganalog="originalsloc" audience="internal" altrender="originalsloc" id="originalsloc">
+            <head>Originalsloc</head>
+            <p>Originalsloc paragraph</p>
+         </originalsloc>
+         <phystech type="phystech" encodinganalog="phystech" audience="internal" altrender="phystech" id="phystech">
+            <head>phystech</head>
+            <p>phystech paragraph</p>
+         </phystech>
+         <processinfo type="processinfo" encodinganalog="processinfo" audience="internal" altrender="processinfo" id="processinfo">
+            <head>processinfo</head>
+            <p>processinfo paragraph</p>
+         </processinfo>
+         <userestrict type="userestrict" id="urest">
             <head>Ownership &amp; Copyright</head>
             <p>The Abraham Hayward Collection is the physical property of the Beinecke Rare Book and
                Manuscript Library, Yale University. Literary rights, including copyright, belong to
                the authors or their legal heirs and assigns. For further information, consult the
                appropriate curator. </p>
          </userestrict>
-         <prefercite id="cite">
+         <separatedmaterial type="sepmat">
+            <head>Separated Material</head>
+            <p>blah blah</p>
+            <archref>Archref</archref>
+            <bibref>Bibref</bibref>
+            <extref>Extref</extref>
+            <ref>Ref</ref>
+            <title>Title</title>
+         </separatedmaterial>
+         <relatedmaterial type="relmat">
+            <head>Related Material</head>
+            <p>blah blah</p>
+            <archref>Archref</archref>
+            <bibref>Bibref</bibref>
+            <extref>Extref</extref>
+            <ref>Ref</ref>
+            <title>Title</title>
+         </relatedmaterial>
+         <otherfindaid>
+            <head>Related Material</head>
+            <p>blah blah</p>
+            <archref altrender="archref" audience="internal" id="archref" xlink:actuate="none" xlink:arcrole="arcrole"
+               xlink:href="http://google.com" xlink:role="role" xlink:show="none" xlink:title="title" xlink:type="simple"
+               xpointer="xpointer">Archref</archref>
+            <bibref>Bibref</bibref>
+            <extref>Extref</extref>
+            <ref>Ref</ref>
+            <title>Title</title>
+         </otherfindaid>
+         <bibliography>
+            <head>Related Material</head>
+            <p>blah blah</p>
+            <archref>Archref</archref>
+            <bibref>Bibref</bibref>
+            <extref>Extref</extref>
+            <ref>Ref</ref>
+            <title>Title</title>
+         </bibliography>
+         <prefercite id="cite" altrender="prefercite" audience="internal" encodinganalog="prefercite">
             <head>Cite As</head>
             <p>Abraham Hayward Collection. General Collection, Beinecke Rare Book and Manuscript
                Library, Yale University.</p>
          </prefercite>
-         <accessrestrict id="arest">
+         <accessrestrict id="arest" altrender="access" audience="internal" type="access" encodinganalog="506">
             <head>Information about Access</head>
             <p> This collection is open for research. <title xlink:type="simple" render="italic"
                   >Restricted Fragile Oversize</title> in box 7 may only be consulted with
                permission of the appropriate curator. Preservation photocopies or photographic
                prints for reference use have been substituted in the main files. </p>
+            <legalstatus type="legalstatus" id="legalstatus" audience="internal" altrender="legalstatus">
+               Legal Status FOO BAR.
+            </legalstatus>
+            <accessrestrict>
+               <head>subhead</head>
+               <p>recursion recursion recursion</p>
+            </accessrestrict>
          </accessrestrict>
       </descgrp>
       <bioghist id="bh1">

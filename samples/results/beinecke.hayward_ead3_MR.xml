@@ -126,7 +126,7 @@
                            audience="external"
                            encodinganalog="langusage">
          <language langcode="eng">English</language>
-         <script scriptcode="Latn">Latn</script>
+         <script scriptcode="Latn SCRIPTCODE NEEDED">Latn SCRIPTCODE NEEDED</script>
          <descriptivenote>
             <p>
                <emph render="altrender">Finding aid </emph>written in
@@ -138,7 +138,7 @@
                            audience="external"
                            encodinganalog="langusage">
          <language langcode="fre">French</language>
-         <script scriptcode="Latn">Latn</script>
+         <script scriptcode="Latn SCRIPTCODE NEEDED">Latn SCRIPTCODE NEEDED</script>
          <descriptivenote>
             <p>
                <emph render="altrender">Finding aid </emph>written in
@@ -179,7 +179,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2014-12-07T00:09:24.592-05:00">2014-12-07T00:09:24.592-05:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-01-17T00:20:54.501-05:00">2015-01-17T00:20:54.501-05:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -229,10 +229,6 @@
                altrender="head"
                audience="external"
                id="head1">Overview</head>
-         <physdescstructured coverage="whole" physdescstructuredtype="carrier">
-            <quantity approximate="true"></quantity>
-            <unittype>boxes</unittype>
-         </physdescstructured>
          <physloc localtype="physloc"
                   id="pl1"
                   encodinganalog="physloc"
@@ -249,6 +245,7 @@
                  identifier="unitid"
                  localtype="unitid">GEN MSS
             553</unitid>
+         <origination/>
          <unittitle label="Title:">Abraham Hayward collection 1791-1962 or something</unittitle>
          <unitdate unitdatetype="inclusive"
                    datechar="creation"
@@ -325,26 +322,159 @@
                <p>The Abraham Hayward Collection was acquired through purchase from Christopher
                   Edwards on the George Henry Nettleton Fund, 2003.</p>
             </acqinfo>
+            <custodhist>
+               <head>Custodial History</head>
+               <p>paragraph</p>
+               
+                  
+                  <p>custodhist/acqinfo/p</p>
+                  
+                     
+                     <p>custodhist/acqinfo/acqinfo/p</p>
+                  
+               
+            </custodhist>
          
-         <userestrict id="urest">
+         <altformavail encodinganalog="altform"
+                    localtype="altform"
+                    audience="internal"
+                    altrender="altform"
+                    id="altform">
+            <head>Alt Form</head>
+            <p>Alt Form paragraph</p>
+         </altformavail>
+         <accruals encodinganalog="accruals"
+                audience="internal"
+                altrender="accruals"
+                id="accruals">
+            <head>Accruals</head>
+            <p>Accruals paragraph</p>
+         </accruals>
+         <appraisal encodinganalog="appraisal"
+                 audience="internal"
+                 altrender="appraisal"
+                 id="appraisal">
+            <head>Appraisal</head>
+            <p>Appraisal paragraph</p>
+         </appraisal>
+         <fileplan encodinganalog="fileplan"
+                audience="internal"
+                altrender="fileplan"
+                id="fileplan">
+            <head>Fileplan</head>
+            <p>Fileplan paragraph</p>
+         </fileplan>
+         <originalsloc localtype="originalsloc"
+                    encodinganalog="originalsloc"
+                    audience="internal"
+                    altrender="originalsloc"
+                    id="originalsloc">
+            <head>Originalsloc</head>
+            <p>Originalsloc paragraph</p>
+         </originalsloc>
+         <phystech localtype="phystech"
+                encodinganalog="phystech"
+                audience="internal"
+                altrender="phystech"
+                id="phystech">
+            <head>phystech</head>
+            <p>phystech paragraph</p>
+         </phystech>
+         <processinfo localtype="processinfo"
+                   encodinganalog="processinfo"
+                   audience="internal"
+                   altrender="processinfo"
+                   id="processinfo">
+            <head>processinfo</head>
+            <p>processinfo paragraph</p>
+         </processinfo>
+         <userestrict localtype="userestrict" id="urest">
             <head>Ownership &amp; Copyright</head>
             <p>The Abraham Hayward Collection is the physical property of the Beinecke Rare Book and
                Manuscript Library, Yale University. Literary rights, including copyright, belong to
                the authors or their legal heirs and assigns. For further information, consult the
                appropriate curator. </p>
          </userestrict>
-         <prefercite id="cite">
+         <separatedmaterial localtype="sepmat">
+            <head>Separated Material</head>
+            <p>blah blah</p>
+            <archref>Archref</archref>
+            <bibref>Bibref</bibref>
+            <ref>Extref</ref>
+            <ref>Ref</ref>
+            <title>
+            <part>Title</part>
+         </title>
+         </separatedmaterial>
+         <relatedmaterial localtype="relmat">
+            <head>Related Material</head>
+            <p>blah blah</p>
+            <archref>Archref</archref>
+            <bibref>Bibref</bibref>
+            <ref>Extref</ref>
+            <ref>Ref</ref>
+            <title>
+            <part>Title</part>
+         </title>
+         </relatedmaterial>
+         <otherfindaid>
+            <head>Related Material</head>
+            <p>blah blah</p>
+            <archref xmlns:xlink="http://www.w3.org/1999/xlink"
+                  altrender="archref"
+                  audience="internal"
+                  id="archref"
+                  xlink:actuate="none"
+                  xlink:arcrole="arcrole"
+                  xlink:href="http://google.com"
+                  relator="role"
+                  xlink:show="none"
+                  xlink:title="title"
+                  xpointer="xpointer">Archref</archref>
+            <bibref>Bibref</bibref>
+            <ref>Extref</ref>
+            <ref>Ref</ref>
+            <title>
+            <part>Title</part>
+         </title>
+         </otherfindaid>
+         <bibliography>
+            <head>Related Material</head>
+            <p>blah blah</p>
+            <archref>Archref</archref>
+            <bibref>Bibref</bibref>
+            <ref>Extref</ref>
+            <ref>Ref</ref>
+            <title>
+            <part>Title</part>
+         </title>
+         </bibliography>
+         <prefercite id="cite"
+                  altrender="prefercite"
+                  audience="internal"
+                  encodinganalog="prefercite">
             <head>Cite As</head>
             <p>Abraham Hayward Collection. General Collection, Beinecke Rare Book and Manuscript
                Library, Yale University.</p>
          </prefercite>
-         <accessrestrict id="arest">
+         <accessrestrict id="arest"
+                      altrender="access"
+                      audience="internal"
+                      localtype="access"
+                      encodinganalog="506">
             <head>Information about Access</head>
             <p> This collection is open for research. <title render="italic">
                <part>Restricted Fragile Oversize</part>
             </title> in box 7 may only be consulted with
                permission of the appropriate curator. Preservation photocopies or photographic
                prints for reference use have been substituted in the main files. </p>
+            <p id="legalstatus" audience="internal" altrender="legalstatus">
+               Legal Status FOO BAR.
+            </p>
+            <accessrestrict>
+               <head>subhead</head>
+               <p>recursion recursion recursion</p>
+            </accessrestrict>
          </accessrestrict>
       
       <bioghist id="bh1">
@@ -701,7 +831,9 @@
          <blockquote>
             <p>blockquote paragraph in dsc</p>
          </blockquote>
-         
+         <note>
+            <p>DSC Note paragraph</p>
+         </note>
          <table>
             <tgroup cols="1">
                <tbody>
