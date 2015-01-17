@@ -205,7 +205,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- REMOVE COMPLETELY -->
     <xsl:template
-        match="archdesc/address | dsc/address | arc | resource | ead/@xsi:schemaLocation | 
+        match="archdesc/address | dsc/address | arc | resource | ead/@xsi:schemaLocation | custodhist//acqinfo/head |
         notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | @xlink:type | @linktype">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
@@ -221,7 +221,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         archref/abstract | subtitle/date | corpname/subarea |
         subtitle/num | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | 
-        item/address | item/repository | item/unittitle |
+        item/address | item/repository | item/unittitle | custodhist//acqinfo |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
         unitdate/title | unitid/title | physloc/title">
         <xsl:call-template name="commentAndMessage">
@@ -1275,24 +1275,6 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-
-    <!-- ############################################### -->
-    <!-- CUSTODHIST + ACQINFO                            -->
-    <!-- ############################################### -->
-
-    <xsl:template match="custodhist">
-        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:element>
-        <xsl:for-each select="acqinfo">
-            <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-                <xsl:apply-templates select="@*|node()"/>
-            </xsl:element>
-        </xsl:for-each>
-    </xsl:template>
-
-    <xsl:template match="custodhist/acqinfo"/>
-    
     
     <!-- ############################################### -->
     <!-- UPDATE BOOLEAN TABLE ATTRS                      -->
