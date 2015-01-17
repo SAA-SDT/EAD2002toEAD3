@@ -1265,9 +1265,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 -->
 
-    <!-- move element to sibling or skip? -->
     <!-- ############################################### -->
-    <!-- ACCESSRESTRICT + LEGALSTATUS                    -->
+    <!-- LEGALSTATUS                                     -->
     <!-- ############################################### -->
 
     <xsl:template match="accessrestrict/legalstatus">
