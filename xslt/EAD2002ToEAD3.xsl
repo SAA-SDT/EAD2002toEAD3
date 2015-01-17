@@ -219,7 +219,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- SKIP ELEMENT OR ATTRIBUTE -->
     <xsl:template
         match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
-        accessrestrict/accessrestrict/legalstatus | archref/abstract | subtitle/date | corpname/subarea |
+        archref/abstract | subtitle/date | corpname/subarea |
         subtitle/num | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | 
         item/address | item/repository | item/unittitle |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
@@ -1269,19 +1269,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- ACCESSRESTRICT + LEGALSTATUS                    -->
     <!-- ############################################### -->
-
-    <!--<xsl:template match="accessrestrict">
-        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:element>
-        <xsl:for-each select="legalstatus">
-            <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-                <xsl:element name="p" namespace="{$eadxmlns}">
-                    <xsl:apply-templates select="@*|node()"/>
-                </xsl:element>
-            </xsl:element>
-        </xsl:for-each>
-    </xsl:template>-->
 
     <xsl:template match="accessrestrict/legalstatus">
         <xsl:element name="p">
