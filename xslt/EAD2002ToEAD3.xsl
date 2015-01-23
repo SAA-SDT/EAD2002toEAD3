@@ -1002,7 +1002,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template name="refDecompose">
+    <!--<xsl:template name="refDecompose">
         <ref>
             <xsl:apply-templates select="@actuate | @xlink:actuate
                 | @arcrole | @xlink:arcrole
@@ -1018,7 +1018,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:apply-templates/>
             </xsl:element>
         </ref>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template match="corpname">
         <xsl:call-template name="commentAndMessage">
