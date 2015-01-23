@@ -952,6 +952,23 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     
     <xsl:template match="title">
+        
+        <xsl:choose>
+            <xsl:when test="parent::bibliography or 
+                parent::otherfindaid or 
+                parent::relatedmaterial or 
+                parent::separatedmaterial">
+                <p>
+                    <xsl:call-template name="titleLinkDecomposeAddPart"/>
+                </p>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="titleLinkDecomposeAddPart"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="titleLinkDecomposeAddPart">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>ADDED CHILD ELEMENT part TO </xsl:text>
@@ -1334,14 +1351,43 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- LINK ELEMENTS and ATTRS                         -->
     <!-- ############################################### -->
-
-
-
+    
+    <xsl:template match="ref">
+        <xsl:choose>
+            <xsl:when test="parent::bibliography or 
+                parent::otherfindaid or 
+                parent::relatedmaterial or 
+                parent::separatedmaterial">
+                <p>
+                    <xsl:call-template name="copyElement"/>
+                </p>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="copyElement"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
     <xsl:template match="extref">
-        <ref>
-            <xsl:apply-templates select="@*"/>
-            <xsl:value-of select="."/>
-        </ref>
+        <xsl:choose>
+            <xsl:when test="parent::bibliography or 
+                parent::otherfindaid or 
+                parent::relatedmaterial or 
+                parent::separatedmaterial">
+                <p>
+                    <ref>
+                        <xsl:apply-templates select="@*"/>
+                        <xsl:value-of select="."/>
+                    </ref>
+                </p>
+            </xsl:when>
+            <xsl:otherwise>
+                <ref>
+                    <xsl:apply-templates select="@*"/>
+                    <xsl:value-of select="."/>
+                </ref>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="extptr">
@@ -1353,6 +1399,22 @@ For these and/or other purposes and motivations, and without any expectation of 
         <ptr>
             <xsl:apply-templates select="@*"/>
         </ptr>
+    </xsl:template>
+    
+    <xsl:template match="linkgrp">
+        <xsl:choose>
+            <xsl:when test="parent::bibliography or 
+                parent::otherfindaid or 
+                parent::relatedmaterial or 
+                parent::separatedmaterial">
+                <p>
+                    <!-- Figure out what to do with linkgrp -->
+                </p>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- Figure out what to do with linkgrp -->
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="@*[name() = 'xlink:type']"> </xsl:template>
