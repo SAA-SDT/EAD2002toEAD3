@@ -206,7 +206,13 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- REMOVE COMPLETELY -->
     <xsl:template
         match="arc | resource | ead/@xsi:schemaLocation | 
-        custodhist//acqinfo/head | scopecontent//arrangement/head |
+        custodhist//acqinfo/head | scopecontent//arrangement/head | 
+        event/blockquote/chronlist | extref/blockquote/chronlist | extrefloc/blockquote/chronlist | 
+        item/blockquote/chronlist | p/blockquote/chronlist | ref/blockquote/chronlist | refloc/blockquote/chronlist | 
+        event/blockquote/list | extref/blockquote/list | extrefloc/blockquote/list | item/blockquote/list | 
+        p/blockquote/list | ref/blockquote/list | refloc/blockquote/list | 
+        event/blockquote/table | extref/blockquote/table | extrefloc/blockquote/table | 
+        item/blockquote/table | p/blockquote/table | ref/blockquote/table | refloc/blockquote/table | 
         notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | @xlink:type | @linktype">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
@@ -219,12 +225,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- SKIP ELEMENT OR ATTRIBUTE -->
     <xsl:template
-        match="descgrp | admininfo | titleproper/date | titleproper/num | dimensions | physfacet | extent |
+        match="descgrp | titleproper/date | titleproper/num | dimensions | physfacet | extent |
         archref/abstract | subtitle/date | corpname/subarea |
         subtitle/num | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | 
         item/repository | item/unittitle | custodhist//acqinfo | scopecontent//arrangement |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
-        unitdate/title | unitid/title | physloc/title">
+        unitdate/title | unitid/title | physloc/title | did/note/p | 
+        event/blockquote/p | extref/blockquote/p | extrefloc/blockquote/p | 
+        item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:call-template name="removedElement"/>
@@ -689,25 +697,12 @@ For these and/or other purposes and motivations, and without any expectation of 
                 test="parent::event | parent::extref | parent::extrefloc | 
                 parent::item | parent::p | parent::ref | parent::refloc">
                 <xsl:element name="quote">
-                    <xsl:apply-templates select="p" mode="skipP"/>
-                    <xsl:for-each select="address | chronlist | list | note | table">
-                        <xsl:comment>
-                            <xsl:call-template name="blockquoteOrphanElements"/>
-                        </xsl:comment>
-                        <xsl:comment>
-                            <xsl:apply-templates/>
-                        </xsl:comment>
-                    </xsl:for-each>
-                </xsl:element>
-            </xsl:when>
-            <xsl:when test="parent::archdesc | parent::admininfo | parent::descgrp">
-                <xsl:call-template name="nowOdd"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:element name="blockquote">
                     <xsl:copy-of select="@*"/>
                     <xsl:apply-templates/>
                 </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="copyElement"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -1173,7 +1168,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:call-template>
         <didnote>
             <xsl:copy-of select="@*"/>
-            <xsl:apply-templates select="p" mode="skipP"/>
+            <xsl:apply-templates select="p"/>
         </didnote>
     </xsl:template>
 
@@ -1257,7 +1252,14 @@ For these and/or other purposes and motivations, and without any expectation of 
                 and not(parent::item)
                 and not(parent::p) 
                 and not(parent::ref)
-                and not(parent::refloc)">
+                and not(parent::refloc)
+                and not(parent::blockquote[parent::event])
+                and not(parent::blockquote[parent::extref])
+                and not(parent::blockquote[parent::extrefloc])
+                and not(parent::blockquote[parent::item])
+                and not(parent::blockquote[parent::p])
+                and not(parent::blockquote[parent::ref])
+                and not(parent::blockquote[parent::refloc])">
                 <xsl:element name="p">
                     <xsl:for-each select="addressline">
                         <xsl:apply-templates/>
@@ -1464,13 +1466,6 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:attribute name="localtype" select="@type"/>
             <xsl:apply-templates/>
         </xsl:element>
-    </xsl:template>
-
-    <xsl:template name="blockquoteOrphanElements">
-        <xsl:text>INLINE BLOCKQUOTE CHILD ELEMENT </xsl:text>
-        <xsl:value-of select="local-name()"/>
-        <xsl:text>&#160;</xsl:text>
-        <xsl:text>ORPHANED BY CONVERSION OF INLINE BLOCKQUOTE TO QUOTE. MIGRATION PATH PENDING</xsl:text>
     </xsl:template>
 
     <xsl:template name="gonna-deal-with-this-later">
