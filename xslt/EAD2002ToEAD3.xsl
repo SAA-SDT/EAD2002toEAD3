@@ -1243,8 +1243,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
 
-    <!-- address now only in repository and publicationstmt -->
-
     <!-- ############################################### -->
     <!-- ADDRESS                                     -->
     <!-- ############################################### -->
