@@ -213,7 +213,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         p/blockquote/list | ref/blockquote/list | refloc/blockquote/list | 
         event/blockquote/table | extref/blockquote/table | extrefloc/blockquote/table | 
         item/blockquote/table | p/blockquote/table | ref/blockquote/table | refloc/blockquote/table | 
-        notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | @xlink:type | @linktype">
+        notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | @xlink:type | @linktype | namegrp/note">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
