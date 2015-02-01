@@ -187,7 +187,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <!-- REMOVE COMPLETELY IF NOT UNDEPRECATED -->
     <xsl:template
-        match="frontmatter | runner | @tpattern">
+        match="frontmatter | runner | @tpattern | descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/tabledescgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">
                 <xsl:call-template name="commentAndMessage">
@@ -222,12 +222,30 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
+    
+    <!-- SKIP ELEMENT OR ATTRIBUTE IF NOT UNDEPRECATED-->
+    <xsl:template
+        match="descgrp | dimensions | physfacet | extent | bibseries | imprint">
+        <xsl:choose>
+            <xsl:when test="$outputUndeprecatedEAD3=false()">
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:call-template name="removedElement"/>
+                    </xsl:with-param>
+                </xsl:call-template>
+                <xsl:apply-templates/>
+            </xsl:when>
+            <xsl:when test="$outputUndeprecatedEAD3=true()">
+                <xsl:call-template name="copyElement"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
 
     <!-- SKIP ELEMENT OR ATTRIBUTE -->
     <xsl:template
-        match="descgrp | titleproper/date | titleproper/num | dimensions | physfacet | extent |
+        match="titleproper/date | titleproper/num | 
         archref/abstract | subtitle/date | corpname/subarea |
-        subtitle/num | bibseries | imprint | bibref/edition | bibref/publisher | emph/* | 
+        subtitle/num | bibref/edition | bibref/publisher | emph/* | 
         item/repository | item/unittitle | custodhist//acqinfo | scopecontent//arrangement |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
         unitdate/title | unitid/title | physloc/title | did/note/p | 
@@ -261,7 +279,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- descgrp orphan elements -->
 
-    <xsl:template
+    <!--<xsl:template
         match="descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
@@ -271,7 +289,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:comment>
             <xsl:apply-templates/>
         </xsl:comment>
-    </xsl:template>
+    </xsl:template>-->
 
     <!-- ############################################### -->
     <!-- REVISED CONTENT MODELS                          -->
