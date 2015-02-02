@@ -213,7 +213,10 @@ For these and/or other purposes and motivations, and without any expectation of 
         p/blockquote/list | ref/blockquote/list | refloc/blockquote/list | 
         event/blockquote/table | extref/blockquote/table | extrefloc/blockquote/table | 
         item/blockquote/table | p/blockquote/table | ref/blockquote/table | refloc/blockquote/table | 
-        notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | @xlink:type | @linktype | namegrp/note">
+        notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | 
+        did/note/@actuate | did/note/@show | did/note/blockquote | 
+        did/note/chronlist | did/note/list | did/note/table |
+        @xlink:type | @linktype | namegrp/note">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
@@ -1185,8 +1188,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:with-param>
         </xsl:call-template>
         <didnote>
-            <xsl:copy-of select="@*"/>
-            <xsl:apply-templates select="p"/>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates/>
         </didnote>
     </xsl:template>
 
@@ -1235,7 +1238,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="notestmt/note/@type | abstract/@type | accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
+        match="notestmt/note/@type | did/note/@type | abstract/@type | accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
         originalsloc/@type | phystech/@type | processinfo/@type | relatedmaterial/@type | separatedmaterial/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
         userestrict/@type | odd/@type | date/@type | name/@type |  persname/@type | famname/@type |
         corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type">
@@ -1271,6 +1274,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 and not(parent::p) 
                 and not(parent::ref)
                 and not(parent::refloc)
+                and not(parent::note[parent::did])
                 and not(parent::blockquote[parent::event])
                 and not(parent::blockquote[parent::extref])
                 and not(parent::blockquote[parent::extrefloc])
