@@ -214,8 +214,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         event/blockquote/table | extref/blockquote/table | extrefloc/blockquote/table | 
         item/blockquote/table | p/blockquote/table | ref/blockquote/table | refloc/blockquote/table | 
         notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | 
-        did/note/@actuate | did/note/@show | did/note/blockquote | 
-        did/note/chronlist | did/note/list | did/note/table |
+        did/note/@actuate | did/note/@show | did/note[(p[2] or child::*[local-name()!=p])]/@label | 
         @xlink:type | @linktype | namegrp/note">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
@@ -251,7 +250,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         subtitle/num | bibref/edition | bibref/publisher | emph/title | 
         item/repository | item/unittitle | custodhist//acqinfo | scopecontent//arrangement |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
-        unitdate/title | unitid/title | physloc/title | did/note/p | 
+        unitdate/title | unitid/title | physloc/title | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
         event/blockquote/p | extref/blockquote/p | extrefloc/blockquote/p | 
         item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p">
         <xsl:call-template name="commentAndMessage">
@@ -774,11 +773,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="did">
         <did>
             <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates select="*[not(local-name()='note' and (p[2] or child::*[local-name()!=p]))]"/>
             <xsl:apply-templates
                 select="parent::*/dao | parent::*/daogrp | child::dao | child::daogrp | parent::*/scopecontent//dao | parent::*/bioghist//dao | parent::*/odd//dao | parent::*/scopecontent//daogrp | parent::*/bioghist//daogrp | parent::*/odd//daogrp"
                 mode="daoIndid"/>
         </did>
+        <xsl:apply-templates select="*[local-name()='note' and (p[2] or child::*[local-name()!=p])]"/>
     </xsl:template>
 
     <xsl:template match="dao[not(parent::did)] | daogrp[not(parent::did)]">
@@ -1161,7 +1161,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="c/note | archdesc/note | descgrp/note | c01/note | c02/note | c03/note | c04/note | c05/note | c06/note | c07/note | c08/note | c09/note | c10/note | c11/note | c12/note">
+        match="did/note[p[2] or child::*[local-name()!=p]] | archdesc/note | descgrp/note | c/note | c01/note | c02/note | c03/note | c04/note | c05/note | c06/note | c07/note | c08/note | c09/note | c10/note | c11/note | c12/note">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>ELEMENT </xsl:text>
@@ -1172,12 +1172,12 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:with-param>
         </xsl:call-template>
         <xsl:element name="odd" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
-            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
 
-    <xsl:template match="did/note">
+    <xsl:template match="did/note[p][not(p[2])][not(child::*[local-name()!=p])]">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>ELEMENT </xsl:text>
@@ -1274,7 +1274,6 @@ For these and/or other purposes and motivations, and without any expectation of 
                 and not(parent::p) 
                 and not(parent::ref)
                 and not(parent::refloc)
-                and not(parent::note[parent::did])
                 and not(parent::blockquote[parent::event])
                 and not(parent::blockquote[parent::extref])
                 and not(parent::blockquote[parent::extrefloc])
