@@ -279,6 +279,13 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </ref>
     </xsl:template>
+    
+    <xsl:template match="archref | bibref">
+        <xsl:element name="{local-name()}">
+        <xsl:copy-of select="@* except(@actuate, @arcrole, @href, @role, @show, @title, @xpointer)"/>
+        <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
 
     <!-- descgrp orphan elements -->
 
