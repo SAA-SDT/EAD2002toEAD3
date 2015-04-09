@@ -189,12 +189,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="frontmatter | runner | descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/tabledescgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table">
         <xsl:choose>
-            <xsl:when test="$outputUndeprecatedEAD3=false()">
-                <xsl:call-template name="commentAndMessage">
-                    <xsl:with-param name="comment">
-                        <xsl:call-template name="removedElement"/>
-                    </xsl:with-param>
-                </xsl:call-template>
+            <xsl:when test="$outputUndeprecatedEAD3=false()">               
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:call-template name="removedElement"/>
+                        </xsl:with-param>
+                    </xsl:call-template>                
             </xsl:when>
             <xsl:when test="$outputUndeprecatedEAD3=true()">
                 <xsl:call-template name="copyElement"/>
@@ -1232,6 +1232,13 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="@xsi:schemaLocation" mode="strip-ns"
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
 -->
+
+<xsl:template match="@*[starts-with(name(),'xlink')]" mode="strip-ns">
+    <xsl:message>XLINK STRIPPED</xsl:message>
+    <xsl:attribute name="{substring-after(name(), ':')}">
+            <xsl:value-of select="normalize-space(.)"/>
+    </xsl:attribute>
+</xsl:template>
 
     <!-- ############################################### -->
     <!-- @TYPE TO @LOCALTYPE                             -->
