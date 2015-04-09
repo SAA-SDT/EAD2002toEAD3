@@ -187,7 +187,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <!-- REMOVE COMPLETELY IF NOT UNDEPRECATED -->
     <xsl:template
-        match="frontmatter | runner | @tpattern | descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/tabledescgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table">
+        match="frontmatter | runner | descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/tabledescgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">
                 <xsl:call-template name="commentAndMessage">
