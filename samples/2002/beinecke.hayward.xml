@@ -280,7 +280,7 @@
             <archref>Archref</archref>
             <bibref>Bibref</bibref>
             <extref>Extref</extref>
-            <ref>Ref</ref>
+            <ref >Ref</ref>
             <title>Title</title>
          </separatedmaterial>
          <relatedmaterial type="relmat">
@@ -289,7 +289,7 @@
             <archref>Archref</archref>
             <bibref>Bibref</bibref>
             <extref>Extref</extref>
-            <ref>Ref</ref>
+            <ref >Ref</ref>
             <title>Title</title>
          </relatedmaterial>
          <otherfindaid>

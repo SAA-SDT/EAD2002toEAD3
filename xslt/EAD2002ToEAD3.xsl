@@ -1122,8 +1122,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:call-template name="nowOdd"/>
     </xsl:template>-->
 
-    <xsl:template match="*[parent::* except (//dao, //ref, //extref)]/@role
-        | title/@role | archref/@role | bibref/@role">
+    <xsl:template match="*[self::* except (//dao, //ref, //extref, //title, //archref, //bibref)]/@role">
         <xsl:attribute name="relator">
             <xsl:value-of select="."/>
         </xsl:attribute>
