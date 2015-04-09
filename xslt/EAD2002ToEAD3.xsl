@@ -187,14 +187,16 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <!-- REMOVE COMPLETELY IF NOT UNDEPRECATED -->
     <xsl:template
-        match="frontmatter | runner | descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/tabledescgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table">
+        match="frontmatter | runner | descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/tabledescgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table | @tpattern">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">               
+                <xsl:if test="node()=element()">
                     <xsl:call-template name="commentAndMessage">
                         <xsl:with-param name="comment">
                             <xsl:call-template name="removedElement"/>
                         </xsl:with-param>
-                    </xsl:call-template>                
+                    </xsl:call-template>
+                </xsl:if>
             </xsl:when>
             <xsl:when test="$outputUndeprecatedEAD3=true()">
                 <xsl:call-template name="copyElement"/>
