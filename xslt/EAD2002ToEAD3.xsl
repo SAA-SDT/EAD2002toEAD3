@@ -1447,13 +1447,6 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:choose>
     </xsl:template>
     
-    <!-- Modify template to avoid ambigous match w/ title/@xlinl:  -->
-    <xsl:template match="@*[starts-with(name(), 'xlink')][name() != 'xlink:type'][not(name()='xlink:role') 
-        and not(parent::title or parent::bibref or parent::archref)]">
-        <xsl:attribute name="{substring-after(name(), ':')}">
-            <xsl:value-of select="lower-case(.)"/>
-        </xsl:attribute>
-    </xsl:template>
 
     <!-- ############################################### -->
     <!-- OTHER TEMPLATES                                 -->

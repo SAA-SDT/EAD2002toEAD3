@@ -192,7 +192,7 @@
                           id="revisiondesc"><!--ELEMENT maintenanceevent ADDED FOR THE EVENT OF MIGRATION TO EAD3-->
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-04-09T18:11:52.892-04:00">2015-04-09T18:11:52.892-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-04-09T18:23:22.745-04:00">2015-04-09T18:23:22.745-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
