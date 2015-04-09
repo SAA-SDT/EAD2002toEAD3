@@ -216,8 +216,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         event/blockquote/table | extref/blockquote/table | extrefloc/blockquote/table | 
         item/blockquote/table | p/blockquote/table | ref/blockquote/table | refloc/blockquote/table | 
         notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | 
-        did/note/@actuate | did/note/@show | did/note[(p[2] or child::*[local-name()!=p])]/@label | 
-        @xlink:type | @linktype | namegrp/note">
+        did/note/@actuate | did/note/@show | did/note[(p[2] or child::*[local-name()!=p])]/@label | @linktype | namegrp/note">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
@@ -1123,7 +1122,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>-->
 
     <xsl:template match="*[parent::* except (//dao, //ref, //extref)]/@role
-        | title/@xlink:role | archref/@xlink:role | bibref/@xlink:role">
+        | title/@role | archref/@role | bibref/@role">
         <xsl:attribute name="relator">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -1235,12 +1234,14 @@ For these and/or other purposes and motivations, and without any expectation of 
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
 -->
 
-<xsl:template match="@*[starts-with(name(),'xlink')]" mode="strip-ns">
+<xsl:template match="@*[starts-with(name(),'xlink')][name() != 'xlink:type']" mode="strip-ns">
     <xsl:message>XLINK STRIPPED</xsl:message>
     <xsl:attribute name="{substring-after(name(), ':')}">
-            <xsl:value-of select="normalize-space(.)"/>
+        <xsl:value-of select="normalize-space(lower-case(.))"/>
     </xsl:attribute>
 </xsl:template>
+    
+<xsl:template match="@xlink:type[. = 'simple']" mode="strip-ns"/>
 
     <!-- ############################################### -->
     <!-- @TYPE TO @LOCALTYPE                             -->
@@ -1445,8 +1446,6 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-
-    <xsl:template match="@*[name() = 'xlink:type']"> </xsl:template>
     
     <!-- Modify template to avoid ambigous match w/ title/@xlinl:  -->
     <xsl:template match="@*[starts-with(name(), 'xlink')][name() != 'xlink:type'][not(name()='xlink:role') 
