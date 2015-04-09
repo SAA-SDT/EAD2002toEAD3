@@ -626,8 +626,9 @@ For these and/or other purposes and motivations, and without any expectation of 
                             <xsl:copy-of select="@* except @scriptcode"/>
                             <xsl:value-of select="."/>
                         </language>
-                        <script scriptcode="{(@scriptcode, 'SCRIPTCODE NEEDED')}">
-                                <xsl:value-of select="(@scriptcode, 'SCRIPTCODE NEEDED')"/>
+                        <xsl:variable name="scriptCode" select="if (@scriptcode[normalize-space(.)])then @scriptcode else'SCRIPTCODE NEEDED'"/>
+                        <script scriptcode="{$scriptCode}">
+                                <xsl:value-of select="$scriptCode"/>
                             </script>
                         <descriptivenote>
                             <p>
