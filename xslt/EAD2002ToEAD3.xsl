@@ -282,7 +282,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <xsl:template match="archref | bibref">
         <xsl:element name="{local-name()}">
-        <xsl:copy-of select="@* except(@actuate, @arcrole, @href, @role, @show, @title, @xpointer)"/>
+        <xsl:copy-of select="@* except(@actuate, @arcrole, @href, @linktype, @role, @show, @title, @xpointer)"/>
         <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -820,9 +820,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
+            <!--
             <xsl:attribute name="linktype">
                 <xsl:text>simple</xsl:text>
             </xsl:attribute>
+            -->
             <xsl:attribute name="linkrole">
                 <xsl:value-of select="daoloc/@role"/>
             </xsl:attribute>
