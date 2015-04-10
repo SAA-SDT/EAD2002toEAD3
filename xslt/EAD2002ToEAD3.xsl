@@ -89,12 +89,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- user parameter for control/maintenancehistory/maintenanceevent/agenttype -->
     <!-- agenttype enumeration '[human, machine, unknown]' -->
     <xsl:param name="agenttypeValue" select="'machine'"/>
-    
+
     <!-- user parameter for control/maintenancehistory/maintenanceevent/agent -->
     <xsl:param name="agent">
         <xsl:text>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</xsl:text>
     </xsl:param>
-    
+
     <!-- user parameter for control/maintenancehistory/maintenanceevent/eventdescription -->
     <xsl:param name="eventdescriptionValue">
         <xsl:text>EAD 2002 instanace migrated to EAD3 </xsl:text>
@@ -105,7 +105,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:value-of select="$eadxmlns"/>
         <xsl:text>).</xsl:text>
     </xsl:param>
-    
+
     <!-- param for EAD3 namespace -->
     <xsl:param name="eadxmlns">
         <xsl:choose>
@@ -158,13 +158,13 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- IDENTITY TEMPLATE                               -->
     <!-- ############################################### -->
-    
+
     <xsl:template name="copyElement">
         <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
             <xsl:apply-templates select="@*|node()"/>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template match="element()">
         <xsl:call-template name="copyElement"/>
     </xsl:template>
@@ -184,12 +184,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- DEPRECATED ELEMENTS                             -->
     <!-- ############################################### -->
-    
+
     <!-- REMOVE COMPLETELY IF NOT UNDEPRECATED -->
     <xsl:template
         match="frontmatter | runner | descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/tabledescgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table | @tpattern">
         <xsl:choose>
-            <xsl:when test="$outputUndeprecatedEAD3=false()">               
+            <xsl:when test="$outputUndeprecatedEAD3=false()">
                 <xsl:if test="node()=element()">
                     <xsl:call-template name="commentAndMessage">
                         <xsl:with-param name="comment">
@@ -202,7 +202,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:call-template name="copyElement"/>
             </xsl:when>
         </xsl:choose>
-        
+
     </xsl:template>
 
     <!-- REMOVE COMPLETELY -->
@@ -225,10 +225,9 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
-    
+
     <!-- SKIP ELEMENT OR ATTRIBUTE IF NOT UNDEPRECATED-->
-    <xsl:template
-        match="descgrp | dimensions | physfacet | extent | bibseries | imprint">
+    <xsl:template match="descgrp | dimensions | physfacet | extent | bibseries | imprint">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">
                 <xsl:call-template name="commentAndMessage">
@@ -271,7 +270,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </ref>
     </xsl:template>
-    
+
     <xsl:template
         match="bibref[not(parent::separatedmaterial)][not(parent::relatedmaterial)][not(parent::otherfindaid)][not(parent::bibliography)]">
         <ref>
@@ -279,11 +278,12 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </ref>
     </xsl:template>
-    
+
     <xsl:template match="archref | bibref">
         <xsl:element name="{local-name()}">
-        <xsl:copy-of select="@* except(@actuate, @arcrole, @href, @linktype, @role, @show, @title, @xpointer)"/>
-        <xsl:apply-templates/>
+            <xsl:copy-of
+                select="@* except(@actuate, @arcrole, @href, @linktype, @role, @show, @title, @xpointer)"/>
+            <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
 
@@ -328,7 +328,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="dsc/@type | unitdate/@type">
         <xsl:attribute name="{parent::*/local-name()}type" select="string(.)"/>
     </xsl:template>
-    
+
     <xsl:template match="dsc/@othertype">
         <xsl:attribute name="otherdsctype" select="string(.)"/>
     </xsl:template>
@@ -349,7 +349,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="eadid"/>
 
             <xsl:apply-templates select="filedesc"/>
-            
+
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
                     <xsl:text>ELEMENT maintenancestatus ADDED</xsl:text>
@@ -365,7 +365,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:call-template>
                 <publicationstatus value="{$publicationstatusValue}"/>
             </xsl:if>
-            
+
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
                     <xsl:text>ELEMENT maintenanceagency ADDED</xsl:text>
@@ -374,11 +374,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             <maintenanceagency>
                 <xsl:if test="eadid/@countrycode">
                     <xsl:copy-of select="eadid/@countrycode"/>
-                        <xsl:call-template name="commentAndMessage">
-                            <xsl:with-param name="comment">
-                                <xsl:text>ATTRIBUTE eadid/@countrycode REPLACED WITH maintenanceagency/@countrycode</xsl:text>
-                            </xsl:with-param>
-                        </xsl:call-template>                  
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>ATTRIBUTE eadid/@countrycode REPLACED WITH maintenanceagency/@countrycode</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                 </xsl:if>
                 <xsl:if test="eadid/@mainagencycode">
                     <xsl:call-template name="commentAndMessage">
@@ -431,7 +431,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </term>
                 </localcontrol>
             </xsl:if>
-            
+
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
                     <xsl:text>ELEMENT maintenancehistory ADDED</xsl:text>
@@ -450,8 +450,12 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <xsl:value-of select="current-dateTime()"/>
                     </eventdatetime>
                     <agenttype value="{$agenttypeValue}"/>
-                    <agent><xsl:value-of select="$agent"/></agent>
-                    <eventdescription><xsl:value-of select="$eventdescriptionValue"/></eventdescription>
+                    <agent>
+                        <xsl:value-of select="$agent"/>
+                    </agent>
+                    <eventdescription>
+                        <xsl:value-of select="$eventdescriptionValue"/>
+                    </eventdescription>
                 </maintenanceevent>
                 <xsl:if test="profiledesc/creation">
                     <xsl:call-template name="commentAndMessage">
@@ -466,7 +470,8 @@ For these and/or other purposes and motivations, and without any expectation of 
                             <xsl:choose>
                                 <xsl:when
                                     test="profiledesc/creation/date and not(profiledesc/creation/date[2])">
-                                    <xsl:copy-of select="profiledesc/creation/date/@*[not(local-name()='calendar') and not(local-name()='era') and not(local-name()='certainty') and not(local-name()='type') and not(local-name()='normal')]"/>
+                                    <xsl:copy-of
+                                        select="profiledesc/creation/date/@*[not(local-name()='calendar') and not(local-name()='era') and not(local-name()='certainty') and not(local-name()='type') and not(local-name()='normal')]"/>
                                     <xsl:if
                                         test="profiledesc/creation/date/@normal[not(contains(.,'/'))]">
                                         <xsl:attribute name="standarddatetime">
@@ -496,7 +501,8 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <xsl:copy-of select="@*"/>
                         <eventtype value="unknown"/>
                         <eventdatetime>
-                            <xsl:copy-of select="date/@*[not(local-name()='calendar') and not(local-name()='era') and not(local-name()='certainty') and not(local-name()='type') and not(local-name()='normal')]"/>
+                            <xsl:copy-of
+                                select="date/@*[not(local-name()='calendar') and not(local-name()='era') and not(local-name()='certainty') and not(local-name()='type') and not(local-name()='normal')]"/>
                             <xsl:if test="date/@normal[not(contains(.,'/'))]">
                                 <xsl:attribute name="standarddatetime">
                                     <xsl:value-of select="date/@normal"/>
@@ -623,7 +629,8 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <languagedeclaration>
                         <xsl:choose>
                             <xsl:when test="../language[2]">
-                                <xsl:apply-templates select="/ead//langusage/@*[not(local-name()='id')]"/>
+                                <xsl:apply-templates
+                                    select="/ead//langusage/@*[not(local-name()='id')]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:apply-templates select="/ead//langusage/@*"/>
@@ -633,7 +640,8 @@ For these and/or other purposes and motivations, and without any expectation of 
                             <xsl:copy-of select="@* except @scriptcode"/>
                             <xsl:value-of select="."/>
                         </language>
-                        <xsl:variable name="scriptCode" select="if (@scriptcode[normalize-space(.)])then @scriptcode else'SCRIPTCODE NEEDED'"/>
+                        <xsl:variable name="scriptCode"
+                            select="if (@scriptcode[normalize-space(.)])then @scriptcode else'SCRIPTCODE NEEDED'"/>
                         <script scriptcode="{$scriptCode}">
                                 <xsl:value-of select="$scriptCode"/>
                             </script>
@@ -682,7 +690,8 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <conventiondeclaration>
                         <xsl:choose>
                             <xsl:when test="../title[2]">
-                                <xsl:apply-templates select="/ead//descrules/@*[not(local-name()='id')]"/>
+                                <xsl:apply-templates
+                                    select="/ead//descrules/@*[not(local-name()='id')]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:apply-templates select="/ead//descrules/@*"/>
@@ -743,7 +752,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="chronlist">
         <xsl:call-template name="gonna-deal-with-this-later"/>
     </xsl:template>
-    
+
     <!-- ############################################### -->
     <!-- LIST                                            -->
     <!-- ############################################### -->
@@ -757,16 +766,16 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="*"/>
         </list>
     </xsl:template>
-    
+
     <xsl:template match="item">
         <item>
-        <xsl:apply-templates select="node() except (chronlist, table)"/>
-        </item>   
+            <xsl:apply-templates select="node() except (chronlist, table)"/>
+        </item>
     </xsl:template>
-    
 
-    
-    
+
+
+
 
     <!-- ############################################### -->
     <!-- DID ELEMENTS                                    -->
@@ -782,12 +791,14 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="did">
         <did>
             <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates select="*[not(local-name()='note' and (p[2] or child::*[local-name()!=p]))]"/>
+            <xsl:apply-templates
+                select="*[not(local-name()='note' and (p[2] or child::*[local-name()!=p]))]"/>
             <xsl:apply-templates
                 select="parent::*/dao | parent::*/daogrp | child::dao | child::daogrp | parent::*/scopecontent//dao | parent::*/bioghist//dao | parent::*/odd//dao | parent::*/scopecontent//daogrp | parent::*/bioghist//daogrp | parent::*/odd//daogrp"
                 mode="daoIndid"/>
         </did>
-        <xsl:apply-templates select="*[local-name()='note' and (p[2] or child::*[local-name()!=p])]"/>
+        <xsl:apply-templates select="*[local-name()='note' and (p[2] or child::*[local-name()!=p])]"
+        />
     </xsl:template>
 
     <xsl:template match="dao[not(parent::did)] | daogrp[not(parent::did)]">
@@ -816,7 +827,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         <dao>
             <!-- why does this not work? -->
             <!--<xsl:copy-of select="daoloc/@* except (@role, @title)"/> -->
-            <xsl:copy-of select="daoloc/@*[name() != 'role' and name() != 'title']"/>
+            <xsl:copy-of
+                select="daoloc/@*[name() != 'role' and name() != 'title' and name() != 'linktype']"/>
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
@@ -870,7 +882,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:attribute>
     </xsl:template>
 
-<!-- if content is only a name element - copy and apply-templates
+    <!-- if content is only a name element - copy and apply-templates
      if only text content: create name/part element with entire text inside
      if text and name elements ?
 -->
@@ -903,7 +915,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:for-each>
         </xsl:if>
     </xsl:template>
-    
+
     <xsl:template match="unitdate[parent::unittitle]">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=true()">
@@ -939,16 +951,10 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- script attr becomes script element -->
     <xsl:template match="langmaterial">
         <langmaterial>
-            <xsl:choose>
-                <xsl:when test="count(child::language) &gt; 1">
-                    <languageset>
-                        <xsl:apply-templates select="language"/>
-                    </languageset>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates select="language"/>
-                </xsl:otherwise>
-            </xsl:choose>
+
+            <xsl:apply-templates select="language[@scriptcode]" mode="languageset"/>
+            <xsl:apply-templates select="language[not(@scriptcode)]"/>
+
             <descriptivenote>
                 <p>
                     <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
@@ -956,6 +962,18 @@ For these and/or other purposes and motivations, and without any expectation of 
             </descriptivenote>
         </langmaterial>
     </xsl:template>
+
+    <xsl:template match="language" mode="languageset">
+        <languageset>
+            <xsl:element name="language">
+                <xsl:apply-templates select="@* except @scriptcode"/>
+                <xsl:apply-templates/>
+            </xsl:element>
+            <script scriptcode="{@scriptcode}"/>
+        </languageset>
+    </xsl:template>
+
+
 
 
     <!-- ############################################### -->
@@ -977,11 +995,12 @@ For these and/or other purposes and motivations, and without any expectation of 
             </part>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template match="title">
-        
+
         <xsl:choose>
-            <xsl:when test="parent::bibliography or 
+            <xsl:when
+                test="parent::bibliography or 
                 parent::otherfindaid or 
                 parent::relatedmaterial or 
                 parent::separatedmaterial">
@@ -994,7 +1013,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <xsl:template name="titleLinkDecomposeAddPart">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
@@ -1003,7 +1022,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:with-param>
         </xsl:call-template>
         <xsl:choose>
-            <xsl:when test="(@actuate or @xlink:actuate
+            <xsl:when
+                test="(@actuate or @xlink:actuate
                 or @arcrole or @xlink:arcrole
                 or @href or @xlink:href
                 or @show or @xlink:show
@@ -1011,14 +1031,16 @@ For these and/or other purposes and motivations, and without any expectation of 
                 or @entityref or @xpointer)
                 and not(parent::controlaccess)">
                 <ref>
-                    <xsl:apply-templates select="@actuate | @xlink:actuate
+                    <xsl:apply-templates
+                        select="@actuate | @xlink:actuate
                         | @arcrole | @xlink:arcrole
                         | @href | @xlink:href
                         | @show | @xlink:show
                         | @title | @xlink:title
                         | @entityref | @xpointer"/>
                     <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-                        <xsl:apply-templates select="@altrender | @audience
+                        <xsl:apply-templates
+                            select="@altrender | @audience
                             | @authfilenumber | @encodinganalog
                             | @id | @normal
                             | @render | @rules
@@ -1032,7 +1054,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-                    <xsl:apply-templates select="@altrender | @audience
+                    <xsl:apply-templates
+                        select="@altrender | @audience
                         | @authfilenumber | @encodinganalog
                         | @id | @normal
                         | @render | @rules
@@ -1045,7 +1068,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <!--<xsl:template name="refDecompose">
         <ref>
             <xsl:apply-templates select="@actuate | @xlink:actuate
@@ -1063,7 +1086,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:element>
         </ref>
     </xsl:template>-->
-    
+
     <xsl:template match="corpname">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
@@ -1078,7 +1101,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:for-each>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template name="corpnamePart">
         <part>
             <xsl:if test="local-name()='subarea'">
@@ -1087,24 +1110,27 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:if>
             <xsl:call-template name="corpnameNode"/>
         </part>
-        <xsl:if test="local-name()='subarea' or following-sibling::node()[1][local-name()='subarea']">
+        <xsl:if
+            test="local-name()='subarea' or following-sibling::node()[1][local-name()='subarea']">
             <xsl:for-each select="following-sibling::node()[1]">
                 <xsl:call-template name="corpnamePart"/>
             </xsl:for-each>
         </xsl:if>
     </xsl:template>
-    
+
     <xsl:template name="corpnameNode">
-        <xsl:if test="normalize-space(.) or local-name()='ptr' or local-name()='extptr' or local-name()='lb'">
+        <xsl:if
+            test="normalize-space(.) or local-name()='ptr' or local-name()='extptr' or local-name()='lb'">
             <xsl:apply-templates select="."/>
         </xsl:if>
-        <xsl:if test="following-sibling::node()[1][not(local-name()='subarea')] and not(local-name()='subarea')">
+        <xsl:if
+            test="following-sibling::node()[1][not(local-name()='subarea')] and not(local-name()='subarea')">
             <xsl:for-each select="following-sibling::node()[1]">
                 <xsl:call-template name="corpnameNode"/>
             </xsl:for-each>
         </xsl:if>
     </xsl:template>
-    
+
     <xsl:template match="repository/subarea">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
@@ -1120,8 +1146,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             </part>
         </corpname>
     </xsl:template>
-    
-    
+
+
     <!-- ############################################### -->
     <!-- RENAMED ELEMENTS AND ATTRIBUTES                -->
     <!-- ############################################### -->
@@ -1131,7 +1157,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:call-template name="nowOdd"/>
     </xsl:template>-->
 
-    <xsl:template match="*[self::* except (//dao, //ref, //extref, //title, //archref, //bibref)]/@role">
+    <xsl:template
+        match="*[self::* except (//dao, //ref, //extref, //title, //archref, //bibref)]/@role">
         <xsl:attribute name="relator">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -1243,14 +1270,14 @@ For these and/or other purposes and motivations, and without any expectation of 
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
 -->
 
-<xsl:template match="@*[starts-with(name(),'xlink')][name() != 'xlink:type']" mode="strip-ns">
-    <xsl:message>XLINK STRIPPED</xsl:message>
-    <xsl:attribute name="{substring-after(name(), ':')}">
-        <xsl:value-of select="normalize-space(lower-case(.))"/>
-    </xsl:attribute>
-</xsl:template>
-    
-<xsl:template match="@xlink:type[. = 'simple']" mode="strip-ns"/>
+    <xsl:template match="@*[starts-with(name(),'xlink')][name() != 'xlink:type']" mode="strip-ns">
+        <xsl:message>XLINK STRIPPED</xsl:message>
+        <xsl:attribute name="{substring-after(name(), ':')}">
+            <xsl:value-of select="normalize-space(lower-case(.))"/>
+        </xsl:attribute>
+    </xsl:template>
+
+    <xsl:template match="@xlink:type[. = 'simple']" mode="strip-ns"/>
 
     <!-- ############################################### -->
     <!-- @TYPE TO @LOCALTYPE                             -->
@@ -1281,8 +1308,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- ADDRESS                                         -->
     <!-- ############################################### -->
-    
-    <xsl:template match="address[not(parent::repository) and not(parent::publicationstmt) and not(parent::descgrp)]">
+
+    <xsl:template
+        match="address[not(parent::repository) and not(parent::publicationstmt) and not(parent::descgrp)]">
         <xsl:choose>
             <xsl:when
                 test="not(parent::entry) 
@@ -1332,11 +1360,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!-- ############################################### -->
     <!-- UPDATE BOOLEAN TABLE ATTRS                      -->
     <!-- ############################################### -->
-    
+
     <xsl:template match="@pgwide">
         <xsl:variable name="pgwideValue">
             <xsl:value-of select="."/>
@@ -1352,7 +1380,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:choose>
         </xsl:attribute>
     </xsl:template>
-    
+
     <xsl:template match="@colsep">
         <xsl:variable name="colsepValue">
             <xsl:value-of select="."/>
@@ -1368,7 +1396,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:choose>
         </xsl:attribute>
     </xsl:template>
-    
+
     <xsl:template match="@rowsep">
         <xsl:variable name="rowsepValue">
             <xsl:value-of select="."/>
@@ -1390,10 +1418,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- LINK ELEMENTS and ATTRS                         -->
     <!-- ############################################### -->
-    
+
     <xsl:template match="ref">
         <xsl:choose>
-            <xsl:when test="parent::bibliography or 
+            <xsl:when
+                test="parent::bibliography or 
                 parent::otherfindaid or 
                 parent::relatedmaterial or 
                 parent::separatedmaterial">
@@ -1406,10 +1435,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <xsl:template match="extref">
         <xsl:choose>
-            <xsl:when test="parent::bibliography or 
+            <xsl:when
+                test="parent::bibliography or 
                 parent::otherfindaid or 
                 parent::relatedmaterial or 
                 parent::separatedmaterial">
@@ -1439,10 +1469,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="@*"/>
         </ptr>
     </xsl:template>
-    
+
     <xsl:template match="linkgrp">
         <xsl:choose>
-            <xsl:when test="parent::bibliography or 
+            <xsl:when
+                test="parent::bibliography or 
                 parent::otherfindaid or 
                 parent::relatedmaterial or 
                 parent::separatedmaterial">
@@ -1455,7 +1486,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
 
     <!-- ############################################### -->
     <!-- OTHER TEMPLATES                                 -->
