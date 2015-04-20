@@ -1252,14 +1252,14 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="*" mode="strip-ns">
         <!-- create new element using local name, in no namespace -->
-        <xsl:element name="{local-name()}" inherit-namespaces="no">
+        <xsl:element name="{local-name()}" namespace="" inherit-namespaces="no">
             <xsl:apply-templates select="@* | node()" mode="strip-ns"/>
         </xsl:element>
     </xsl:template>
     <!-- create new attribute using local name, in no namespace -->
     <xsl:template match="@*" mode="strip-ns">
         <xsl:attribute name="{local-name()}">
-            <xsl:apply-templates/>
+            <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
     <!-- copy text, comment, and processing-instruction nodes -->
