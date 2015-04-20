@@ -9,7 +9,7 @@
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
             <xd:p>
-                <xd:b>Last Updated: 2014-11-24</xd:b>
+                <xd:b>Last Updated: 2015-04-20</xd:b>
             </xd:p>
             <xd:p><xd:b>Authors:</xd:b> Terry Catapano and Mike Rush</xd:p>
             <xd:p>Convert EAD2002 instance to EAD3</xd:p>
@@ -1251,15 +1251,24 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template match="*" mode="strip-ns">
-        <xsl:element name="{local-name()}" namespace="" inherit-namespaces="no">
+        <!-- create new element using local name, in no namespace -->
+        <xsl:element name="{local-name()}" inherit-namespaces="no">
             <xsl:apply-templates select="@* | node()" mode="strip-ns"/>
         </xsl:element>
     </xsl:template>
-    <xsl:template match="@*|text()|comment()|processing-instruction()" mode="strip-ns">
-        <xsl:copy inherit-namespaces="no" copy-namespaces="no">
-            <xsl:apply-templates select="@*|node()" mode="strip-ns"/>
-        </xsl:copy>
+    <!-- create new attribute using local name, in no namespace -->
+    <xsl:template match="@*" mode="strip-ns">
+        <xsl:attribute name="{local-name()}">
+            <xsl:apply-templates/>
+        </xsl:attribute>
     </xsl:template>
+    <!-- copy text, comment, and processing-instruction nodes -->
+    <xsl:template match="text()|comment()|processing-instruction()" mode="strip-ns">
+        <xsl:copy inherit-namespaces="no" copy-namespaces="no">
+            <xsl:apply-templates select="node()" mode="strip-ns"/>
+        </xsl:copy>
+    </xsl:template>    
+    
     <!--
     <xsl:template match="xlink:*" mode="strip-ns">
         <xsl:attribute name="{substring-after(name(), 6, )}" namespace="">
@@ -1268,7 +1277,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     <xsl:template match="@xsi:schemaLocation" mode="strip-ns"
         xpath-default-namespace="http://www.w3.org/2001/XMLSchema-instance"/>
--->
+
 
     <xsl:template match="@*[starts-with(name(),'xlink')][name() != 'xlink:type']" mode="strip-ns">
         <xsl:message>XLINK STRIPPED</xsl:message>
@@ -1279,6 +1288,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="@xlink:type[. = 'simple']" mode="strip-ns"/>
 
+-->
+    
     <!-- ############################################### -->
     <!-- @TYPE TO @LOCALTYPE                             -->
     <!-- ############################################### -->
