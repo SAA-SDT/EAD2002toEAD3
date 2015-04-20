@@ -1269,6 +1269,17 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:copy>
     </xsl:template>    
     
+    <xsl:template match="@*[namespace-uri() = 'http://www.w3.org/1999/xlink']" mode="strip-ns">
+        <xsl:message>XLINK STRIPPED</xsl:message>
+        <xsl:attribute name="{substring-after(name(), ':')}">
+            <xsl:value-of select="normalize-space(lower-case(.))"/>
+        </xsl:attribute>
+    </xsl:template>
+    
+    <xsl:template match="@*[namespace-uri() = 'http://www.w3.org/1999/xlink'][local-name() = 'type']" mode="strip-ns"/>
+    
+    <xsl:template match="@*[namespace-uri() = 'http://www.w3.org/2001/XMLSchema-instance']" mode="strip-ns"/>
+    
     <!--
     <xsl:template match="xlink:*" mode="strip-ns">
         <xsl:attribute name="{substring-after(name(), 6, )}" namespace="">
