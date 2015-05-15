@@ -1270,7 +1270,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>    
     
     <xsl:template match="@*[namespace-uri() = 'http://www.w3.org/1999/xlink']" mode="strip-ns">
-        <xsl:message>XLINK STRIPPED</xsl:message>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>XLINK STRIPPED</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <xsl:attribute name="{substring-after(name(), ':')}">
             <xsl:value-of select="normalize-space(lower-case(.))"/>
         </xsl:attribute>
