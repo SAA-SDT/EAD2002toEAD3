@@ -128,7 +128,7 @@
                            audience="external"
                            encodinganalog="langusage">
          <language langcode="eng">English</language>
-         <script scriptcode="Latn SCRIPTCODE NEEDED">Latn SCRIPTCODE NEEDED</script>
+         <script scriptcode="Latn">Latn</script>
          <descriptivenote>
             <p>
                <emph render="altrender">Finding aid </emph>written in
@@ -140,7 +140,7 @@
                            audience="external"
                            encodinganalog="langusage">
          <language langcode="fre">French</language>
-         <script scriptcode="Latn SCRIPTCODE NEEDED">Latn SCRIPTCODE NEEDED</script>
+         <script scriptcode="Latn">Latn</script>
          <descriptivenote>
             <p>
                <emph render="altrender">Finding aid </emph>written in
@@ -181,7 +181,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-05-14T22:37:49.255-04:00">2015-05-14T22:37:49.255-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-05-14T22:50:27.262-04:00">2015-05-14T22:50:27.262-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -334,11 +334,9 @@
          <!--moving dao* outside did into did-->
          <!--daogrp with single daoloc now dao-->
          <!--dao now requires attribute "daotype"; setting value to "unknown"-->
-         <dao xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:label="end"
-              xlink:href="http://bostonglobe.com"
+         <dao label="end"
+              href="http://bostonglobe.com"
               daotype="unknown"
-              linktype="simple"
               linkrole="">
             <descriptivenote>
                <p>daodesc p</p>
@@ -359,11 +357,9 @@
          <!--moving dao* outside did into did-->
          <!--daogrp with single daoloc now dao-->
          <!--dao now requires attribute "daotype"; setting value to "unknown"-->
-         <dao xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:label="end"
-              xlink:href="http://bostonglobe.com"
+         <dao label="end"
+              href="http://bostonglobe.com"
               daotype="unknown"
-              linktype="simple"
               linkrole="">
             <descriptivenote>
                <p>daodesc p</p>
@@ -383,11 +379,9 @@
          <!--moving dao* outside did into did-->
          <!--daogrp with single daoloc now dao-->
          <!--dao now requires attribute "daotype"; setting value to "unknown"-->
-         <dao xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:label="end"
-              xlink:href="http://bostonglobe.com"
+         <dao label="end"
+              href="http://bostonglobe.com"
               daotype="unknown"
-              linktype="simple"
               linkrole="">
             <descriptivenote>
                <p>daodesc p</p>
@@ -571,17 +565,7 @@
          <otherfindaid>
             <head>Related Material</head>
             <p>blah blah</p>
-            <archref xmlns:xlink="http://www.w3.org/1999/xlink"
-                  altrender="archref"
-                  audience="internal"
-                  id="archref"
-                  xlink:actuate="none"
-                  xlink:arcrole="arcrole"
-                  xlink:href="http://google.com"
-                  relator="role"
-                  xlink:show="none"
-                  xlink:title="title"
-                  xpointer="xpointer">Archref</archref>
+            <archref altrender="archref" audience="internal" id="archref">Archref</archref>
             <bibref>Bibref</bibref>
             <p>
             <ref>Extref</ref>
@@ -785,7 +769,7 @@
                    render="altrender"
                    encodinganalog="title"
                    localtype="titletype"
-                   relator="titlexlinkrole">
+                   role="titlexlinkrole">
                <part>Moby-Dick, or The Whale</part>
             </title>
             <persname encodinganalog="600"
