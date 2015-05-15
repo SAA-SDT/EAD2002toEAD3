@@ -38,7 +38,9 @@
             <publisher>Beinecke Rare Book and Manuscript Library</publisher>
             <publisher>General Collection of Modern Books and Manuscripts</publisher>
             <address>
-               <addressline>New Haven, Connecticut</addressline>
+               <addressline>Address Line 1</addressline>
+               <addressline>Address Line 2</addressline>
+               <addressline>Address Line 3</addressline>
             </address>
             <date type="original" normal="2006-10">October, 2006</date>
             <date type="revised" normal="2006-10">October 2006</date>
@@ -162,6 +164,42 @@
       encodinganalog="archdesc" audience="internal" altrender="archdesc" otherlevel="archdesc">
       <did id="did">
          <head althead="View Over" altrender="head" audience="external" id="head1">Overview</head>
+         <note actuate="onload" altrender="didnote" audience="external" encodinganalog="didnote" id="didnote"
+            label="Did Note:" show="new" type="didNote">
+            <p>1 did note paragraph</p>
+         </note>
+         <note actuate="onload" altrender="didnote" audience="external" encodinganalog="didnote" id="didnotetoOdd"
+           label="Did Note:" show="new" type="didNote">
+            <p>did note paragraph 1</p>
+            <p>did note paragraph 2</p>
+            <address>
+               <addressline>did note addressline 1</addressline>
+               <addressline>did note addressline 2</addressline>
+            </address>
+            <blockquote>
+               <p>did note blockquote paragraph</p>
+            </blockquote>
+            <chronlist>
+               <chronitem>
+                  <date>February 2015</date>
+                  <event>did note chronlist event</event>
+               </chronitem>
+            </chronlist>
+            <list type="marked">
+               <item>did note list item 1</item>
+               <item>did note list item 2</item>
+            </list>
+            <table>
+               <tgroup cols="2">
+                  <tbody>
+                     <row>
+                        <entry>did note table entry 1</entry>
+                        <entry>did note table entry 2</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+         </note>
          <physloc type="physloc" id="pl1" encodinganalog="physloc" audience="external" altrender="physloc"
             label="Physical Location:">On the <title>shelf</title>.</physloc>
          <unitid label="Call Number:" countrycode="US" repositorycode="US-CtY-BR" altrender="unitid"
@@ -225,10 +263,56 @@
             <acqinfo>
                <p>The Abraham Hayward Collection was acquired through purchase from Christopher
                   Edwards on the George Henry Nettleton Fund, 2003.</p>
+               <blockquote altrender="bq" audience="external" id="bq1">
+                  <p>blockquote paragraph</p>
+                  <address><addressline>blockquote addressline</addressline></address>
+                  <chronlist>
+                     <chronitem>
+                        <date>2015</date>
+                        <event>blockquote event</event>
+                     </chronitem>
+                  </chronlist>
+                  <list type="marked">
+                     <item>blockquote item</item>
+                  </list>
+                  <table>
+                     <tgroup cols="1">
+                        <tbody>
+                           <row>
+                              <entry>blockquote table</entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </blockquote>
             </acqinfo>
             <custodhist>
                <head>Custodial History</head>
                <p>paragraph</p>
+               <p><blockquote altrender="bq" audience="external" id="bq2">
+                  <p>blockquote paragraph</p>
+                  <address><addressline>blockquote addressline</addressline>
+                  
+               <addressline>blockquote addressline 2</addressline></address>
+                  <chronlist>
+                     <chronitem>
+                        <date>2015</date>
+                        <event>blockquote event</event>
+                     </chronitem>
+                  </chronlist>
+                  <list type="marked">
+                     <item>blockquote item</item>
+                  </list>
+                  <table>
+                     <tgroup cols="1">
+                        <tbody>
+                           <row>
+                              <entry>blockquote table</entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </blockquote></p>
                <acqinfo>
                   <head>custodhist/acqinfo/head</head>
                   <p>custodhist/acqinfo/p</p>
@@ -238,14 +322,52 @@
                   </acqinfo>
                </acqinfo>
             </custodhist>
+            <address>
+               <addressline>Address Line 1</addressline>
+               <addressline>Address Line 2</addressline>
+               <addressline>Address Line 3</addressline>
+            </address>
+            <blockquote altrender="bq" audience="external" id="bq3">
+               <p>blockquote paragraph</p>
+               <address><addressline>blockquote addressline 1</addressline>
+               <addressline>blockquote addressline 2</addressline></address>
+               <chronlist>
+                  <chronitem>
+                     <date>2015</date>
+                     <event>blockquote event</event>
+                  </chronitem>
+               </chronlist>
+               <list type="marked">
+                  <item>blockquote item</item>
+               </list>
+               <table>
+                  <tgroup cols="1">
+                     <tbody>
+                        <row>
+                           <entry>blockquote table</entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </blockquote>
          </descgrp>
          <altformavail encodinganalog="altform" type="altform" audience="internal" altrender="altform" id="altform">
             <head>Alt Form</head>
             <p>Alt Form paragraph</p>
+            <address>
+               <addressline>Address Line 1</addressline>
+               <addressline>Address Line 2</addressline>
+               <addressline>Address Line 3</addressline>
+            </address>
          </altformavail>
          <accruals encodinganalog="accruals" audience="internal" altrender="accruals" id="accruals">
             <head>Accruals</head>
-            <p>Accruals paragraph</p>
+            <p>Accruals paragraph <address>
+               <addressline>Address Line 1</addressline>
+               <addressline>Address Line 2</addressline>
+               <addressline>Address Line 3</addressline>
+            </address></p>
+            
          </accruals>
          <appraisal encodinganalog="appraisal" audience="internal" altrender="appraisal" id="appraisal">
             <head>Appraisal</head>
@@ -341,19 +463,24 @@
                xlink:type="simple" render="italic">Faust</title>, the first translation of <title
                xlink:type="simple" render="italic">Faust</title> into English, he pursued a career
             in journalism and literature. He never married. </p>
-         <p>Residing in London for the rest of his life, Hayward was well-connected in literary and
-            political circles, counting among his acquaintances Thomas Babington Macaulay, William
-            Makepeace Thackeray, W. E. Gladstone, and others. He contributed to many periodicals,
-            including <title xlink:type="simple" render="italic">Quarterly Review</title>, <title
-               xlink:type="simple" render="italic">Monthly Magazine</title>, and <title
-               xlink:type="simple" render="italic">Edinburgh Review</title>, and wrote several
-            books, including collections of essays and biographies of Goethe and Mrs. Thrale (a
-            friend of Dr. Johnson). </p>
-         <p>Hayward was involved in a controversy in 1845 over the Inner Temple's rules governing
-            elections to the bench of the Inner Temple. Having received an appointment from Lord
-            Chancellor Lyndhurst, Hayward then failed to win election to the bench. He attributed
-            the rejection to a grudge held by a Mr. Roebuck who, according to Inner Temple
-            tradition, was able to exclude him with a single black ball. </p>
+         <dao id="bioghistDao" xlink:type="simple" xlink:show="none" xlink:actuate="none" xlink:href="http://www.nytimes.com/">
+            <daodesc>
+               <p>daodesc paragraph</p>
+            </daodesc>
+         </dao>
+         <daogrp xlink:type="extended" id="bioghistDaogrp">
+            <daodesc>
+               <p>daodesc p</p>
+               <address>
+               <addressline>Address Line 1</addressline>
+               <addressline>Address Line 2</addressline>
+               <addressline>Address Line 3</addressline>
+            </address>
+            </daodesc>
+            <resource xlink:label="start">Resource</resource>
+            <daoloc xlink:label="end" xlink:href="http://bostonglobe.com"/>
+            <arc xlink:from="start" xlink:to="end"/>
+         </daogrp>
       </bioghist>
       <scopecontent id="sc">
          <head>Description of the Papers</head>
@@ -369,70 +496,53 @@
                >Brian Roberts Research Materials</title>. The papers document Hayward's familial
             relations, the literary and political circles of mid-nineteeth century London, and a
             controversy involving Hayward and the Inner Temple. </p>
-         <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SI"
-               >Series I, <title xlink:type="simple" render="italic">Correspondence</title>
-            </ref>, is arranged alphabetically in three subseries: Outgoing, Incoming, and Third
-            Party Correspondence. The bulk of the outgoing correspondence consists of letters to
-            Hayward's two sisters, Fanny and Mary Anne Hayward. In his letters to his sisters,
-            Hayward discusses his travels, London society, and politics, in particular the
-            governments of Gladstone and Disraeli. Outgoing correspondence also includes letters
-            from Hayward to the publisher Richard Bentley regarding articles and book reviews. </p>
-         <p>Incoming correspondence consists of letters to Hayward from George Bentley, John
-            Thaddeus Delane, Edward Everett, Alexander William Kinglake, John Murray, Henry Pelham,
-            Viscountess Emily Lamb Palmerston, and Horace Smith, and others. Topics include
-            invitations to dine, the politics of Gladstone and Disraeli, Hayward's political
-            appointments, and the publication of various articles, reviews, and pamphlets. The bulk
-            of the third party correspondence is to Fanny Hayward a decade after Abraham Hayward's
-            death. </p>
-         <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SII"
-               >Series II, <title xlink:type="simple" render="italic">Printed Materials</title>
-            </ref>, is arranged chronologically in two subseries: Inner Temple Affair and Other
-            Printed Materials. Inner Temple Affair materials consist of two pamphlets, a petition,
-            and clippings related to the controversy that arose from Hayward's failed election to
-            the Inner Temple bench. Other printed materials include titlepages, a theater program, a
-            menu from the Café de Paris, clippings, a circular on John Stuart Mill's antipopulation
-            theory, and a broadside, "Men of the Day, No. 117, Mr. Abraham Hayward, Q.C." </p>
-         <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SIII"
-               >Series III, <title xlink:type="simple" render="italic">Other Papers</title>
-            </ref>, is arranged chronologically and includes the following: an account of the estate
-            of Robert Abraham, for whom Abraham Hayward was an executor; Abraham Hayward's passport
-            for the years 1862-1871; a copy of his entry in Blundell's School registry; an undated
-            design for a fruit garden or orchard; manuscript copies of poems by Caroline Sheridan
-            Norton, Rev. E.D. Rhodes, and others; and whist instructions. </p>
-         <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SIV"
-               >Series IV, <title xlink:type="simple" render="italic">Photographs</title>
-            </ref>, consists of a carte-de-visite album containing 12 cartes-de-visite of Abraham
-            Hayward and eleven women, including Mrs. Cornwallis West, Mrs. Wheeler, Olive Campbell,
-            Florence de Bretton, Madaillae Florian, and Countess Fanny Karolyi. </p>
-         <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="SV"
-               >Series V, <title xlink:type="simple" render="italic">Brian Roberts Research
-                  Materials</title>
-            </ref>, is arranged in four subseries: Correspondence, Writings, Notes, and Other
-            Papers. Correspondence is arranged alphabetically and includes letters from many people
-            Roberts contacted in the course of his research on Abraham Hayward, including members of
-            the Hayward family and Muriel Abbot-Anderson, who helped Roberts with local research in
-            England's West Country. Writings include typescript drafts of chapters 1, 2, and 3 of
-            Roberts's biography of Hayward. </p>
-         <p>The bulk of Brian Roberts's research notes consists of manscript transcriptions of
-            correspondence and writings related to Hayward. The manuscript transcriptions are
-            arranged approximately by the decade of the original document. Roberts's notes also
-            include typescript transcriptions, a biographical timeline, a research notebook
-            containing transcriptions of letters present in Series I, and note cards. </p>
-         <p>
-            <ref xlink:type="simple" xlink:actuate="onRequest" xlink:show="replace" target="OS">
-               <title xlink:type="simple" render="italic">Oversize</title>
-            </ref> material is housed in boxes 5 and 6. <ref xlink:type="simple"
-               xlink:actuate="onRequest" xlink:show="replace" target="RFO">
-               <title xlink:type="simple" render="italic">Restricted Fragile Oversize</title>
-            </ref> material is stored in box 7 and contains oversize fragile originals for which
-            preservation photocopies have been made for reference use and filed in the regular
-            series run.</p>
+         <arrangement encodinganalog="arrangement" audience="internal" altrender="arrangement" id="arr123">
+            <head>Arrangement Head</head>
+            <p>Arrangment paragraph</p>
+            <arrangement>
+               <head>Arrangement Head</head>
+               <p>Arrangment paragraph</p>
+            </arrangement>
+         </arrangement>
+         <dao id="scopecontentDao" xlink:type="simple" xlink:show="none" xlink:actuate="none" xlink:href="http://www.nytimes.com/">
+            <daodesc>
+               <p>daodesc paragraph</p>
+            </daodesc>
+         </dao>
+         <daogrp xlink:type="extended" id="scopecontentDaogrp">
+            <daodesc>
+               <p>daodesc p</p>
+            </daodesc>
+            <resource xlink:label="start">Resource</resource>
+            <daoloc xlink:label="end" xlink:href="http://bostonglobe.com"/>
+            <arc xlink:from="start" xlink:to="end"/>
+         </daogrp>
       </scopecontent>
+      <arrangement encodinganalog="arrangement" audience="internal" altrender="arrangement" id="arr1234">
+         <head>Arrangement Head</head>
+         <p>Arrangment paragraph</p>
+         <arrangement>
+            <head>Arrangement Head</head>
+            <p>Arrangment paragraph</p>
+         </arrangement>
+      </arrangement>
+      <odd altrender="odd" id="odd" audience="internal" encodinganalog="odd" type="odd">
+         <head>ODD head</head>
+         <p>odd paragraph</p>
+         <dao id="oddDao" xlink:type="simple" xlink:show="none" xlink:actuate="none" xlink:href="http://www.nytimes.com/">
+            <daodesc>
+               <p>daodesc paragraph</p>
+            </daodesc>
+         </dao>
+         <daogrp xlink:type="extended" id="oddDaogrp">
+            <daodesc>
+               <p>daodesc p</p>
+            </daodesc>
+            <resource xlink:label="start">Resource</resource>
+            <daoloc xlink:label="end" xlink:href="http://bostonglobe.com"/>
+            <arc xlink:from="start" xlink:to="end"/>
+         </daogrp>
+      </odd>
       <controlaccess id="ca" altrender="controlaccess" audience="external" encodinganalog="controlaccess">
          <head>Access Terms</head>
          <p>This collection is indexed under the following access points in <extref
@@ -1637,5 +1747,23 @@
             </c02>
          </c01>
       </dsc>
+      <index encodinganalog="index" audience="internal" id="index" altrender="index">
+         <head>Index</head>
+         <indexentry>
+            <famname>Partridge Family</famname>
+            <ref target="f120">reference</ref>
+         </indexentry>
+         <indexentry>
+            <persname>Alan Ginsberg</persname>
+            <ptr target="f119"/>
+         </indexentry>
+         <indexentry>
+            <corpname>EON Productions</corpname>
+            <ptrgrp>
+               <ptr target="f113"/>
+               <ptr target="f112"/>
+            </ptrgrp>
+         </indexentry>
+      </index>
    </archdesc>
 </ead>
