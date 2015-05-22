@@ -250,6 +250,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         subtitle/num | bibref/edition | bibref/publisher | emph/title | 
         item/repository | item/unittitle | custodhist//acqinfo | scopecontent//arrangement |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
+        container/title |
         unitdate/title | unitid/title | physloc/title | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
         event/blockquote/p | extref/blockquote/p | extrefloc/blockquote/p | 
         item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p">
