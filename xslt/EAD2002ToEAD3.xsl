@@ -253,8 +253,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         archref/physloc | archref/repository |
         archref/unitdate | archref/unitid |
         archref/unittitle |
-        subtitle/date | corpname/subarea |
-        subtitle/num | bibref/edition | bibref/publisher | emph/title | 
+        bibref/edition | 
+        subtitle/date | subtitle/num |
+        corpname/subarea | emph/title | 
         item/repository | item/unittitle | custodhist//acqinfo | scopecontent//arrangement |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
         container/title |
