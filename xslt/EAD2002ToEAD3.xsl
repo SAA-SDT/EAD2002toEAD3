@@ -256,7 +256,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         bibref/archref | bibref/edition |
         subtitle/date | subtitle/num |
         corpname/subarea | emph/title | 
-        item/repository | item/unittitle | custodhist//acqinfo | scopecontent//arrangement |
+        item/repository | item/unittitle | 
+        custodhist//acqinfo | scopecontent//arrangement |
+        materialspec/num | materialspec/materialspec |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
         container/title |
         unitdate/title | unitid/title | physloc/title | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
