@@ -258,7 +258,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         corpname/subarea | emph/title | 
         item/repository | item/unittitle | 
         custodhist//acqinfo | scopecontent//arrangement |
-        materialspec/num | materialspec/materialspec |
+        materialspec/num | materialspec/materialspec |  
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
         container/title |
         unitdate/title | unitid/title | physloc/title | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
@@ -803,13 +803,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- DID ELEMENTS                                    -->
     <!-- ############################################### -->
-    <!-- origination:
-     when child *name is present:   
-        create origination for each *name element
-        put all text in a comment
-      otherwise:
-      put all text in <name>/<part>
--->
 
     <xsl:template match="did">
         <did>
