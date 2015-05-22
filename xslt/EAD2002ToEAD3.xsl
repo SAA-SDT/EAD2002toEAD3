@@ -253,7 +253,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         archref/physloc | archref/repository |
         archref/unitdate | archref/unitid |
         archref/unittitle |
-        bibref/edition | 
+        bibref/archref | bibref/edition |
         subtitle/date | subtitle/num |
         corpname/subarea | emph/title | 
         item/repository | item/unittitle | custodhist//acqinfo | scopecontent//arrangement |
@@ -273,7 +273,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- archref and bibref -->
 
     <xsl:template
-        match="archref[not(parent::separatedmaterial)][not(parent::relatedmaterial)][not(parent::otherfindaid)][not(parent::bibliography)]">
+        match="archref[not(parent::separatedmaterial)][not(parent::relatedmaterial)][not(parent::otherfindaid)][not(parent::bibliography)][not(parent::bibref)]">
         <ref>
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates/>
@@ -288,11 +288,22 @@ For these and/or other purposes and motivations, and without any expectation of 
         </ref>
     </xsl:template>
 
-    <xsl:template match="archref | bibref">
+    <xsl:template match="archref[not(parent::bibref)] | bibref">
         <xsl:element name="{local-name()}">
             <xsl:copy-of
                 select="@* except(@actuate, @arcrole, @href, @linktype, @role, @show, @title, @xpointer)"/>
-            <xsl:apply-templates/>
+            <xsl:choose>
+                <xsl:when test="@actuate | @arcrole | @href | @linktype | @role | @show | @title | @xpointer">
+                    <ref>
+                        <xsl:apply-templates
+                            select="@actuate, @arcrole, @href, @linktype, @role, @show, @title, @xpointer"/>
+                        <xsl:apply-templates/>
+                    </ref>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:element>
     </xsl:template>
 
