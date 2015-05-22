@@ -1331,7 +1331,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="notestmt/note/@type | did/note/@type | abstract/@type | accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
+        match="notestmt/note/@type | did/note/@type | abstract/@type | materialspec/@type |
+        accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
         originalsloc/@type | phystech/@type | processinfo/@type | relatedmaterial/@type | separatedmaterial/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
         userestrict/@type | odd/@type | date/@type | name/@type |  persname/@type | famname/@type |
         corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type">
