@@ -259,6 +259,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         item/repository | item/unittitle | 
         custodhist//acqinfo | scopecontent//arrangement |
         materialspec/num | materialspec/materialspec |  
+        origination/title |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
         container/title |
         unitdate/title | unitid/title | physloc/title | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
@@ -290,7 +291,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         </ref>
     </xsl:template>
 
-    <xsl:template match="archref[not(parent::bibref)] | bibref">
+    <xsl:template match="archref[not(parent::bibref)][parent::bibliography or parent::otherfindaid or parent::relatedmaterial or parent::separatedmaterial] | 
+        bibref[parent::bibliography or parent::otherfindaid or parent::relatedmaterial or parent::separatedmaterial]">
         <xsl:element name="{local-name()}">
             <xsl:copy-of
                 select="@* except(@actuate, @arcrole, @href, @linktype, @role, @show, @title, @xpointer)"/>
@@ -903,20 +905,35 @@ For these and/or other purposes and motivations, and without any expectation of 
      if text and name elements ?
 -->
     <xsl:template match="origination">
-        <origination>
-            <!--        <xsl:for-each select="corpname | name | persname | famname">            
-                <xsl:apply-templates select="self::*"/>
-                <xsl:comment>
-                    <xsl:value-of select="parent::origination//text()"/>
-                </xsl:comment>         
-        </xsl:for-each>
         
-                -->
-            <xsl:call-template name="commentAndMessage">
-                <xsl:with-param name="comment" select="'ORIGINATION NEEDS WORK'"/>
-            </xsl:call-template>
+        <origination>
+            <xsl:apply-templates select="@*"/>
+            <xsl:choose>
+                <xsl:when test="not(text()[normalize-space(.)]) and not(*[not(local-name()='persname')][not(local-name()='corpname')][not(local-name()='famname')][not(local-name()='name')])">
+                    <xsl:apply-templates/>
+                </xsl:when>
+                <xsl:when test="not(persname | corpname | famname | name)">
+                    <name>
+                        <part>
+                            <xsl:apply-templates/>
+                        </part>
+                    </name>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="*[local-name()='persname' 
+                        or local-name()='corpname' 
+                        or local-name()='famname' 
+                        or local-name()='name']"/>
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>Before migration the entire text of this origination was as follows:
+                            "</xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text>"
+                            Portions not included in persname, corpname, famname, or name elements were lost.</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
+                </xsl:otherwise>
+            </xsl:choose>
         </origination>
-
     </xsl:template>
 
     <!-- keep contents of unitdate, move unitdate element outside unittitle -->
