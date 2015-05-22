@@ -246,7 +246,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- SKIP ELEMENT OR ATTRIBUTE -->
     <xsl:template
         match="titleproper/date | titleproper/num | 
-        archref/abstract | subtitle/date | corpname/subarea |
+        archref/abstract | archref/container | subtitle/date | corpname/subarea |
         subtitle/num | bibref/edition | bibref/publisher | emph/title | 
         item/repository | item/unittitle | custodhist//acqinfo | scopecontent//arrangement |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |

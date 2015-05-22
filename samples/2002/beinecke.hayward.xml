@@ -659,7 +659,7 @@
                </did>
                <c03 id="f1" level="file">
                   <did>
-                     <container type="Box">1</container>
+                     <container type="Box"><title>1</title></container>
                      <container type="Folder">1</container>
                      <unittitle type="genericfolder"> Bentley, [Richard] </unittitle>
                      <unitdate>1873-83</unitdate>
