@@ -903,13 +903,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
-
-    <!-- if content is only a name element - copy and apply-templates
-     if only text content: create name/part element with entire text inside
-     if text and name elements ?
--->
+    
     <xsl:template match="origination">
-        
         <origination>
             <xsl:apply-templates select="@*"/>
             <xsl:choose>
