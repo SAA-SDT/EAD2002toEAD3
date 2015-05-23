@@ -259,6 +259,10 @@ For these and/or other purposes and motivations, and without any expectation of 
         item/repository | item/unittitle | 
         custodhist//acqinfo | scopecontent//arrangement |
         materialspec/num | materialspec/materialspec |  
+        entry/origination | event/origination |
+        extref/origination | extrefloc/origination |
+        item/origination | label/origination |
+        p/origination | ref/origination | refloc/origination |
         origination/title |
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
         container/title |
