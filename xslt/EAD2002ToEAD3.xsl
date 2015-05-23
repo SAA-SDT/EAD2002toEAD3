@@ -252,11 +252,10 @@ For these and/or other purposes and motivations, and without any expectation of 
         archref/origination | archref/physdesc |
         archref/physloc | archref/repository |
         archref/unitdate | archref/unitid |
-        archref/unittitle |
         bibref/archref | bibref/edition |
         subtitle/date | subtitle/num |
         corpname/subarea | emph/title | 
-        item/repository | item/unittitle | 
+        item/repository | 
         custodhist//acqinfo | scopecontent//arrangement |
         materialspec/num | materialspec/materialspec |  
         entry/origination | entry/repository |
@@ -269,9 +268,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         ref/origination | ref/origination |
         refloc/origination | refloc/origination |
         origination/title | repository/title |
-        
-        unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
+        unittitle[parent::* except (//did)] | 
+        langusage | language[parent::langusage] | 
+        descrules |
         container/title |
+        unittitle/edition |
         unitdate/title | unitid/title | physloc/title | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
         event/blockquote/p | extref/blockquote/p | extrefloc/blockquote/p | 
         item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p">

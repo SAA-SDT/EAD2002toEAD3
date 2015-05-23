@@ -181,7 +181,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-05-22T21:52:40.167-04:00">2015-05-22T21:52:40.167-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-05-22T22:36:27.15-04:00">2015-05-22T22:36:27.15-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -298,6 +298,56 @@
                <part>name</part>
             </persname>
          </origination>
+         <unittitle>
+            text
+            <abbr>abbr</abbr>
+            <ref>archref</ref>
+            <ref>bibref</ref>
+            bibseries
+            <corpname>
+               <part>corpname</part>
+            </corpname>
+            <date>date</date>
+            edition
+            <emph>emph</emph>
+            <expan>expan</expan>
+            <ptr/>
+            <ref>extref</ref>
+            <famname>
+               <part>famname</part>
+            </famname>
+            <function>
+               <part>function</part>
+            </function>
+            <genreform>
+               <part>genreform</part>
+            </genreform>
+            <geogname>
+               <part>geogname</part>
+            </geogname>
+            imprint
+            <lb/>
+            <name>
+               <part>name</part>
+            </name>
+            <num>num</num>
+            <occupation>
+               <part>occupation</part>
+            </occupation>
+            <persname>
+               <part>persname</part>
+            </persname>
+            <ptr/>
+            <ref>ref</ref>
+            <subject>
+               <part>subject</part>
+            </subject>
+            <title>
+               <part>title</part>
+            </title>
+            unitdate
+         </unittitle>
+         <unitdate>unitdate</unitdate>
          <unittitle label="Title:">Abraham Hayward collection 1791-1962 or something</unittitle>
          <unitdate unitdatetype="inclusive"
                    datechar="creation"

@@ -232,6 +232,35 @@
             <persname>name</persname>
             text <emph>text</emph>
          </origination>
+         <unittitle>
+            text
+            <abbr>abbr</abbr>
+            <archref>archref</archref>
+            <bibref>bibref</bibref>
+            <bibseries>bibseries</bibseries>
+            <corpname>corpname</corpname>
+            <date>date</date>
+            <edition>edition</edition>
+            <emph>emph</emph>
+            <expan>expan</expan>
+            <extptr/>
+            <extref>extref</extref>
+            <famname>famname</famname>
+            <function>function</function>
+            <genreform>genreform</genreform>
+            <geogname>geogname</geogname>
+            <imprint>imprint</imprint>
+            <lb/>
+            <name>name</name>
+            <num>num</num>
+            <occupation>occupation</occupation>
+            <persname>persname</persname>
+            <ptr/>
+            <ref>ref</ref>
+            <subject>subject</subject>
+            <title>title</title>
+            <unitdate>unitdate</unitdate>
+         </unittitle>
          <unittitle label="Title:">Abraham Hayward collection <unitdate type="inclusive"
                datechar="creation" label="Dates:" normal="1791/1962" era="ce" calendar="gregorian"
                >1791-1962</unitdate> or something</unittitle>
