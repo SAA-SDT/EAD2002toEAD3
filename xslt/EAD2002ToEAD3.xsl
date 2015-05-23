@@ -259,11 +259,17 @@ For these and/or other purposes and motivations, and without any expectation of 
         item/repository | item/unittitle | 
         custodhist//acqinfo | scopecontent//arrangement |
         materialspec/num | materialspec/materialspec |  
-        entry/origination | event/origination |
-        extref/origination | extrefloc/origination |
-        item/origination | label/origination |
-        p/origination | ref/origination | refloc/origination |
-        origination/title |
+        entry/origination | entry/repository |
+        event/origination | event/repository |
+        extref/origination | extref/repository |
+        extrefloc/origination | extrefloc/repository |
+        item/origination | item/repository |
+        label/origination | label/repository |
+        p/origination | p/repository |
+        ref/origination | ref/origination |
+        refloc/origination | refloc/origination |
+        origination/title | repository/title |
+        
         unittitle[parent::* except (//did)] | langusage | language[parent::langusage] | descrules |
         container/title |
         unitdate/title | unitid/title | physloc/title | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
@@ -966,17 +972,32 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="repository">
         <repository>
-            <xsl:if test="empty(corpname | name | persname | famname)">
-                <name>
-                    <part>
-                        <xsl:value-of select="descendant::addressline[1]"/>
-                    </part>
-                </name>
-            </xsl:if>
-            <xsl:apply-templates select="corpname | name | persname | famname | address"/>
-            <xsl:comment>
-                <xsl:value-of select=".//text()"/>
-            </xsl:comment>
+            <xsl:apply-templates select="@*"/>
+            <xsl:choose>
+                <xsl:when test="not(text()[normalize-space(.)]) and not(*[not(local-name()='corpname')][not(local-name()='name')][not(local-name()='subarea')][not(local-name()='address')])">
+                    <xsl:apply-templates/>
+                </xsl:when>
+                <xsl:when test="not(corpname | subarea | name | address)">
+                    <name>
+                        <part>
+                            <xsl:apply-templates/>
+                        </part>
+                    </name>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="*[local-name()='corpname' 
+                        or local-name()='subarea' 
+                        or local-name()='name' 
+                        or local-name()='address']"/>
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>Before migration the entire text of this repository was as follows:
+                            "</xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text>"
+                            Portions not included in corpname, subarea, name, or address elements were lost.</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
+                </xsl:otherwise>
+            </xsl:choose>
         </repository>
     </xsl:template>
 

@@ -181,7 +181,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-05-22T14:04:41.509-04:00">2015-05-22T14:04:41.509-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-05-22T21:52:40.167-04:00">2015-05-22T21:52:40.167-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -231,6 +231,14 @@
                altrender="head"
                audience="external"
                id="head1">Overview</head>
+         <materialspec audience="external"
+                       id="materialspec"
+                       altrender="altrender"
+                       localtype="materialspec"
+                       encodinganalog="999"
+                       label="materialspec">materialspec number
+         recursive materialspec
+         </materialspec>
          <didnote altrender="didnote"
                   audience="external"
                   encodinganalog="didnote"
@@ -255,7 +263,41 @@
                  identifier="unitid"
                  localtype="unitid">GEN MSS
             553</unitid>
-         <origination/>
+         <origination label="Creator:"
+                      encodinganalog="100"
+                      altrender="altrender"
+                      id="origination1"
+                      audience="external">
+            <persname encodinganalog="100">
+               <part>Hayward, A. (Abraham), 1801-1884.</part>
+            </persname>
+            <corpname>
+               <part>corpname</part>
+            </corpname>
+         </origination>
+         <origination>
+            <name>
+               <part>
+            text
+            title
+            <ref>archref</ref>
+                  <ref>bibref</ref>
+                  <abbr>abbr</abbr>
+                  <emph>emph</emph>
+                  <expan>expan</expan>
+                  <ptr/>
+                  <ref>extref</ref>
+                  <lb/>
+                  <ptr/>
+                  <ref>ref</ref>
+               </part>
+            </name>
+         </origination>
+         <origination>
+            <persname>
+               <part>name</part>
+            </persname>
+         </origination>
          <unittitle label="Title:">Abraham Hayward collection 1791-1962 or something</unittitle>
          <unitdate unitdatetype="inclusive"
                    datechar="creation"
@@ -298,27 +340,33 @@
             biography of Hayward; manuscript and typescript transcriptions of correspondence and
             writings related to Hayward; a biographical timeline; and other research
             papers.</abstract>
-         <repository>
-            <corpname>
-               <part>Beinecke Rare Book and Manuscript Library</part>
-            </corpname>
+         <repository label="Repository:">
+            <name>
+               <part>
+                  <ref>ref</ref>
+                  <ptr/>
+                  <lb/>
+                  <ref>extref</ref>
+                  <ptr/>
+                  <abbr>abbr</abbr>
+                  <ref>archref</ref>
+                  <ref>bibref</ref>
+                  <emph>emph</emph>
+                  <expan>expan</expan>
+            title
+            <!--<corpname>Beinecke Rare Book and Manuscript Library</corpname>
+            <subarea>subarea</subarea>
+            TExt text <emph>emph</emph>
+            <name>name name</name>
             <address>
                <addressline>P. O. Box 208240</addressline>
                <addressline>New Haven, CT  06520-8240</addressline>
                <addressline altrender="email">Email: beinecke.library@yale.edu</addressline>
                <addressline altrender="phone">Phone: (203) 432-2972</addressline>
                <addressline altrender="fax">Fax: (203) 432-4047</addressline>
-            </address>
-            <!--
-            Beinecke Rare Book and Manuscript Library
-            
-               P. O. Box 208240
-               New Haven, CT  06520-8240
-               Email: beinecke.library@yale.edu
-               Phone: (203) 432-2972
-               Fax: (203) 432-4047
-            
-         -->
+            </address>-->
+         </part>
+            </name>
          </repository>
          <dao daotype="unknown"
               id="bioghistDao"
@@ -531,8 +579,59 @@
          <separatedmaterial localtype="sepmat">
             <head>Separated Material</head>
             <p>blah blah</p>
-            <archref>Archref</archref>
-            <bibref>Bibref</bibref>
+            <archref>
+            <ref actuate="none"
+                 arcrole="arcrole"
+                 href="href"
+                 role="linkrole"
+                 show="none"
+                 title="linktitle"
+                 xpointer="xpointer">Archref
+            abstract
+            container
+            
+               
+            langmaterial
+            materialspec
+               <note>
+                  <p>note paragraph</p>
+               </note>
+            origination
+               <persname>
+                  <part>persname</part>
+               </persname>
+               physdesc
+               physloc
+               <corpname>
+                  <part>repository</part>
+               </corpname> 
+               <corpname>
+                  <part localtype="subarea">subarea</part>
+               </corpname>
+               unitdate
+               unitid
+               unittitle
+            </ref>
+         </archref>
+            <bibref>
+            <ref actuate="none"
+                 arcrole="arcrole"
+                 href="href"
+                 role="linkrole"
+                 show="none"
+                 title="linktitle"
+                 xpointer="xpointer">Bibref
+            bib series
+            imprint
+            edition
+            archref
+            <title>
+                  <part>title</part>
+               </title>
+            
+            
+            </ref>
+         </bibref>
             <p>
             <ref>Extref</ref>
          </p>
@@ -565,7 +664,15 @@
          <otherfindaid>
             <head>Related Material</head>
             <p>blah blah</p>
-            <archref altrender="archref" audience="internal" id="archref">Archref</archref>
+            <archref altrender="archref" audience="internal" id="archref">
+            <ref actuate="none"
+                 arcrole="arcrole"
+                 href="http://google.com"
+                 role="role"
+                 show="none"
+                 title="title"
+                 xpointer="xpointer">Archref</ref>
+         </archref>
             <bibref>Bibref</bibref>
             <p>
             <ref>Extref</ref>
@@ -960,7 +1067,27 @@
                </did>
                <c03 id="f1" level="file">
                   <did>
-                     <container localtype="Box">1</container>
+                     <container localtype="Box">Title 
+                        <ref xpointer="xpointer"
+                             title="linktitle"
+                             show="none"
+                             role="role"
+                             href="href"
+                             arcrole="arcrole"
+                             actuate="none"
+                             altrender="altrender"
+                             id="title222"
+                             audience="external">archref</ref> 
+                        <ref xpointer="xpointer"
+                             title="linktitle"
+                             show="none"
+                             role="role"
+                             href="href"
+                             arcrole="arcrole"
+                             actuate="none"
+                             altrender="altrender"
+                             id="title333"
+                             audience="external">bibref</ref> 1</container>
                      <container localtype="Folder">1</container>
                      <unittitle localtype="genericfolder"> Bentley, [Richard] </unittitle>
                      <unitdate>1873-83</unitdate>
