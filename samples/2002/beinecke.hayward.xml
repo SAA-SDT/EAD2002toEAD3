@@ -164,6 +164,10 @@
       encodinganalog="archdesc" audience="internal" altrender="archdesc" otherlevel="archdesc">
       <did id="did">
          <head althead="View Over" altrender="head" audience="external" id="head1">Overview</head>
+         <materialspec audience="external" id="materialspec" altrender="altrender" 
+            type="materialspec" encodinganalog="999" label="materialspec">materialspec <num>number</num>
+         <materialspec>recursive materialspec</materialspec>
+         </materialspec>
          <note actuate="onload" altrender="didnote" audience="external" encodinganalog="didnote" id="didnote"
             label="Did Note:" show="new" type="didNote">
             <p>1 did note paragraph</p>
@@ -205,8 +209,28 @@
          <unitid label="Call Number:" countrycode="US" repositorycode="US-CtY-BR" altrender="unitid"
             audience="external" encodinganalog="unitid" id="ui1" identifier="unitid" type="unitid"><title>GEN MSS</title>
             553</unitid>
-         <origination label="Creator:">
+         <origination label="Creator:" encodinganalog="100" altrender="altrender" id="origination1" audience="external">
             <persname encodinganalog="100">Hayward, A. (Abraham), 1801-1884.</persname>
+            <corpname>corpname</corpname>
+         </origination>
+         <origination>
+            text
+            <title>title</title>
+            <archref>archref</archref>
+            <bibref>bibref</bibref>
+            <abbr>abbr</abbr>
+            <emph>emph</emph>
+            <expan>expan</expan>
+            <extptr/>
+            <extref>extref</extref>
+            <lb/>
+            <ptr/>
+            <ref>ref</ref>
+         </origination>
+         <origination>
+            text text
+            <persname>name</persname>
+            text <emph>text</emph>
          </origination>
          <unittitle label="Title:">Abraham Hayward collection <unitdate type="inclusive"
                datechar="creation" label="Dates:" normal="1791/1962" era="ce" calendar="gregorian"
@@ -246,14 +270,28 @@
             writings related to Hayward; a biographical timeline; and other research
             papers.</abstract>
          <repository label="Repository:">
-            <corpname>Beinecke Rare Book and Manuscript Library</corpname>
+            <ref>ref</ref>
+            <ptr/>
+            <lb/>
+            <extref>extref</extref>
+            <extptr/>
+            <abbr>abbr</abbr>
+            <archref>archref</archref>
+            <bibref>bibref</bibref>
+            <emph>emph</emph>
+            <expan>expan</expan>
+            <title>title</title>
+            <!--<corpname>Beinecke Rare Book and Manuscript Library</corpname>
+            <subarea>subarea</subarea>
+            TExt text <emph>emph</emph>
+            <name>name name</name>
             <address>
                <addressline>P. O. Box 208240</addressline>
                <addressline>New Haven, CT  06520-8240</addressline>
                <addressline altrender="email">Email: beinecke.library@yale.edu</addressline>
                <addressline altrender="phone">Phone: (203) 432-2972</addressline>
                <addressline altrender="fax">Fax: (203) 432-4047</addressline>
-            </address>
+            </address>-->
          </repository>
       </did>
       <descgrp type="admininfo" id="ai">
@@ -399,8 +437,37 @@
          <separatedmaterial type="sepmat">
             <head>Separated Material</head>
             <p>blah blah</p>
-            <archref>Archref</archref>
-            <bibref>Bibref</bibref>
+            <archref xlink:type="simple" xlink:actuate="none" xlink:show="none" xlink:arcrole="arcrole"
+                xlink:href="href" xlink:role="linkrole" xlink:title="linktitle" xpointer="xpointer">Archref
+            <abstract>abstract</abstract>
+            <container>container</container>
+            <dao><daodesc><p>daodesc</p></daodesc></dao>
+               <daogrp xlink:type="extended">
+                  <daodesc><p>daogrp daodesc</p></daodesc>
+               <daoloc xlink:href="href"/>
+            </daogrp>
+            <langmaterial>langmaterial</langmaterial>
+            <materialspec>materialspec</materialspec>
+               <note><p>note paragraph</p></note>
+            <origination>origination</origination>
+               <origination><persname>persname</persname></origination>
+               <physdesc>physdesc</physdesc>
+               <physloc>physloc</physloc>
+               <repository><corpname>repository</corpname> <subarea>subarea</subarea></repository>
+               <unitdate>unitdate</unitdate>
+               <unitid>unitid</unitid>
+               <unittitle>unittitle</unittitle>
+            </archref>
+            <bibref  xlink:type="simple" xlink:actuate="none" xlink:show="none" xlink:arcrole="arcrole"
+               xlink:href="href" xlink:role="linkrole" xlink:title="linktitle" xpointer="xpointer">Bibref
+            <bibseries>bib series</bibseries>
+            <imprint>imprint</imprint>
+            <edition>edition</edition>
+            <archref>archref</archref>
+            <title>title</title>
+            
+            
+            </bibref>
             <extref>Extref</extref>
             <ref >Ref</ref>
             <title>Title</title>
@@ -659,7 +726,14 @@
                </did>
                <c03 id="f1" level="file">
                   <did>
-                     <container type="Box"><title>1</title></container>
+                     <container type="Box"><title altrender="altrender" audience="external" authfilenumber="authfilenum"
+                         encodinganalog="title" id="title111" normal="normal title" render="altrender" rules="rules" source="source"
+                         type="titleType" xlink:actuate="none" xlink:arcrole="arcrole" xlink:href="href" xlink:role="xlinkrole" xlink:show="none"
+                         xlink:title="xlinktitle" xlink:type="simple" xpointer="xpointer">Title</title> 
+                        <archref xpointer="xpointer" xlink:type="simple" xlink:title="linktitle" xlink:show="none" xlink:role="role"
+                            xlink:href="href" xlink:arcrole="arcrole" xlink:actuate="none" altrender="altrender" id="title222" audience="external">archref</archref> 
+                        <bibref xpointer="xpointer" xlink:type="simple" xlink:title="linktitle" xlink:show="none" xlink:role="role"
+                           xlink:href="href" xlink:arcrole="arcrole" xlink:actuate="none" altrender="altrender" id="title333" audience="external">bibref</bibref> 1</container>
                      <container type="Folder">1</container>
                      <unittitle type="genericfolder"> Bentley, [Richard] </unittitle>
                      <unitdate>1873-83</unitdate>
