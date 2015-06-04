@@ -187,7 +187,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- REMOVE COMPLETELY IF NOT UNDEPRECATED -->
     <xsl:template
-        match="frontmatter | runner | descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/tabledescgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table | @tpattern">
+        match="frontmatter | runner | descgrp/address | descgrp/blockquote | descgrp/chronlist | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/tabledescgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table | @tpattern">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">
                 <xsl:if test="node()=element()">
@@ -210,6 +210,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="arc | resource | ead/@xsi:schemaLocation | 
         custodhist//acqinfo/head | scopecontent//arrangement/head | 
         event/blockquote/chronlist | extref/blockquote/chronlist | extrefloc/blockquote/chronlist | 
+        daodesc/chronlist | event/chronlist | extref/chronlist | extrefloc/chronlist |
+        item/chronlist | p/chronlist | ref/chronlist | refloc/chronlist |
         item/blockquote/chronlist | p/blockquote/chronlist | ref/blockquote/chronlist | refloc/blockquote/chronlist | 
         event/blockquote/list | extref/blockquote/list | extrefloc/blockquote/list | item/blockquote/list | 
         p/blockquote/list | ref/blockquote/list | refloc/blockquote/list | 
