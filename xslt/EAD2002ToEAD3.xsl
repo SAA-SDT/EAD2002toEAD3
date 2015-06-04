@@ -209,8 +209,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="arc | resource | ead/@xsi:schemaLocation | 
         custodhist//acqinfo/head | scopecontent//arrangement/head | 
+        event/blockquote | event/chronlist | event/list | 
         event/blockquote/chronlist | extref/blockquote/chronlist | extrefloc/blockquote/chronlist | 
-        daodesc/chronlist | event/chronlist | extref/chronlist | extrefloc/chronlist |
+        daodesc/chronlist | extref/chronlist | extrefloc/chronlist |
         item/chronlist | p/chronlist | ref/chronlist | refloc/chronlist |
         item/blockquote/chronlist | p/blockquote/chronlist | ref/blockquote/chronlist | refloc/blockquote/chronlist | 
         event/blockquote/list | extref/blockquote/list | extrefloc/blockquote/list | item/blockquote/list | 
@@ -786,8 +787,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- CHRONLIST                                       -->
     <!-- ############################################### -->
 
-    <xsl:template match="chronlist">
-        <xsl:call-template name="gonna-deal-with-this-later"/>
+    <xsl:template match="eventgrp">
+        <xsl:element name="chronitemset">
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates/>
+        </xsl:element>
     </xsl:template>
 
     <!-- ############################################### -->
