@@ -208,8 +208,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- REMOVE COMPLETELY -->
     <xsl:template
         match="arc | resource | ead/@xsi:schemaLocation | 
-        custodhist//acqinfo/head | scopecontent//arrangement/head | 
-        event/blockquote | event/chronlist | event/list | 
+        custodhist//acqinfo/head | scopecontent//arrangement/head | event/chronlist | event/list | 
         event/blockquote/chronlist | extref/blockquote/chronlist | extrefloc/blockquote/chronlist | 
         daodesc/chronlist | extref/chronlist | extrefloc/chronlist |
         item/chronlist | p/chronlist | ref/chronlist | refloc/chronlist |
