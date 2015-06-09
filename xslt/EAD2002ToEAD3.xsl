@@ -265,7 +265,14 @@ For these and/or other purposes and motivations, and without any expectation of 
         extref/origination | extref/repository |
         extrefloc/origination | extrefloc/repository |
         item/origination | item/repository |
-        label/origination | label/repository |
+        label/corpname | label/date |
+        label/famname | label/function |
+        label/genreform | label/geogname |
+        label/name | label/num |
+        label/occupation | label/origination | 
+        label/persname | label/repository |
+        label/subject | label/title |
+        label/unitdate | label/unittitle |
         p/origination | p/repository |
         ref/origination | ref/origination |
         refloc/origination | refloc/origination |
