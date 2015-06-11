@@ -807,10 +807,58 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- Which instances of list to exclude? daodesc, descgrp, extref, extrefloc, ref, refloc, revisiondesc -->
     <xsl:template match="list">
         <list>
-            <xsl:apply-templates select="@* except (@type)"/>
+            <xsl:apply-templates select="@* except (@type, @continuation, @mark)"/>
             <xsl:if test="@type">
-                <xsl:attribute name="listtype" select="replace(@type, 'simple', 'unordered')"/>
+                <xsl:attribute name="listtype">
+                    <xsl:choose>
+                        <xsl:when test="@type='simple' or @type='marked'">
+                            <xsl:value-of select="'unordered'"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="@type"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
             </xsl:if>
+            <xsl:if test="@type='simple'">
+                <xsl:attribute name="mark" select="'none'"/>
+            </xsl:if>
+            <xsl:if test="@mark and not(@type='simple')">
+                <xsl:variable name="markValue" select="@mark"/>
+                <xsl:choose>
+                    <xsl:when test="$markValue='disc' or $markValue='circle' or 
+                        $markValue='square' or $markValue='' or 
+                        $markValue='decimal' or $markValue='decimal-leading-zero' or 
+                        $markValue='lower-roman' or $markValue='upper-roman' or 
+                        $markValue='lower-greek' or $markValue='lower-latin' or 
+                        $markValue='upper-latin' or $markValue='armenian' or 
+                        $markValue='georgian' or $markValue='lower-alpha' or 
+                        $markValue='upper-alpha' or $markValue='none' or 
+                        $markValue='inherit'">
+                            <xsl:attribute name="mark">
+                                <xsl:value-of select="$markValue"/>
+                            </xsl:attribute>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="mark">
+                                <xsl:value-of select="'disc'"/>
+                            </xsl:attribute>
+                            <xsl:call-template name="commentAndMessage">
+                                <xsl:with-param name="comment">
+                                    <xsl:text>@mark value "</xsl:text><xsl:value-of select="$markValue"/><xsl:text> converted to "disc".</xsl:text>
+                                </xsl:with-param>
+                            </xsl:call-template>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                
+            </xsl:if>
+            <xsl:for-each select="@continuation">
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:call-template name="removedElement"/>
+                    </xsl:with-param>
+                </xsl:call-template>
+            </xsl:for-each>
             <xsl:apply-templates select="*"/>
         </list>
     </xsl:template>
@@ -1586,7 +1634,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template name="removedElement">
-        <xsl:text> ELEMENT </xsl:text>
+        <xsl:text> ELEMENT OR ATTRIBUTE </xsl:text>
         <xsl:value-of select="local-name()"/>
         <xsl:text>&#160;</xsl:text>
         <xsl:text>REMOVED FROM </xsl:text>
