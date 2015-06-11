@@ -219,7 +219,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         event/blockquote/table | extref/blockquote/table | extrefloc/blockquote/table | 
         item/blockquote/table | p/blockquote/table | ref/blockquote/table | refloc/blockquote/table | 
         notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | 
-        did/note/@actuate | did/note/@show | did/note[(p[2] or child::*[local-name()!=p])]/@label | @linktype | namegrp/note">
+        did/note/@actuate | did/note/@show | did/note[(p[2] or child::*[local-name()!=p])]/@label | @linktype | namegrp/note | 
+        chronitem/date/@calendar | chronitem/date/@era | 
+        chronitem/date/@certainty | chronitem/date/@encodinganalog">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
@@ -800,6 +802,20 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="chronitem/date">
+        <xsl:choose>
+            <xsl:when test="@normal">
+                
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:element name="datesingle">
+                    <xsl:apply-templates select="@*"/>
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <!-- ############################################### -->
