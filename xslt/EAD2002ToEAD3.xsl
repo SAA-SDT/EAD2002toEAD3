@@ -210,6 +210,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="arc | resource | ead/@xsi:schemaLocation | 
         custodhist//acqinfo/head | scopecontent//arrangement/head | event/chronlist | event/list | 
         event/blockquote/chronlist | extref/blockquote/chronlist | extrefloc/blockquote/chronlist | 
+        daodesc/list | extref/list | extrefloc/list | ref/list | refloc/list |
         daodesc/chronlist | extref/chronlist | extrefloc/chronlist |
         item/chronlist | p/chronlist | ref/chronlist | refloc/chronlist |
         item/blockquote/chronlist | p/blockquote/chronlist | ref/blockquote/chronlist | refloc/blockquote/chronlist | 
