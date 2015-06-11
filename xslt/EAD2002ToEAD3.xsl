@@ -280,6 +280,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         origination/title | repository/title |
         unittitle[parent::* except (//did)] | 
         langusage | language[parent::langusage] | 
+        physdesc/date | title/date |
         descrules |
         container/title |
         unittitle/edition |
