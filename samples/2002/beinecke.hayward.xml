@@ -776,8 +776,29 @@
                <unitid>Series I.</unitid>
                <unittitle type="head"> Correspondence </unittitle>
                <unitdate>1833-1896</unitdate>
-               <physdesc>
+               <physdesc encodinganalog="300" altrender="physdesc" 
+                  audience="external" id="physdesc1" label="physdesc" 
+                  rules="physdescRules" source="physdescSource">
+                  <abbr>abbr</abbr>
+                  <archref>archref</archref>
+                  <bibref>bibref</bibref>
+                  <corpname>corpname</corpname>
+                  <date>date</date>
+                  <dimensions>dimensions</dimensions>
+                  <emph>emph</emph>
+                  <expan>expan</expan>
                   <extent>0.21' (43 folders)</extent>
+                  <famname>famname</famname>
+                  <function>function</function>
+                  <genreform>genreform</genreform>
+                  <geogname>geogname</geogname>
+                  <name>name</name>
+                  <lb/>
+                  <occupation>occupation</occupation>
+                  <persname>persname</persname>
+                  <physfacet>physfacet</physfacet>
+                  <subject>subject</subject>
+                  <title>title</title>
                </physdesc>
             </did>
             <scopecontent>

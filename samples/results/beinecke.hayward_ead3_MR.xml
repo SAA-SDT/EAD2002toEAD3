@@ -181,7 +181,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-06-11T23:22:00.194-04:00">2015-06-11T23:22:00.194-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-06-12T00:00:40.102-04:00">2015-06-12T00:00:40.102-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -1177,8 +1177,31 @@
                <unitid>Series I.</unitid>
                <unittitle localtype="head"> Correspondence </unittitle>
                <unitdate>1833-1896</unitdate>
-               <physdesc>
+               <physdesc encodinganalog="300"
+                         altrender="physdesc"
+                         audience="external"
+                         id="physdesc1"
+                         label="physdesc">
+                  <abbr>abbr</abbr>
+                  <ref>archref</ref>
+                  <ref>bibref</ref>
+                  corpname
+                  date
+                  dimensions
+                  <emph>emph</emph>
+                  <expan>expan</expan>
                   0.21' (43 folders)
+                  famname
+                  function
+                  genreform
+                  geogname
+                  name
+                  <lb/>
+                  occupation
+                  persname
+                  physfacet
+                  subject
+                  title
                </physdesc>
             </did>
             <scopecontent>
