@@ -181,7 +181,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-05-22T22:36:27.15-04:00">2015-05-22T22:36:27.15-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-06-11T23:22:00.194-04:00">2015-06-11T23:22:00.194-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -298,7 +298,12 @@
                <part>name</part>
             </persname>
          </origination>
-         <unittitle>
+         <unittitle audience="external"
+                    id="unittitle1"
+                    altrender="altrender"
+                    encodinganalog="245"
+                    label="Title:"
+                    localtype="unittitle">
             text
             <abbr>abbr</abbr>
             <ref>archref</ref>
@@ -497,9 +502,44 @@
             <blockquote>
                <p>did note blockquote paragraph</p>
             </blockquote>
-            <!--NOT GONNA DEAL WITH chronlist NOW
--->
-            <list listtype="marked">
+            <chronlist>
+               <chronitem>
+                  <datesingle id="dateID2"
+                           audience="external"
+                           altrender="chronItemDate"
+                           localtype="testDate">February 2015</datesingle>
+                  <event>did note chronlist event</event>
+               </chronitem>
+               <chronitem>
+                  <datesingle standarddate="2015-02"
+                           id="dateID3"
+                           audience="external"
+                           altrender="chronItemDate"
+                           localtype="testDate">February 2015</datesingle>
+                  <event>did note chronlist event</event>
+               </chronitem>
+               <chronitem>
+                  <daterange id="dateID4"
+                          audience="external"
+                          altrender="chronItemDate"
+                          localtype="testDate">
+                  <fromdate standarddate="2015-02">February 2015</fromdate>
+                  <todate standarddate="2015-06">June 2015</todate>
+               </daterange>
+                  <event>did note chronlist event</event>
+               </chronitem>
+               <chronitem>
+                  <daterange id="dateID5"
+                          audience="external"
+                          altrender="chronItemDate"
+                          localtype="testDate">
+                  <fromdate standarddate="2015-02">February 2015-–—June 2015</fromdate>
+                  <todate standarddate="2015-06"/>
+               </daterange>
+                  <event>did note chronlist event</event>
+               </chronitem>
+            </chronlist>
+            <list listtype="unordered">
             <item>did note list item 1</item>
             <item>did note list item 2</item>
          </list>
@@ -524,9 +564,13 @@
                <blockquote altrender="bq" audience="external" id="bq1">
                   <p>blockquote paragraph</p>
                   <p>blockquote addressline</p>
-                  <!--NOT GONNA DEAL WITH chronlist NOW
--->
-                  <list listtype="marked">
+                  <chronlist>
+                     <chronitem>
+                        <datesingle>2015</datesingle>
+                        <event>blockquote event</event>
+                     </chronitem>
+                  </chronlist>
+                  <list listtype="unordered">
                <item>blockquote item</item>
             </list>
                   <table>
@@ -836,6 +880,36 @@
             <head>Arrangement Head</head>
             <p>Arrangment paragraph</p>
          </arrangement>
+         <list altrender="simpleList"
+               audience="external"
+               id="simpleID"
+               listtype="unordered"
+               mark="none">
+            <item>simple list item</item>
+         </list>
+         <list altrender="markedList"
+               audience="external"
+               id="markedID"
+               listtype="unordered"
+               mark="disc">
+            <item>marked list item</item>
+         </list>
+         <list altrender="orderedList"
+               audience="external"
+               id="orderedID"
+               numeration="arabic"
+               listtype="ordered">
+            <item>ordered list item</item>
+         </list>
+         <list altrender="defList"
+               audience="external"
+               id="deflistID"
+               listtype="deflist">
+            <defitem>
+               <label>deflist label</label>
+               <item>deflist item</item>
+            </defitem>
+         </list>
       </arrangement>
       <odd altrender="odd"
            id="odd"

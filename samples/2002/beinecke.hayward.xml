@@ -136,7 +136,7 @@
          <subtitle>Subtitle: Sub Madness</subtitle>
          <chronlist>
             <chronitem>
-               <date>Today</date>
+               <date id="dateID" audience="external" altrender="chronItemDate" calendar="gregorian" certainty="approximate" encodinganalog="245g" era="ce" type="testDate">Today</date>
                <event>Something happened</event>
             </chronitem>
          </chronlist>
@@ -185,7 +185,27 @@
             </blockquote>
             <chronlist>
                <chronitem>
-                  <date>February 2015</date>
+                  <date id="dateID2" audience="external" altrender="chronItemDate" 
+                     calendar="gregorian" certainty="approximate" encodinganalog="245g" 
+                     era="ce" type="testDate">February 2015</date>
+                  <event>did note chronlist event</event>
+               </chronitem>
+               <chronitem>
+                  <date id="dateID3" audience="external" altrender="chronItemDate" 
+                     calendar="gregorian" certainty="approximate" encodinganalog="245g" 
+                     era="ce" type="testDate" normal="2015-02">February 2015</date>
+                  <event>did note chronlist event</event>
+               </chronitem>
+               <chronitem>
+                  <date id="dateID4" audience="external" altrender="chronItemDate" 
+                     calendar="gregorian" certainty="approximate" encodinganalog="245g" 
+                     era="ce" type="testDate" normal="2015-02/2015-06">February 2015-June 2015</date>
+                  <event>did note chronlist event</event>
+               </chronitem>
+               <chronitem>
+                  <date id="dateID5" audience="external" altrender="chronItemDate" 
+                     calendar="gregorian" certainty="approximate" encodinganalog="245g" 
+                     era="ce" type="testDate" normal="2015-02/2015-06">February 2015-–—June 2015</date>
                   <event>did note chronlist event</event>
                </chronitem>
             </chronlist>
@@ -232,7 +252,7 @@
             <persname>name</persname>
             text <emph>text</emph>
          </origination>
-         <unittitle>
+         <unittitle audience="external" id="unittitle1" altrender="altrender" encodinganalog="245" label="Title:" type="unittitle">
             text
             <abbr>abbr</abbr>
             <archref>archref</archref>
@@ -621,6 +641,21 @@
             <head>Arrangement Head</head>
             <p>Arrangment paragraph</p>
          </arrangement>
+         <list type="simple" altrender="simpleList" audience="external" id="simpleID">
+            <item>simple list item</item>
+         </list>
+         <list type="marked" altrender="markedList" audience="external" id="markedID" mark="wahlberg">
+            <item>marked list item</item>
+         </list>
+         <list type="ordered" altrender="orderedList" audience="external" id="orderedID" continuation="continues" numeration="arabic">
+            <item>ordered list item</item>
+         </list>
+         <list type="deflist" altrender="defList" audience="external" id="deflistID">
+            <defitem>
+               <label>deflist label</label>
+               <item>deflist item</item>
+            </defitem>
+         </list>
       </arrangement>
       <odd altrender="odd" id="odd" audience="internal" encodinganalog="odd" type="odd">
          <head>ODD head</head>
