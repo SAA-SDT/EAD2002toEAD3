@@ -221,7 +221,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | 
         did/note/@actuate | did/note/@show | did/note[(p[2] or child::*[local-name()!=p])]/@label | @linktype | namegrp/note | 
         chronitem/date/@calendar | chronitem/date/@era | 
-        chronitem/date/@certainty | chronitem/date/@encodinganalog">
+        chronitem/date/@certainty | chronitem/date/@encodinganalog |
+        physdesc/@source | physdesc/@rules">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
@@ -282,7 +283,13 @@ For these and/or other purposes and motivations, and without any expectation of 
         origination/title | repository/title |
         unittitle[parent::* except (//did)] | 
         langusage | language[parent::langusage] | 
-        physdesc/date | title/date |
+        physdesc/date | physdesc/corpname |
+        physdesc/famname | physdesc/function |
+        physdesc/genreform | physdesc/geogname |
+        physdesc/name | physdesc/occupation |
+        physdesc/persname | physdesc/subject |
+        physdesc/title |
+        title/date |
         descrules |
         container/title |
         unittitle/edition |
@@ -816,9 +823,6 @@ For these and/or other purposes and motivations, and without any expectation of 
                             <xsl:value-of select="translate($dateRangeString,'-–—','---')"/>
                         </xsl:variable>
                         <xsl:variable name="normalizedDateRangeStringDashCount" select="string-length($normalizedDateRangeString)-string-length(translate($normalizedDateRangeString,'-',''))"/>
-                        <xsl:message>
-                            <xsl:value-of select="$normalizedDateRangeStringDashCount"/>
-                        </xsl:message>
                         <xsl:element name="daterange">
                             <xsl:apply-templates select="@*[not(local-name()='normal')]"/>
                             <xsl:element name="fromdate">
