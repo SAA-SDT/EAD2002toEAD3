@@ -807,7 +807,53 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="chronitem/date">
         <xsl:choose>
             <xsl:when test="@normal">
-                
+                <xsl:choose>
+                    <xsl:when test="contains(@normal,'/')">
+                        <xsl:variable name="dateRangeString">
+                            <xsl:value-of select="normalize-space(.)"/>
+                        </xsl:variable>
+                        <xsl:variable name="normalizedDateRangeString">
+                            <xsl:value-of select="translate($dateRangeString,'-–—','---')"/>
+                        </xsl:variable>
+                        <xsl:variable name="normalizedDateRangeStringDashCount" select="string-length($normalizedDateRangeString)-string-length(translate($normalizedDateRangeString,'-',''))"/>
+                        <xsl:message>
+                            <xsl:value-of select="$normalizedDateRangeStringDashCount"/>
+                        </xsl:message>
+                        <xsl:element name="daterange">
+                            <xsl:apply-templates select="@*[not(local-name()='normal')]"/>
+                            <xsl:element name="fromdate">
+                                <xsl:attribute name="standarddate">
+                                    <xsl:value-of select="substring-before(@normal,'/')"/>
+                                </xsl:attribute>
+                                <xsl:choose>
+                                    <xsl:when test="$normalizedDateRangeStringDashCount=1">
+                                        <xsl:value-of select="substring-before($normalizedDateRangeString,'-')"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:apply-templates/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:element>
+                            <xsl:element name="todate">
+                                <xsl:attribute name="standarddate">
+                                    <xsl:value-of select="substring-after(@normal,'/')"/>
+                                </xsl:attribute>
+                                <xsl:if test="$normalizedDateRangeStringDashCount=1">
+                                    <xsl:value-of select="substring-after($normalizedDateRangeString,'-')"/>
+                                </xsl:if>
+                            </xsl:element>
+                        </xsl:element>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:element name="datesingle">
+                            <xsl:attribute name="standarddate">
+                                <xsl:value-of select="@normal"/>
+                            </xsl:attribute>
+                            <xsl:apply-templates select="@*[not(local-name()='normal')]"/>
+                            <xsl:apply-templates/>
+                        </xsl:element>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="datesingle">
