@@ -1333,11 +1333,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- RENAMED ELEMENTS AND ATTRIBUTES                -->
     <!-- ############################################### -->
 
-    <!-- the archaic add -->
-    <!--<xsl:template match="add">
-        <xsl:call-template name="nowOdd"/>
-    </xsl:template>-->
-
     <xsl:template
         match="*[self::* except (//dao, //ref, //extref, //title, //archref, //bibref)]/@role">
         <xsl:attribute name="relator">
