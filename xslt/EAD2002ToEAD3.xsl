@@ -872,7 +872,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- LIST                                            -->
     <!-- ############################################### -->
     
-    <!-- Which instances of list to exclude? daodesc, descgrp, extref, extrefloc, ref, refloc, revisiondesc -->
     <xsl:template match="list">
         <list>
             <xsl:apply-templates select="@* except (@type, @continuation, @mark)"/>
