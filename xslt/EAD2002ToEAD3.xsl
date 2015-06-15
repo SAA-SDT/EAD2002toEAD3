@@ -1145,11 +1145,13 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:for-each>
-            <descriptivenote>
-                <p>
-                    <xsl:apply-templates/>
-                </p>
-            </descriptivenote>
+            <xsl:if test="node()[not(local-name()='language')][normalize-space(.)]">
+                <descriptivenote>
+                    <p>
+                        <xsl:apply-templates/>
+                    </p>
+                </descriptivenote>
+            </xsl:if>
         </langmaterial>
     </xsl:template>
 
