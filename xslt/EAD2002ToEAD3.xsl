@@ -283,6 +283,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         origination/title | repository/title |
         unittitle[parent::* except (//did)] | 
         langusage | language[parent::langusage] | 
+        language[parent::langmaterial] |
         physdesc/date | physdesc/corpname |
         physdesc/famname | physdesc/function |
         physdesc/genreform | physdesc/geogname |
@@ -1010,10 +1011,12 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
-            <xsl:apply-templates select="@* except (@role) "/>
-            <xsl:attribute name="linkrole">
-                <xsl:value-of select="daoloc/@role"/>
-            </xsl:attribute>
+            <xsl:apply-templates select="@* except (@role, @xlink:role) "/>
+            <xsl:for-each select="@role | @xlink:role">
+                <xsl:attribute name="linkrole">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>
+            </xsl:for-each>
             <xsl:apply-templates select="child::*"/>
         </dao>
     </xsl:template>
@@ -1128,17 +1131,23 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:choose>
         </repository>
     </xsl:template>
-
-    <!-- script attr becomes script element -->
+    
     <xsl:template match="langmaterial">
         <langmaterial>
-
-            <xsl:apply-templates select="language[@scriptcode]" mode="languageset"/>
-            <xsl:apply-templates select="language[not(@scriptcode)]"/>
-
+            <xsl:apply-templates select="@*"/>
+            <xsl:for-each select="language">
+                <xsl:choose>
+                    <xsl:when test="@scriptcode">
+                        <xsl:apply-templates select="." mode="languageset"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="." mode="nolanguageset"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:for-each>
             <descriptivenote>
                 <p>
-                    <xsl:apply-templates select="./text() | abbr | emph | expan | lb | ref | ptr"/>
+                    <xsl:apply-templates/>
                 </p>
             </descriptivenote>
         </langmaterial>
@@ -1152,6 +1161,13 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:element>
             <script scriptcode="{@scriptcode}"/>
         </languageset>
+    </xsl:template>
+    
+    <xsl:template match="language" mode="nolanguageset">
+        <xsl:element name="language">
+            <xsl:apply-templates select="@* except @scriptcode"/>
+            <xsl:apply-templates/>
+        </xsl:element>
     </xsl:template>
 
 
@@ -1336,6 +1352,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="*[self::* except (//dao, //ref, //extref, //title, //archref, //bibref)]/@role">
         <xsl:attribute name="relator">
+            <xsl:value-of select="."/>
+        </xsl:attribute>
+    </xsl:template>
+    
+    <xsl:template match="@title">
+        <xsl:attribute name="linktitle">
             <xsl:value-of select="."/>
         </xsl:attribute>
     </xsl:template>
