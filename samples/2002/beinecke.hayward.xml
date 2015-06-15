@@ -808,6 +808,53 @@
             <c02 id="d0e205" level="subseries">
                <did>
                   <unittitle type="head"> OUTGOING </unittitle>
+                  <langmaterial altrender="langmaterial" audience="external" encodinganalog="langmat"
+                     id="langmat1" label="Language">
+                     <abbr>abbr</abbr>
+                     <archref>archref</archref>
+                     <bibref>bibref</bibref>
+                     <emph>emph</emph>
+                     <expan>expan</expan>
+                     <extptr/>
+                     <extref>extref</extref>
+                     <language id="languge1" encodinganalog="lang" audience="external"
+                        altrender="lang" langcode="eng" scriptcode="Latn">English</language>
+                     <lb/>
+                     <ptr/>
+                     <ref>ref</ref>
+                     <title>title</title>
+                  </langmaterial>
+                  <langmaterial altrender="langmaterial" audience="external" encodinganalog="langmat"
+                     id="langmat2" label="Language">
+                     <abbr>abbr</abbr>
+                     <archref>archref</archref>
+                     <bibref>bibref</bibref>
+                     <emph>emph</emph>
+                     <expan>expan</expan>
+                     <extptr/>
+                     <extref>extref</extref>
+                     <language id="languge2" encodinganalog="lang" audience="external"
+                        altrender="lang" langcode="eng">English</language>
+                     <lb/>
+                     <ptr/>
+                     <ref>ref</ref>
+                     <title>title</title>
+                  </langmaterial>
+                  <langmaterial>
+                     Materials in <language scriptcode="Latn">Dutch</language>, <language langcode="eng">English</language>, <language langcode="fre" scriptcode="Latn">French</language>, and <language>some language twins speak</language>.
+                  </langmaterial>
+                  <langmaterial>
+                      <language scriptcode="Kana" langcode="jpn">Japanese</language>
+                  </langmaterial>
+                  <dao id="didDao" audience="external" altrender="didDAO"
+                      xlink:actuate="onRequest" xlink:arcrole="didDAOarcrole"
+                      xlink:href="http://www.nytimes.com/" xlink:role="didDAOrole"
+                       xlink:show="new" xlink:title="didDAOtitle" xlink:type="simple"
+                       xpointer="didDAOxpointer">
+                     <daodesc>
+                        <p>did DAO daodeac p</p>
+                     </daodesc>
+                  </dao>
                </did>
                <c03 id="f1" level="file">
                   <did>

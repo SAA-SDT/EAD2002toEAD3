@@ -181,7 +181,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-06-12T00:00:40.102-04:00">2015-06-12T00:00:40.102-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-06-14T22:31:44.485-04:00">2015-06-14T22:31:44.485-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -427,8 +427,7 @@
               id="bioghistDao"
               show="none"
               actuate="none"
-              href="http://www.nytimes.com/"
-              linkrole="">
+              href="http://www.nytimes.com/">
             <descriptivenote>
                <p>daodesc paragraph</p>
             </descriptivenote>
@@ -450,8 +449,7 @@
               id="scopecontentDao"
               show="none"
               actuate="none"
-              href="http://www.nytimes.com/"
-              linkrole="">
+              href="http://www.nytimes.com/">
             <descriptivenote>
                <p>daodesc paragraph</p>
             </descriptivenote>
@@ -472,8 +470,7 @@
               id="oddDao"
               show="none"
               actuate="none"
-              href="http://www.nytimes.com/"
-              linkrole="">
+              href="http://www.nytimes.com/">
             <descriptivenote>
                <p>daodesc paragraph</p>
             </descriptivenote>
@@ -679,7 +676,7 @@
                  href="href"
                  role="linkrole"
                  show="none"
-                 title="linktitle"
+                 linktitle="linktitle"
                  xpointer="xpointer">Archref
             abstract
             container
@@ -713,7 +710,7 @@
                  href="href"
                  role="linkrole"
                  show="none"
-                 title="linktitle"
+                 linktitle="linktitle"
                  xpointer="xpointer">Bibref
             bib series
             imprint
@@ -764,7 +761,7 @@
                  href="http://google.com"
                  role="role"
                  show="none"
-                 title="title"
+                 linktitle="title"
                  xpointer="xpointer">Archref</ref>
          </archref>
             <bibref>Bibref</bibref>
@@ -1211,6 +1208,105 @@
             <c02 id="d0e205" level="subseries">
                <did>
                   <unittitle localtype="head"> OUTGOING </unittitle>
+                  <langmaterial altrender="langmaterial"
+                                audience="external"
+                                encodinganalog="langmat"
+                                id="langmat1"
+                                label="Language">
+                     <languageset>
+                        <language id="languge1"
+                                  encodinganalog="lang"
+                                  audience="external"
+                                  altrender="lang"
+                                  langcode="eng">English</language>
+                        <script scriptcode="Latn"/>
+                     </languageset>
+                     <descriptivenote>
+                        <p>
+                           <abbr>abbr</abbr>
+                           <ref>archref</ref>
+                           <ref>bibref</ref>
+                           <emph>emph</emph>
+                           <expan>expan</expan>
+                           <ptr/>
+                           <ref>extref</ref>
+                     English
+                     <lb/>
+                           <ptr/>
+                           <ref>ref</ref>
+                           <title>
+                              <part>title</part>
+                           </title>
+                        </p>
+                     </descriptivenote>
+                  </langmaterial>
+                  <langmaterial altrender="langmaterial"
+                                audience="external"
+                                encodinganalog="langmat"
+                                id="langmat2"
+                                label="Language">
+                     <language id="languge2"
+                               encodinganalog="lang"
+                               audience="external"
+                               altrender="lang"
+                               langcode="eng">English</language>
+                     <descriptivenote>
+                        <p>
+                           <abbr>abbr</abbr>
+                           <ref>archref</ref>
+                           <ref>bibref</ref>
+                           <emph>emph</emph>
+                           <expan>expan</expan>
+                           <ptr/>
+                           <ref>extref</ref>
+                     English
+                     <lb/>
+                           <ptr/>
+                           <ref>ref</ref>
+                           <title>
+                              <part>title</part>
+                           </title>
+                        </p>
+                     </descriptivenote>
+                  </langmaterial>
+                  <langmaterial>
+                     <languageset>
+                        <language>Dutch</language>
+                        <script scriptcode="Latn"/>
+                     </languageset>
+                     <language langcode="eng">English</language>
+                     <languageset>
+                        <language langcode="fre">French</language>
+                        <script scriptcode="Latn"/>
+                     </languageset>
+                     <language>some language twins speak</language>
+                     <descriptivenote>
+                        <p>
+                     Materials in Dutch, English, French, and some language twins speak.
+                  </p>
+                     </descriptivenote>
+                  </langmaterial>
+                  <langmaterial>
+                     <languageset>
+                        <language langcode="jpn">Japanese</language>
+                        <script scriptcode="Kana"/>
+                     </languageset>
+                  </langmaterial>
+                  <dao daotype="unknown"
+                       id="didDao"
+                       audience="external"
+                       altrender="didDAO"
+                       actuate="onrequest"
+                       arcrole="diddaoarcrole"
+                       href="http://www.nytimes.com/"
+                       show="new"
+                       linktitle="diddaotitle"
+                       xpointer="didDAOxpointer"
+                       linkrole="diddaorole">
+                     <descriptivenote>
+                        <p>did DAO daodeac p</p>
+                     </descriptivenote>
+                  </dao>
                </did>
                <c03 id="f1" level="file">
                   <did>
