@@ -115,6 +115,38 @@
                          encodinganalog="note">
                <p>This encoded finding aid is compliant with the Yale EAD Best Practice Guidelines,
                   Version 1.0.</p>
+               <p>address 1, address 2</p>
+               <blockquote>
+                  <p>blockquote</p>
+               </blockquote>
+               <chronlist>
+                  <chronitem>
+                     <datesingle>date</datesingle>
+                     <event>event</event>
+                  </chronitem>
+               </chronlist>
+               <list listtype="unordered">
+                  <item>list item</item>
+               </list>
+               <table>
+                  <tgroup cols="1">
+                     <tbody>
+                        <row>
+                           <entry>table row entry</entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+               <p>
+                  <footnote show="embed"
+                            id="note2"
+                            audience="external"
+                            altrender="note"
+                            actuate="onload"
+                            localtype="note">
+                     <p>recursive note to controlnote</p>
+                  </footnote>
+               </p>
             </controlnote>
          </notestmt>
       </filedesc>
@@ -181,7 +213,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-06-14T22:31:44.485-04:00">2015-06-14T22:31:44.485-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-06-16T22:23:12.361-04:00">2015-06-16T22:23:12.361-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -550,6 +582,16 @@
                   </tbody>
                </tgroup>
             </table>
+            <p>
+            <footnote localtype="note"
+                      actuate="onload"
+                      altrender="note"
+                      audience="external"
+                      id="note3"
+                      show="embed">
+               <p>did/note/note</p>
+            </footnote>
+         </p>
          </odd>
       
          
@@ -627,7 +669,15 @@
                  altrender="appraisal"
                  id="appraisal">
             <head>Appraisal</head>
-            <p>Appraisal paragraph</p>
+            <p>Appraisal paragraph <footnote show="embed"
+                      id="note30"
+                      audience="external"
+                      altrender="note"
+                      actuate="onload"
+                      localtype="note">
+               <p>appraisal/p/note</p>
+            </footnote>
+         </p>
          </appraisal>
          <fileplan encodinganalog="fileplan"
                 audience="internal"
@@ -684,9 +734,14 @@
                
             langmaterial
             materialspec
-               <note>
+               <footnote localtype="note"
+                         actuate="onload"
+                         altrender="note"
+                         audience="external"
+                         id="note40"
+                         show="embed">
                   <p>note paragraph</p>
-               </note>
+               </footnote>
             origination
                <persname>
                   <part>persname</part>
@@ -1151,9 +1206,16 @@
          <blockquote>
             <p>blockquote paragraph in dsc</p>
          </blockquote>
-         <note>
-            <p>DSC Note paragraph</p>
-         </note>
+         <p>
+            <footnote localtype="notetype"
+                      actuate="onload"
+                      altrender="note"
+                      audience="external"
+                      id="note10"
+                      show="embed">
+               <p>DSC Note paragraph</p>
+            </footnote>
+         </p>
          <table>
             <tgroup cols="1">
                <tbody>
