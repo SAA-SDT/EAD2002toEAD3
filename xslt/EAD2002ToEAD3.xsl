@@ -218,6 +218,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         p/blockquote/list | ref/blockquote/list | refloc/blockquote/list | 
         event/blockquote/table | extref/blockquote/table | extrefloc/blockquote/table | 
         item/blockquote/table | p/blockquote/table | ref/blockquote/table | refloc/blockquote/table | 
+        daodesc/table | event/table | extref/table | extrefloc/table | 
+        item/table | p/table | ref/table | refloc/table |
         notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | 
         did/note/@actuate | did/note/@show | did/note[(p[2] or child::*[local-name()!=p])]/@label | @linktype | namegrp/note | 
         chronitem/date/@calendar | chronitem/date/@era | 
@@ -896,12 +898,6 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:for-each>
             <xsl:apply-templates select="*"/>
         </list>
-    </xsl:template>
-
-    <xsl:template match="item">
-        <item>
-            <xsl:apply-templates select="node() except (chronlist, table)"/>
-        </item>
     </xsl:template>
 
 
