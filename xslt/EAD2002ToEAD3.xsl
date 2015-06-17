@@ -9,7 +9,7 @@
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
             <xd:p>
-                <xd:b>Last Updated: 2015-04-20</xd:b>
+                <xd:b>Last Updated: 2015-06-16</xd:b>
             </xd:p>
             <xd:p><xd:b>Authors:</xd:b> Terry Catapano and Mike Rush</xd:p>
             <xd:p>Convert EAD2002 instance to EAD3</xd:p>
@@ -1445,6 +1445,47 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates/>
         </controlnote>
     </xsl:template>
+    
+    <xsl:template match="entry/note | event/note | item/note | p/note | 
+        archref/note | bibref/note | extref/note | extrefloc/note | ref/note | refloc/note">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED as 'footnote'</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
+        <footnote>
+            <xsl:apply-templates select="@* except(@encodinganalog, @label)"/>
+            <xsl:apply-templates/>
+        </footnote>
+    </xsl:template>
+    
+    <xsl:template match="accessrestrict/note | accruals/note | acqinfo/note | 
+        altformavail/note | appraisal/note | arrangement/note | bibliography/note | 
+        bioghist/note | blockquote/note | controlaccess/note | custodhist/note | 
+        daodesc/note | dsc/note | fileplan/note | 
+        index/note | note/note | odd/note | originalsloc/note | otherfindaid/note | 
+        phystech/note | prefercite/note | processinfo/note | relatedmaterial/note | 
+        scopecontent/note | separatedmaterial/note | userestrict/note | div/note | titlepage/note">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>WRAPPED in a paragraph and RENAMED as 'footnote'</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
+        <p>
+            <footnote>
+                <xsl:apply-templates select="@* except(@encodinganalog, @label)"/>
+                <xsl:apply-templates/>
+            </footnote>
+        </p>
+    </xsl:template>
 
     <!-- ############################################### -->
     <!-- NAMESPACE STRIPPING ELEMENTS                    -->
@@ -1513,7 +1554,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         match="notestmt/note/@type | did/note/@type | abstract/@type | materialspec/@type |
         accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
         originalsloc/@type | phystech/@type | processinfo/@type | relatedmaterial/@type | separatedmaterial/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
-        userestrict/@type | odd/@type | date/@type | name/@type |  persname/@type | famname/@type |
+        userestrict/@type | odd/@type | note/@type | date/@type | name/@type |  persname/@type | famname/@type |
         corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
