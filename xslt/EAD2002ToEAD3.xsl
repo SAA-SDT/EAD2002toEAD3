@@ -187,7 +187,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- REMOVE COMPLETELY IF NOT UNDEPRECATED -->
     <xsl:template
-        match="frontmatter | runner | descgrp/address | descgrp/blockquote | descgrp/chronlist | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/tabledescgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table | @tpattern">
+        match="frontmatter | runner | descgrp/address | descgrp/blockquote | descgrp/chronlist | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table | descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | @tpattern">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">
                 <xsl:if test="node()=element()">
@@ -342,39 +342,6 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:choose>
         </xsl:element>
     </xsl:template>
-
-    <!-- descgrp orphan elements -->
-
-    <!--<xsl:template
-        match="descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table">
-        <xsl:call-template name="commentAndMessage">
-            <xsl:with-param name="comment">
-                <xsl:call-template name="removedElement"/>
-            </xsl:with-param>
-        </xsl:call-template>
-        <xsl:comment>
-            <xsl:apply-templates/>
-        </xsl:comment>
-    </xsl:template>-->
-
-    <!-- ############################################### -->
-    <!-- REVISED CONTENT MODELS                          -->
-    <!-- ############################################### -->
-
-
-    <!-- m.refs from container -->
-    <!--
-    <xsl:template
-        match="container/ref | container/extref | container/linkgrp | container/bibref | container/title | container/archref">
-        <xsl:comment>
-            <xsl:call-template name="removedElement"/>
-        </xsl:comment>
-        <xsl:message>
-            <xsl:call-template name="removedElement"/>
-        </xsl:message>
-    </xsl:template>
--->
-
 
 
     <!-- ############################################### -->
