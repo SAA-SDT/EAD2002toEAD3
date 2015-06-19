@@ -213,7 +213,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-06-18T21:21:31.697-04:00">2015-06-18T21:21:31.697-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-06-19T09:21:58.992-04:00">2015-06-19T09:21:58.992-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -346,7 +346,10 @@
             </corpname>
             <date>date</date>
             edition
-            <emph>emph</emph>
+            <emph>title without link</emph>
+            <emph>
+               <ref href="http://www.nytimes.com/">title with link</ref>
+            </emph>
             <expan>expan</expan>
             <ptr/>
             <ref>extref</ref>
@@ -1362,7 +1365,14 @@
                </did>
                <c03 id="f1" level="file">
                   <did>
-                     <container localtype="Box">Title 
+                     <container localtype="Box">
+                        <ref actuate="none"
+                             arcrole="arcrole"
+                             href="href"
+                             linkrole="xlinkrole"
+                             show="none"
+                             linktitle="xlinktitle"
+                             xpointer="xpointer">Title</ref> 
                         <ref xpointer="xpointer"
                              linktitle="linktitle"
                              show="none"

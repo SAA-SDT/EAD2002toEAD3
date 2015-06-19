@@ -292,7 +292,8 @@
             <corpname>corpname</corpname>
             <date>date</date>
             <edition>edition</edition>
-            <emph>emph</emph>
+            <emph><title>title without link</title></emph>
+            <emph><title xlink:href="http://www.nytimes.com/">title with link</title></emph>
             <expan>expan</expan>
             <extptr/>
             <extref>extref</extref>
