@@ -213,7 +213,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-06-16T22:58:30.659-04:00">2015-06-16T22:58:30.659-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-06-18T21:21:31.697-04:00">2015-06-18T21:21:31.697-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -468,10 +468,7 @@
          <!--moving dao* outside did into did-->
          <!--daogrp with single daoloc now dao-->
          <!--dao now requires attribute "daotype"; setting value to "unknown"-->
-         <dao label="end"
-              href="http://bostonglobe.com"
-              daotype="unknown"
-              linkrole="">
+         <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
                <p>daodesc p</p>
                <p>Address Line 1, Address Line 2, Address Line 3</p>
@@ -490,10 +487,7 @@
          <!--moving dao* outside did into did-->
          <!--daogrp with single daoloc now dao-->
          <!--dao now requires attribute "daotype"; setting value to "unknown"-->
-         <dao label="end"
-              href="http://bostonglobe.com"
-              daotype="unknown"
-              linkrole="">
+         <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
                <p>daodesc p</p>
             </descriptivenote>
@@ -511,10 +505,7 @@
          <!--moving dao* outside did into did-->
          <!--daogrp with single daoloc now dao-->
          <!--dao now requires attribute "daotype"; setting value to "unknown"-->
-         <dao label="end"
-              href="http://bostonglobe.com"
-              daotype="unknown"
-              linkrole="">
+         <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
                <p>daodesc p</p>
             </descriptivenote>
@@ -724,7 +715,7 @@
             <ref actuate="none"
                  arcrole="arcrole"
                  href="href"
-                 role="linkrole"
+                 linkrole="linkrole"
                  show="none"
                  linktitle="linktitle"
                  xpointer="xpointer">Archref
@@ -763,7 +754,7 @@
             <ref actuate="none"
                  arcrole="arcrole"
                  href="href"
-                 role="linkrole"
+                 linkrole="linkrole"
                  show="none"
                  linktitle="linktitle"
                  xpointer="xpointer">Bibref
@@ -814,7 +805,7 @@
             <ref actuate="none"
                  arcrole="arcrole"
                  href="http://google.com"
-                 role="role"
+                 linkrole="role"
                  show="none"
                  linktitle="title"
                  xpointer="xpointer">Archref</ref>
@@ -1051,8 +1042,7 @@
                    id="title1"
                    render="altrender"
                    encodinganalog="title"
-                   localtype="titletype"
-                   role="titlexlinkrole">
+                   localtype="titletype">
                <part>Moby-Dick, or The Whale</part>
             </title>
             <persname encodinganalog="600"
@@ -1361,10 +1351,10 @@
                        actuate="onrequest"
                        arcrole="diddaoarcrole"
                        href="http://www.nytimes.com/"
+                       linkrole="diddaorole"
                        show="new"
                        linktitle="diddaotitle"
-                       xpointer="didDAOxpointer"
-                       linkrole="diddaorole">
+                       xpointer="didDAOxpointer">
                      <descriptivenote>
                         <p>did DAO daodeac p</p>
                      </descriptivenote>
@@ -1374,9 +1364,9 @@
                   <did>
                      <container localtype="Box">Title 
                         <ref xpointer="xpointer"
-                             title="linktitle"
+                             linktitle="linktitle"
                              show="none"
-                             role="role"
+                             linkrole="role"
                              href="href"
                              arcrole="arcrole"
                              actuate="none"
@@ -1384,9 +1374,9 @@
                              id="title222"
                              audience="external">archref</ref> 
                         <ref xpointer="xpointer"
-                             title="linktitle"
+                             linktitle="linktitle"
                              show="none"
-                             role="role"
+                             linkrole="role"
                              href="href"
                              arcrole="arcrole"
                              actuate="none"
