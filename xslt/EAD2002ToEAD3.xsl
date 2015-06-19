@@ -161,7 +161,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template name="copyElement">
         <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
 
@@ -312,7 +313,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="archref[not(parent::separatedmaterial)][not(parent::relatedmaterial)][not(parent::otherfindaid)][not(parent::bibliography)][not(parent::bibref)]">
         <ref>
-            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </ref>
     </xsl:template>
@@ -320,7 +321,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="bibref[not(parent::separatedmaterial)][not(parent::relatedmaterial)][not(parent::otherfindaid)][not(parent::bibliography)]">
         <ref>
-            <xsl:copy-of select="@*"/>
+            <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </ref>
     </xsl:template>
@@ -329,12 +330,12 @@ For these and/or other purposes and motivations, and without any expectation of 
         bibref[parent::bibliography or parent::otherfindaid or parent::relatedmaterial or parent::separatedmaterial]">
         <xsl:element name="{local-name()}">
             <xsl:copy-of
-                select="@* except(@actuate, @arcrole, @href, @linktype, @role, @show, @title, @xpointer)"/>
+                select="@* except(@actuate, @arcrole, @href, @role, @show, @title, @xpointer)"/>
             <xsl:choose>
-                <xsl:when test="@actuate | @arcrole | @href | @linktype | @role | @show | @title | @xpointer">
+                <xsl:when test="@actuate | @arcrole | @href | @role | @show | @title | @xpointer">
                     <ref>
                         <xsl:apply-templates
-                            select="@actuate, @arcrole, @href, @linktype, @role, @show, @title, @xpointer"/>
+                            select="@actuate, @arcrole, @href, @role, @show, @title, @xpointer"/>
                         <xsl:apply-templates/>
                     </ref>
                 </xsl:when>
@@ -945,20 +946,10 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:comment>daogrp with single daoloc now dao</xsl:comment>
         <xsl:comment>dao now requires attribute "daotype"; setting value to "unknown"</xsl:comment>
         <dao>
-            <!-- why does this not work? -->
-            <!--<xsl:copy-of select="daoloc/@* except (@role, @title)"/> -->
-            <xsl:copy-of
-                select="daoloc/@*[name() != 'role' and name() != 'title' and name() != 'linktype']"/>
+            <xsl:apply-templates
+                select="daoloc/@*"/>
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
-            </xsl:attribute>
-            <!--
-            <xsl:attribute name="linktype">
-                <xsl:text>simple</xsl:text>
-            </xsl:attribute>
-            -->
-            <xsl:attribute name="linkrole">
-                <xsl:value-of select="daoloc/@role"/>
             </xsl:attribute>
             <xsl:apply-templates select="daodesc"/>
         </dao>
@@ -974,34 +965,20 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
-            <xsl:apply-templates select="@* except (@role, @xlink:role) "/>
-            <xsl:for-each select="@role | @xlink:role">
-                <xsl:attribute name="linkrole">
-                    <xsl:value-of select="."/>
-                </xsl:attribute>
-            </xsl:for-each>
-            <xsl:apply-templates select="child::*"/>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates/>
         </dao>
     </xsl:template>
 
     <xsl:template match="daoloc">
         <xsl:comment>daoloc</xsl:comment>
         <dao>
-            <xsl:copy-of select="daoloc/@* except (@title, @role)"/>
+            <xsl:apply-templates select="daoloc/@*"/>
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
-            <xsl:attribute name="linkrole">
-                <xsl:value-of select="daoloc/@role"/>
-            </xsl:attribute>
-            <xsl:apply-templates select="child::*"/>
+            <xsl:apply-templates/>
         </dao>
-    </xsl:template>
-
-    <xsl:template match="dao/@role">
-        <xsl:attribute name="linkrole">
-            <xsl:value-of select="."/>
-        </xsl:attribute>
     </xsl:template>
     
     <xsl:template match="origination">
@@ -1185,20 +1162,22 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:call-template>
         <xsl:choose>
             <xsl:when
-                test="(@actuate or @xlink:actuate
-                or @arcrole or @xlink:arcrole
-                or @href or @xlink:href
-                or @show or @xlink:show
-                or @title or @xlink:title
+                test="(@actuate
+                or @arcrole
+                or @href
+                or @role
+                or @show 
+                or @title
                 or @entityref or @xpointer)
                 and not(parent::controlaccess)">
                 <ref>
                     <xsl:apply-templates
-                        select="@actuate | @xlink:actuate
-                        | @arcrole | @xlink:arcrole
-                        | @href | @xlink:href
-                        | @show | @xlink:show
-                        | @title | @xlink:title
+                        select="@actuate
+                        | @arcrole
+                        | @href
+                        | @role
+                        | @show
+                        | @title
                         | @entityref | @xpointer"/>
                     <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
                         <xsl:apply-templates
@@ -1206,7 +1185,6 @@ For these and/or other purposes and motivations, and without any expectation of 
                             | @authfilenumber | @encodinganalog
                             | @id | @normal
                             | @render | @rules
-                            | @role | @xlink:role
                             | @source | @type"/>
                         <part>
                             <xsl:apply-templates/>
@@ -1221,7 +1199,6 @@ For these and/or other purposes and motivations, and without any expectation of 
                         | @authfilenumber | @encodinganalog
                         | @id | @normal
                         | @render | @rules
-                        | @role | @xlink:role
                         | @source | @type"/>
                     <part>
                         <xsl:apply-templates/>
@@ -1230,24 +1207,6 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-
-    <!--<xsl:template name="refDecompose">
-        <ref>
-            <xsl:apply-templates select="@actuate | @xlink:actuate
-                | @arcrole | @xlink:arcrole
-                | @href | @xlink:href
-                | @role | @xlink:role
-                | @show | @xlink:show
-                | @title | @xlink:title
-                | @entityref
-                | @xpointer">
-            </xsl:apply-templates>
-            <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-                <xsl:apply-templates select="@*"/>
-                <xsl:apply-templates/>
-            </xsl:element>
-        </ref>
-    </xsl:template>-->
 
     <xsl:template match="corpname">
         <xsl:call-template name="commentAndMessage">
@@ -1313,12 +1272,24 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
     <!-- RENAMED ELEMENTS AND ATTRIBUTES                -->
     <!-- ############################################### -->
-
-    <xsl:template
-        match="*[self::* except (//dao, //ref, //extref, //title, //archref, //bibref)]/@role">
-        <xsl:attribute name="relator">
-            <xsl:value-of select="."/>
-        </xsl:attribute>
+    
+    <xsl:template match="@role">
+        <xsl:choose>
+            <xsl:when test="parent::corpname | parent::famname | parent::geogname | 
+                parent::name | parent::persname">
+                <xsl:attribute name="relator">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>
+            </xsl:when>
+            <xsl:when test="parent::runner">
+                <xsl:copy-of select="."/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:attribute name="linkrole">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="@title">
@@ -1327,7 +1298,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:attribute>
     </xsl:template>
 
-    <xsl:template match="*/@authfilenumber">
+    <xsl:template match="@authfilenumber">
         <xsl:attribute name="identifier">
             <xsl:value-of select="."/>
         </xsl:attribute>
