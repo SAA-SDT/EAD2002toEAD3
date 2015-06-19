@@ -263,7 +263,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         archref/unitdate | archref/unitid |
         bibref/archref | bibref/edition |
         subtitle/date | subtitle/num |
-        corpname/subarea | emph/title | 
+        corpname/subarea | 
         item/repository | 
         custodhist//acqinfo | scopecontent//arrangement |
         materialspec/num | materialspec/materialspec |  
@@ -278,12 +278,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         label/name | label/num |
         label/occupation | label/origination | 
         label/persname | label/repository |
-        label/subject | label/title |
+        label/subject | 
         label/unitdate | label/unittitle |
         p/origination | p/repository |
         ref/origination | ref/origination |
         refloc/origination | refloc/origination |
-        origination/title | repository/title |
         unittitle[parent::* except (//did)] | 
         langusage | language[parent::langusage] | 
         language[parent::langmaterial] |
@@ -292,12 +291,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         physdesc/genreform | physdesc/geogname |
         physdesc/name | physdesc/occupation |
         physdesc/persname | physdesc/subject |
-        physdesc/title |
-        title/date |
+        title/date | title/num |
         descrules |
-        container/title |
-        unittitle/edition |
-        unitdate/title | unitid/title | physloc/title | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
+        unittitle/edition | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
         event/blockquote/p | extref/blockquote/p | extrefloc/blockquote/p | 
         item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p">
         <xsl:call-template name="commentAndMessage">
@@ -1146,6 +1142,23 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <p>
                     <xsl:call-template name="titleLinkDecomposeAddPart"/>
                 </p>
+            </xsl:when>
+            <xsl:when test="parent::emph | parent::label | parent::origination |
+                parent::repository | parent::physdesc | parent::container |
+                parent::unitdate | parent::unitid | parent::physloc">
+                <xsl:choose>
+                    <xsl:when test="@actuate or @arcrole or @href or @role or @show 
+                        or @title or @entityref or @xpointer">
+                        <ref>
+                            <xsl:apply-templates select="@actuate | @arcrole | @href | @role | @show 
+                                | @title | @entityref | @xpointer"/>
+                            <xsl:apply-templates/>
+                        </ref>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:call-template name="titleLinkDecomposeAddPart"/>
