@@ -6,11 +6,17 @@
         <rng:define name="e.ead">
             <element name="ead">
                 <ref name="am.common"/>
-                <ref name="a.relatedencoding"/>
-                <ref name="a.base"/>
+                <optional>
+                    <ref name="a.relatedencoding"/>
+                </optional>
+                <optional>
+                    <ref name="a.base"/>
+                </optional>
                 <ref name="e.control"/>
                 <!-- OPTIONAL FRONTMATTER -->
-                <optional><ref name="e.frontmatter"/></optional>
+                <optional>
+                    <ref name="e.frontmatter"/>
+                </optional>
                 <ref name="e.archdesc"/>
             </element>
         </rng:define>
@@ -20,11 +26,17 @@
         <rng:define name="e.archdesc">
             <element name="archdesc">
                 <ref name="am.common"/>
-                <ref name="a.localtype"/>
-                <ref name="a.relatedencoding"/>
+                <optional>
+                    <ref name="a.localtype"/>
+                </optional>
+                <optional>
+                    <ref name="a.relatedencoding"/>
+                </optional>
                 <ref name="am.desc.base"/>
                 <ref name="a.level"/>
-                <ref name="a.base"/>
+                <optional>
+                    <ref name="a.base"/>
+                </optional>
                 <zeroOrMore>
                     <ref name="e.runner"/>
                 </zeroOrMore>
@@ -37,6 +49,52 @@
                 </zeroOrMore>
             </element>
         </rng:define>
+
+        <!-- dsc -->
+
+        <rng:define name="e.dsc">
+            <element name="dsc">
+                <ref name="am.common"/>
+                <optional>
+                    <attribute name="tpattern">
+                        <data type="NMTOKEN"/>
+                    </attribute>
+                </optional>
+                <optional>
+                    <attribute name="dsctype">
+                        <choice>
+                            <value>analyticover</value>
+                            <value>combined</value>
+                            <value>in-depth</value>
+                            <value>otherdsctype</value>
+                        </choice>
+                    </attribute>
+                </optional>
+                <optional>
+                    <attribute name="otherdsctype">
+                        <data type="token"/>
+                    </attribute>
+                </optional>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <group>
+                    <optional>
+                        <ref name="e.head"/>
+                    </optional>
+                    <zeroOrMore>
+                        <ref name="m.blocks"/>
+                    </zeroOrMore>
+                </group>
+                <optional>
+                    <ref name="e.thead"/>
+                </optional>
+                <optional>
+                    <ref name="m.cOrC01"/>
+                </optional>
+            </element>
+        </rng:define>
+
         <!-- Components -->
         <rng:define name="e.c">
             <element name="c">
@@ -926,7 +984,9 @@
         </choice>
       </attribute>
       <optional>
-        <attribute name="otherdaotype"/>
+        <attribute name="otherdaotype">
+          <data type="token"/>
+        </attribute>
       </optional>
       <optional>
         <ref name="a.coverage"/>
@@ -1095,7 +1155,9 @@
         </choice>
       </attribute>
       <optional>
-        <attribute name="otherphysdescstructuredtype"/>
+        <attribute name="otherphysdescstructuredtype">
+          <data type="token"/>
+        </attribute>
       </optional>
       <ref name="a.coverage"/>
       <element name="quantity">
@@ -2613,43 +2675,7 @@
     </element>
   </rng:define>
   <!-- DSC -->
-  <rng:define name="e.dsc">
-    <element name="dsc">
-      <ref name="am.common"/>
-      <optional>
-        <attribute name="dsctype">
-          <choice>
-            <value>analyticover</value>
-            <value>combined</value>
-            <value>in-depth</value>
-            <value>otherdsctype</value>
-          </choice>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute name="otherdsctype">
-          <data type="NMTOKEN"/>
-        </attribute>
-      </optional>
-      <optional>
-        <ref name="a.encodinganalog"/>
-      </optional>
-      <group>
-        <optional>
-          <ref name="e.head"/>
-        </optional>
-        <zeroOrMore>
-          <ref name="m.blocks"/>
-        </zeroOrMore>
-      </group>
-      <optional>
-        <ref name="e.thead"/>
-      </optional>
-      <optional>
-        <ref name="m.cOrC01"/>
-      </optional>
-    </element>
-  </rng:define>
+  
   
   
   
@@ -2692,7 +2718,7 @@
           </attribute>
           <optional>
             <attribute name="otherrelationtype">
-              <data type="string"/>
+              <data type="token"/>
             </attribute>
           </optional>
           <optional>
@@ -2744,7 +2770,7 @@
     <element>
       <anyName>
         <except>
-          <nsName ns="http://ead3.archivists.org/schema/"/>
+          <nsName ns="http://ead3.archivists.org/schema/undeprecated/"/>
         </except>
       </anyName>
       <zeroOrMore>
@@ -2808,47 +2834,17 @@
   <rng:define name="m.datesingle">
     <optional>
       <attribute name="standarddate">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+          <data type="token"/>
       </attribute>
     </optional>
     <optional>
       <attribute name="notbefore">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+        <data type="token"/> 
       </attribute>
     </optional>
     <optional>
       <attribute name="notafter">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+        <data type="token"/>
       </attribute>
     </optional>
     <ref name="m.mixed.basic"/>
@@ -3028,7 +3024,7 @@
   <rng:define name="am.desc.base">
     <optional>
       <attribute name="otherlevel">
-        <data type="NMTOKEN"/>
+        <data type="token"/>
       </attribute>
     </optional>
     <optional>
@@ -3448,13 +3444,20 @@
                 <ref name="e.head"/>
             </optional>
             <oneOrMore>
+                <choice>
                 <ref name="m.blocks"/>
                 <ref name="m.desc.base.descgrp"/>
+                </choice>
             </oneOrMore>
         </element>
     </rng:define>
     <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="m.c.base.descgrp">
         <ref name="am.desc.c"/>
+        <optional>
+            <attribute name="tpattern">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </optional>
         <optional>
             <ref name="e.head"/>
         </optional>
@@ -3481,21 +3484,21 @@
                 </choice>
             </zeroOrMore>
         </element>
-      
+
 
     </rng:define>
     <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.frontmatter">
 
-            <element name="frontmatter">
-                <ref name="am.common"/>
-                <optional>
-                    <ref name="e.titlepage"/>
-                    
-                </optional>
-                <zeroOrMore>
-                    <ref name="e.div"/>
-                </zeroOrMore>
-            </element>
+        <element name="frontmatter">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="e.titlepage"/>
+
+            </optional>
+            <zeroOrMore>
+                <ref name="e.div"/>
+            </zeroOrMore>
+        </element>
     </rng:define>
     <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.titlepage">
         <element name="titlepage">
