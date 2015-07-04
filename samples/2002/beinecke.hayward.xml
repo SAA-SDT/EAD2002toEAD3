@@ -349,7 +349,18 @@
             materials consist of correspondence; typescripts for three chapters of an unfinished
             biography of Hayward; manuscript and typescript transcriptions of correspondence and
             writings related to Hayward; a biographical timeline; and other research
-            papers.</abstract>
+            papers.
+         
+         <linkgrp>
+            <resource xlink:label="start">Start of the link</resource>
+            <arc xlink:from="start" xlink:to="end"/>
+            <extptrloc xlink:href="http://extptrloc.com"/>
+            <ptrloc xlink:href="http://ptrloc.com"/>
+            <extrefloc xlink:href="http://extrefloc.com">extrefloc</extrefloc>
+            <refloc xlink:href="http://refloc.com">refloc</refloc>
+         </linkgrp>
+         
+         </abstract>
          <repository label="Repository:">
             <ref>ref</ref>
             <ptr/>
