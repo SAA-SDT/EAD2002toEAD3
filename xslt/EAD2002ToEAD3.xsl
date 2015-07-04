@@ -1693,13 +1693,43 @@ For these and/or other purposes and motivations, and without any expectation of 
                 parent::relatedmaterial or 
                 parent::separatedmaterial">
                 <p>
-                    <!-- Figure out what to do with linkgrp -->
+                    <xsl:call-template name="decomposeLinkgrp"/>
                 </p>
             </xsl:when>
             <xsl:otherwise>
-                <!-- Figure out what to do with linkgrp -->
+                <xsl:call-template name="decomposeLinkgrp"/>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="decomposeLinkgrp">
+        <xsl:variable name="arcCount" select="count(arc)"/>
+        <xsl:choose>
+            <xsl:when test="$arcCount=0">
+                <xsl:call-template name="decomposeLinkgrpNoArc"/>
+            </xsl:when>
+            <xsl:when test="$arcCount>0">
+                <xsl:choose>
+                    <xsl:when test="not(arc[not(@from)]) and not(arc[not(@to)])">
+                        <xsl:call-template name="decomposeLinkgrpNoArc"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="decomposeLinkgrpArc"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="decomposeLinkgrpNoArc">
+        <xsl:for-each select="extptrloc | ptrloc | extrefloc | refloc">
+            <xsl:apply-templates/>
+            <xsl:if test="position()!=last()">, </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template name="decomposeLinkgrpArc">
+        
     </xsl:template>
 
 
