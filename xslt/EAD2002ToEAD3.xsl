@@ -943,6 +943,9 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <xsl:when test="@numeration='lowerroman'">
                             <xsl:value-of select="'lower-roman'"/>
                         </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="'decimal'"/>
+                        </xsl:otherwise>
                     </xsl:choose>
                 </xsl:attribute>
             </xsl:if>
