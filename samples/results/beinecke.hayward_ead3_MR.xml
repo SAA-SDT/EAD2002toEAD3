@@ -213,7 +213,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-06-19T09:21:58.992-04:00">2015-06-19T09:21:58.992-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-07-26T23:13:55.963-04:00">2015-07-26T23:13:55.963-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -429,7 +429,11 @@
             materials consist of correspondence; typescripts for three chapters of an unfinished
             biography of Hayward; manuscript and typescript transcriptions of correspondence and
             writings related to Hayward; a biographical timeline; and other research
-            papers.</abstract>
+            papers.
+         
+         , , extrefloc, refloc
+         
+         </abstract>
          <repository label="Repository:">
             <name>
                <part>
@@ -943,7 +947,7 @@
          <list altrender="orderedList"
                audience="external"
                id="orderedID"
-               numeration="arabic"
+               numeration="decimal"
                listtype="ordered">
             <item>ordered list item</item>
          </list>
