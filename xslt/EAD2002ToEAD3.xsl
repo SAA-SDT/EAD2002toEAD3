@@ -925,6 +925,27 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </xsl:choose>
                 
             </xsl:if>
+            <xsl:if test="@numeration">
+                <xsl:attribute name="numeration">
+                    <xsl:choose>
+                        <xsl:when test="@numeration='arabic'">
+                            <xsl:value-of select="'decimal'"/>
+                        </xsl:when>
+                        <xsl:when test="@numeration='upperalpha'">
+                            <xsl:value-of select="'upper-alpha'"/>
+                        </xsl:when>
+                        <xsl:when test="@numeration='loweralpha'">
+                            <xsl:value-of select="'lower-alpha'"/>
+                        </xsl:when>
+                        <xsl:when test="@numeration='upperroman'">
+                            <xsl:value-of select="'upper-roman'"/>
+                        </xsl:when>
+                        <xsl:when test="@numeration='lowerroman'">
+                            <xsl:value-of select="'lower-roman'"/>
+                        </xsl:when>
+                    </xsl:choose>
+                </xsl:attribute>
+            </xsl:if>
             <xsl:for-each select="@continuation">
                 <xsl:call-template name="commentAndMessage">
                     <xsl:with-param name="comment">
