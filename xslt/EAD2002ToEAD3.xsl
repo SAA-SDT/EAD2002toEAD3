@@ -296,11 +296,13 @@ For these and/or other purposes and motivations, and without any expectation of 
         unittitle/edition | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
         event/blockquote/p | extref/blockquote/p | extrefloc/blockquote/p | 
         item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p">
-        <xsl:call-template name="commentAndMessage">
-            <xsl:with-param name="comment">
-                <xsl:call-template name="removedElement"/>
-            </xsl:with-param>
-        </xsl:call-template>
+        <xsl:if test="node()=element()">
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:call-template name="removedElement"/>
+                </xsl:with-param>
+            </xsl:call-template>
+        </xsl:if>
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -308,6 +310,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template
         match="archref[not(parent::separatedmaterial)][not(parent::relatedmaterial)][not(parent::otherfindaid)][not(parent::bibliography)][not(parent::bibref)]">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT archref CONVERTED TO ref</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <ref>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
@@ -317,6 +324,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="bibref[not(parent::separatedmaterial)][not(parent::relatedmaterial)][not(parent::otherfindaid)][not(parent::bibliography)]">
         <ref>
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>ELEMENT bibref CONVERTED TO ref</xsl:text>
+                </xsl:with-param>
+            </xsl:call-template>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </ref>
@@ -324,11 +336,19 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="archref[not(parent::bibref)][parent::bibliography or parent::otherfindaid or parent::relatedmaterial or parent::separatedmaterial] | 
         bibref[parent::bibliography or parent::otherfindaid or parent::relatedmaterial or parent::separatedmaterial]">
+        
         <xsl:element name="{local-name()}">
             <xsl:copy-of
                 select="@* except(@actuate, @arcrole, @href, @role, @show, @title, @xpointer)"/>
             <xsl:choose>
                 <xsl:when test="@actuate | @arcrole | @href | @role | @show | @title | @xpointer">
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>LINKING ATTRIBUTES REMOVED FROM ELEMENT </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> AND SHIFTED TO CHILD ref ELEMENT</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                     <ref>
                         <xsl:apply-templates
                             select="@actuate, @arcrole, @href, @role, @show, @title, @xpointer"/>
@@ -756,6 +776,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:when
                 test="parent::event | parent::extref | parent::extrefloc | 
                 parent::item | parent::p | parent::ref | parent::refloc">
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>ELEMENT blockquote CONVERTED TO quote</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
                 <xsl:element name="quote">
                     <xsl:copy-of select="@*"/>
                     <xsl:apply-templates/>
@@ -772,6 +797,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template match="eventgrp">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT eventgrp CONVERTED TO chronitemset</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <xsl:element name="chronitemset">
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
@@ -790,6 +820,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                             <xsl:value-of select="translate($dateRangeString,'-–—','---')"/>
                         </xsl:variable>
                         <xsl:variable name="normalizedDateRangeStringDashCount" select="string-length($normalizedDateRangeString)-string-length(translate($normalizedDateRangeString,'-',''))"/>
+                        <xsl:call-template name="commentAndMessage">
+                            <xsl:with-param name="comment">
+                                <xsl:text>ELEMENT chronitem/date CONVERTED TO chronitem/daterange</xsl:text>
+                            </xsl:with-param>
+                        </xsl:call-template>
                         <xsl:element name="daterange">
                             <xsl:apply-templates select="@*[not(local-name()='normal')]"/>
                             <xsl:element name="fromdate">
@@ -816,6 +851,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                         </xsl:element>
                     </xsl:when>
                     <xsl:otherwise>
+                        <xsl:call-template name="commentAndMessage">
+                            <xsl:with-param name="comment">
+                                <xsl:text>ELEMENT chronitem/date CONVERTED TO chronitem/datesingle</xsl:text>
+                            </xsl:with-param>
+                        </xsl:call-template>
                         <xsl:element name="datesingle">
                             <xsl:attribute name="standarddate">
                                 <xsl:value-of select="@normal"/>
@@ -827,6 +867,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>ELEMENT chronitem/date CONVERTED TO chronitem/datesingle</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
                 <xsl:element name="datesingle">
                     <xsl:apply-templates select="@*"/>
                     <xsl:apply-templates/>
