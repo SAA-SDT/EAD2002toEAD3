@@ -906,13 +906,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:variable name="markValue" select="@mark"/>
                 <xsl:choose>
                     <xsl:when test="$markValue='disc' or $markValue='circle' or 
-                        $markValue='square' or $markValue='' or 
-                        $markValue='decimal' or $markValue='decimal-leading-zero' or 
-                        $markValue='lower-roman' or $markValue='upper-roman' or 
-                        $markValue='lower-greek' or $markValue='lower-latin' or 
-                        $markValue='upper-latin' or $markValue='armenian' or 
-                        $markValue='georgian' or $markValue='lower-alpha' or 
-                        $markValue='upper-alpha' or $markValue='none' or 
+                        $markValue='square' or $markValue='none' or 
                         $markValue='inherit'">
                             <xsl:attribute name="mark">
                                 <xsl:value-of select="$markValue"/>
