@@ -161,7 +161,18 @@
         <xs:element name="physfacet" type="physfacet"/>
         <xs:element name="dimensions" type="dimensions"/>
       </xs:choice><xs:attributeGroup ref="am.common"/><xs:attribute name="localtype" type="xs:token"/><xs:attribute name="label" type="xs:string"/><xs:attribute name="encodinganalog" type="xs:token"/></xs:complexType>
-  <xs:complexType name="extent"/>
+  <xs:complexType name="bibref"><xs:complexContent>
+        <xs:extension base="m.mixed.basic.plus.access.ref">
+          <xs:attributeGroup ref="am.common"/>
+          <xs:attribute name="encodinganalog" type="xs:token"/>
+        </xs:extension>
+      </xs:complexContent></xs:complexType>
+  <xs:complexType name="e.anyname">
+    <xs:choice>
+      <xs:any namespace="##other" processContents="lax"/>
+      <xs:any namespace="##local" processContents="lax"/>
+    </xs:choice>
+  </xs:complexType>
   <!-- ELEMENTS -->
   <!-- control -->
   <xs:complexType name="control"><xs:sequence>
@@ -999,6 +1010,13 @@
             <xs:enumeration value="disc"/>
             <xs:enumeration value="circle"/>
             <xs:enumeration value="square"/>
+            <xs:enumeration value="none"/>
+            <xs:enumeration value="inherit"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute><xs:attribute name="numeration">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
             <xs:enumeration value="decimal"/>
             <xs:enumeration value="decimal-leading-zero"/>
             <xs:enumeration value="lower-roman"/>
@@ -1010,18 +1028,7 @@
             <xs:enumeration value="georgian"/>
             <xs:enumeration value="lower-alpha"/>
             <xs:enumeration value="upper-alpha"/>
-            <xs:enumeration value="none"/>
             <xs:enumeration value="inherit"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute><xs:attribute name="numeration">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="arabic"/>
-            <xs:enumeration value="upperalpha"/>
-            <xs:enumeration value="loweralpha"/>
-            <xs:enumeration value="upperroman"/>
-            <xs:enumeration value="lowerroman"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute></xs:complexType>
@@ -1199,12 +1206,6 @@
         </xs:extension>
       </xs:complexContent></xs:complexType>
   <xs:complexType name="archref"><xs:complexContent>
-        <xs:extension base="m.mixed.basic.plus.access">
-          <xs:attributeGroup ref="am.common"/>
-          <xs:attribute name="encodinganalog" type="xs:token"/>
-        </xs:extension>
-      </xs:complexContent></xs:complexType>
-  <xs:complexType name="bibref"><xs:complexContent>
         <xs:extension base="m.mixed.basic.plus.access">
           <xs:attributeGroup ref="am.common"/>
           <xs:attribute name="encodinganalog" type="xs:token"/>
@@ -1416,12 +1417,6 @@
           <xs:attributeGroup ref="am.common"/>
         </xs:extension>
       </xs:complexContent></xs:complexType>
-  <xs:complexType name="e.anyname">
-    <xs:choice>
-      <xs:any namespace="##other" processContents="lax"/>
-      <xs:any namespace="##local" processContents="lax"/>
-    </xs:choice>
-  </xs:complexType>
   <!-- ELEMENT MODELS -->
   <xs:group name="m.blocks">
     <xs:choice>
@@ -1983,4 +1978,25 @@
         <xs:element name="titleproper" type="titleproper"/>
         <xs:element name="subtitle" type="subtitle"/>
       </xs:choice><xs:attributeGroup ref="am.common"/></xs:complexType>
+  <xs:complexType name="extent"><xs:complexContent>
+        <xs:extension base="m.mixed.basic">
+          <xs:attributeGroup ref="am.common"/>
+          <xs:attribute name="label" type="xs:string"/>
+          <xs:attribute name="encodinganalog" type="xs:token"/>
+          <xs:attribute name="localtype" type="xs:token"/>
+          <xs:attribute name="unit" type="xs:token"/>
+        </xs:extension>
+      </xs:complexContent></xs:complexType>
+  <xs:complexType name="m.mixed.basic.plus.access.ref" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="m.mixed.basic.elements"/>
+      <xs:group ref="m.access"/>
+      <xs:element name="date" type="date"/>
+      <xs:element name="footnote" type="footnote"/>
+      <xs:element name="num" type="num"/>
+      <xs:element name="quote" type="quote"/>
+      <xs:element name="bibseries" type="bibseries"/>
+      <xs:element name="imprint" type="imprint"/>
+    </xs:choice>
+  </xs:complexType>
 </xs:schema>

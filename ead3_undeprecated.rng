@@ -313,9 +313,7 @@
                         <ref name="e.footnote"/>
                         <ref name="e.num"/>
                         <ref name="e.quote"/>
-                        <element name="extent">
-                            <ref name="m.mixed.basic"/>
-                        </element>
+                        <ref name="e.extent"/>
                         <ref name="e.physfacet"/>
                         <ref name="e.dimensions"/>
                     </choice>
@@ -323,7 +321,35 @@
 
             </element>
         </rng:define>
-
+        <rng:define name="e.bibref">
+            <element name="bibref">
+                <ref name="am.common"/>
+                <optional>
+                    <ref name="a.encodinganalog"/>
+                </optional>
+                <ref name="m.mixed.basic.plus.access.ref"/>
+            </element>
+        </rng:define>
+        <rng:define name="e.anyname">
+            <element>
+                <anyName>
+                    <except>
+                        <nsName ns="http://ead3.archivists.org/schema/undeprecated/"/>
+                    </except>
+                </anyName>
+                <zeroOrMore>
+                    <attribute>
+                        <anyName/>
+                    </attribute>
+                </zeroOrMore>
+                <zeroOrMore>
+                    <choice>
+                        <text/>
+                        <ref name="e.anyname"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+        </rng:define>
     <rng:div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <!-- ELEMENTS -->
   
@@ -2100,6 +2126,14 @@
             <value>disc</value>
             <value>circle</value>
             <value>square</value>
+            <value>none</value>
+            <value>inherit</value>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="numeration">
+          <choice>
             <value>decimal</value>
             <value>decimal-leading-zero</value>
             <value>lower-roman</value>
@@ -2111,19 +2145,7 @@
             <value>georgian</value>
             <value>lower-alpha</value>
             <value>upper-alpha</value>
-            <value>none</value>
             <value>inherit</value>
-          </choice>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute name="numeration">
-          <choice>
-            <value>arabic</value>
-            <value>upperalpha</value>
-            <value>loweralpha</value>
-            <value>upperroman</value>
-            <value>lowerroman</value>
           </choice>
         </attribute>
       </optional>
@@ -2453,15 +2475,7 @@
       <ref name="m.mixed.basic.plus.access"/>
     </element>
   </rng:define>
-  <rng:define name="e.bibref">
-    <element name="bibref">
-      <ref name="am.common"/>
-      <optional>
-        <ref name="a.encodinganalog"/>
-      </optional>
-      <ref name="m.mixed.basic.plus.access"/>
-    </element>
-  </rng:define>
+  
   <rng:define name="e.descriptivenote">
     <element name="descriptivenote">
       <ref name="am.common"/>
@@ -2766,26 +2780,7 @@
       <ref name="e.anyname"/>
     </element>
   </rng:define>
-  <rng:define name="e.anyname">
-    <element>
-      <anyName>
-        <except>
-          <nsName ns="http://ead3.archivists.org/schema/undeprecated/"/>
-        </except>
-      </anyName>
-      <zeroOrMore>
-        <attribute>
-          <anyName/>
-        </attribute>
-      </zeroOrMore>
-      <zeroOrMore>
-        <choice>
-          <text/>
-          <ref name="e.anyname"/>
-        </choice>
-      </zeroOrMore>
-    </element>
-  </rng:define>
+  
   <!-- ELEMENT MODELS -->
   <rng:define name="m.blocks">
     <choice>
@@ -3445,8 +3440,8 @@
             </optional>
             <oneOrMore>
                 <choice>
-                <ref name="m.blocks"/>
-                <ref name="m.desc.base.descgrp"/>
+                    <ref name="m.blocks"/>
+                    <ref name="m.desc.base.descgrp"/>
                 </choice>
             </oneOrMore>
         </element>
@@ -3518,5 +3513,40 @@
                 </choice>
             </oneOrMore>
         </element>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="e.extent">
+        <element name="extent">
+            <ref name="am.common"/>
+            <optional>
+                <ref name="a.label"/>
+            </optional>
+            <optional>
+                <ref name="a.encodinganalog"/>
+            </optional>
+            <optional>
+                <ref name="a.localtype"/>
+            </optional>
+            <optional>
+                <attribute name="unit">
+                    <data type="token"/>
+                </attribute>
+            </optional>
+            <ref name="m.mixed.basic"/>
+        </element>
+    </rng:define>
+    <rng:define xmlns:rng="http://relaxng.org/ns/structure/1.0" name="m.mixed.basic.plus.access.ref">
+        <zeroOrMore>
+            <choice>
+                <text/>
+                <ref name="m.mixed.basic.elements"/>
+                <ref name="m.access"/>
+                <ref name="e.date"/>
+                <ref name="e.footnote"/>
+                <ref name="e.num"/>
+                <ref name="e.quote"/>
+                <ref name="e.bibseries"/>
+                <ref name="e.imprint"/>
+            </choice>
+        </zeroOrMore>
     </rng:define>
 </grammar>

@@ -1,6 +1,4 @@
 
-<!-- other linking-related attributes -->
-
 <!-- include "ead_revised_defs.rng" -->
 
 <!ELEMENT ead (control,frontmatter?,archdesc)>
@@ -11,10 +9,8 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  relatedencoding CDATA #REQUIRED
-
-  base CDATA #REQUIRED>
+  relatedencoding CDATA #IMPLIED
+  base CDATA #IMPLIED>
 
 <!-- ARCHDESC -->
 
@@ -34,18 +30,15 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
-
-  localtype CDATA #REQUIRED
-
-  relatedencoding CDATA #REQUIRED
+  localtype CDATA #IMPLIED
+  relatedencoding CDATA #IMPLIED
 
   otherlevel CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED
 
   level (class|collection|file|fonds|item|otherlevel|recordgrp|series
          |subfonds|subgrp|subseries) #REQUIRED
-
-  base CDATA #REQUIRED>
+  base CDATA #IMPLIED>
 
 <!-- ELEMENT MODELS -->
 
@@ -412,7 +405,19 @@
   label CDATA #IMPLIED
   encodinganalog CDATA #IMPLIED>
 
-<!ELEMENT extent (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
+<!ELEMENT bibref (#PCDATA
+                                           |abbr|emph|expan|foreign|lb|ptr|ref
+                                           |persname|corpname|famname|geogname|name|occupation
+                     |subject|genreform|function|title|date|footnote|num
+                                           |quote|bibseries|imprint)*>
+<!ATTLIST bibref
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  encodinganalog CDATA #IMPLIED>
 
 <!-- ELEMENTS -->
 
@@ -1731,11 +1736,10 @@
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED
   listtype (deflist|unordered|ordered) #IMPLIED
-  mark (disc|circle|square|decimal|decimal-leading-zero|lower-roman
-        |upper-roman|lower-greek|lower-latin|upper-latin|armenian
-        |georgian|lower-alpha|upper-alpha|none|inherit) #IMPLIED
-  numeration (arabic|upperalpha|loweralpha|upperroman
-              |lowerroman) #IMPLIED>
+  mark (disc|circle|square|none|inherit) #IMPLIED
+  numeration (decimal|decimal-leading-zero|lower-roman|upper-roman
+              |lower-greek|lower-latin|upper-latin|armenian|georgian
+              |lower-alpha|upper-alpha|inherit) #IMPLIED>
 
 <!ELEMENT defitem (label,item)>
 <!ATTLIST defitem
@@ -1989,19 +1993,6 @@
                      |subject|genreform|function|title|date|footnote|num
                                        |quote)*>
 <!ATTLIST archref
-
-  id ID #IMPLIED
-  altrender CDATA #IMPLIED
-  audience (external|internal) #IMPLIED
-  lang NMTOKEN #IMPLIED
-  script NMTOKEN #IMPLIED
-  encodinganalog CDATA #IMPLIED>
-
-<!ELEMENT bibref (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref
-                                       |persname|corpname|famname|geogname|name|occupation
-                     |subject|genreform|function|title|date|footnote|num
-                                       |quote)*>
-<!ATTLIST bibref
 
   id ID #IMPLIED
   altrender CDATA #IMPLIED
@@ -2286,6 +2277,8 @@
 
 <!-- xlink-modelled attributes -->
 
+<!-- other linking-related attributes -->
+
 <!-- display attributes -->
 
 <!-- typing attributes -->
@@ -2371,3 +2364,16 @@
   audience (external|internal) #IMPLIED
   lang NMTOKEN #IMPLIED
   script NMTOKEN #IMPLIED>
+
+<!ELEMENT extent (#PCDATA|abbr|emph|expan|foreign|lb|ptr|ref)*>
+<!ATTLIST extent
+
+  id ID #IMPLIED
+  altrender CDATA #IMPLIED
+  audience (external|internal) #IMPLIED
+  lang NMTOKEN #IMPLIED
+  script NMTOKEN #IMPLIED
+  label CDATA #IMPLIED
+  encodinganalog CDATA #IMPLIED
+  localtype CDATA #IMPLIED
+  unit CDATA #IMPLIED>
