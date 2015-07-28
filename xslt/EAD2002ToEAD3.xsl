@@ -983,7 +983,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="dao[not(parent::did)] | daogrp[not(parent::did)]">
         <xsl:call-template name="commentAndMessage">
-            <xsl:with-param name="comment" select="'dao or daogrp outside did moved into did'"/>
+            <xsl:with-param name="comment" select="'ELEMENT dao OR daogrp OUTSIDE did MOVED INTO did'"/>
         </xsl:call-template>
     </xsl:template>
 
@@ -991,7 +991,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="daogrp[count(child::daoloc) &gt; 1]" mode="daoIndid">
         <xsl:call-template name="commentAndMessage">
-            <xsl:with-param name="comment" select="'daogrp now daoset'"/>
+            <xsl:with-param name="comment" select="'ELEMENT daogrp CONVERTED TO daoset'"/>
         </xsl:call-template>
         <daoset>
             <xsl:apply-templates select="daoloc"/>
@@ -1000,10 +1000,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="daogrp[count(child::daoloc) = 1]" mode="daoIndid">
-        <xsl:comment>daogrp[count(child::daoloc) = 1]</xsl:comment>
-        <xsl:comment>moving dao* outside did into did</xsl:comment>
-        <xsl:comment>daogrp with single daoloc now dao</xsl:comment>
-        <xsl:comment>dao now requires attribute "daotype"; setting value to "unknown"</xsl:comment>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment" select="'ELEMENT daogrp[count(child::daoloc) = 1] CONVERTED TO dao'"/>
+        </xsl:call-template>
         <dao>
             <xsl:apply-templates
                 select="daoloc/@*"/>
@@ -1017,7 +1016,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="dao" mode="daoIndid">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
-                <xsl:text>added required attribute daotype with value "unknown"</xsl:text>
+                <xsl:text>REQUIRED ATTRIBUTE daotype ADDED TO dao WITH VALUE "unknown"</xsl:text>
             </xsl:with-param>
         </xsl:call-template>
         <dao>
@@ -1030,7 +1029,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="daoloc">
-        <xsl:comment>daoloc</xsl:comment>
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT daoloc CONVERTED TO dao</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <dao>
             <xsl:apply-templates select="daoloc/@*"/>
             <xsl:attribute name="daotype">
@@ -1048,6 +1051,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <xsl:apply-templates/>
                 </xsl:when>
                 <xsl:when test="not(persname | corpname | famname | name)">
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>origination ELEMENT VALUE MOVED INTO name ELEMENT</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                     <name>
                         <part>
                             <xsl:apply-templates/>
@@ -1061,9 +1069,9 @@ For these and/or other purposes and motivations, and without any expectation of 
                         or local-name()='name']"/>
                     <xsl:call-template name="commentAndMessage">
                         <xsl:with-param name="comment">
-                            <xsl:text>Before migration the entire text of this origination was as follows:
+                            <xsl:text>ORIGINAL origination VALUE WAS AS FOLLOWS:
                             "</xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text>"
-                            Portions not included in persname, corpname, famname, or name elements were lost.</xsl:text>
+                            PORTIONS NOT INCLUDED IN  persname, corpname, famname, OR name ELEMENTS WERE LOST.</xsl:text>
                         </xsl:with-param>
                     </xsl:call-template>
                 </xsl:otherwise>
@@ -1079,6 +1087,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         </unittitle>
         <xsl:if test="$outputUndeprecatedEAD3=false()">
             <xsl:for-each select="unitdate">
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>ELEMENT unitdate MOVED FROM unittitle CHILD TO unittitle SIBLING</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
                 <xsl:call-template name="copyElement"/>
             </xsl:for-each>
         </xsl:if>
@@ -1108,6 +1121,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <xsl:apply-templates/>
                 </xsl:when>
                 <xsl:when test="not(corpname | subarea | name | address)">
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>repository ELEMENT VALUE MOVED INTO name ELEMENT</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
                     <name>
                         <part>
                             <xsl:apply-templates/>
@@ -1121,9 +1139,9 @@ For these and/or other purposes and motivations, and without any expectation of 
                         or local-name()='address']"/>
                     <xsl:call-template name="commentAndMessage">
                         <xsl:with-param name="comment">
-                            <xsl:text>Before migration the entire text of this repository was as follows:
+                            <xsl:text>ORIGINAL repository VALUE WAS AS FOLLOWS:
                             "</xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text>"
-                            Portions not included in corpname, subarea, name, or address elements were lost.</xsl:text>
+                            PORTIONS NOT INCLUDED IN  corpname, name, subarea, OR address ELEMENTS WERE LOST.</xsl:text>
                         </xsl:with-param>
                     </xsl:call-template>
                 </xsl:otherwise>
@@ -1133,6 +1151,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <xsl:template match="langmaterial">
         <langmaterial>
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>MIXED CONTENT REMOVED FROM langmaterial</xsl:text>
+                </xsl:with-param>
+            </xsl:call-template>
             <xsl:apply-templates select="@*"/>
             <xsl:for-each select="language">
                 <xsl:choose>
@@ -1160,6 +1183,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:apply-templates select="@* except @scriptcode"/>
                 <xsl:apply-templates/>
             </xsl:element>
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>ELEMENT script CREATED FROM ATTRIBUTE language/@scriptcode</xsl:text>
+                </xsl:with-param>
+            </xsl:call-template>
             <script scriptcode="{@scriptcode}"/>
         </languageset>
     </xsl:template>
