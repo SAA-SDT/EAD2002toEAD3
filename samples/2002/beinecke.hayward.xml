@@ -354,10 +354,10 @@
          <linkgrp>
             <resource xlink:label="start">Start of the link</resource>
             <arc xlink:from="start" xlink:to="end"/>
-            <extptrloc xlink:href="http://extptrloc.com"/>
-            <ptrloc xlink:href="http://ptrloc.com"/>
-            <extrefloc xlink:href="http://extrefloc.com">extrefloc</extrefloc>
-            <refloc xlink:href="http://refloc.com">refloc</refloc>
+            <extptrloc xlink:href="http://extptrloc.com" altrender="extptrloc" audience="external" id="a1" xlink:label="xlinklabel" xlink:role="xlinkrole" xlink:title="xlinktitle" xlink:type="locator" xpointer="xpointer"/>
+            <ptrloc xlink:href="http://ptrloc.com" xpointer="xpointer" xlink:type="locator" xlink:title="xlinktitle" xlink:role="xlinkrole" xlink:label="xlinklabel" id="a2" audience="external" altrender="ptrloc" target="OS"/>
+            <extrefloc xlink:href="http://extrefloc.com" altrender="altrender" audience="external" id="a3" xlink:label="xlinklabel" xlink:role="xlinkrole" xlink:title="xlinktitle" xlink:type="locator" xpointer="xpointer">extrefloc</extrefloc>
+            <refloc xlink:href="http://refloc.com" xpointer="xpointer" xlink:type="locator" xlink:title="xlinktitle" xlink:role="xlinkrole" xlink:label="xlinklabel" id="a4" audience="external" altrender="altrender" target="RFO">refloc</refloc>
          </linkgrp>
          
          </abstract>
