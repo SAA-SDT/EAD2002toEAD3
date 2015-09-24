@@ -1814,13 +1814,61 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <xsl:template name="decomposeLinkgrpNoArc">
         <xsl:for-each select="extptrloc | ptrloc | extrefloc | refloc">
-            <xsl:apply-templates/>
+            <xsl:apply-templates select="."/>
             <xsl:if test="position()!=last()">, </xsl:if>
         </xsl:for-each>
     </xsl:template>
     
     <xsl:template name="decomposeLinkgrpArc">
-        
+        <xsl:for-each select="arc">
+            <xsl:variable name="arcFrom" select="@from"/>
+            <xsl:variable name="arcTo" select="@to"/>
+            <xsl:choose>
+                <xsl:when test="../resource/@label = $arcFrom">
+                    <xsl:choose>
+                        <xsl:when test="../ptrloc/@label = $arcTo or ../extptrloc/@label = $arcTo">
+                            
+                        </xsl:when>
+                        <xsl:when test="../refloc/@label = $arcTo or ../extrefloc/@label = $arcTo">
+                            
+                        </xsl:when>
+                    </xsl:choose>
+                </xsl:when>
+                <xsl:when test="../ptrloc/@label = $arcFrom or ../extptrloc/@label = $arcFrom">
+                    
+                </xsl:when>
+                <xsl:when test="../refloc/@label = $arcFrom or ../extrefloc/@label = $arcFrom">
+                    
+                </xsl:when>
+                <xsl:otherwise/>
+            </xsl:choose>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="extptrloc">
+        <ptr>
+            <xsl:apply-templates select="@*[not(local-name()='label')]"/>
+        </ptr>
+    </xsl:template>
+    
+    <xsl:template match="ptrloc">
+        <ptr>
+            <xsl:apply-templates select="@*[not(local-name()='label')]"/>
+        </ptr>
+    </xsl:template>
+    
+    <xsl:template match="extrefloc">
+        <ref>
+            <xsl:apply-templates select="@*[not(local-name()='label')]"/>
+            <xsl:apply-templates/>
+        </ref>
+    </xsl:template>
+    
+    <xsl:template match="refloc">
+        <ref>
+            <xsl:apply-templates select="@*[not(local-name()='label')]"/>
+            <xsl:apply-templates/>
+        </ref>
     </xsl:template>
 
 
