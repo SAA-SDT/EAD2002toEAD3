@@ -78,7 +78,7 @@
                <addressline>Address Line 2</addressline>
                <addressline>Address Line 3</addressline>
             </address>
-            <date localtype="original" normal="2006-10">October, 2006</date>
+            <date localtype="original" normal="2006-10/2007">October, 2006</date>
             <date localtype="revised" normal="2006-10">October 2006</date>
             <date localtype="ead" normal="2006/2007">2006-2007</date>
             <p>
@@ -213,7 +213,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-07-26T23:13:55.963-04:00">2015-07-26T23:13:55.963-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-09-23T21:23:22.527-04:00">2015-09-23T21:23:22.527-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -471,10 +471,6 @@
                <p>daodesc paragraph</p>
             </descriptivenote>
          </dao>
-         <!--daogrp[count(child::daoloc) = 1]-->
-         <!--moving dao* outside did into did-->
-         <!--daogrp with single daoloc now dao-->
-         <!--dao now requires attribute "daotype"; setting value to "unknown"-->
          <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
                <p>daodesc p</p>
@@ -490,10 +486,6 @@
                <p>daodesc paragraph</p>
             </descriptivenote>
          </dao>
-         <!--daogrp[count(child::daoloc) = 1]-->
-         <!--moving dao* outside did into did-->
-         <!--daogrp with single daoloc now dao-->
-         <!--dao now requires attribute "daotype"; setting value to "unknown"-->
          <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
                <p>daodesc p</p>
@@ -508,10 +500,6 @@
                <p>daodesc paragraph</p>
             </descriptivenote>
          </dao>
-         <!--daogrp[count(child::daoloc) = 1]-->
-         <!--moving dao* outside did into did-->
-         <!--daogrp with single daoloc now dao-->
-         <!--dao now requires attribute "daotype"; setting value to "unknown"-->
          <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
                <p>daodesc p</p>
