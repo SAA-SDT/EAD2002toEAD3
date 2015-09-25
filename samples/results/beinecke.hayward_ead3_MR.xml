@@ -213,7 +213,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-09-23T21:51:58.176-04:00">2015-09-23T21:51:58.176-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-09-24T22:27:39.794-04:00">2015-09-24T22:27:39.794-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -859,6 +859,35 @@
             <title>
                <part>Title</part>
             </title>
+         </p>
+            <p>
+            <ptr href="http://extptrloc.com"
+                 altrender="extptrloc"
+                 audience="external"
+                 id="a10"
+                 linkrole="xlinkrole"
+                 linktitle="xlinktitle"
+                 xpointer="xpointer"/>, <ptr href="http://ptrloc.com"
+                 xpointer="xpointer"
+                 linktitle="xlinktitle"
+                 linkrole="xlinkrole"
+                 id="a20"
+                 audience="external"
+                 altrender="ptrloc"
+                 target="OS"/>, <ref href="http://extrefloc.com"
+                 altrender="altrender"
+                 audience="external"
+                 id="a30"
+                 linkrole="xlinkrole"
+                 linktitle="xlinktitle"
+                 xpointer="xpointer">extrefloc</ref>, <ref href="http://refloc.com"
+                 xpointer="xpointer"
+                 linktitle="xlinktitle"
+                 linkrole="xlinkrole"
+                 id="a40"
+                 audience="external"
+                 altrender="altrender"
+                 target="RFO">refloc</ref>
          </p>
          </bibliography>
          <prefercite id="cite"
