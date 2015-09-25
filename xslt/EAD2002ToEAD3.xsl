@@ -1783,81 +1783,81 @@ For these and/or other purposes and motivations, and without any expectation of 
                 parent::otherfindaid or 
                 parent::relatedmaterial or 
                 parent::separatedmaterial">
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>ELEMENT </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>&#160;</xsl:text>
+                        <xsl:text>REPLACED with 'p'</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
                 <p>
                     <xsl:call-template name="decomposeLinkgrp"/>
                 </p>
             </xsl:when>
             <xsl:otherwise>
+                <xsl:call-template name="commentAndMessage">
+                    <xsl:with-param name="comment">
+                        <xsl:text>ELEMENT </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>&#160;</xsl:text>
+                        <xsl:text>SKIPPED</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:with-param>
+                </xsl:call-template>
                 <xsl:call-template name="decomposeLinkgrp"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     
     <xsl:template name="decomposeLinkgrp">
-        <xsl:variable name="arcCount" select="count(arc)"/>
-        <xsl:choose>
-            <xsl:when test="$arcCount=0">
-                <xsl:call-template name="decomposeLinkgrpNoArc"/>
-            </xsl:when>
-            <xsl:when test="$arcCount>0">
-                <xsl:choose>
-                    <xsl:when test="not(arc[not(@from)]) and not(arc[not(@to)])">
-                        <xsl:call-template name="decomposeLinkgrpNoArc"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:call-template name="decomposeLinkgrpArc"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
-        </xsl:choose>
-    </xsl:template>
-    
-    <xsl:template name="decomposeLinkgrpNoArc">
         <xsl:for-each select="extptrloc | ptrloc | extrefloc | refloc">
             <xsl:apply-templates select="."/>
             <xsl:if test="position()!=last()">, </xsl:if>
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template name="decomposeLinkgrpArc">
-        <xsl:for-each select="arc">
-            <xsl:variable name="arcFrom" select="@from"/>
-            <xsl:variable name="arcTo" select="@to"/>
-            <xsl:choose>
-                <xsl:when test="../resource/@label = $arcFrom">
-                    <xsl:choose>
-                        <xsl:when test="../ptrloc/@label = $arcTo or ../extptrloc/@label = $arcTo">
-                            
-                        </xsl:when>
-                        <xsl:when test="../refloc/@label = $arcTo or ../extrefloc/@label = $arcTo">
-                            
-                        </xsl:when>
-                    </xsl:choose>
-                </xsl:when>
-                <xsl:when test="../ptrloc/@label = $arcFrom or ../extptrloc/@label = $arcFrom">
-                    
-                </xsl:when>
-                <xsl:when test="../refloc/@label = $arcFrom or ../extrefloc/@label = $arcFrom">
-                    
-                </xsl:when>
-                <xsl:otherwise/>
-            </xsl:choose>
-        </xsl:for-each>
-    </xsl:template>
-    
     <xsl:template match="extptrloc">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED as 'ptr'</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <ptr>
             <xsl:apply-templates select="@*[not(local-name()='label')]"/>
         </ptr>
     </xsl:template>
     
     <xsl:template match="ptrloc">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED as 'ptr'</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <ptr>
             <xsl:apply-templates select="@*[not(local-name()='label')]"/>
         </ptr>
     </xsl:template>
     
     <xsl:template match="extrefloc">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED as 'ref'</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <ref>
             <xsl:apply-templates select="@*[not(local-name()='label')]"/>
             <xsl:apply-templates/>
@@ -1865,6 +1865,15 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     
     <xsl:template match="refloc">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED as 'ref'</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <ref>
             <xsl:apply-templates select="@*[not(local-name()='label')]"/>
             <xsl:apply-templates/>
