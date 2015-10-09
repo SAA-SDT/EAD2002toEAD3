@@ -994,8 +994,21 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:with-param name="comment" select="'ELEMENT daogrp CONVERTED TO daoset'"/>
         </xsl:call-template>
         <daoset>
+            <xsl:apply-templates select="@*[not(local-name()='role' and not(local-name()='title'))]"/>
             <xsl:apply-templates select="daoloc"/>
-            <xsl:apply-templates select="daodesc"/>
+            <xsl:if test="resource[normalize-space(.)] or daodesc">
+                <descriptivenote>
+                    <xsl:apply-templates select="daodesc/@*"/>
+                    <xsl:for-each select="resource[normalize-space(.)]">
+                        <p>
+                            <xsl:apply-templates/>
+                        </p>
+                    </xsl:for-each>
+                    <xsl:for-each select="daodesc">
+                        <xsl:apply-templates/>
+                    </xsl:for-each>
+                </descriptivenote>
+            </xsl:if>
         </daoset>
     </xsl:template>
 
@@ -1006,11 +1019,46 @@ For these and/or other purposes and motivations, and without any expectation of 
         <dao>
             <xsl:apply-templates
                 select="daoloc/@*"/>
+            <xsl:if test="arc and not(arc[2])">
+                <xsl:apply-templates select="arc/@actuate | arc/@show"/>
+            </xsl:if>
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
-            <xsl:apply-templates select="daodesc"/>
+            <xsl:if test="resource[normalize-space(.)] or daodesc or daoloc/daodesc">
+                <descriptivenote>
+                    <xsl:choose>
+                        <xsl:when test="daodesc and not(daoloc/daodesc)">
+                            <xsl:apply-templates select="daodesc/@*"/>
+                        </xsl:when>
+                        <xsl:when test="daoloc/daodesc and not(daodesc)">
+                            <xsl:apply-templates select="daoloc/daodesc/@*"/>
+                        </xsl:when>
+                        <xsl:when test="daodesc and daoloc/daodesc">
+                            <xsl:apply-templates select="daodesc/@*"/>
+                        </xsl:when>
+                    </xsl:choose>
+                    <xsl:apply-templates select="daodesc/@*"/>
+                    <xsl:for-each select="resource[normalize-space(.)]">
+                        <p>
+                            <xsl:apply-templates/>
+                        </p>
+                    </xsl:for-each>
+                    <xsl:for-each select="daodesc">
+                        <xsl:apply-templates/>
+                    </xsl:for-each>
+                    <xsl:for-each select="daoloc/daodesc">
+                        <xsl:apply-templates/>
+                    </xsl:for-each>
+                </descriptivenote>
+            </xsl:if>
         </dao>
+    </xsl:template>
+    
+    <xsl:template match="daogrp[count(child::daoloc) = 0]" mode="daoIndid">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment" select="'ELEMENT daogrp[count(child::daoloc) = 0] REMOVED'"/>
+        </xsl:call-template>
     </xsl:template>
 
     <xsl:template match="dao" mode="daoIndid">
@@ -1031,16 +1079,32 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="daoloc">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
-                <xsl:text>ELEMENT daoloc CONVERTED TO dao</xsl:text>
+                <xsl:text>ELEMENT daoloc CONVERTED TO daoset/dao</xsl:text>
             </xsl:with-param>
         </xsl:call-template>
         <dao>
-            <xsl:apply-templates select="daoloc/@*"/>
+            <xsl:apply-templates select="@*"/>
             <xsl:attribute name="daotype">
                 <xsl:text>unknown</xsl:text>
             </xsl:attribute>
             <xsl:apply-templates/>
         </dao>
+    </xsl:template>
+    
+    <xsl:template match="daodesc">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>ELEMENT </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>RENAMED AS 'descriptivenote'</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
+        <descriptivenote>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates/>
+        </descriptivenote>
     </xsl:template>
     
     <xsl:template match="origination">
@@ -1406,22 +1470,6 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:attribute name="identifier">
             <xsl:value-of select="."/>
         </xsl:attribute>
-    </xsl:template>
-
-    <xsl:template match="daodesc">
-        <xsl:call-template name="commentAndMessage">
-            <xsl:with-param name="comment">
-                <xsl:text>ELEMENT </xsl:text>
-                <xsl:value-of select="local-name()"/>
-                <xsl:text>&#160;</xsl:text>
-                <xsl:text>RENAMED AS 'descriptivenote'</xsl:text>
-                <xsl:text>&#10;</xsl:text>
-            </xsl:with-param>
-        </xsl:call-template>
-        <descriptivenote>
-            <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates/>
-        </descriptivenote>
     </xsl:template>
 
     <xsl:template match="item/unitdate">
