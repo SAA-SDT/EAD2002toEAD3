@@ -65,7 +65,8 @@
             <edition altrender="edition"
                      audience="external"
                      id="ed1"
-                     encodinganalog="edition">1st edition.</edition>
+                     encodinganalog="edition">1st
+               edition.</edition>
             <p id="edp" audience="external" altrender="editionp">Edition statement paragraph.</p>
             <edition>Another edition.</edition>
          </editionstmt>
@@ -97,15 +98,14 @@
                          audience="external"
                          altrender="sttp"
                          render="bold"
-                         localtype="sttp">
-               Series Title Proper
-            </titleproper>
+                         localtype="sttp"> Series Title Proper </titleproper>
             <num localtype="num"
                  altrender="num"
                  audience="external"
                  encodinganalog="num"
                  id="num1">12345</num>
-            <p id="stp1" audience="external" altrender="altp1">Paragraph inside series statement.</p>
+            <p id="stp1" audience="external" altrender="altp1">Paragraph inside series
+               statement.</p>
          </seriesstmt>
          <notestmt>
             <controlnote localtype="bpg"
@@ -163,9 +163,7 @@
          <script scriptcode="Latn">Latn</script>
          <descriptivenote>
             <p>
-               <emph render="altrender">Finding aid </emph>written in
-            English and French.
-         </p>
+               <emph render="altrender">Finding aid </emph>written in English and French. </p>
          </descriptivenote>
       </languagedeclaration>
       <languagedeclaration altrender="langusage"
@@ -175,9 +173,7 @@
          <script scriptcode="Latn">Latn</script>
          <descriptivenote>
             <p>
-               <emph render="altrender">Finding aid </emph>written in
-            English and French.
-         </p>
+               <emph render="altrender">Finding aid </emph>written in English and French. </p>
          </descriptivenote>
       </languagedeclaration>
       <conventiondeclaration altrender="altrender"
@@ -187,7 +183,8 @@
          <descriptivenote>
             <p>Finding aid prepared according to the <title render="italic">
                   <part>Beinecke Manuscript Unit Archival Processing Manual</part>
-               </title> and <title>
+               </title> and
+               <title>
                   <part>DACS</part>
                </title>. </p>
          </descriptivenote>
@@ -199,7 +196,8 @@
          <descriptivenote>
             <p>Finding aid prepared according to the <title render="italic">
                   <part>Beinecke Manuscript Unit Archival Processing Manual</part>
-               </title> and <title>
+               </title> and
+               <title>
                   <part>DACS</part>
                </title>. </p>
          </descriptivenote>
@@ -213,7 +211,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-09-24T22:27:39.794-04:00">2015-09-24T22:27:39.794-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-10-08T23:21:15.392-04:00">2015-10-08T23:21:15.392-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -230,8 +228,8 @@
                            standarddatetime="2006">2006</eventdatetime>
             <agenttype value="unknown"/>
             <agent/>
-            <eventdescription>Finding aid encoded in EAD 1.0 by Manuscript Unit staff, Beinecke Library, with
-            Edix/Wordix macros, 2006. </eventdescription>
+            <eventdescription>Finding aid encoded in EAD 1.0 by Manuscript Unit staff, Beinecke
+            Library, with Edix/Wordix macros, 2006. </eventdescription>
          </maintenanceevent>
          <maintenanceevent id="defitem" audience="external" altrender="defitem">
             <eventtype value="unknown"/>
@@ -268,8 +266,9 @@
                        altrender="altrender"
                        localtype="materialspec"
                        encodinganalog="999"
-                       label="materialspec">materialspec number
-         recursive materialspec
+                       label="materialspec">materialspec
+               number
+            recursive materialspec
          </materialspec>
          <didnote altrender="didnote"
                   audience="external"
@@ -293,8 +292,7 @@
                  encodinganalog="unitid"
                  id="ui1"
                  identifier="unitid"
-                 localtype="unitid">GEN MSS
-            553</unitid>
+                 localtype="unitid">GEN MSS 553</unitid>
          <origination label="Creator:"
                       encodinganalog="100"
                       altrender="altrender"
@@ -309,9 +307,7 @@
          </origination>
          <origination>
             <name>
-               <part>
-            text
-            title
+               <part> text title
             <ref>archref</ref>
                   <ref>bibref</ref>
                   <abbr>abbr</abbr>
@@ -335,9 +331,7 @@
                     altrender="altrender"
                     encodinganalog="245"
                     label="Title:"
-                    localtype="unittitle">
-            text
-            <abbr>abbr</abbr>
+                    localtype="unittitle"> text <abbr>abbr</abbr>
             <ref>archref</ref>
             <ref>bibref</ref>
             bibseries
@@ -428,10 +422,7 @@
             Bretton; Madaillae Florian; and Countess Fanny Karolyi.<lb/>Brian Roberts research
             materials consist of correspondence; typescripts for three chapters of an unfinished
             biography of Hayward; manuscript and typescript transcriptions of correspondence and
-            writings related to Hayward; a biographical timeline; and other research
-            papers.
-         
-         <ptr href="http://extptrloc.com"
+            writings related to Hayward; a biographical timeline; and other research papers. <ptr href="http://extptrloc.com"
                  altrender="extptrloc"
                  audience="external"
                  id="a1"
@@ -458,7 +449,6 @@
                  audience="external"
                  altrender="altrender"
                  target="RFO">refloc</ref>
-         
          </abstract>
          <repository label="Repository:">
             <name>
@@ -499,6 +489,7 @@
          </dao>
          <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
+               <p>Resource</p>
                <p>daodesc p</p>
                <p>Address Line 1, Address Line 2, Address Line 3</p>
             </descriptivenote>
@@ -514,6 +505,7 @@
          </dao>
          <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
+               <p>Resource</p>
                <p>daodesc p</p>
             </descriptivenote>
          </dao>
@@ -528,6 +520,7 @@
          </dao>
          <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
+               <p>Resource</p>
                <p>daodesc p</p>
             </descriptivenote>
          </dao>
@@ -640,12 +633,12 @@
                <p>paragraph</p>
                <p>
             <quote altrender="bq" audience="external" id="bq2">
-                  blockquote paragraph
-                  blockquote addressline, blockquote addressline 2
-                  
-                  
-                  
-               </quote>
+                     blockquote paragraph
+                     blockquote addressline, blockquote addressline 2
+                     
+                     
+                     
+                  </quote>
          </p>
                
                   
@@ -674,7 +667,7 @@
                 id="accruals">
             <head>Accruals</head>
             <p>Accruals paragraph Address Line 1, Address Line 2, Address Line 3</p>
-            
+
          </accruals>
          <appraisal encodinganalog="appraisal"
                  audience="internal"
@@ -687,8 +680,8 @@
                       altrender="note"
                       actuate="onload"
                       localtype="note">
-               <p>appraisal/p/note</p>
-            </footnote>
+                  <p>appraisal/p/note</p>
+               </footnote>
          </p>
          </appraisal>
          <fileplan encodinganalog="fileplan"
@@ -739,13 +732,12 @@
                  linkrole="linkrole"
                  show="none"
                  linktitle="linktitle"
-                 xpointer="xpointer">Archref
-            abstract
-            container
-            
+                 xpointer="xpointer">Archref abstract
+               container
                
-            langmaterial
-            materialspec
+               
+               langmaterial
+               materialspec
                <footnote localtype="note"
                          actuate="onload"
                          altrender="note"
@@ -754,7 +746,7 @@
                          show="embed">
                   <p>note paragraph</p>
                </footnote>
-            origination
+               origination
                <persname>
                   <part>persname</part>
                </persname>
@@ -762,8 +754,8 @@
                physloc
                <corpname>
                   <part>repository</part>
-               </corpname> 
-               <corpname>
+               </corpname>
+                  <corpname>
                   <part localtype="subarea">subarea</part>
                </corpname>
                unitdate
@@ -778,16 +770,13 @@
                  linkrole="linkrole"
                  show="none"
                  linktitle="linktitle"
-                 xpointer="xpointer">Bibref
-            bib series
-            imprint
-            edition
-            archref
-            <title>
+                 xpointer="xpointer">Bibref bib series
+               imprint
+               edition
+               archref
+               <title>
                   <part>title</part>
                </title>
-            
-            
             </ref>
          </bibref>
             <p>
@@ -909,9 +898,7 @@
             </title> in box 7 may only be consulted with
                permission of the appropriate curator. Preservation photocopies or photographic
                prints for reference use have been substituted in the main files. </p>
-            <p id="legalstatus" audience="internal" altrender="legalstatus">
-               Legal Status FOO BAR.
-            </p>
+            <p id="legalstatus" audience="internal" altrender="legalstatus"> Legal Status FOO BAR. </p>
             <accessrestrict>
                <head>subhead</head>
                <p>recursion recursion recursion</p>
@@ -1034,7 +1021,8 @@
                   rules="Name"
                   normal="McNamerson, Name"
                   identifier="123">
-               <part>Name McNamerson</part>
+               <part>Name
+               McNamerson</part>
             </name>
             <geogname identifier="Boston"
                       normal="Bahstun"
@@ -1067,8 +1055,7 @@
                      normal="Rush family"
                      identifier="1234"
                      relator="famname">
-               <part>
-               Rush <emph render="bold">family</emph> of <lb/>New <ptr href="http://www.rushfamily.com"/>/&gt; Hampshire</part>
+               <part> Rush <emph render="bold">family</emph> of <lb/>New <ptr href="http://www.rushfamily.com"/>/&gt; Hampshire</part>
             </famname>
             <function identifier="function"
                       normal="Entertaining"
@@ -1104,8 +1091,7 @@
                       rules="persname"
                       normal="Pers, Name"
                       identifier="1234">
-               <part>Abraham, Robert, d. 1833
-               --Estate.</part>
+               <part>Abraham, Robert, d. 1833 --Estate.</part>
             </persname>
             <persname encodinganalog="600" relator="subject">
                <part>Bentley, George, 1828-1895.</part>
@@ -1179,7 +1165,8 @@
                      localtype="subarea">(London, England)</part>
                <part/>
                <part localtype="subarea">(Great Britain, Europe)</part>
-               <part> (Earth, <emph render="bold">Solar</emph> System)</part>
+               <part> (Earth, <emph render="bold">Solar</emph>
+               System)</part>
             </corpname>
             <subject encodinganalog="650"
                      source="lcsh"
@@ -1189,7 +1176,8 @@
                      rules="subject"
                      normal="Authors"
                      identifier="1234">
-               <part>Authors, English --19th century.</part>
+               <part>Authors,
+               English --19th century.</part>
             </subject>
             <subject encodinganalog="650" source="lcsh">
                <part>Gardens --Design --England.</part>
@@ -1234,8 +1222,8 @@
                         audience="external"
                         id="occ1"
                         altrender="occupation">
-               <part>Authors --England --19th
-               century.</part>
+               <part>Authors --England
+               --19th century.</part>
             </occupation>
          </controlaccess>
       </controlaccess>
@@ -1381,11 +1369,12 @@
                         <language langcode="fre">French</language>
                         <script scriptcode="Latn"/>
                      </languageset>
-                     <language>some language twins speak</language>
+                     <language>some language twins
+                        speak</language>
                      <descriptivenote>
-                        <p>
-                     Materials in Dutch, English, French, and some language twins speak.
-                  </p>
+                        <p> Materials in Dutch,
+                        English, French, and some language twins
+                        speak. </p>
                      </descriptivenote>
                   </langmaterial>
                   <langmaterial>
@@ -1419,7 +1408,7 @@
                              linkrole="xlinkrole"
                              show="none"
                              linktitle="xlinktitle"
-                             xpointer="xpointer">Title</ref> 
+                             xpointer="xpointer">Title</ref>
                         <ref xpointer="xpointer"
                              linktitle="linktitle"
                              show="none"
@@ -1429,7 +1418,7 @@
                              actuate="none"
                              altrender="altrender"
                              id="title222"
-                             audience="external">archref</ref> 
+                             audience="external">archref</ref>
                         <ref xpointer="xpointer"
                              linktitle="linktitle"
                              show="none"
@@ -1451,6 +1440,18 @@
                      <container localtype="Folder">2</container>
                      <unittitle localtype="genericfolder"> Boyes, ---- </unittitle>
                      <unitdate>n.y. Nov 3</unitdate>
+                     <daoset id="daogrp1">
+                        <dao href="href" daotype="unknown"/>
+                        <dao href="http://daoloc.com/" daotype="unknown">
+                           <descriptivenote>
+                              <p>daoloc/daodesc/p</p>
+                           </descriptivenote>
+                        </dao>
+                        <descriptivenote>
+                           <p>resource text</p>
+                           <p>daogrp daodesc</p>
+                        </descriptivenote>
+                     </daoset>
                   </did>
                </c03>
                <c03 id="f3" level="file">

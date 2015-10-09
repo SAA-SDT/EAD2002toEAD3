@@ -28,8 +28,10 @@
             <sponsor encodinganalog="sponsor" id="sponsor1" audience="external" altrender="sponsor"
                >Sponsored by your sponsor</sponsor>
          </titlestmt>
-         <editionstmt altrender="editionstmt" audience="external" id="edstmt1" encodinganalog="edstmt">
-            <edition altrender="edition" audience="external" id="ed1" encodinganalog="edition">1st edition.</edition>
+         <editionstmt altrender="editionstmt" audience="external" id="edstmt1"
+            encodinganalog="edstmt">
+            <edition altrender="edition" audience="external" id="ed1" encodinganalog="edition">1st
+               edition.</edition>
             <p id="edp" audience="external" altrender="editionp">Edition statement paragraph.</p>
             <edition>Another edition.</edition>
          </editionstmt>
@@ -52,15 +54,18 @@
                   Library.</extref>
             </p>
          </publicationstmt>
-         <seriesstmt altrender="seriesstmt" audience="external" encodinganalog="seriesstmt" id="seriesstmt1">
-            <titleproper id="sttp1" encodinganalog="sttp" audience="external" altrender="sttp" render="bold" type="sttp">
-               Series Title Proper
-            </titleproper>
-            <num type="num" altrender="num" audience="external" encodinganalog="num" id="num1">12345</num>
-            <p id="stp1" audience="external" altrender="altp1">Paragraph inside series statement.</p>
+         <seriesstmt altrender="seriesstmt" audience="external" encodinganalog="seriesstmt"
+            id="seriesstmt1">
+            <titleproper id="sttp1" encodinganalog="sttp" audience="external" altrender="sttp"
+               render="bold" type="sttp"> Series Title Proper </titleproper>
+            <num type="num" altrender="num" audience="external" encodinganalog="num" id="num1"
+               >12345</num>
+            <p id="stp1" audience="external" altrender="altp1">Paragraph inside series
+               statement.</p>
          </seriesstmt>
          <notestmt>
-            <note type="bpg" id="note1" audience="external" altrender="note" encodinganalog="note" actuate="onload" show="embed" label="note label">
+            <note type="bpg" id="note1" audience="external" altrender="note" encodinganalog="note"
+               actuate="onload" show="embed" label="note label">
                <p>This encoded finding aid is compliant with the Yale EAD Best Practice Guidelines,
                   Version 1.0.</p>
                <address>
@@ -88,29 +93,34 @@
                      </tbody>
                   </tgroup>
                </table>
-               <note show="embed" label="note" id="note2" encodinganalog="500" audience="external" altrender="note" actuate="onload" type="note">
+               <note show="embed" label="note" id="note2" encodinganalog="500" audience="external"
+                  altrender="note" actuate="onload" type="note">
                   <p>recursive note to controlnote</p>
                </note>
             </note>
          </notestmt>
       </filedesc>
       <profiledesc>
-         <creation id="creation" encodinganalog="creation" audience="external" altrender="creation">Finding aid encoded in <title>EAD 1.0</title> by Manuscript Unit staff, Beinecke Library, with
-            Edix/Wordix macros, <date normal="2006" altrender="date" audience="external" encodinganalog="eventdate" id="eventdate" calendar="gregorian" certainty="approximate" era="ce" type="eventdate">2006</date>. </creation>
-         <langusage altrender="langusage" 
-            audience="external" 
-            encodinganalog="langusage"
+         <creation id="creation" encodinganalog="creation" audience="external" altrender="creation"
+            >Finding aid encoded in <title>EAD 1.0</title> by Manuscript Unit staff, Beinecke
+            Library, with Edix/Wordix macros, <date normal="2006" altrender="date"
+               audience="external" encodinganalog="eventdate" id="eventdate" calendar="gregorian"
+               certainty="approximate" era="ce" type="eventdate">2006</date>. </creation>
+         <langusage altrender="langusage" audience="external" encodinganalog="langusage"
             id="langusage">
-            <emph render="altrender">Finding aid </emph>written in
-            <language langcode="eng" scriptcode="Latn">English</language> and <language langcode="fre" scriptcode="Latn">French</language>.
-         </langusage>
+            <emph render="altrender">Finding aid </emph>written in <language langcode="eng"
+               scriptcode="Latn">English</language> and <language langcode="fre" scriptcode="Latn"
+               >French</language>. </langusage>
          <!--<descrules altrender="altrender" audience="external" encodinganalog="descrules" id="descrules">Finding aid prepared according to the <title xlink:type="simple" render="italic"
                >Beinecke Manuscript Unit Archival Processing Manual</title>. </descrules>-->
-         <descrules altrender="altrender" audience="external" encodinganalog="descrules" id="descrules">Finding aid prepared according to the <title xlink:type="simple" render="italic"
-            >Beinecke Manuscript Unit Archival Processing Manual</title> and <title>DACS</title>. </descrules>
-<!--         <descrules altrender="altrender" audience="external" encodinganalog="descrules" id="descrules">Finding aid prepared according to the Beinecke Manuscript Unit Archival Processing Manual. </descrules>-->
+         <descrules altrender="altrender" audience="external" encodinganalog="descrules"
+            id="descrules">Finding aid prepared according to the <title xlink:type="simple"
+               render="italic">Beinecke Manuscript Unit Archival Processing Manual</title> and
+               <title>DACS</title>. </descrules>
+         <!--         <descrules altrender="altrender" audience="external" encodinganalog="descrules" id="descrules">Finding aid prepared according to the Beinecke Manuscript Unit Archival Processing Manual. </descrules>-->
       </profiledesc>
-      <revisiondesc altrender="revisiondesc" audience="external" encodinganalog="revisiondesc" id="revisiondesc">
+      <revisiondesc altrender="revisiondesc" audience="external" encodinganalog="revisiondesc"
+         id="revisiondesc">
          <!--<list type="marked">
             <head>List Head</head>
             <item altrender="item" audience="external" id="item1">Test item</item>
@@ -164,7 +174,9 @@
          <subtitle>Subtitle: Sub Madness</subtitle>
          <chronlist>
             <chronitem>
-               <date id="dateID" audience="external" altrender="chronItemDate" calendar="gregorian" certainty="approximate" encodinganalog="245g" era="ce" type="testDate">Today</date>
+               <date id="dateID" audience="external" altrender="chronItemDate" calendar="gregorian"
+                  certainty="approximate" encodinganalog="245g" era="ce" type="testDate"
+                  >Today</date>
                <event>Something happened</event>
             </chronitem>
          </chronlist>
@@ -192,16 +204,17 @@
       encodinganalog="archdesc" audience="internal" altrender="archdesc" otherlevel="archdesc">
       <did id="did">
          <head althead="View Over" altrender="head" audience="external" id="head1">Overview</head>
-         <materialspec audience="external" id="materialspec" altrender="altrender" 
-            type="materialspec" encodinganalog="999" label="materialspec">materialspec <num>number</num>
-         <materialspec>recursive materialspec</materialspec>
+         <materialspec audience="external" id="materialspec" altrender="altrender"
+            type="materialspec" encodinganalog="999" label="materialspec">materialspec
+               <num>number</num>
+            <materialspec>recursive materialspec</materialspec>
          </materialspec>
-         <note actuate="onload" altrender="didnote" audience="external" encodinganalog="didnote" id="didnote"
-            label="Did Note:" show="new" type="didNote">
+         <note actuate="onload" altrender="didnote" audience="external" encodinganalog="didnote"
+            id="didnote" label="Did Note:" show="new" type="didNote">
             <p>1 did note paragraph</p>
          </note>
-         <note actuate="onload" altrender="didnote" audience="external" encodinganalog="didnote" id="didnotetoOdd"
-           label="Did Note:" show="new" type="didNote">
+         <note actuate="onload" altrender="didnote" audience="external" encodinganalog="didnote"
+            id="didnotetoOdd" label="Did Note:" show="new" type="didNote">
             <p>did note paragraph 1</p>
             <p>did note paragraph 2</p>
             <address>
@@ -213,27 +226,27 @@
             </blockquote>
             <chronlist>
                <chronitem>
-                  <date id="dateID2" audience="external" altrender="chronItemDate" 
-                     calendar="gregorian" certainty="approximate" encodinganalog="245g" 
-                     era="ce" type="testDate">February 2015</date>
+                  <date id="dateID2" audience="external" altrender="chronItemDate"
+                     calendar="gregorian" certainty="approximate" encodinganalog="245g" era="ce"
+                     type="testDate">February 2015</date>
                   <event>did note chronlist event</event>
                </chronitem>
                <chronitem>
-                  <date id="dateID3" audience="external" altrender="chronItemDate" 
-                     calendar="gregorian" certainty="approximate" encodinganalog="245g" 
-                     era="ce" type="testDate" normal="2015-02">February 2015</date>
+                  <date id="dateID3" audience="external" altrender="chronItemDate"
+                     calendar="gregorian" certainty="approximate" encodinganalog="245g" era="ce"
+                     type="testDate" normal="2015-02">February 2015</date>
                   <event>did note chronlist event</event>
                </chronitem>
                <chronitem>
-                  <date id="dateID4" audience="external" altrender="chronItemDate" 
-                     calendar="gregorian" certainty="approximate" encodinganalog="245g" 
-                     era="ce" type="testDate" normal="2015-02/2015-06">February 2015-June 2015</date>
+                  <date id="dateID4" audience="external" altrender="chronItemDate"
+                     calendar="gregorian" certainty="approximate" encodinganalog="245g" era="ce"
+                     type="testDate" normal="2015-02/2015-06">February 2015-June 2015</date>
                   <event>did note chronlist event</event>
                </chronitem>
                <chronitem>
-                  <date id="dateID5" audience="external" altrender="chronItemDate" 
-                     calendar="gregorian" certainty="approximate" encodinganalog="245g" 
-                     era="ce" type="testDate" normal="2015-02/2015-06">February 2015-–—June 2015</date>
+                  <date id="dateID5" audience="external" altrender="chronItemDate"
+                     calendar="gregorian" certainty="approximate" encodinganalog="245g" era="ce"
+                     type="testDate" normal="2015-02/2015-06">February 2015-–—June 2015</date>
                   <event>did note chronlist event</event>
                </chronitem>
             </chronlist>
@@ -251,22 +264,22 @@
                   </tbody>
                </tgroup>
             </table>
-            <note type="note" actuate="onload" altrender="note" audience="external" encodinganalog="500" id="note3" label="note" show="embed">
+            <note type="note" actuate="onload" altrender="note" audience="external"
+               encodinganalog="500" id="note3" label="note" show="embed">
                <p>did/note/note</p>
             </note>
          </note>
-         <physloc type="physloc" id="pl1" encodinganalog="physloc" audience="external" altrender="physloc"
-            label="Physical Location:">On the <title>shelf</title>.</physloc>
+         <physloc type="physloc" id="pl1" encodinganalog="physloc" audience="external"
+            altrender="physloc" label="Physical Location:">On the <title>shelf</title>.</physloc>
          <unitid label="Call Number:" countrycode="US" repositorycode="US-CtY-BR" altrender="unitid"
-            audience="external" encodinganalog="unitid" id="ui1" identifier="unitid" type="unitid"><title>GEN MSS</title>
-            553</unitid>
-         <origination label="Creator:" encodinganalog="100" altrender="altrender" id="origination1" audience="external">
+            audience="external" encodinganalog="unitid" id="ui1" identifier="unitid" type="unitid"
+               ><title>GEN MSS</title> 553</unitid>
+         <origination label="Creator:" encodinganalog="100" altrender="altrender" id="origination1"
+            audience="external">
             <persname encodinganalog="100">Hayward, A. (Abraham), 1801-1884.</persname>
             <corpname>corpname</corpname>
          </origination>
-         <origination>
-            text
-            <title>title</title>
+         <origination> text <title>title</title>
             <archref>archref</archref>
             <bibref>bibref</bibref>
             <abbr>abbr</abbr>
@@ -278,14 +291,10 @@
             <ptr/>
             <ref>ref</ref>
          </origination>
-         <origination>
-            text text
-            <persname>name</persname>
-            text <emph>text</emph>
+         <origination> text text <persname>name</persname> text <emph>text</emph>
          </origination>
-         <unittitle audience="external" id="unittitle1" altrender="altrender" encodinganalog="245" label="Title:" type="unittitle">
-            text
-            <abbr>abbr</abbr>
+         <unittitle audience="external" id="unittitle1" altrender="altrender" encodinganalog="245"
+            label="Title:" type="unittitle"> text <abbr>abbr</abbr>
             <archref>archref</archref>
             <bibref>bibref</bibref>
             <bibseries>bibseries</bibseries>
@@ -316,11 +325,11 @@
          <unittitle label="Title:">Abraham Hayward collection <unitdate type="inclusive"
                datechar="creation" label="Dates:" normal="1791/1962" era="ce" calendar="gregorian"
                >1791-1962</unitdate> or something</unittitle>
-             <unitdate type="inclusive" datechar="creation" label="Dates:" normal="1791/1962" era="ce"
-                   calendar="gregorian">1791-<title>1962</title></unitdate>
-                   
-     
-         
+         <unitdate type="inclusive" datechar="creation" label="Dates:" normal="1791/1962" era="ce"
+            calendar="gregorian">1791-<title>1962</title></unitdate>
+
+
+
          <physdesc label="Physical Description:">
             <extent>Total Boxes: 7 (incl. 3 oversize boxes)</extent>
          </physdesc>
@@ -348,18 +357,23 @@
             Bretton; Madaillae Florian; and Countess Fanny Karolyi.<lb/>Brian Roberts research
             materials consist of correspondence; typescripts for three chapters of an unfinished
             biography of Hayward; manuscript and typescript transcriptions of correspondence and
-            writings related to Hayward; a biographical timeline; and other research
-            papers.
-         
-         <linkgrp>
-            <resource xlink:label="start">Start of the link</resource>
-            <arc xlink:from="start" xlink:to="end"/>
-            <extptrloc xlink:href="http://extptrloc.com" altrender="extptrloc" audience="external" id="a1" xlink:label="xlinklabel" xlink:role="xlinkrole" xlink:title="xlinktitle" xlink:type="locator" xpointer="xpointer"/>
-            <ptrloc xlink:href="http://ptrloc.com" xpointer="xpointer" xlink:type="locator" xlink:title="xlinktitle" xlink:role="xlinkrole" xlink:label="xlinklabel" id="a2" audience="external" altrender="ptrloc" target="OS"/>
-            <extrefloc xlink:href="http://extrefloc.com" altrender="altrender" audience="external" id="a3" xlink:label="xlinklabel" xlink:role="xlinkrole" xlink:title="xlinktitle" xlink:type="locator" xpointer="xpointer">extrefloc</extrefloc>
-            <refloc xlink:href="http://refloc.com" xpointer="xpointer" xlink:type="locator" xlink:title="xlinktitle" xlink:role="xlinkrole" xlink:label="xlinklabel" id="a4" audience="external" altrender="altrender" target="RFO">refloc</refloc>
-         </linkgrp>
-         
+            writings related to Hayward; a biographical timeline; and other research papers. <linkgrp>
+               <resource xlink:label="start">Start of the link</resource>
+               <arc xlink:from="start" xlink:to="end"/>
+               <extptrloc xlink:href="http://extptrloc.com" altrender="extptrloc"
+                  audience="external" id="a1" xlink:label="xlinklabel" xlink:role="xlinkrole"
+                  xlink:title="xlinktitle" xlink:type="locator" xpointer="xpointer"/>
+               <ptrloc xlink:href="http://ptrloc.com" xpointer="xpointer" xlink:type="locator"
+                  xlink:title="xlinktitle" xlink:role="xlinkrole" xlink:label="xlinklabel" id="a2"
+                  audience="external" altrender="ptrloc" target="OS"/>
+               <extrefloc xlink:href="http://extrefloc.com" altrender="altrender"
+                  audience="external" id="a3" xlink:label="xlinklabel" xlink:role="xlinkrole"
+                  xlink:title="xlinktitle" xlink:type="locator" xpointer="xpointer"
+                  >extrefloc</extrefloc>
+               <refloc xlink:href="http://refloc.com" xpointer="xpointer" xlink:type="locator"
+                  xlink:title="xlinktitle" xlink:role="xlinkrole" xlink:label="xlinklabel" id="a4"
+                  audience="external" altrender="altrender" target="RFO">refloc</refloc>
+            </linkgrp>
          </abstract>
          <repository label="Repository:">
             <ref>ref</ref>
@@ -395,7 +409,9 @@
                   Edwards on the George Henry Nettleton Fund, 2003.</p>
                <blockquote altrender="bq" audience="external" id="bq1">
                   <p>blockquote paragraph</p>
-                  <address><addressline>blockquote addressline</addressline></address>
+                  <address>
+                     <addressline>blockquote addressline</addressline>
+                  </address>
                   <chronlist>
                      <chronitem>
                         <date>2015</date>
@@ -420,29 +436,31 @@
                <head>Custodial History</head>
                <p>paragraph</p>
                <p><blockquote altrender="bq" audience="external" id="bq2">
-                  <p>blockquote paragraph</p>
-                  <address><addressline>blockquote addressline</addressline>
-                  
-               <addressline>blockquote addressline 2</addressline></address>
-                  <chronlist>
-                     <chronitem>
-                        <date>2015</date>
-                        <event>blockquote event</event>
-                     </chronitem>
-                  </chronlist>
-                  <list type="marked">
-                     <item>blockquote item</item>
-                  </list>
-                  <table>
-                     <tgroup cols="1">
-                        <tbody>
-                           <row>
-                              <entry>blockquote table</entry>
-                           </row>
-                        </tbody>
-                     </tgroup>
-                  </table>
-               </blockquote></p>
+                     <p>blockquote paragraph</p>
+                     <address>
+                        <addressline>blockquote addressline</addressline>
+
+                        <addressline>blockquote addressline 2</addressline>
+                     </address>
+                     <chronlist>
+                        <chronitem>
+                           <date>2015</date>
+                           <event>blockquote event</event>
+                        </chronitem>
+                     </chronlist>
+                     <list type="marked">
+                        <item>blockquote item</item>
+                     </list>
+                     <table>
+                        <tgroup cols="1">
+                           <tbody>
+                              <row>
+                                 <entry>blockquote table</entry>
+                              </row>
+                           </tbody>
+                        </tgroup>
+                     </table>
+                  </blockquote></p>
                <acqinfo>
                   <head>custodhist/acqinfo/head</head>
                   <p>custodhist/acqinfo/p</p>
@@ -459,8 +477,10 @@
             </address>
             <blockquote altrender="bq" audience="external" id="bq3">
                <p>blockquote paragraph</p>
-               <address><addressline>blockquote addressline 1</addressline>
-               <addressline>blockquote addressline 2</addressline></address>
+               <address>
+                  <addressline>blockquote addressline 1</addressline>
+                  <addressline>blockquote addressline 2</addressline>
+               </address>
                <chronlist>
                   <chronitem>
                      <date>2015</date>
@@ -481,7 +501,8 @@
                </table>
             </blockquote>
          </descgrp>
-         <altformavail encodinganalog="altform" type="altform" audience="internal" altrender="altform" id="altform">
+         <altformavail encodinganalog="altform" type="altform" audience="internal"
+            altrender="altform" id="altform">
             <head>Alt Form</head>
             <p>Alt Form paragraph</p>
             <address>
@@ -493,29 +514,36 @@
          <accruals encodinganalog="accruals" audience="internal" altrender="accruals" id="accruals">
             <head>Accruals</head>
             <p>Accruals paragraph <address>
-               <addressline>Address Line 1</addressline>
-               <addressline>Address Line 2</addressline>
-               <addressline>Address Line 3</addressline>
-            </address></p>
-            
+                  <addressline>Address Line 1</addressline>
+                  <addressline>Address Line 2</addressline>
+                  <addressline>Address Line 3</addressline>
+               </address></p>
+
          </accruals>
-         <appraisal encodinganalog="appraisal" audience="internal" altrender="appraisal" id="appraisal">
+         <appraisal encodinganalog="appraisal" audience="internal" altrender="appraisal"
+            id="appraisal">
             <head>Appraisal</head>
-            <p>Appraisal paragraph <note show="embed" label="note" id="note30" encodinganalog="500" audience="external" altrender="note" actuate="onload" type="note"><p>appraisal/p/note</p></note></p>
+            <p>Appraisal paragraph <note show="embed" label="note" id="note30" encodinganalog="500"
+                  audience="external" altrender="note" actuate="onload" type="note">
+                  <p>appraisal/p/note</p>
+               </note></p>
          </appraisal>
          <fileplan encodinganalog="fileplan" audience="internal" altrender="fileplan" id="fileplan">
             <head>Fileplan</head>
             <p>Fileplan paragraph</p>
          </fileplan>
-         <originalsloc type="originalsloc" encodinganalog="originalsloc" audience="internal" altrender="originalsloc" id="originalsloc">
+         <originalsloc type="originalsloc" encodinganalog="originalsloc" audience="internal"
+            altrender="originalsloc" id="originalsloc">
             <head>Originalsloc</head>
             <p>Originalsloc paragraph</p>
          </originalsloc>
-         <phystech type="phystech" encodinganalog="phystech" audience="internal" altrender="phystech" id="phystech">
+         <phystech type="phystech" encodinganalog="phystech" audience="internal"
+            altrender="phystech" id="phystech">
             <head>phystech</head>
             <p>phystech paragraph</p>
          </phystech>
-         <processinfo type="processinfo" encodinganalog="processinfo" audience="internal" altrender="processinfo" id="processinfo">
+         <processinfo type="processinfo" encodinganalog="processinfo" audience="internal"
+            altrender="processinfo" id="processinfo">
             <head>processinfo</head>
             <p>processinfo paragraph</p>
          </processinfo>
@@ -529,39 +557,52 @@
          <separatedmaterial type="sepmat">
             <head>Separated Material</head>
             <p>blah blah</p>
-            <archref xlink:type="simple" xlink:actuate="none" xlink:show="none" xlink:arcrole="arcrole"
-                xlink:href="href" xlink:role="linkrole" xlink:title="linktitle" xpointer="xpointer">Archref
-            <abstract>abstract</abstract>
-            <container>container</container>
-            <dao><daodesc><p>daodesc</p></daodesc></dao>
+            <archref xlink:type="simple" xlink:actuate="none" xlink:show="none"
+               xlink:arcrole="arcrole" xlink:href="href" xlink:role="linkrole"
+               xlink:title="linktitle" xpointer="xpointer">Archref <abstract>abstract</abstract>
+               <container>container</container>
+               <dao>
+                  <daodesc>
+                     <p>daodesc</p>
+                  </daodesc>
+               </dao>
                <daogrp xlink:type="extended">
-                  <daodesc><p>daogrp daodesc</p></daodesc>
-               <daoloc xlink:href="href"/>
-            </daogrp>
-            <langmaterial>langmaterial</langmaterial>
-            <materialspec>materialspec</materialspec>
-               <note type="note" actuate="onload" altrender="note" audience="external" encodinganalog="500" id="note40" label="note" show="embed"><p>note paragraph</p></note>
-            <origination>origination</origination>
+                  <!--<daodesc>
+                     <p>daogrp daodesc</p>
+                  </daodesc>-->
+                  <!--<daoloc xlink:href="href"/>-->
+                  <daoloc xlink:href="http://daoloc.com/">
+                     <daodesc>
+                        <p>daoloc/daodesc/p</p>
+                     </daodesc>
+                  </daoloc>
+               </daogrp>
+               <langmaterial>langmaterial</langmaterial>
+               <materialspec>materialspec</materialspec>
+               <note type="note" actuate="onload" altrender="note" audience="external"
+                  encodinganalog="500" id="note40" label="note" show="embed">
+                  <p>note paragraph</p>
+               </note>
+               <origination>origination</origination>
                <origination><persname>persname</persname></origination>
                <physdesc>physdesc</physdesc>
                <physloc>physloc</physloc>
-               <repository><corpname>repository</corpname> <subarea>subarea</subarea></repository>
+               <repository><corpname>repository</corpname>
+                  <subarea>subarea</subarea></repository>
                <unitdate>unitdate</unitdate>
                <unitid>unitid</unitid>
                <unittitle>unittitle</unittitle>
             </archref>
-            <bibref  xlink:type="simple" xlink:actuate="none" xlink:show="none" xlink:arcrole="arcrole"
-               xlink:href="href" xlink:role="linkrole" xlink:title="linktitle" xpointer="xpointer">Bibref
-            <bibseries>bib series</bibseries>
-            <imprint>imprint</imprint>
-            <edition>edition</edition>
-            <archref>archref</archref>
-            <title>title</title>
-            
-            
+            <bibref xlink:type="simple" xlink:actuate="none" xlink:show="none"
+               xlink:arcrole="arcrole" xlink:href="href" xlink:role="linkrole"
+               xlink:title="linktitle" xpointer="xpointer">Bibref <bibseries>bib series</bibseries>
+               <imprint>imprint</imprint>
+               <edition>edition</edition>
+               <archref>archref</archref>
+               <title>title</title>
             </bibref>
             <extref>Extref</extref>
-            <ref >Ref</ref>
+            <ref>Ref</ref>
             <title>Title</title>
          </separatedmaterial>
          <relatedmaterial type="relmat">
@@ -570,15 +611,16 @@
             <archref>Archref</archref>
             <bibref>Bibref</bibref>
             <extref>Extref</extref>
-            <ref >Ref</ref>
+            <ref>Ref</ref>
             <title>Title</title>
          </relatedmaterial>
          <otherfindaid>
             <head>Related Material</head>
             <p>blah blah</p>
-            <archref altrender="archref" audience="internal" id="archref" xlink:actuate="none" xlink:arcrole="arcrole"
-               xlink:href="http://google.com" xlink:role="role" xlink:show="none" xlink:title="title" xlink:type="simple"
-               xpointer="xpointer">Archref</archref>
+            <archref altrender="archref" audience="internal" id="archref" xlink:actuate="none"
+               xlink:arcrole="arcrole" xlink:href="http://google.com" xlink:role="role"
+               xlink:show="none" xlink:title="title" xlink:type="simple" xpointer="xpointer"
+               >Archref</archref>
             <bibref>Bibref</bibref>
             <extref>Extref</extref>
             <ref>Ref</ref>
@@ -595,26 +637,36 @@
             <linkgrp>
                <resource xlink:label="start">Start of the link</resource>
                <arc xlink:from="start" xlink:to="end"/>
-               <extptrloc xlink:href="http://extptrloc.com" altrender="extptrloc" audience="external" id="a10" xlink:label="xlinklabel" xlink:role="xlinkrole" xlink:title="xlinktitle" xlink:type="locator" xpointer="xpointer"/>
-               <ptrloc xlink:href="http://ptrloc.com" xpointer="xpointer" xlink:type="locator" xlink:title="xlinktitle" xlink:role="xlinkrole" xlink:label="xlinklabel" id="a20" audience="external" altrender="ptrloc" target="OS"/>
-               <extrefloc xlink:href="http://extrefloc.com" altrender="altrender" audience="external" id="a30" xlink:label="xlinklabel" xlink:role="xlinkrole" xlink:title="xlinktitle" xlink:type="locator" xpointer="xpointer">extrefloc</extrefloc>
-               <refloc xlink:href="http://refloc.com" xpointer="xpointer" xlink:type="locator" xlink:title="xlinktitle" xlink:role="xlinkrole" xlink:label="xlinklabel" id="a40" audience="external" altrender="altrender" target="RFO">refloc</refloc>
+               <extptrloc xlink:href="http://extptrloc.com" altrender="extptrloc"
+                  audience="external" id="a10" xlink:label="xlinklabel" xlink:role="xlinkrole"
+                  xlink:title="xlinktitle" xlink:type="locator" xpointer="xpointer"/>
+               <ptrloc xlink:href="http://ptrloc.com" xpointer="xpointer" xlink:type="locator"
+                  xlink:title="xlinktitle" xlink:role="xlinkrole" xlink:label="xlinklabel" id="a20"
+                  audience="external" altrender="ptrloc" target="OS"/>
+               <extrefloc xlink:href="http://extrefloc.com" altrender="altrender"
+                  audience="external" id="a30" xlink:label="xlinklabel" xlink:role="xlinkrole"
+                  xlink:title="xlinktitle" xlink:type="locator" xpointer="xpointer"
+                  >extrefloc</extrefloc>
+               <refloc xlink:href="http://refloc.com" xpointer="xpointer" xlink:type="locator"
+                  xlink:title="xlinktitle" xlink:role="xlinkrole" xlink:label="xlinklabel" id="a40"
+                  audience="external" altrender="altrender" target="RFO">refloc</refloc>
             </linkgrp>
          </bibliography>
-         <prefercite id="cite" altrender="prefercite" audience="internal" encodinganalog="prefercite">
+         <prefercite id="cite" altrender="prefercite" audience="internal"
+            encodinganalog="prefercite">
             <head>Cite As</head>
             <p>Abraham Hayward Collection. General Collection, Beinecke Rare Book and Manuscript
                Library, Yale University.</p>
          </prefercite>
-         <accessrestrict id="arest" altrender="access" audience="internal" type="access" encodinganalog="506">
+         <accessrestrict id="arest" altrender="access" audience="internal" type="access"
+            encodinganalog="506">
             <head>Information about Access</head>
             <p> This collection is open for research. <title xlink:type="simple" render="italic"
                   >Restricted Fragile Oversize</title> in box 7 may only be consulted with
                permission of the appropriate curator. Preservation photocopies or photographic
                prints for reference use have been substituted in the main files. </p>
-            <legalstatus type="legalstatus" id="legalstatus" audience="internal" altrender="legalstatus">
-               Legal Status FOO BAR.
-            </legalstatus>
+            <legalstatus type="legalstatus" id="legalstatus" audience="internal"
+               altrender="legalstatus"> Legal Status FOO BAR. </legalstatus>
             <accessrestrict>
                <head>subhead</head>
                <p>recursion recursion recursion</p>
@@ -630,7 +682,8 @@
                xlink:type="simple" render="italic">Faust</title>, the first translation of <title
                xlink:type="simple" render="italic">Faust</title> into English, he pursued a career
             in journalism and literature. He never married. </p>
-         <dao id="bioghistDao" xlink:type="simple" xlink:show="none" xlink:actuate="none" xlink:href="http://www.nytimes.com/">
+         <dao id="bioghistDao" xlink:type="simple" xlink:show="none" xlink:actuate="none"
+            xlink:href="http://www.nytimes.com/">
             <daodesc>
                <p>daodesc paragraph</p>
             </daodesc>
@@ -639,10 +692,10 @@
             <daodesc>
                <p>daodesc p</p>
                <address>
-               <addressline>Address Line 1</addressline>
-               <addressline>Address Line 2</addressline>
-               <addressline>Address Line 3</addressline>
-            </address>
+                  <addressline>Address Line 1</addressline>
+                  <addressline>Address Line 2</addressline>
+                  <addressline>Address Line 3</addressline>
+               </address>
             </daodesc>
             <resource xlink:label="start">Resource</resource>
             <daoloc xlink:label="end" xlink:href="http://bostonglobe.com"/>
@@ -663,7 +716,8 @@
                >Brian Roberts Research Materials</title>. The papers document Hayward's familial
             relations, the literary and political circles of mid-nineteeth century London, and a
             controversy involving Hayward and the Inner Temple. </p>
-         <arrangement encodinganalog="arrangement" audience="internal" altrender="arrangement" id="arr123">
+         <arrangement encodinganalog="arrangement" audience="internal" altrender="arrangement"
+            id="arr123">
             <head>Arrangement Head</head>
             <p>Arrangment paragraph</p>
             <arrangement>
@@ -671,7 +725,8 @@
                <p>Arrangment paragraph</p>
             </arrangement>
          </arrangement>
-         <dao id="scopecontentDao" xlink:type="simple" xlink:show="none" xlink:actuate="none" xlink:href="http://www.nytimes.com/">
+         <dao id="scopecontentDao" xlink:type="simple" xlink:show="none" xlink:actuate="none"
+            xlink:href="http://www.nytimes.com/">
             <daodesc>
                <p>daodesc paragraph</p>
             </daodesc>
@@ -685,7 +740,8 @@
             <arc xlink:from="start" xlink:to="end"/>
          </daogrp>
       </scopecontent>
-      <arrangement encodinganalog="arrangement" audience="internal" altrender="arrangement" id="arr1234">
+      <arrangement encodinganalog="arrangement" audience="internal" altrender="arrangement"
+         id="arr1234">
          <head>Arrangement Head</head>
          <p>Arrangment paragraph</p>
          <arrangement>
@@ -695,10 +751,12 @@
          <list type="simple" altrender="simpleList" audience="external" id="simpleID">
             <item>simple list item</item>
          </list>
-         <list type="marked" altrender="markedList" audience="external" id="markedID" mark="wahlberg">
+         <list type="marked" altrender="markedList" audience="external" id="markedID"
+            mark="wahlberg">
             <item>marked list item</item>
          </list>
-         <list type="ordered" altrender="orderedList" audience="external" id="orderedID" continuation="continues" numeration="arabic">
+         <list type="ordered" altrender="orderedList" audience="external" id="orderedID"
+            continuation="continues" numeration="arabic">
             <item>ordered list item</item>
          </list>
          <list type="deflist" altrender="defList" audience="external" id="deflistID">
@@ -711,7 +769,8 @@
       <odd altrender="odd" id="odd" audience="internal" encodinganalog="odd" type="odd">
          <head>ODD head</head>
          <p>odd paragraph</p>
-         <dao id="oddDao" xlink:type="simple" xlink:show="none" xlink:actuate="none" xlink:href="http://www.nytimes.com/">
+         <dao id="oddDao" xlink:type="simple" xlink:show="none" xlink:actuate="none"
+            xlink:href="http://www.nytimes.com/">
             <daodesc>
                <p>daodesc paragraph</p>
             </daodesc>
@@ -725,7 +784,8 @@
             <arc xlink:from="start" xlink:to="end"/>
          </daogrp>
       </odd>
-      <controlaccess id="ca" altrender="controlaccess" audience="external" encodinganalog="controlaccess">
+      <controlaccess id="ca" altrender="controlaccess" audience="external"
+         encodinganalog="controlaccess">
          <head>Access Terms</head>
          <p>This collection is indexed under the following access points in <extref
                xlink:type="simple" xlink:actuate="onRequest" xlink:show="new"
@@ -734,24 +794,31 @@
          <controlaccess encodinganalog="ca" audience="external" altrender="ca" id="ca3">
             <head>Subjects</head>
             <name role="name" altrender="name" encodinganalog="name" id="n1" audience="external"
-               source="Name" rules="Name" normal="McNamerson, Name" authfilenumber="123">Name McNamerson</name>
-            <geogname authfilenumber="Boston" normal="Bahstun" rules="Fenway" source="RedSox" audience="external"
-               id="a617" encodinganalog="Beantown" altrender="wickedawesome" role="wickedpissah">Boston (Massachusetts).</geogname>
+               source="Name" rules="Name" normal="McNamerson, Name" authfilenumber="123">Name
+               McNamerson</name>
+            <geogname authfilenumber="Boston" normal="Bahstun" rules="Fenway" source="RedSox"
+               audience="external" id="a617" encodinganalog="Beantown" altrender="wickedawesome"
+               role="wickedpissah">Boston (Massachusetts).</geogname>
             <genreform altrender="genreform" encodinganalog="genreform" id="gf1" audience="external"
-               source="genreform" rules="genreform" normal="Watercolors" authfilenumber="123" type="form">Watercolors</genreform>
-            <famname encodinganalog="famname" altrender="famname" id="fam1" audience="external" source="famname" 
-               rules="famname" normal="Rush family" authfilenumber="1234" role="famname">
-               Rush <emph render="bold">family</emph> of <lb/>New <ptr xlink:href="http://www.rushfamily.com"/>/> Hampshire</famname>
-            <function authfilenumber="function" normal="Entertaining" rules="lmnop" source="zyx" audience="external" 
-               id="fun1" altrender="function" encodinganalog="function"><emph render="bolditalic">Entertaining</emph><extptr xlink:href="http://function.com"/></function>
-            <title authfilenumber="title" normal="title" rules="title" source="title" audience="external"
-               altrender="title" id="title1" render="altrender" encodinganalog="title" type="titletype"
-               xlink:href="http://www.longform.com" xlink:actuate="none" xlink:arcrole="arcrole"
-               xlink:role="titlexlinkrole" xlink:show="none" xlink:title="titletitle" xlink:type="simple"
-               xpointer="#title">Moby-Dick, or The Whale</title>
-            <persname encodinganalog="600" role="subject" id="pers1" altrender="persname" audience="external"
-                source="persname" rules="persname" normal="Pers, Name" authfilenumber="1234">Abraham, Robert, d. 1833
-               --Estate.</persname>
+               source="genreform" rules="genreform" normal="Watercolors" authfilenumber="123"
+               type="form">Watercolors</genreform>
+            <famname encodinganalog="famname" altrender="famname" id="fam1" audience="external"
+               source="famname" rules="famname" normal="Rush family" authfilenumber="1234"
+               role="famname"> Rush <emph render="bold">family</emph> of <lb/>New <ptr
+                  xlink:href="http://www.rushfamily.com"/>/> Hampshire</famname>
+            <function authfilenumber="function" normal="Entertaining" rules="lmnop" source="zyx"
+               audience="external" id="fun1" altrender="function" encodinganalog="function"><emph
+                  render="bolditalic">Entertaining</emph><extptr xlink:href="http://function.com"
+               /></function>
+            <title authfilenumber="title" normal="title" rules="title" source="title"
+               audience="external" altrender="title" id="title1" render="altrender"
+               encodinganalog="title" type="titletype" xlink:href="http://www.longform.com"
+               xlink:actuate="none" xlink:arcrole="arcrole" xlink:role="titlexlinkrole"
+               xlink:show="none" xlink:title="titletitle" xlink:type="simple" xpointer="#title"
+               >Moby-Dick, or The Whale</title>
+            <persname encodinganalog="600" role="subject" id="pers1" altrender="persname"
+               audience="external" source="persname" rules="persname" normal="Pers, Name"
+               authfilenumber="1234">Abraham, Robert, d. 1833 --Estate.</persname>
             <persname encodinganalog="600" role="subject">Bentley, George, 1828-1895.</persname>
             <persname encodinganalog="600" role="subject">Bentley, Richard, 1794-1871.</persname>
             <persname encodinganalog="600" role="subject">Delane, John Thaddeus,
@@ -770,11 +837,19 @@
                1787-1869.</persname>
             <persname encodinganalog="600" role="subject">Roberts, Brian.</persname>
             <persname encodinganalog="600" role="subject">Smith, Horace, 1779-1849.</persname>
-            <corpname encodinganalog="610" role="subject" id="cn" altrender="corpname" audience="external"
-               authfilenumber="authfilenumber" normal="inner temple yall" rules="aacr2" source="lcnaf"><!-- comment -->Inner Temple <extptr xlink:href="http://www.nytimes.com/"/>(London, England)</corpname>
-            <corpname encodinganalog="610" role="subject" id="cn2" altrender="corpname" audience="external"
-               authfilenumber="authfilenumber" normal="inner temple yall" rules="aacr2" source="lcnaf">Inner Temple <subarea audience="external" altrender="subarea" id="sa1" encodinganalog="subarea">(London, England)</subarea> <subarea>(Great Britain, Europe)</subarea> (Earth, <emph render="bold">Solar</emph> System)</corpname>
-            <subject encodinganalog="650" source="lcsh" altrender="subject" id="sub1" audience="external" rules="subject" normal="Authors" authfilenumber="1234">Authors, English --19th century.</subject>
+            <corpname encodinganalog="610" role="subject" id="cn" altrender="corpname"
+               audience="external" authfilenumber="authfilenumber" normal="inner temple yall"
+               rules="aacr2" source="lcnaf"><!-- comment -->Inner Temple <extptr
+                  xlink:href="http://www.nytimes.com/"/>(London, England)</corpname>
+            <corpname encodinganalog="610" role="subject" id="cn2" altrender="corpname"
+               audience="external" authfilenumber="authfilenumber" normal="inner temple yall"
+               rules="aacr2" source="lcnaf">Inner Temple <subarea audience="external"
+                  altrender="subarea" id="sa1" encodinganalog="subarea">(London, England)</subarea>
+               <subarea>(Great Britain, Europe)</subarea> (Earth, <emph render="bold">Solar</emph>
+               System)</corpname>
+            <subject encodinganalog="650" source="lcsh" altrender="subject" id="sub1"
+               audience="external" rules="subject" normal="Authors" authfilenumber="1234">Authors,
+               English --19th century.</subject>
             <subject encodinganalog="650" source="lcsh">Gardens --Design --England.</subject>
             <subject encodinganalog="650" source="lcsh">Politics and culture --England --History
                --19th century.</subject>
@@ -792,19 +867,22 @@
          </controlaccess>
          <controlaccess>
             <head>Occupations and Functions</head>
-            <occupation encodinganalog="656" source="lcsh" authfilenumber="1234" normal="authors" rules="occ" 
-               audience="external" id="occ1" altrender="occupation">Authors --England --19th
-               century.</occupation>
+            <occupation encodinganalog="656" source="lcsh" authfilenumber="1234" normal="authors"
+               rules="occ" audience="external" id="occ1" altrender="occupation">Authors --England
+               --19th century.</occupation>
          </controlaccess>
       </controlaccess>
       <dsc type="combined" id="dsc" tpattern="tpatterndsc" othertype="otherDSCtype">
          <head>Collection Contents</head>
          <p>paragraph</p>
-         <address><addressline>DSC ADDRESS</addressline></address>
+         <address>
+            <addressline>DSC ADDRESS</addressline>
+         </address>
          <blockquote>
             <p>blockquote paragraph in dsc</p>
          </blockquote>
-         <note type="notetype" actuate="onload" altrender="note" audience="external" encodinganalog="500" id="note10" label="Note" show="embed">
+         <note type="notetype" actuate="onload" altrender="note" audience="external"
+            encodinganalog="500" id="note10" label="Note" show="embed">
             <p>DSC Note paragraph</p>
          </note>
          <table>
@@ -827,9 +905,8 @@
                <unitid>Series I.</unitid>
                <unittitle type="head"> Correspondence </unittitle>
                <unitdate>1833-1896</unitdate>
-               <physdesc encodinganalog="300" altrender="physdesc" 
-                  audience="external" id="physdesc1" label="physdesc" 
-                  rules="physdescRules" source="physdescSource">
+               <physdesc encodinganalog="300" altrender="physdesc" audience="external"
+                  id="physdesc1" label="physdesc" rules="physdescRules" source="physdescSource">
                   <abbr>abbr</abbr>
                   <archref>archref</archref>
                   <bibref>bibref</bibref>
@@ -859,8 +936,8 @@
             <c02 id="d0e205" level="subseries">
                <did>
                   <unittitle type="head"> OUTGOING </unittitle>
-                  <langmaterial altrender="langmaterial" audience="external" encodinganalog="langmat"
-                     id="langmat1" label="Language">
+                  <langmaterial altrender="langmaterial" audience="external"
+                     encodinganalog="langmat" id="langmat1" label="Language">
                      <abbr>abbr</abbr>
                      <archref>archref</archref>
                      <bibref>bibref</bibref>
@@ -875,8 +952,8 @@
                      <ref>ref</ref>
                      <title>title</title>
                   </langmaterial>
-                  <langmaterial altrender="langmaterial" audience="external" encodinganalog="langmat"
-                     id="langmat2" label="Language">
+                  <langmaterial altrender="langmaterial" audience="external"
+                     encodinganalog="langmat" id="langmat2" label="Language">
                      <abbr>abbr</abbr>
                      <archref>archref</archref>
                      <bibref>bibref</bibref>
@@ -891,17 +968,17 @@
                      <ref>ref</ref>
                      <title>title</title>
                   </langmaterial>
+                  <langmaterial> Materials in <language scriptcode="Latn">Dutch</language>,
+                        <language langcode="eng">English</language>, <language langcode="fre"
+                        scriptcode="Latn">French</language>, and <language>some language twins
+                        speak</language>. </langmaterial>
                   <langmaterial>
-                     Materials in <language scriptcode="Latn">Dutch</language>, <language langcode="eng">English</language>, <language langcode="fre" scriptcode="Latn">French</language>, and <language>some language twins speak</language>.
+                     <language scriptcode="Kana" langcode="jpn">Japanese</language>
                   </langmaterial>
-                  <langmaterial>
-                      <language scriptcode="Kana" langcode="jpn">Japanese</language>
-                  </langmaterial>
-                  <dao id="didDao" audience="external" altrender="didDAO"
-                      xlink:actuate="onRequest" xlink:arcrole="didDAOarcrole"
-                      xlink:href="http://www.nytimes.com/" xlink:role="didDAOrole"
-                       xlink:show="new" xlink:title="didDAOtitle" xlink:type="simple"
-                       xpointer="didDAOxpointer">
+                  <dao id="didDao" audience="external" altrender="didDAO" xlink:actuate="onRequest"
+                     xlink:arcrole="didDAOarcrole" xlink:href="http://www.nytimes.com/"
+                     xlink:role="didDAOrole" xlink:show="new" xlink:title="didDAOtitle"
+                     xlink:type="simple" xpointer="didDAOxpointer">
                      <daodesc>
                         <p>did DAO daodeac p</p>
                      </daodesc>
@@ -909,14 +986,21 @@
                </did>
                <c03 id="f1" level="file">
                   <did>
-                     <container type="Box"><title altrender="altrender" audience="external" authfilenumber="authfilenum"
-                         encodinganalog="title" id="title111" normal="normal title" render="altrender" rules="rules" source="source"
-                         type="titleType" xlink:actuate="none" xlink:arcrole="arcrole" xlink:href="href" xlink:role="xlinkrole" xlink:show="none"
-                         xlink:title="xlinktitle" xlink:type="simple" xpointer="xpointer">Title</title> 
-                        <archref xpointer="xpointer" xlink:type="simple" xlink:title="linktitle" xlink:show="none" xlink:role="role"
-                            xlink:href="href" xlink:arcrole="arcrole" xlink:actuate="none" altrender="altrender" id="title222" audience="external">archref</archref> 
-                        <bibref xpointer="xpointer" xlink:type="simple" xlink:title="linktitle" xlink:show="none" xlink:role="role"
-                           xlink:href="href" xlink:arcrole="arcrole" xlink:actuate="none" altrender="altrender" id="title333" audience="external">bibref</bibref> 1</container>
+                     <container type="Box"><title altrender="altrender" audience="external"
+                           authfilenumber="authfilenum" encodinganalog="title" id="title111"
+                           normal="normal title" render="altrender" rules="rules" source="source"
+                           type="titleType" xlink:actuate="none" xlink:arcrole="arcrole"
+                           xlink:href="href" xlink:role="xlinkrole" xlink:show="none"
+                           xlink:title="xlinktitle" xlink:type="simple" xpointer="xpointer"
+                           >Title</title>
+                        <archref xpointer="xpointer" xlink:type="simple" xlink:title="linktitle"
+                           xlink:show="none" xlink:role="role" xlink:href="href"
+                           xlink:arcrole="arcrole" xlink:actuate="none" altrender="altrender"
+                           id="title222" audience="external">archref</archref>
+                        <bibref xpointer="xpointer" xlink:type="simple" xlink:title="linktitle"
+                           xlink:show="none" xlink:role="role" xlink:href="href"
+                           xlink:arcrole="arcrole" xlink:actuate="none" altrender="altrender"
+                           id="title333" audience="external">bibref</bibref> 1</container>
                      <container type="Folder">1</container>
                      <unittitle type="genericfolder"> Bentley, [Richard] </unittitle>
                      <unitdate>1873-83</unitdate>
@@ -928,6 +1012,19 @@
                      <container type="Folder">2</container>
                      <unittitle type="genericfolder"> Boyes, ---- </unittitle>
                      <unitdate>n.y. Nov 3</unitdate>
+                     <daogrp xlink:type="extended" id="daogrp1">
+                        <daodesc>
+                     <p>daogrp daodesc</p>
+                  </daodesc>
+                        <resource xlink:label="start">resource text</resource>
+                        <arc xlink:from="start" xlink:to="end" xlink:actuate="onLoad" xlink:show="embed"></arc>
+                        <daoloc xlink:href="href"/>
+                        <daoloc xlink:href="http://daoloc.com/">
+                           <daodesc>
+                              <p>daoloc/daodesc/p</p>
+                           </daodesc>
+                        </daoloc>
+                     </daogrp>
                   </did>
                </c03>
                <c03 id="f3" level="file">
