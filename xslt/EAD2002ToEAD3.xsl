@@ -234,6 +234,17 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
+    
+    <!-- REMOVE dsc//dsc -->
+    <xsl:template match="dsc[ancestor::dsc]">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:call-template name="removedElement"/>
+                <xsl:text> Forward migration of dsc elements within other dsc elements is too complex for this style sheet. Revise the source to remove dsc elements with an ancestor dsc element before migrating to EAD3.</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
+    </xsl:template>
+    
 
     <!-- SKIP ELEMENT OR ATTRIBUTE IF NOT UNDEPRECATED-->
     <xsl:template match="descgrp | dimensions | physfacet | extent | bibseries | imprint">
@@ -1948,7 +1959,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:text>&#160;</xsl:text>
         <xsl:text>REMOVED FROM </xsl:text>
         <xsl:value-of select="parent::*/local-name()"/>
-        <xsl:text> </xsl:text>
+        <xsl:text>. </xsl:text>
     </xsl:template>
 
     <xsl:template name="commentAndMessage">
