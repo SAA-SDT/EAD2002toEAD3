@@ -260,7 +260,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         archref/langmaterial | archref/materialspec |
         archref/origination | archref/physdesc |
         archref/physloc | archref/repository |
-        archref/unitdate | archref/unitid |
+        archref/unitid |
         bibref/archref | bibref/edition |
         subtitle/date | subtitle/num |
         corpname/subarea | 
@@ -280,6 +280,15 @@ For these and/or other purposes and motivations, and without any expectation of 
         label/persname | label/repository |
         label/subject | 
         label/unitdate | 
+        archref/unitdate/title | 
+        entry/unitdate/title | 
+        event/unitdate/title | 
+        extref/unitdate/title | 
+        extrefloc/unitdate/title | 
+        item/unitdate/title | 
+        p/unitdate/title | 
+        ref/unitdate/title | 
+        refloc/unitdate/title | 
         p/origination | p/repository |
         ref/origination | ref/origination |
         refloc/origination | refloc/origination |
@@ -1472,7 +1481,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:attribute>
     </xsl:template>
 
-    <xsl:template match="item/unitdate">
+    <xsl:template match="unitdate[not(parent::label)][not(parent::did)][not(parent::unittitle)]">
         <date>
             <xsl:apply-templates select="node()"/>
         </date>
