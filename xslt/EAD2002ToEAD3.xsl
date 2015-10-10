@@ -279,7 +279,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         label/occupation | label/origination | 
         label/persname | label/repository |
         label/subject | 
-        label/unitdate | label/unittitle |
+        label/unitdate | 
         p/origination | p/repository |
         ref/origination | ref/origination |
         refloc/origination | refloc/origination |
