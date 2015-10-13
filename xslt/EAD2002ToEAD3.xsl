@@ -1991,15 +1991,4 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:element>
     </xsl:template>
 
-    <xsl:template name="gonna-deal-with-this-later">
-        <xsl:comment>
-            <xsl:text>NOT GONNA DEAL WITH</xsl:text>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>&#160;</xsl:text>
-            <xsl:text>NOW</xsl:text>
-            <xsl:text>&#10;</xsl:text>
-        </xsl:comment>
-    </xsl:template>
-
 </xsl:stylesheet>
