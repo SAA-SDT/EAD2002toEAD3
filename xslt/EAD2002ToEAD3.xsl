@@ -344,12 +344,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="bibref[not(parent::separatedmaterial)][not(parent::relatedmaterial)][not(parent::otherfindaid)][not(parent::bibliography)]">
         <ref>
+            <xsl:apply-templates select="@*"/>
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
                     <xsl:text>ELEMENT bibref CONVERTED TO ref</xsl:text>
                 </xsl:with-param>
             </xsl:call-template>
-            <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </ref>
     </xsl:template>
@@ -1234,12 +1234,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     
     <xsl:template match="langmaterial">
+        <xsl:call-template name="commentAndMessage">
+            <xsl:with-param name="comment">
+                <xsl:text>MIXED CONTENT REMOVED FROM langmaterial</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
         <langmaterial>
-            <xsl:call-template name="commentAndMessage">
-                <xsl:with-param name="comment">
-                    <xsl:text>MIXED CONTENT REMOVED FROM langmaterial</xsl:text>
-                </xsl:with-param>
-            </xsl:call-template>
             <xsl:apply-templates select="@*"/>
             <xsl:for-each select="language">
                 <xsl:choose>
@@ -1617,11 +1617,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>    
     
     <xsl:template match="@*[namespace-uri() = 'http://www.w3.org/1999/xlink']" mode="strip-ns">
-        <xsl:call-template name="commentAndMessage">
+        <!--<xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>XLINK STRIPPED</xsl:text>
             </xsl:with-param>
-        </xsl:call-template>
+        </xsl:call-template>-->
         <xsl:attribute name="{substring-after(name(), ':')}">
             <xsl:value-of select="normalize-space(lower-case(.))"/>
         </xsl:attribute>
