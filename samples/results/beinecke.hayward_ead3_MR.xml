@@ -211,7 +211,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-10-12T22:41:28.278-04:00">2015-10-12T22:41:28.278-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-10-12T23:03:33.196-04:00">2015-10-12T23:03:33.196-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
