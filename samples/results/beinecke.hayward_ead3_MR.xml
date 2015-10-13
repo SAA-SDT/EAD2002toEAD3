@@ -6,7 +6,7 @@
      altrender="altrender"
      audience="external"
      relatedencoding="enigma">
-   <!--ELEMENT eadheader REPLACED WITH control--><control langencoding="iso639-2b"
+   <control langencoding="iso639-2b"
             scriptencoding="iso15924"
             countryencoding="iso3166-1"
             repositoryencoding="iso15511"
@@ -15,15 +15,11 @@
             audience="internal"
             encodinganalog="eadheader"
             id="eadheader"
-            relatedencoding="DC"><!--ELEMENT eadid REPLACED WITH recordid-->
+            relatedencoding="DC">
       <recordid encodinganalog="eadid">beinecke.hayward</recordid>
-      <!--ATTRIBUTE eadid/@publicid REPLACED WITH otherrecordid-->
       <otherrecordid localtype="publicid">-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT (US::CtY-BR::::[ABRAHAM HAYWARD COLLECTION])//EN</otherrecordid>
-      <!--ATTRIBUTE eadid/@identifier REPLACED WITH otherrecordid-->
       <otherrecordid localtype="identifier">eadid:identifier</otherrecordid>
-      <!--ATTRIBUTE eadid/@url REPLACED WITH otherrecordid-->
       <otherrecordid localtype="url">http://hdl.handle.net/10079/fa/beinecke.hayward</otherrecordid>
-      <!--ATTRIBUTE eadid/@urn REPLACED WITH otherrecordid-->
       <otherrecordid localtype="urn">eadid:urn</otherrecordid>
       <filedesc altrender="filedesc"
                 audience="external"
@@ -112,8 +108,7 @@
                statement.</p>
          </seriesstmt>
          <notestmt>
-            <!--ELEMENT note RENAMED as 'controlnote'
---><controlnote localtype="bpg"
+            <controlnote localtype="bpg"
                          id="note1"
                          audience="external"
                          altrender="note"
@@ -126,7 +121,7 @@
                </blockquote>
                <chronlist>
                   <chronitem>
-                     <!--ELEMENT chronitem/date CONVERTED TO chronitem/datesingle--><datesingle>date</datesingle>
+                     <datesingle>date</datesingle>
                      <event>event</event>
                   </chronitem>
                </chronlist>
@@ -142,8 +137,7 @@
                      </tbody>
                   </tgroup>
                </table>
-               <!--ELEMENT note WRAPPED in a paragraph and RENAMED as 'footnote'
---><p>
+               <p>
                   <footnote show="embed"
                             id="note2"
                             audience="external"
@@ -156,83 +150,72 @@
             </controlnote>
          </notestmt>
       </filedesc>
-      <!--ELEMENT maintenancestatus ADDED-->
       <maintenancestatus value="revised"/>
-      <!--ELEMENT publicationstatus ADDED-->
       <publicationstatus value="published"/>
-      <!--ELEMENT maintenanceagency ADDED-->
-      <maintenanceagency countrycode="US"><!--ATTRIBUTE eadid/@countrycode REPLACED WITH maintenanceagency/@countrycode--><!--ATTRIBUTE eadid/@mainagencycode REPLACED WITH ELEMENT maintenanceagency/agencycode-->
+      <maintenanceagency countrycode="US">
          <agencycode>US-CtY-BR</agencycode>
-         <!--ELEMENT agencyname ADDED-->
          <agencyname>Beinecke Library</agencyname>
       </maintenanceagency>
-      <!--ELEMENT langusage REPLACED WITH languagedeclaration-->
       <languagedeclaration altrender="langusage"
                            audience="external"
                            encodinganalog="langusage">
          <language langcode="eng">English</language>
          <script scriptcode="Latn">Latn</script>
          <descriptivenote>
-            <p><!-- ELEMENT OR ATTRIBUTE langusage REMOVED FROM profiledesc. -->
+            <p>
                <emph render="altrender">Finding aid </emph>written in English and French. </p>
          </descriptivenote>
       </languagedeclaration>
-      <!--ELEMENT langusage REPLACED WITH languagedeclaration-->
       <languagedeclaration altrender="langusage"
                            audience="external"
                            encodinganalog="langusage">
          <language langcode="fre">French</language>
          <script scriptcode="Latn">Latn</script>
          <descriptivenote>
-            <p><!-- ELEMENT OR ATTRIBUTE langusage REMOVED FROM profiledesc. -->
+            <p>
                <emph render="altrender">Finding aid </emph>written in English and French. </p>
          </descriptivenote>
       </languagedeclaration>
-      <!--ELEMENT descrules REPLACED WITH conventiondeclaration-->
       <conventiondeclaration altrender="altrender"
                              audience="external"
                              encodinganalog="descrules">
          <citation>Beinecke Manuscript Unit Archival Processing Manual</citation>
          <descriptivenote>
-            <p><!-- ELEMENT OR ATTRIBUTE descrules REMOVED FROM profiledesc. -->Finding aid prepared according to the <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <p>Finding aid prepared according to the <title render="italic">
                   <part>Beinecke Manuscript Unit Archival Processing Manual</part>
                </title> and
-               <!--ADDED CHILD ELEMENT part TO title--><title>
+               <title>
                   <part>DACS</part>
                </title>. </p>
          </descriptivenote>
       </conventiondeclaration>
-      <!--ELEMENT descrules REPLACED WITH conventiondeclaration-->
       <conventiondeclaration altrender="altrender"
                              audience="external"
                              encodinganalog="descrules">
          <citation>DACS</citation>
          <descriptivenote>
-            <p><!-- ELEMENT OR ATTRIBUTE descrules REMOVED FROM profiledesc. -->Finding aid prepared according to the <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <p>Finding aid prepared according to the <title render="italic">
                   <part>Beinecke Manuscript Unit Archival Processing Manual</part>
                </title> and
-               <!--ADDED CHILD ELEMENT part TO title--><title>
+               <title>
                   <part>DACS</part>
                </title>. </p>
          </descriptivenote>
       </conventiondeclaration>
-      <!--ATTRIBUTE eadheader/@findaidstatus REPLACED WITH ELEMENT localcontrol/term-->
       <localcontrol localtype="findaidstatus">
          <term>edited-full-draft</term>
       </localcontrol>
-      <!--ELEMENT maintenancehistory ADDED-->
       <maintenancehistory altrender="revisiondesc"
                           audience="external"
                           encodinganalog="revisiondesc"
-                          id="revisiondesc"><!--ELEMENT maintenanceevent ADDED FOR THE EVENT OF MIGRATION TO EAD3-->
+                          id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-10-12T21:53:26.729-04:00">2015-10-12T21:53:26.729-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-10-12T22:41:28.278-04:00">2015-10-12T22:41:28.278-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
          </maintenanceevent>
-         <!--ELEMENT creation REPLACED WITH maintenanceevent-->
          <maintenanceevent id="creation"
                            encodinganalog="creation"
                            audience="external"
@@ -248,7 +231,6 @@
             <eventdescription>Finding aid encoded in EAD 1.0 by Manuscript Unit staff, Beinecke
             Library, with Edix/Wordix macros, 2006. </eventdescription>
          </maintenanceevent>
-         <!--ELEMENT revisiondesc/list/defitem REPLACED WITH maintenanceevent-->
          <maintenanceevent id="defitem" audience="external" altrender="defitem">
             <eventtype value="unknown"/>
             <eventdatetime/>
@@ -256,7 +238,6 @@
             <agent/>
             <eventdescription altrender="defitemitem" audience="external" id="dii1">def label1: def item1</eventdescription>
          </maintenanceevent>
-         <!--ELEMENT revisiondesc/list/defitem REPLACED WITH maintenanceevent-->
          <maintenanceevent>
             <eventtype value="unknown"/>
             <eventdatetime/>
@@ -266,7 +247,7 @@
          </maintenanceevent>
       </maintenancehistory>
    </control>
-   <!-- ELEMENT OR ATTRIBUTE frontmatter REMOVED FROM ead. -->
+   
    <archdesc localtype="register"
              relatedencoding="MARC21"
              level="otherlevel"
@@ -289,8 +270,6 @@
                number
             recursive materialspec
          </materialspec>
-         <!--ELEMENT note RENAMED as 'didnote'
--->
          <didnote altrender="didnote"
                   audience="external"
                   encodinganalog="didnote"
@@ -319,22 +298,22 @@
                       altrender="altrender"
                       id="origination1"
                       audience="external">
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="100">
+            <persname encodinganalog="100">
                <part>Hayward, A. (Abraham), 1801-1884.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO corpname--><corpname>
+            <corpname>
                <part>corpname</part>
             </corpname>
          </origination>
-         <origination><!--origination ELEMENT VALUE MOVED INTO name ELEMENT-->
+         <origination>
             <name>
                <part> text title
-            <!--ELEMENT archref CONVERTED TO ref--><ref>archref</ref>
-                  <ref><!--ELEMENT bibref CONVERTED TO ref-->bibref</ref>
+            <ref>archref</ref>
+                  <ref>bibref</ref>
                   <abbr>abbr</abbr>
                   <emph>emph</emph>
                   <expan>expan</expan>
-                  <!--ELEMENT extptr CONVERTED TO ptr-->      <ptr/>
+                  <ptr/>
                   <ref>extref</ref>
                   <lb/>
                   <ptr/>
@@ -342,13 +321,10 @@
                </part>
             </name>
          </origination>
-         <origination><!--ADDED CHILD ELEMENT part TO persname-->
+         <origination>
             <persname>
                <part>name</part>
             </persname>
-            <!--ORIGINAL origination VALUE WAS AS FOLLOWS:
-                            "text text name text text"
-                            PORTIONS NOT INCLUDED IN  persname, corpname, famname, OR name ELEMENTS WERE LOST.-->
          </origination>
          <unittitle audience="external"
                     id="unittitle1"
@@ -356,10 +332,10 @@
                     encodinganalog="245"
                     label="Title:"
                     localtype="unittitle"> text <abbr>abbr</abbr>
-            <!--ELEMENT archref CONVERTED TO ref--><ref>archref</ref>
-            <ref><!--ELEMENT bibref CONVERTED TO ref-->bibref</ref>
-            <!-- ELEMENT OR ATTRIBUTE bibseries REMOVED FROM unittitle. -->bibseries
-            <!--ADDED CHILD ELEMENT part TO corpname--><corpname>
+            <ref>archref</ref>
+            <ref>bibref</ref>
+            bibseries
+            <corpname>
                <part>corpname</part>
             </corpname>
             <date>date</date>
@@ -369,46 +345,44 @@
                <ref href="http://www.nytimes.com/">title with link</ref>
             </emph>
             <expan>expan</expan>
-            <!--ELEMENT extptr CONVERTED TO ptr--><ptr/>
+            <ptr/>
             <ref>extref</ref>
-            <!--ADDED CHILD ELEMENT part TO famname--><famname>
+            <famname>
                <part>famname</part>
             </famname>
-            <!--ADDED CHILD ELEMENT part TO function--><function>
+            <function>
                <part>function</part>
             </function>
-            <!--ADDED CHILD ELEMENT part TO genreform--><genreform>
+            <genreform>
                <part>genreform</part>
             </genreform>
-            <!--ADDED CHILD ELEMENT part TO geogname--><geogname>
+            <geogname>
                <part>geogname</part>
             </geogname>
-            <!-- ELEMENT OR ATTRIBUTE imprint REMOVED FROM unittitle. -->imprint
+            imprint
             <lb/>
-            <!--ADDED CHILD ELEMENT part TO name--><name>
+            <name>
                <part>name</part>
             </name>
             <num>num</num>
-            <!--ADDED CHILD ELEMENT part TO occupation--><occupation>
+            <occupation>
                <part>occupation</part>
             </occupation>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname>
+            <persname>
                <part>persname</part>
             </persname>
             <ptr/>
             <ref>ref</ref>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject>
+            <subject>
                <part>subject</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO title--><title>
+            <title>
                <part>title</part>
             </title>
             unitdate
          </unittitle>
-         <!--ELEMENT unitdate MOVED FROM unittitle CHILD TO unittitle SIBLING-->
          <unitdate>unitdate</unitdate>
          <unittitle label="Title:">Abraham Hayward collection 1791-1962 or something</unittitle>
-         <!--ELEMENT unitdate MOVED FROM unittitle CHILD TO unittitle SIBLING-->
          <unitdate unitdatetype="inclusive"
                    datechar="creation"
                    label="Dates:"
@@ -422,10 +396,10 @@
                    era="ce"
                    calendar="gregorian">1791-1962</unitdate>
          <physdesc label="Physical Description:">
-            <!-- ELEMENT OR ATTRIBUTE extent REMOVED FROM physdesc. -->Total Boxes: 7 (incl. 3 oversize boxes)
+            Total Boxes: 7 (incl. 3 oversize boxes)
          </physdesc>
          <physdesc label="Physical Description:">
-            <!-- ELEMENT OR ATTRIBUTE extent REMOVED FROM physdesc. -->Linear Feet: 5.51'
+            Linear Feet: 5.51'
          </physdesc>
          <abstract label="Summary:">Correspondence, printed materials, other papers, and photographs
             related to Abraham Hayward, as well as the research materials of Hayward biographer
@@ -448,31 +422,26 @@
             Bretton; Madaillae Florian; and Countess Fanny Karolyi.<lb/>Brian Roberts research
             materials consist of correspondence; typescripts for three chapters of an unfinished
             biography of Hayward; manuscript and typescript transcriptions of correspondence and
-            writings related to Hayward; a biographical timeline; and other research papers. <!--ELEMENT linkgrp SKIPPED
---><!--ELEMENT extptrloc RENAMED as 'ptr'
---><ptr href="http://extptrloc.com"
+            writings related to Hayward; a biographical timeline; and other research papers. <ptr href="http://extptrloc.com"
                  altrender="extptrloc"
                  audience="external"
                  id="a1"
                  linkrole="xlinkrole"
                  linktitle="xlinktitle"
-                 xpointer="xpointer"/>, <!--ELEMENT ptrloc RENAMED as 'ptr'
---><ptr href="http://ptrloc.com"
+                 xpointer="xpointer"/>, <ptr href="http://ptrloc.com"
                  xpointer="xpointer"
                  linktitle="xlinktitle"
                  linkrole="xlinkrole"
                  id="a2"
                  audience="external"
                  altrender="ptrloc"
-                 target="OS"/>, <!--ELEMENT extrefloc RENAMED as 'ref'
---><ref href="http://extrefloc.com"
+                 target="OS"/>, <ref href="http://extrefloc.com"
                  altrender="altrender"
                  audience="external"
                  id="a3"
                  linkrole="xlinkrole"
                  linktitle="xlinktitle"
-                 xpointer="xpointer">extrefloc</ref>, <!--ELEMENT refloc RENAMED as 'ref'
---><ref href="http://refloc.com"
+                 xpointer="xpointer">extrefloc</ref>, <ref href="http://refloc.com"
                  xpointer="xpointer"
                  linktitle="xlinktitle"
                  linkrole="xlinkrole"
@@ -481,17 +450,17 @@
                  altrender="altrender"
                  target="RFO">refloc</ref>
          </abstract>
-         <repository label="Repository:"><!--repository ELEMENT VALUE MOVED INTO name ELEMENT-->
+         <repository label="Repository:">
             <name>
                <part>
                   <ref>ref</ref>
                   <ptr/>
                   <lb/>
                   <ref>extref</ref>
-                  <!--ELEMENT extptr CONVERTED TO ptr-->      <ptr/>
+                  <ptr/>
                   <abbr>abbr</abbr>
-                  <!--ELEMENT archref CONVERTED TO ref-->      <ref>archref</ref>
-                  <ref><!--ELEMENT bibref CONVERTED TO ref-->bibref</ref>
+                  <ref>archref</ref>
+                  <ref>bibref</ref>
                   <emph>emph</emph>
                   <expan>expan</expan>
             title
@@ -509,18 +478,15 @@
          </part>
             </name>
          </repository>
-         <!--REQUIRED ATTRIBUTE daotype ADDED TO dao WITH VALUE "unknown"-->
          <dao daotype="unknown"
               id="bioghistDao"
               show="none"
               actuate="none"
               href="http://www.nytimes.com/">
-            <!--ELEMENT daodesc RENAMED AS 'descriptivenote'
---><descriptivenote>
+            <descriptivenote>
                <p>daodesc paragraph</p>
             </descriptivenote>
          </dao>
-         <!--ELEMENT daogrp[count(child::daoloc) = 1] CONVERTED TO dao-->
          <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
                <p>Resource</p>
@@ -528,36 +494,30 @@
                <p>Address Line 1, Address Line 2, Address Line 3</p>
             </descriptivenote>
          </dao>
-         <!--REQUIRED ATTRIBUTE daotype ADDED TO dao WITH VALUE "unknown"-->
          <dao daotype="unknown"
               id="scopecontentDao"
               show="none"
               actuate="none"
               href="http://www.nytimes.com/">
-            <!--ELEMENT daodesc RENAMED AS 'descriptivenote'
---><descriptivenote>
+            <descriptivenote>
                <p>daodesc paragraph</p>
             </descriptivenote>
          </dao>
-         <!--ELEMENT daogrp[count(child::daoloc) = 1] CONVERTED TO dao-->
          <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
                <p>Resource</p>
                <p>daodesc p</p>
             </descriptivenote>
          </dao>
-         <!--REQUIRED ATTRIBUTE daotype ADDED TO dao WITH VALUE "unknown"-->
          <dao daotype="unknown"
               id="oddDao"
               show="none"
               actuate="none"
               href="http://www.nytimes.com/">
-            <!--ELEMENT daodesc RENAMED AS 'descriptivenote'
---><descriptivenote>
+            <descriptivenote>
                <p>daodesc paragraph</p>
             </descriptivenote>
          </dao>
-         <!--ELEMENT daogrp[count(child::daoloc) = 1] CONVERTED TO dao-->
          <dao label="end" href="http://bostonglobe.com" daotype="unknown">
             <descriptivenote>
                <p>Resource</p>
@@ -565,8 +525,6 @@
             </descriptivenote>
          </dao>
       </did>
-      <!--ELEMENT note RENAMED as 'odd'
--->
       <odd altrender="didnote"
            audience="external"
            encodinganalog="didnote"
@@ -580,14 +538,14 @@
             </blockquote>
             <chronlist>
                <chronitem>
-                  <!--ELEMENT chronitem/date CONVERTED TO chronitem/datesingle--><datesingle id="dateID2"
+                  <datesingle id="dateID2"
                            audience="external"
                            altrender="chronItemDate"
                            localtype="testDate">February 2015</datesingle>
                   <event>did note chronlist event</event>
                </chronitem>
                <chronitem>
-                  <!--ELEMENT chronitem/date CONVERTED TO chronitem/datesingle--><datesingle standarddate="2015-02"
+                  <datesingle standarddate="2015-02"
                            id="dateID3"
                            audience="external"
                            altrender="chronItemDate"
@@ -595,7 +553,7 @@
                   <event>did note chronlist event</event>
                </chronitem>
                <chronitem>
-                  <!--ELEMENT chronitem/date CONVERTED TO chronitem/daterange--><daterange id="dateID4"
+                  <daterange id="dateID4"
                           audience="external"
                           altrender="chronItemDate"
                           localtype="testDate">
@@ -605,7 +563,7 @@
                   <event>did note chronlist event</event>
                </chronitem>
                <chronitem>
-                  <!--ELEMENT chronitem/date CONVERTED TO chronitem/daterange--><daterange id="dateID5"
+                  <daterange id="dateID5"
                           audience="external"
                           altrender="chronItemDate"
                           localtype="testDate">
@@ -629,8 +587,7 @@
                   </tbody>
                </tgroup>
             </table>
-            <!--ELEMENT note WRAPPED in a paragraph and RENAMED as 'footnote'
---><p>
+            <p>
             <footnote localtype="note"
                       actuate="onload"
                       altrender="note"
@@ -641,9 +598,9 @@
             </footnote>
          </p>
          </odd>
-      <!-- ELEMENT OR ATTRIBUTE descgrp REMOVED FROM archdesc. -->
+      
          
-         <!-- ELEMENT OR ATTRIBUTE descgrp REMOVED FROM descgrp. -->
+         
             
             <acqinfo>
                <p>The Abraham Hayward Collection was acquired through purchase from Christopher
@@ -653,7 +610,7 @@
                   <p>blockquote addressline</p>
                   <chronlist>
                      <chronitem>
-                        <!--ELEMENT chronitem/date CONVERTED TO chronitem/datesingle--><datesingle>2015</datesingle>
+                        <datesingle>2015</datesingle>
                         <event>blockquote event</event>
                      </chronitem>
                   </chronlist>
@@ -674,26 +631,26 @@
             <custodhist>
                <head>Custodial History</head>
                <p>paragraph</p>
-               <p><!--ELEMENT blockquote CONVERTED TO quote-->
+               <p>
             <quote altrender="bq" audience="external" id="bq2">
                      blockquote paragraph
                      blockquote addressline, blockquote addressline 2
-                     <!-- ELEMENT OR ATTRIBUTE chronlist REMOVED FROM blockquote. -->
-                     <!-- ELEMENT OR ATTRIBUTE list REMOVED FROM blockquote. -->
-                     <!-- ELEMENT OR ATTRIBUTE table REMOVED FROM blockquote. -->
+                     
+                     
+                     
                   </quote>
          </p>
-               <!-- ELEMENT OR ATTRIBUTE acqinfo REMOVED FROM custodhist. -->
+               
                   
                   <p>custodhist/acqinfo/p</p>
-                  <!-- ELEMENT OR ATTRIBUTE acqinfo REMOVED FROM acqinfo. -->
+                  
                      
                      <p>custodhist/acqinfo/acqinfo/p</p>
                   
                
             </custodhist>
-            <!-- ELEMENT OR ATTRIBUTE address REMOVED FROM descgrp. -->
-            <!-- ELEMENT OR ATTRIBUTE blockquote REMOVED FROM descgrp. -->
+            
+            
          
          <altformavail encodinganalog="altform"
                     localtype="altform"
@@ -717,8 +674,7 @@
                  altrender="appraisal"
                  id="appraisal">
             <head>Appraisal</head>
-            <p>Appraisal paragraph <!--ELEMENT note RENAMED as 'footnote'
---><footnote show="embed"
+            <p>Appraisal paragraph <footnote show="embed"
                       id="note30"
                       audience="external"
                       altrender="note"
@@ -769,7 +725,7 @@
          <separatedmaterial localtype="sepmat">
             <head>Separated Material</head>
             <p>blah blah</p>
-            <archref><!--LINKING ATTRIBUTES REMOVED FROM ELEMENT archref AND SHIFTED TO CHILD ref ELEMENT-->
+            <archref>
             <ref actuate="none"
                  arcrole="arcrole"
                  href="href"
@@ -778,12 +734,11 @@
                  linktitle="linktitle"
                  xpointer="xpointer">Archref abstract
                container
-               <!--ELEMENT dao OR daogrp OUTSIDE did MOVED INTO did-->
-               <!--ELEMENT dao OR daogrp OUTSIDE did MOVED INTO did-->
+               
+               
                langmaterial
                materialspec
-               <!--ELEMENT note RENAMED as 'footnote'
---><footnote localtype="note"
+               <footnote localtype="note"
                          actuate="onload"
                          altrender="note"
                          audience="external"
@@ -792,15 +747,15 @@
                   <p>note paragraph</p>
                </footnote>
                origination
-               <!-- ELEMENT OR ATTRIBUTE origination REMOVED FROM archref. --><!--ADDED CHILD ELEMENT part TO persname--><persname>
+               <persname>
                   <part>persname</part>
                </persname>
                physdesc
                physloc
-               <!-- ELEMENT OR ATTRIBUTE repository REMOVED FROM archref. --><!--ADDED CHILD ELEMENT part TO corpname--><corpname>
+               <corpname>
                   <part>repository</part>
                </corpname>
-                  <!--CHANGED repository/subarea TO repository/corpname/part--><corpname>
+                  <corpname>
                   <part localtype="subarea">subarea</part>
                </corpname>
                <date>unitdate</date>
@@ -808,18 +763,18 @@
                unittitle
             </ref>
          </archref>
-            <bibref><!--LINKING ATTRIBUTES REMOVED FROM ELEMENT bibref AND SHIFTED TO CHILD ref ELEMENT-->
+            <bibref>
             <ref actuate="none"
                  arcrole="arcrole"
                  href="href"
                  linkrole="linkrole"
                  show="none"
                  linktitle="linktitle"
-                 xpointer="xpointer">Bibref <!-- ELEMENT OR ATTRIBUTE bibseries REMOVED FROM bibref. -->bib series
-               <!-- ELEMENT OR ATTRIBUTE imprint REMOVED FROM bibref. -->imprint
+                 xpointer="xpointer">Bibref bib series
+               imprint
                edition
                archref
-               <!--ADDED CHILD ELEMENT part TO title--><title>
+               <title>
                   <part>title</part>
                </title>
             </ref>
@@ -830,7 +785,7 @@
             <p>
             <ref>Ref</ref>
          </p>
-            <p><!--ADDED CHILD ELEMENT part TO title-->
+            <p>
             <title>
                <part>Title</part>
             </title>
@@ -847,7 +802,7 @@
             <p>
             <ref>Ref</ref>
          </p>
-            <p><!--ADDED CHILD ELEMENT part TO title-->
+            <p>
             <title>
                <part>Title</part>
             </title>
@@ -856,7 +811,7 @@
          <otherfindaid>
             <head>Related Material</head>
             <p>blah blah</p>
-            <archref altrender="archref" audience="internal" id="archref"><!--LINKING ATTRIBUTES REMOVED FROM ELEMENT archref AND SHIFTED TO CHILD ref ELEMENT-->
+            <archref altrender="archref" audience="internal" id="archref">
             <ref actuate="none"
                  arcrole="arcrole"
                  href="http://google.com"
@@ -872,7 +827,7 @@
             <p>
             <ref>Ref</ref>
          </p>
-            <p><!--ADDED CHILD ELEMENT part TO title-->
+            <p>
             <title>
                <part>Title</part>
             </title>
@@ -889,37 +844,32 @@
             <p>
             <ref>Ref</ref>
          </p>
-            <p><!--ADDED CHILD ELEMENT part TO title-->
+            <p>
             <title>
                <part>Title</part>
             </title>
          </p>
-            <!--ELEMENT linkgrp REPLACED with 'p'
---><p><!--ELEMENT extptrloc RENAMED as 'ptr'
--->
+            <p>
             <ptr href="http://extptrloc.com"
                  altrender="extptrloc"
                  audience="external"
                  id="a10"
                  linkrole="xlinkrole"
                  linktitle="xlinktitle"
-                 xpointer="xpointer"/>, <!--ELEMENT ptrloc RENAMED as 'ptr'
---><ptr href="http://ptrloc.com"
+                 xpointer="xpointer"/>, <ptr href="http://ptrloc.com"
                  xpointer="xpointer"
                  linktitle="xlinktitle"
                  linkrole="xlinkrole"
                  id="a20"
                  audience="external"
                  altrender="ptrloc"
-                 target="OS"/>, <!--ELEMENT extrefloc RENAMED as 'ref'
---><ref href="http://extrefloc.com"
+                 target="OS"/>, <ref href="http://extrefloc.com"
                  altrender="altrender"
                  audience="external"
                  id="a30"
                  linkrole="xlinkrole"
                  linktitle="xlinktitle"
-                 xpointer="xpointer">extrefloc</ref>, <!--ELEMENT refloc RENAMED as 'ref'
---><ref href="http://refloc.com"
+                 xpointer="xpointer">extrefloc</ref>, <ref href="http://refloc.com"
                  xpointer="xpointer"
                  linktitle="xlinktitle"
                  linkrole="xlinkrole"
@@ -943,7 +893,7 @@
                       localtype="access"
                       encodinganalog="506">
             <head>Information about Access</head>
-            <p> This collection is open for research. <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            <p> This collection is open for research. <title render="italic">
                <part>Restricted Fragile Oversize</part>
             </title> in box 7 may only be consulted with
                permission of the appropriate curator. Preservation photocopies or photographic
@@ -960,14 +910,14 @@
          <p>Abraham Hayward, 1801-1884, was an English essayist and translator. Born in Wiltshire,
             Hayward studied at several schools, including Blundell's School in Tiverton, before
             moving to London and enrolling at the Inner Temple in 1824. He was called to the bar in
-            1832, but after the success of his 1833 translation of Goethe's <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            1832, but after the success of his 1833 translation of Goethe's <title render="italic">
                <part>Faust</part>
-            </title>, the first translation of <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, the first translation of <title render="italic">
                <part>Faust</part>
             </title> into English, he pursued a career
             in journalism and literature. He never married. </p>
-         <!--ELEMENT dao OR daogrp OUTSIDE did MOVED INTO did-->
-         <!--ELEMENT dao OR daogrp OUTSIDE did MOVED INTO did-->
+         
+         
       </bioghist>
       <scopecontent id="sc">
          <head>Description of the Papers</head>
@@ -976,29 +926,29 @@
             and translator, as well as the research papers of Brian Roberts, who started but
             abandoned a biography of Hayward in the 1950s. The papers, which span the years
             1791-1962, are stored in seven boxes (including 3 oversize), and are organized into five
-            series: <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            series: <title render="italic">
                <part>Correspondence</part>
-            </title>, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, <title render="italic">
                <part>Printed Materials</part>
-            </title>, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, <title render="italic">
                <part>Other Papers</part>
-            </title>, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, <title render="italic">
                <part>Photographs</part>
-            </title>, and <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+            </title>, and <title render="italic">
                <part>Brian Roberts Research Materials</part>
             </title>. The papers document Hayward's familial
             relations, the literary and political circles of mid-nineteeth century London, and a
             controversy involving Hayward and the Inner Temple. </p>
-         <!-- ELEMENT OR ATTRIBUTE arrangement REMOVED FROM scopecontent. -->
+         
             
             <p>Arrangment paragraph</p>
-            <!-- ELEMENT OR ATTRIBUTE arrangement REMOVED FROM arrangement. -->
+            
                
                <p>Arrangment paragraph</p>
             
          
-         <!--ELEMENT dao OR daogrp OUTSIDE did MOVED INTO did-->
-         <!--ELEMENT dao OR daogrp OUTSIDE did MOVED INTO did-->
+         
+         
       </scopecontent>
       <arrangement encodinganalog="arrangement"
                    audience="internal"
@@ -1021,14 +971,14 @@
                audience="external"
                id="markedID"
                listtype="unordered"
-               mark="disc"><!--@mark value "wahlberg converted to "disc".-->
+               mark="disc">
             <item>marked list item</item>
          </list>
          <list altrender="orderedList"
                audience="external"
                id="orderedID"
                numeration="decimal"
-               listtype="ordered"><!-- ELEMENT OR ATTRIBUTE continuation REMOVED FROM list. -->
+               listtype="ordered">
             <item>ordered list item</item>
          </list>
          <list altrender="defList"
@@ -1048,8 +998,8 @@
            localtype="odd">
          <head>ODD head</head>
          <p>odd paragraph</p>
-         <!--ELEMENT dao OR daogrp OUTSIDE did MOVED INTO did-->
-         <!--ELEMENT dao OR daogrp OUTSIDE did MOVED INTO did-->
+         
+         
       </odd>
       <controlaccess id="ca"
                      altrender="controlaccess"
@@ -1062,7 +1012,7 @@
             Library online catalog.</p>
          <controlaccess encodinganalog="ca" audience="external" altrender="ca" id="ca3">
             <head>Subjects</head>
-            <!--ADDED CHILD ELEMENT part TO name--><name relator="name"
+            <name relator="name"
                   altrender="name"
                   encodinganalog="name"
                   id="n1"
@@ -1074,7 +1024,7 @@
                <part>Name
                McNamerson</part>
             </name>
-            <!--ADDED CHILD ELEMENT part TO geogname--><geogname identifier="Boston"
+            <geogname identifier="Boston"
                       normal="Bahstun"
                       rules="Fenway"
                       source="RedSox"
@@ -1085,7 +1035,7 @@
                       relator="wickedpissah">
                <part>Boston (Massachusetts).</part>
             </geogname>
-            <!--ADDED CHILD ELEMENT part TO genreform--><genreform altrender="genreform"
+            <genreform altrender="genreform"
                        encodinganalog="genreform"
                        id="gf1"
                        audience="external"
@@ -1096,7 +1046,7 @@
                        localtype="form">
                <part>Watercolors</part>
             </genreform>
-            <!--ADDED CHILD ELEMENT part TO famname--><famname encodinganalog="famname"
+            <famname encodinganalog="famname"
                      altrender="famname"
                      id="fam1"
                      audience="external"
@@ -1107,7 +1057,7 @@
                      relator="famname">
                <part> Rush <emph render="bold">family</emph> of <lb/>New <ptr href="http://www.rushfamily.com"/>/&gt; Hampshire</part>
             </famname>
-            <!--ADDED CHILD ELEMENT part TO function--><function identifier="function"
+            <function identifier="function"
                       normal="Entertaining"
                       rules="lmnop"
                       source="zyx"
@@ -1117,23 +1067,32 @@
                       encodinganalog="function">
                <part>
                   <emph render="bolditalic">Entertaining</emph>
-                  <!--ELEMENT extptr CONVERTED TO ptr-->
                   <ptr href="http://function.com"/>
                </part>
             </function>
-            <!--ADDED CHILD ELEMENT part TO title--><title identifier="title"
-                   normal="title"
-                   rules="title"
-                   source="title"
-                   audience="external"
-                   altrender="title"
-                   id="title1"
-                   render="altrender"
-                   encodinganalog="title"
-                   localtype="titletype">
-               <part>Moby-Dick, or The Whale</part>
-            </title>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600"
+            <p>
+               <ref href="http://www.longform.com"
+                    actuate="none"
+                    arcrole="arcrole"
+                    linkrole="titlexlinkrole"
+                    show="none"
+                    linktitle="titletitle"
+                    xpointer="#title">
+                  <title identifier="title"
+                         normal="title"
+                         rules="title"
+                         source="title"
+                         audience="external"
+                         altrender="title"
+                         id="title1"
+                         render="altrender"
+                         encodinganalog="title"
+                         localtype="titletype">
+                     <part>Moby-Dick, or The Whale</part>
+                  </title>
+               </ref>
+            </p>
+            <persname encodinganalog="600"
                       relator="subject"
                       id="pers1"
                       altrender="persname"
@@ -1144,51 +1103,51 @@
                       identifier="1234">
                <part>Abraham, Robert, d. 1833 --Estate.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Bentley, George, 1828-1895.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Bentley, Richard, 1794-1871.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Delane, John Thaddeus,
                1817-1879.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Everett, Edward, 1794-1865.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Hayward, A. (Abraham),
                1801-1884.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Hayward, Fanny, d. 1904.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Hayward, Mary Anne.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Kinglake, Alexander William,
                1809-1891.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Murray, John, 1808-1892.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Newcastle, Henry Pelham, Duke of,
                1811-1864.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Palmerston, Emily Lamb, Viscountess,
                1787-1869.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Roberts, Brian.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="600" relator="subject">
+            <persname encodinganalog="600" relator="subject">
                <part>Smith, Horace, 1779-1849.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO corpname--><corpname encodinganalog="610"
+            <corpname encodinganalog="610"
                       relator="subject"
                       id="cn"
                       altrender="corpname"
@@ -1197,9 +1156,9 @@
                       normal="inner temple yall"
                       rules="aacr2"
                       source="lcnaf">
-               <part><!-- comment -->Inner Temple <!--ELEMENT extptr CONVERTED TO ptr--><ptr href="http://www.nytimes.com/"/>(London, England)</part>
+               <part><!-- comment -->Inner Temple <ptr href="http://www.nytimes.com/"/>(London, England)</part>
             </corpname>
-            <!--ADDED CHILD ELEMENT part TO corpname--><corpname encodinganalog="610"
+            <corpname encodinganalog="610"
                       relator="subject"
                       id="cn2"
                       altrender="corpname"
@@ -1219,7 +1178,7 @@
                <part> (Earth, <emph render="bold">Solar</emph>
                System)</part>
             </corpname>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject encodinganalog="650"
+            <subject encodinganalog="650"
                      source="lcsh"
                      altrender="subject"
                      id="sub1"
@@ -1230,42 +1189,42 @@
                <part>Authors,
                English --19th century.</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject encodinganalog="650" source="lcsh">
+            <subject encodinganalog="650" source="lcsh">
                <part>Gardens --Design --England.</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject encodinganalog="650" source="lcsh">
+            <subject encodinganalog="650" source="lcsh">
                <part>Politics and culture --England --History
                --19th century.</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject encodinganalog="650" source="lcsh">
+            <subject encodinganalog="650" source="lcsh">
                <part>Publishers and publishing --England
                --History --19th century.</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO subject--><subject encodinganalog="650" source="lcsh">
+            <subject encodinganalog="650" source="lcsh">
                <part>Whist.</part>
             </subject>
-            <!--ADDED CHILD ELEMENT part TO genreform--><genreform encodinganalog="655" source="aat">
+            <genreform encodinganalog="655" source="aat">
                <part>Cartes-de-visite.</part>
             </genreform>
-            <!--ADDED CHILD ELEMENT part TO genreform--><genreform encodinganalog="655" source="rbgenr">
+            <genreform encodinganalog="655" source="rbgenr">
                <part>Menus --France --Paris.</part>
             </genreform>
-            <!--ADDED CHILD ELEMENT part TO genreform--><genreform encodinganalog="655" source="aat">
+            <genreform encodinganalog="655" source="aat">
                <part>Passports.</part>
             </genreform>
          </controlaccess>
          <controlaccess>
             <head>Authors</head>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="100">
+            <persname encodinganalog="100">
                <part>Hayward, A. (Abraham), 1801-1884.</part>
             </persname>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname encodinganalog="700">
+            <persname encodinganalog="700">
                <part>Roberts, Brian.</part>
             </persname>
          </controlaccess>
          <controlaccess>
             <head>Occupations and Functions</head>
-            <!--ADDED CHILD ELEMENT part TO occupation--><occupation encodinganalog="656"
+            <occupation encodinganalog="656"
                         source="lcsh"
                         identifier="1234"
                         normal="authors"
@@ -1285,8 +1244,7 @@
          <blockquote>
             <p>blockquote paragraph in dsc</p>
          </blockquote>
-         <!--ELEMENT note WRAPPED in a paragraph and RENAMED as 'footnote'
---><p>
+         <p>
             <footnote localtype="notetype"
                       actuate="onload"
                       altrender="note"
@@ -1322,14 +1280,14 @@
                          id="physdesc1"
                          label="physdesc">
                   <abbr>abbr</abbr>
-                  <!--ELEMENT archref CONVERTED TO ref--><ref>archref</ref>
-                  <ref><!--ELEMENT bibref CONVERTED TO ref-->bibref</ref>
+                  <ref>archref</ref>
+                  <ref>bibref</ref>
                   corpname
                   date
-                  <!-- ELEMENT OR ATTRIBUTE dimensions REMOVED FROM physdesc. -->dimensions
+                  dimensions
                   <emph>emph</emph>
                   <expan>expan</expan>
-                  <!-- ELEMENT OR ATTRIBUTE extent REMOVED FROM physdesc. -->0.21' (43 folders)
+                  0.21' (43 folders)
                   famname
                   function
                   genreform
@@ -1338,7 +1296,7 @@
                   <lb/>
                   occupation
                   persname
-                  <!-- ELEMENT OR ATTRIBUTE physfacet REMOVED FROM physdesc. -->physfacet
+                  physfacet
                   subject
                   title
                </physdesc>
@@ -1350,7 +1308,6 @@
             <c02 id="d0e205" level="subseries">
                <did>
                   <unittitle localtype="head"> OUTGOING </unittitle>
-                  <!--MIXED CONTENT REMOVED FROM langmaterial-->
                   <langmaterial altrender="langmaterial"
                                 audience="external"
                                 encodinganalog="langmat"
@@ -1362,29 +1319,27 @@
                                   audience="external"
                                   altrender="lang"
                                   langcode="eng">English</language>
-                        <!--ELEMENT script CREATED FROM ATTRIBUTE language/@scriptcode-->
                         <script scriptcode="Latn"/>
                      </languageset>
                      <descriptivenote>
                         <p>
                            <abbr>abbr</abbr>
-                           <!--ELEMENT archref CONVERTED TO ref-->      <ref>archref</ref>
-                           <ref><!--ELEMENT bibref CONVERTED TO ref-->bibref</ref>
+                           <ref>archref</ref>
+                           <ref>bibref</ref>
                            <emph>emph</emph>
                            <expan>expan</expan>
-                           <!--ELEMENT extptr CONVERTED TO ptr-->      <ptr/>
+                           <ptr/>
                            <ref>extref</ref>
                      English
                      <lb/>
                            <ptr/>
                            <ref>ref</ref>
-                           <!--ADDED CHILD ELEMENT part TO title-->      <title>
+                           <title>
                               <part>title</part>
                            </title>
                         </p>
                      </descriptivenote>
                   </langmaterial>
-                  <!--MIXED CONTENT REMOVED FROM langmaterial-->
                   <langmaterial altrender="langmaterial"
                                 audience="external"
                                 encodinganalog="langmat"
@@ -1398,33 +1353,30 @@
                      <descriptivenote>
                         <p>
                            <abbr>abbr</abbr>
-                           <!--ELEMENT archref CONVERTED TO ref-->      <ref>archref</ref>
-                           <ref><!--ELEMENT bibref CONVERTED TO ref-->bibref</ref>
+                           <ref>archref</ref>
+                           <ref>bibref</ref>
                            <emph>emph</emph>
                            <expan>expan</expan>
-                           <!--ELEMENT extptr CONVERTED TO ptr-->      <ptr/>
+                           <ptr/>
                            <ref>extref</ref>
                      English
                      <lb/>
                            <ptr/>
                            <ref>ref</ref>
-                           <!--ADDED CHILD ELEMENT part TO title-->      <title>
+                           <title>
                               <part>title</part>
                            </title>
                         </p>
                      </descriptivenote>
                   </langmaterial>
-                  <!--MIXED CONTENT REMOVED FROM langmaterial-->
                   <langmaterial>
                      <languageset>
                         <language>Dutch</language>
-                        <!--ELEMENT script CREATED FROM ATTRIBUTE language/@scriptcode-->
                         <script scriptcode="Latn"/>
                      </languageset>
                      <language langcode="eng">English</language>
                      <languageset>
                         <language langcode="fre">French</language>
-                        <!--ELEMENT script CREATED FROM ATTRIBUTE language/@scriptcode-->
                         <script scriptcode="Latn"/>
                      </languageset>
                      <language>some language twins
@@ -1435,15 +1387,12 @@
                         speak. </p>
                      </descriptivenote>
                   </langmaterial>
-                  <!--MIXED CONTENT REMOVED FROM langmaterial-->
                   <langmaterial>
                      <languageset>
                         <language langcode="jpn">Japanese</language>
-                        <!--ELEMENT script CREATED FROM ATTRIBUTE language/@scriptcode-->
                         <script scriptcode="Kana"/>
                      </languageset>
                   </langmaterial>
-                  <!--REQUIRED ATTRIBUTE daotype ADDED TO dao WITH VALUE "unknown"-->
                   <dao daotype="unknown"
                        id="didDao"
                        audience="external"
@@ -1455,8 +1404,7 @@
                        show="new"
                        linktitle="diddaotitle"
                        xpointer="didDAOxpointer">
-                     <!--ELEMENT daodesc RENAMED AS 'descriptivenote'
---><descriptivenote>
+                     <descriptivenote>
                         <p>did DAO daodeac p</p>
                      </descriptivenote>
                   </dao>
@@ -1471,7 +1419,7 @@
                              show="none"
                              linktitle="xlinktitle"
                              xpointer="xpointer">Title</ref>
-                        <!--ELEMENT archref CONVERTED TO ref--><ref xpointer="xpointer"
+                        <ref xpointer="xpointer"
                              linktitle="linktitle"
                              show="none"
                              linkrole="role"
@@ -1490,7 +1438,7 @@
                              actuate="none"
                              altrender="altrender"
                              id="title333"
-                             audience="external"><!--ELEMENT bibref CONVERTED TO ref-->bibref</ref> 1</container>
+                             audience="external">bibref</ref> 1</container>
                      <container localtype="Folder">1</container>
                      <unittitle localtype="genericfolder"> Bentley, [Richard] </unittitle>
                      <unitdate>1873-83</unitdate>
@@ -1502,13 +1450,10 @@
                      <container localtype="Folder">2</container>
                      <unittitle localtype="genericfolder"> Boyes, ---- </unittitle>
                      <unitdate>n.y. Nov 3</unitdate>
-                     <!--ELEMENT daogrp CONVERTED TO daoset-->
-                     <daoset id="daogrp1"><!--ELEMENT daoloc CONVERTED TO daoset/dao-->
+                     <daoset id="daogrp1">
                         <dao href="href" daotype="unknown"/>
-                        <!--ELEMENT daoloc CONVERTED TO daoset/dao-->
                         <dao href="http://daoloc.com/" daotype="unknown">
-                           <!--ELEMENT daodesc RENAMED AS 'descriptivenote'
---><descriptivenote>
+                           <descriptivenote>
                               <p>daoloc/daodesc/p</p>
                            </descriptivenote>
                         </dao>
@@ -1794,7 +1739,7 @@
                   </did>
                   <relatedmaterial>
                      <p>
-                        <ref actuate="onrequest" show="replace" target="f44"> See: Series II. <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+                        <ref actuate="onrequest" show="replace" target="f44"> See: Series II. <title render="italic">
                               <part>Printed Materials</part>
                            </title>, Petition, Box 1, folder 44 </ref>
                      </p>
@@ -1824,7 +1769,7 @@
                <unittitle localtype="head"> Printed Materials </unittitle>
                <unitdate>1791-1896</unitdate>
                <physdesc>
-                  <!-- ELEMENT OR ATTRIBUTE extent REMOVED FROM physdesc. -->0.21' (11 folders)
+                  0.21' (11 folders)
                </physdesc>
             </did>
             <scopecontent>
@@ -1886,7 +1831,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">45</container>
-                     <unittitle localtype="genericfolder"> Titlepage, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+                     <unittitle localtype="genericfolder"> Titlepage, <title render="italic">
                            <part>Commentaries on the Laws of England</part>
                         </title>, by Sir
                         William Blackstone, signed "A. Hayward" </unittitle>
@@ -1904,7 +1849,7 @@
                   <did>
                      <container localtype="Box">1</container>
                      <container localtype="Folder">46</container>
-                     <unittitle localtype="genericfolder"> Titlepage, <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+                     <unittitle localtype="genericfolder"> Titlepage, <title render="italic">
                            <part>Discours de M. Thiers sur le Régime Commercial de la
                            France</part>
                         </title>, signed "Monsier Hayward" by M. Thiers </unittitle>
@@ -1981,7 +1926,7 @@
                <unittitle localtype="head"> Other Papers </unittitle>
                <unitdate>1833-1885</unitdate>
                <physdesc>
-                  <!-- ELEMENT OR ATTRIBUTE extent REMOVED FROM physdesc. -->0.21' (1 box)
+                  0.21' (1 box)
                </physdesc>
             </did>
             <arrangement>
@@ -2065,7 +2010,7 @@
                <unittitle localtype="head"> Photographs </unittitle>
                <unitdate>1875-1878</unitdate>
                <physdesc>
-                  <!-- ELEMENT OR ATTRIBUTE extent REMOVED FROM physdesc. -->0.21' (1 box)
+                  0.21' (1 box)
                </physdesc>
             </did>
             <c02 id="f62" level="file">
@@ -2088,7 +2033,7 @@
                <unittitle localtype="head"> Brian Roberts Research Materials </unittitle>
                <unitdate>1943-1962</unitdate>
                <physdesc>
-                  <!-- ELEMENT OR ATTRIBUTE extent REMOVED FROM physdesc. -->0.42' (1 box)
+                  0.42' (1 box)
                </physdesc>
             </did>
             <arrangement>
@@ -2414,7 +2359,7 @@
                      <container localtype="Box">4</container>
                      <container localtype="Folder">98</container>
                      <unittitle localtype="genericfolder"> British Museum application for photography of
-                           <!--ADDED CHILD ELEMENT part TO title--><title render="italic">
+                           <title render="italic">
                            <part>Vanity Fair</part>
                         </title> cartoons </unittitle>
                      <unitdate>1943 Nov 13</unitdate>
@@ -2442,7 +2387,7 @@
             <did>
                <unittitle localtype="head"> Oversize </unittitle>
                <physdesc>
-                  <!-- ELEMENT OR ATTRIBUTE extent REMOVED FROM physdesc. -->1.67' (1 box)
+                  1.67' (1 box)
                </physdesc>
             </did>
             <c02 id="f101" level="file">
@@ -2558,7 +2503,7 @@
             <did>
                <unittitle localtype="head"> Restricted Fragile Oversize </unittitle>
                <physdesc>
-                  <!-- ELEMENT OR ATTRIBUTE extent REMOVED FROM physdesc. -->1.67' (1 box)
+                  1.67' (1 box)
                </physdesc>
             </did>
             <scopecontent>
@@ -2603,19 +2548,19 @@
              altrender="index">
          <head>Index</head>
          <indexentry>
-            <!--ADDED CHILD ELEMENT part TO famname--><famname>
+            <famname>
                <part>Partridge Family</part>
             </famname>
             <ref target="f120">reference</ref>
          </indexentry>
          <indexentry>
-            <!--ADDED CHILD ELEMENT part TO persname--><persname>
+            <persname>
                <part>Alan Ginsberg</part>
             </persname>
             <ptr target="f119"/>
          </indexentry>
          <indexentry>
-            <!--ADDED CHILD ELEMENT part TO corpname--><corpname>
+            <corpname>
                <part>EON Productions</part>
             </corpname>
             <ptrgrp>
