@@ -1380,6 +1380,39 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </xsl:element>
                 </ref>
             </xsl:when>
+            <xsl:when
+                test="(@actuate
+                or @arcrole
+                or @href
+                or @role
+                or @show 
+                or @title
+                or @entityref or @xpointer)
+                and parent::controlaccess">
+                <p>
+                <ref>
+                    <xsl:apply-templates
+                        select="@actuate
+                        | @arcrole
+                        | @href
+                        | @role
+                        | @show
+                        | @title
+                        | @entityref | @xpointer"/>
+                    <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                        <xsl:apply-templates
+                            select="@altrender | @audience
+                            | @authfilenumber | @encodinganalog
+                            | @id | @normal
+                            | @render | @rules
+                            | @source | @type"/>
+                        <part>
+                            <xsl:apply-templates/>
+                        </part>
+                    </xsl:element>
+                </ref>
+                </p>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
                     <xsl:apply-templates
