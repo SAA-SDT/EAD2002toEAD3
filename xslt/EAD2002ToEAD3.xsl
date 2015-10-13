@@ -1351,13 +1351,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:call-template>
         <xsl:choose>
             <xsl:when
-                test="(@actuate
-                or @arcrole
-                or @href
-                or @role
-                or @show 
-                or @title
-                or @entityref or @xpointer)
+                test="(@href or @entityref or @xpointer)
                 and not(parent::controlaccess)">
                 <ref>
                     <xsl:apply-templates
@@ -1382,13 +1376,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </ref>
             </xsl:when>
             <xsl:when
-                test="(@actuate
-                or @arcrole
-                or @href
-                or @role
-                or @show 
-                or @title
-                or @entityref or @xpointer)
+                test="(@href or @entityref or @xpointer)
                 and parent::controlaccess">
                 <p>
                 <ref>
