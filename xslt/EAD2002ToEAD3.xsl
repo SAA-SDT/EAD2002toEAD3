@@ -225,7 +225,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         did/note/@actuate | did/note/@show | did/note[(p[2] or child::*[local-name()!=p])]/@label | @linktype | namegrp/note | 
         chronitem/date/@calendar | chronitem/date/@era | 
         chronitem/date/@certainty | chronitem/date/@encodinganalog |
-        physdesc/@source | physdesc/@rules">
+        physdesc/@source | physdesc/@rules | 
+        archref/dao[not(ancestor::scopecontent)][not(ancestor::bioghist)][not(ancestor::odd)] | 
+        archref/daogrp[not(ancestor::scopecontent)][not(ancestor::bioghist)][not(ancestor::odd)]">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
@@ -267,7 +269,6 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template
         match="titleproper/date | titleproper/num | 
         archref/abstract | archref/container | 
-        archref/dao | archref/daogrp |
         archref/langmaterial | archref/materialspec |
         archref/origination | archref/physdesc |
         archref/physloc | archref/repository |
@@ -1001,7 +1002,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         />
     </xsl:template>
 
-    <xsl:template match="dao[not(parent::did)] | daogrp[not(parent::did)]">
+    <xsl:template match="dao[not(parent::did)][not(parent::archref)] | daogrp[not(parent::did)][not(parent::archref)]">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment" select="'ELEMENT dao OR daogrp OUTSIDE did MOVED INTO did'"/>
         </xsl:call-template>
