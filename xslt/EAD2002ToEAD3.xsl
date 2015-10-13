@@ -1649,7 +1649,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:copy>
     </xsl:template>    
     
-    <xsl:template match="@*[namespace-uri() = 'http://www.w3.org/1999/xlink']" mode="strip-ns">
+    <xsl:template match="@*[namespace-uri() = 'http://www.w3.org/1999/xlink'][not(local-name() = 'type')]" mode="strip-ns">
         <!--<xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>XLINK STRIPPED</xsl:text>
