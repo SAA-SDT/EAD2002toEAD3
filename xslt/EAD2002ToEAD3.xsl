@@ -1684,7 +1684,7 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="@xlink:type[. = 'simple']" mode="strip-ns"/>
 
--->
+--> 
     
     <!-- ############################################### -->
     <!-- @TYPE TO @LOCALTYPE                             -->
