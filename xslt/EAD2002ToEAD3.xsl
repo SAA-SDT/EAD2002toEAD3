@@ -9,7 +9,7 @@
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
             <xd:p>
-                <xd:b>Last Updated: 2015-06-16</xd:b>
+                <xd:b>Last Updated: 2015-10-15</xd:b>
             </xd:p>
             <xd:p><xd:b>Authors:</xd:b> Terry Catapano and Mike Rush</xd:p>
             <xd:p>Convert EAD2002 instance to EAD3</xd:p>
@@ -138,10 +138,10 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:when>
             <xsl:when test="$outputUndeprecatedEAD3=true()">
                 <xsl:processing-instruction name="xml-model">
-            <xsl:text>href="../../ead_revised_undeprecated.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
+            <xsl:text>href="../../ead3_undeprecated.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
         </xsl:processing-instruction>
                 <xsl:processing-instruction name="oxygen">
-            <xsl:text>RNGSchema="../../ead_revised_undeprecated.rng" type="xml"</xsl:text>
+            <xsl:text>RNGSchema="../../ead3_undeprecated.rng" type="xml"</xsl:text>
         </xsl:processing-instruction>
             </xsl:when>
         </xsl:choose>
