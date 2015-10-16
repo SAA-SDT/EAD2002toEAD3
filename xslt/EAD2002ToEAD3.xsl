@@ -186,9 +186,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- DEPRECATED ELEMENTS                             -->
     <!-- ############################################### -->
 
-    <!-- REMOVE COMPLETELY IF NOT UNDEPRECATED -->
+    <!-- REMOVE ELEMENT COMPLETELY IF NOT UNDEPRECATED -->
     <xsl:template
-        match="frontmatter | runner | descgrp/address | descgrp/blockquote | descgrp/chronlist | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | descgrp/table | descgrp/address | descgrp/blockquote | descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p | @tpattern">
+        match="frontmatter | runner | descgrp/address | descgrp/blockquote | 
+        descgrp/chronlist | descgp/descgrp | descgrp/head  | descgrp/list | 
+        descgrp/p | descgrp/table | descgrp/address | descgrp/blockquote | 
+        descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">
                 <xsl:if test="node()=element()">
@@ -203,7 +206,16 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:call-template name="copyElement"/>
             </xsl:when>
         </xsl:choose>
-
+    </xsl:template>
+    
+    <!-- REMOVE ATTRIBUTE COMPLETELY IF NOT UNDEPRECATED -->
+    <xsl:template match="@tpattern">
+        <xsl:choose>
+            <xsl:when test="$outputUndeprecatedEAD3=false()"/>
+            <xsl:when test="$outputUndeprecatedEAD3=true()">
+                <xsl:copy-of select="."/>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
 
     <!-- REMOVE COMPLETELY -->
