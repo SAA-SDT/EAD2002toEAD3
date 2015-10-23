@@ -326,7 +326,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         physdesc/persname | physdesc/subject |
         title/date | title/num |
         descrules |
-        unittitle/edition | did/note[not(p[2])][not(child::*[local-name()!=p])]/p | 
+        unittitle/edition | did/note[not(p[2])][not(*[local-name()!='p'])]/p | 
         event/blockquote/p | extref/blockquote/p | extrefloc/blockquote/p | 
         item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p">
         <xsl:if test="node()=element()">
@@ -1020,12 +1020,12 @@ For these and/or other purposes and motivations, and without any expectation of 
         <did>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates
-                select="*[not(local-name()='note' and (p[2] or child::*[local-name()!=p]))]"/>
+                select="*[not(local-name()='note')] | note[p][not(p[2])][not(*[not(local-name()='p')])]"/>
             <xsl:apply-templates
                 select="parent::*/dao | parent::*/daogrp | child::dao | child::daogrp | parent::*/scopecontent//dao | parent::*/bioghist//dao | parent::*/odd//dao | parent::*/scopecontent//daogrp | parent::*/bioghist//daogrp | parent::*/odd//daogrp"
                 mode="daoIndid"/>
         </did>
-        <xsl:apply-templates select="*[local-name()='note' and (p[2] or child::*[local-name()!=p])]"
+        <xsl:apply-templates select="note[p[2] | *[not(local-name()='p')]]"
         />
     </xsl:template>
 
@@ -1553,7 +1553,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="did/note[p[2] or child::*[local-name()!=p]] | archdesc/note | descgrp/note | c/note | c01/note | c02/note | c03/note | c04/note | c05/note | c06/note | c07/note | c08/note | c09/note | c10/note | c11/note | c12/note">
+        match="did/note[p[2]] | did/note[*[not(local-name()='p')]] | archdesc/note | descgrp/note | c/note | c01/note | c02/note | c03/note | c04/note | c05/note | c06/note | c07/note | c08/note | c09/note | c10/note | c11/note | c12/note">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>ELEMENT </xsl:text>
@@ -1569,7 +1569,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:element>
     </xsl:template>
 
-    <xsl:template match="did/note[p][not(p[2])][not(child::*[local-name()!=p])]">
+    <xsl:template match="did/note[p][not(p[2])][not(*[not(local-name()='p')])]">
         <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>ELEMENT </xsl:text>
