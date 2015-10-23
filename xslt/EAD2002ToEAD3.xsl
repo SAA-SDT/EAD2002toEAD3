@@ -1279,6 +1279,15 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:for-each>
+            <xsl:if test="not(language)">
+                <language>
+                    <xsl:call-template name="commentAndMessage">
+                        <xsl:with-param name="comment">
+                            <xsl:text>LANGUAGE NAME NEEDED</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
+                </language>
+            </xsl:if>
             <xsl:if test="node()[not(local-name()='language')][normalize-space(.)]">
                 <descriptivenote>
                     <p>
