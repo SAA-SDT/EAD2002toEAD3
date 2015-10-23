@@ -432,7 +432,11 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:with-param>
         </xsl:call-template>
         <control>
-            <xsl:copy-of select="@*[not(local-name()='findaidstatus')]"/>
+            <xsl:copy-of select="@*[not(local-name()='findaidstatus') and not(local-name()='langencoding')]"/>
+            
+            <xsl:if test="@langencoding">
+                <xsl:attribute name="langencoding" select="lower-case(@langencoding)"/>
+            </xsl:if>
 
             <xsl:apply-templates select="eadid"/>
 
