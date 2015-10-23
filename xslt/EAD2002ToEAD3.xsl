@@ -715,10 +715,25 @@ For these and/or other purposes and motivations, and without any expectation of 
                             <xsl:copy-of select="@* except @scriptcode"/>
                             <xsl:value-of select="."/>
                         </language>
-                        <xsl:variable name="scriptCode"
-                            select="if (@scriptcode[normalize-space(.)])then @scriptcode else'SCRIPTCODE NEEDED'"/>
-                        <script scriptcode="{$scriptCode}">
-                                <xsl:value-of select="$scriptCode"/>
+                        <script>
+                            <xsl:if test="@scriptcode[normalize-space(.)]">
+                                <xsl:attribute name="scriptcode">
+                                    <xsl:value-of select="@scriptcode"/>
+                                </xsl:attribute>
+                            </xsl:if>
+                            <xsl:choose>
+                                <xsl:when test="@scriptcode[normalize-space(.)]">
+                                    <xsl:value-of select="@scriptcode"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:call-template name="commentAndMessage">
+                                        <xsl:with-param name="comment">
+                                            <xsl:text>SCRIPT NAME NEEDED</xsl:text>
+                                        </xsl:with-param>
+                                    </xsl:call-template>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                            
                             </script>
                         <descriptivenote>
                             <p>
