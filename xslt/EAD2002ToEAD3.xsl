@@ -400,7 +400,20 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- type attributes                            -->
     <!-- ############################################### -->
 
-    <xsl:template match="dsc/@type | unitdate/@type">
+    <xsl:template match="dsc/@type">
+        <xsl:attribute name="{parent::*/local-name()}type">
+            <xsl:choose>
+                <xsl:when test="string(.)='othertype'">
+                    <xsl:value-of select="'otherdsctype'"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="string(.)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:attribute>
+    </xsl:template>
+    
+    <xsl:template match="unitdate/@type">
         <xsl:attribute name="{parent::*/local-name()}type" select="string(.)"/>
     </xsl:template>
 
