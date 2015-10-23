@@ -1513,6 +1513,15 @@ For these and/or other purposes and motivations, and without any expectation of 
             </part>
         </corpname>
     </xsl:template>
+    
+    <xsl:template match="imprint/publisher">
+        <corpname relator="publisher">
+            <xsl:apply-templates select="@*"/>
+            <part>
+                <xsl:apply-templates/>
+            </part>
+        </corpname>
+    </xsl:template>
 
 
     <!-- ############################################### -->
