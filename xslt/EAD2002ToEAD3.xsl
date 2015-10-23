@@ -1169,39 +1169,41 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     
     <xsl:template match="origination">
-        <origination>
-            <xsl:apply-templates select="@*"/>
-            <xsl:choose>
-                <xsl:when test="not(text()[normalize-space(.)]) and not(*[not(local-name()='persname')][not(local-name()='corpname')][not(local-name()='famname')][not(local-name()='name')])">
-                    <xsl:apply-templates/>
-                </xsl:when>
-                <xsl:when test="not(persname | corpname | famname | name)">
-                    <xsl:call-template name="commentAndMessage">
-                        <xsl:with-param name="comment">
-                            <xsl:text>origination ELEMENT VALUE MOVED INTO name ELEMENT</xsl:text>
-                        </xsl:with-param>
-                    </xsl:call-template>
-                    <name>
-                        <part>
-                            <xsl:apply-templates/>
-                        </part>
-                    </name>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates select="*[local-name()='persname' 
-                        or local-name()='corpname' 
-                        or local-name()='famname' 
-                        or local-name()='name']"/>
-                    <xsl:call-template name="commentAndMessage">
-                        <xsl:with-param name="comment">
-                            <xsl:text>ORIGINAL origination VALUE WAS AS FOLLOWS:
+        <xsl:if test="normalize-space(.)">
+            <origination>
+                <xsl:apply-templates select="@*"/>
+                <xsl:choose>
+                    <xsl:when test="not(text()[normalize-space(.)]) and not(*[not(local-name()='persname')][not(local-name()='corpname')][not(local-name()='famname')][not(local-name()='name')])">
+                        <xsl:apply-templates/>
+                    </xsl:when>
+                    <xsl:when test="not(persname | corpname | famname | name)">
+                        <xsl:call-template name="commentAndMessage">
+                            <xsl:with-param name="comment">
+                                <xsl:text>origination ELEMENT VALUE MOVED INTO name ELEMENT</xsl:text>
+                            </xsl:with-param>
+                        </xsl:call-template>
+                        <name>
+                            <part>
+                                <xsl:apply-templates/>
+                            </part>
+                        </name>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="*[local-name()='persname' 
+                            or local-name()='corpname' 
+                            or local-name()='famname' 
+                            or local-name()='name']"/>
+                        <xsl:call-template name="commentAndMessage">
+                            <xsl:with-param name="comment">
+                                <xsl:text>ORIGINAL origination VALUE WAS AS FOLLOWS:
                             "</xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text>"
                             PORTIONS NOT INCLUDED IN  persname, corpname, famname, OR name ELEMENTS WERE LOST.</xsl:text>
-                        </xsl:with-param>
-                    </xsl:call-template>
-                </xsl:otherwise>
-            </xsl:choose>
-        </origination>
+                            </xsl:with-param>
+                        </xsl:call-template>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </origination>
+        </xsl:if>
     </xsl:template>
 
     <!-- keep contents of unitdate, move unitdate element outside unittitle -->
