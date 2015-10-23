@@ -9,7 +9,7 @@
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
             <xd:p>
-                <xd:b>Last Updated: 2015-10-15</xd:b>
+                <xd:b>Last Updated: 2015-10-22</xd:b>
             </xd:p>
             <xd:p><xd:b>Authors:</xd:b> Terry Catapano and Mike Rush</xd:p>
             <xd:p>Convert EAD2002 instance to EAD3</xd:p>
@@ -234,7 +234,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         daodesc/table | event/table | extref/table | extrefloc/table | 
         item/table | p/table | ref/table | refloc/table |
         notestmt/note/@actuate | notestmt/note/@show | notestmt/note/@label | 
-        did/note/@actuate | did/note/@show | did/note[(p[2] or child::*[local-name()!=p])]/@label | @linktype | namegrp/note | 
+        did/note/@actuate | did/note/@show | did/note[(p[2] or child::*[local-name()!=p])]/@label | namegrp/note | 
         chronitem/date/@calendar | chronitem/date/@era | 
         chronitem/date/@certainty | chronitem/date/@encodinganalog |
         physdesc/@source | physdesc/@rules | 
@@ -1662,6 +1662,8 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     
     <xsl:template match="@*[namespace-uri() = 'http://www.w3.org/1999/xlink'][local-name() = 'type']" mode="strip-ns"/>
+    
+    <xsl:template match="@linktype" mode="strip-ns"/>
     
     <xsl:template match="@*[namespace-uri() = 'http://www.w3.org/2001/XMLSchema-instance']" mode="strip-ns"/>
     
