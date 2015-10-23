@@ -1531,7 +1531,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="@role">
         <xsl:choose>
             <xsl:when test="parent::corpname | parent::famname | parent::geogname | 
-                parent::name | parent::persname">
+                parent::name | parent::persname | parent::genreform">
                 <xsl:attribute name="relator">
                     <xsl:value-of select="."/>
                 </xsl:attribute>
