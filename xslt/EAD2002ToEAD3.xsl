@@ -371,7 +371,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         bibref[parent::bibliography or parent::otherfindaid or parent::relatedmaterial or parent::separatedmaterial]">
         
         <xsl:element name="{local-name()}">
-            <xsl:copy-of
+            <xsl:apply-templates
                 select="@* except(@actuate, @arcrole, @href, @role, @show, @title, @xpointer)"/>
             <xsl:choose>
                 <xsl:when test="@actuate | @arcrole | @href | @role | @show | @title | @xpointer">
@@ -2039,6 +2039,10 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="@*[not(local-name()='label')]"/>
             <xsl:apply-templates/>
         </ref>
+    </xsl:template>
+    
+    <xsl:template match="@actuate | @show">
+        <xsl:attribute name="{local-name()}" select="lower-case(.)"/>
     </xsl:template>
 
 
