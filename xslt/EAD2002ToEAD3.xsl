@@ -1406,7 +1406,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:call-template>
         <xsl:choose>
             <xsl:when
-                test="(@href or @entityref or @xpointer)
+                test="(normalize-space(@href) or normalize-space(@entityref) or normalize-space(@xpointer))
                 and not(parent::controlaccess)">
                 <ref>
                     <xsl:apply-templates
