@@ -1348,7 +1348,8 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template
         match="famname | persname | name | subject | occupation | geogname | function | genreform">
-        <xsl:call-template name="commentAndMessage">
+        <xsl:if test="normalize-space(.)">
+            <xsl:call-template name="commentAndMessage">
             <xsl:with-param name="comment">
                 <xsl:text>ADDED CHILD ELEMENT part TO </xsl:text>
                 <xsl:value-of select="local-name()"/>
@@ -1360,11 +1361,13 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:apply-templates/>
             </part>
         </xsl:element>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template match="title">
 
-        <xsl:choose>
+        <xsl:if test="normalize-space(.)">
+            <xsl:choose>
             <xsl:when
                 test="parent::bibliography or 
                 parent::otherfindaid or 
@@ -1395,6 +1398,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:call-template name="titleLinkDecomposeAddPart"/>
             </xsl:otherwise>
         </xsl:choose>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template name="titleLinkDecomposeAddPart">
@@ -1474,18 +1478,20 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="corpname">
-        <xsl:call-template name="commentAndMessage">
-            <xsl:with-param name="comment">
-                <xsl:text>ADDED CHILD ELEMENT part TO </xsl:text>
-                <xsl:value-of select="local-name()"/>
-            </xsl:with-param>
-        </xsl:call-template>
-        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-            <xsl:apply-templates select="@*"/>
-            <xsl:for-each select="node()[position()=1]">
-                <xsl:call-template name="corpnamePart"/>
-            </xsl:for-each>
-        </xsl:element>
+        <xsl:if test="normalize-space(.)">
+            <xsl:call-template name="commentAndMessage">
+                <xsl:with-param name="comment">
+                    <xsl:text>ADDED CHILD ELEMENT part TO </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                </xsl:with-param>
+            </xsl:call-template>
+            <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                <xsl:apply-templates select="@*"/>
+                <xsl:for-each select="node()[position() = 1]">
+                    <xsl:call-template name="corpnamePart"/>
+                </xsl:for-each>
+            </xsl:element>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template name="corpnamePart">
