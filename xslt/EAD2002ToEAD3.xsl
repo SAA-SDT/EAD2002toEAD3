@@ -561,7 +561,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                                     <xsl:copy-of
                                         select="profiledesc/creation/date/@*[not(local-name()='calendar') and not(local-name()='era') and not(local-name()='certainty') and not(local-name()='type') and not(local-name()='normal')]"/>
                                     <xsl:if
-                                        test="profiledesc/creation/date/@normal[not(contains(.,'/'))]">
+                                        test="normalize-space(profiledesc/creation/date/@normal[not(contains(.,'/'))])">
                                         <xsl:attribute name="standarddatetime">
                                             <xsl:value-of select="profiledesc/creation/date/@normal"
                                             />
