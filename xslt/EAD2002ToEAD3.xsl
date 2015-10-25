@@ -1600,10 +1600,15 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:text>&#10;</xsl:text>
             </xsl:with-param>
         </xsl:call-template>
-        <xsl:element name="odd" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
-            <xsl:apply-templates select="@*"/>
+        <odd>
+            <xsl:apply-templates select="@*[not(local-name()='label')]"/>
+            <xsl:if test="@label">
+                <head>
+                    <xsl:value-of select="@label"/>
+                </head>
+            </xsl:if>
             <xsl:apply-templates/>
-        </xsl:element>
+        </odd>
     </xsl:template>
 
     <xsl:template match="did/note[p][not(p[2])][not(*[not(local-name()='p')])]">
