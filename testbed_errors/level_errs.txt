@@ -1,0 +1,5 @@
+value of attribute "level" is invalid
+     53 /data/working/converted/716-100567_ead3.xml
+     48 /data/working/converted/231-48269_ead3.xml
+     22 /data/working/converted/530-184487_ead3.xml
+      4 /data/working/converted/716-100624_ead3.xml

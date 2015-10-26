@@ -1,23 +1,17 @@
   51506  attribute "score" not allowed here
   51506  attribute "C-ORDER" not allowed here
     697  element "title" not allowed here
-    666  value of attribute "scriptcode" is invalid
     318  attribute "poi" not allowed here
-    309  value of attribute "standarddatetime" is invalid
-    184  element "note" not allowed anywhere
+    305  value of attribute "standarddatetime" is invalid
     170  attribute "MAX-C-ORDER" not allowed here
-    165  attribute "linktype" not allowed here
     154  value of attribute "entityref" is invalid
     127  value of attribute "level" is invalid
-     82  element "descriptivenote" not allowed yet
      71  element "date" not allowed here
-     63  value of attribute "langencoding" is invalid
      51  element "admininfo" not allowed anywhere
+     47  value of attribute "langencoding" is invalid
      42  attribute "inline" not allowed here
-     41  element "publisher" not allowed here
-     38  element "origination" incomplete
-     21  value of attribute "dsctype" is invalid
      16  element "organization" not allowed anywhere
+     15  element "ref" not allowed yet
      14  element "genreform" not allowed here
      13  text not allowed here
       9  value of attribute "certainty" is invalid
@@ -26,18 +20,11 @@
       7  element "persname" not allowed here
       7  element "add" not allowed anywhere
       6  element "recordid" not allowed here
+      6  element "controlaccess" incomplete
       5  element "address" not allowed yet
       5  attribute "LABEL" not allowed here
-      4  element "list" not allowed here
       4  element "lb" not allowed here
-      4  attribute "linkrole" not allowed here
-      3  value of attribute "actuate" is invalid
-      3  element "ref" not allowed here
-      3  element "corpname" incomplete
-      3  attribute "label" not allowed here
       2  element "subject2" not allowed anywhere
-      2  element "controlaccess" incomplete
-      1  value of attribute "scriptencoding" is invalid
       1  value of attribute "listtype" is invalid
       1  value of attribute "countryencoding" is invalid
       1  ID "IDfile00072" has already been defined
@@ -48,6 +35,7 @@
       1  element "scopecontent" not allowed here
       1  element "processinfo" incomplete
       1  element "p" not allowed here
+      1  element "origination" incomplete
       1  element "odd" not allowed here
       1  element "geogname" not allowed here
       1  element "footnote" incomplete

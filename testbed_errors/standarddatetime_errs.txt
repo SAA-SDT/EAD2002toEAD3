@@ -57,7 +57,6 @@ value of attribute "standarddatetime" is invalid
       1 /data/working/converted/5991-135833_ead3.xml
       1 /data/working/converted/5991-135791_ead3.xml
       1 /data/working/converted/5962-38009_ead3.xml
-      1 /data/working/converted/5750-99956_ead3.xml
       1 /data/working/converted/5514-171856_ead3.xml
       1 /data/working/converted/520-74331_ead3.xml
       1 /data/working/converted/520-74163_ead3.xml
@@ -192,7 +191,6 @@ value of attribute "standarddatetime" is invalid
       1 /data/working/converted/215-149380_ead3.xml
       1 /data/working/converted/214-720_ead3.xml
       1 /data/working/converted/211-143214_ead3.xml
-      1 /data/working/converted/211-143133_ead3.xml
       1 /data/working/converted/211-143087_ead3.xml
       1 /data/working/converted/211-143076_ead3.xml
       1 /data/working/converted/211-142999_ead3.xml
@@ -240,7 +238,6 @@ value of attribute "standarddatetime" is invalid
       1 /data/working/converted/117-97435_ead3.xml
       1 /data/working/converted/117-96669_ead3.xml
       1 /data/working/converted/117-94916_ead3.xml
-      1 /data/working/converted/117-93763_ead3.xml
       1 /data/working/converted/116-186892_ead3.xml
       1 /data/working/converted/116-186583_ead3.xml
       1 /data/working/converted/116-186367_ead3.xml
@@ -279,4 +276,3 @@ value of attribute "standarddatetime" is invalid
       1 /data/working/converted/1020-195141_ead3.xml
       1 /data/working/converted/1020-195097_ead3.xml
       1 /data/working/converted/1020-194944_ead3.xml
-      1 /data/working/converted/1010-55062_ead3.xml
