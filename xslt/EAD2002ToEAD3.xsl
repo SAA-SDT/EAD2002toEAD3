@@ -562,13 +562,24 @@ For these and/or other purposes and motivations, and without any expectation of 
                                     <xsl:copy-of
                                         select="profiledesc/creation/date/@*[not(local-name()='calendar') and not(local-name()='era') and not(local-name()='certainty') and not(local-name()='type') and not(local-name()='normal')]"/>
                                     <xsl:if
-                                        test="normalize-space(profiledesc/creation/date/@normal[not(contains(.,'/'))])">
+                                        test="normalize-space(profiledesc/creation/date/@normal)">
                                         <xsl:attribute name="standarddatetime">
-                                            <xsl:call-template name="fixNormalDates">
-                                                <xsl:with-param name="normalValue">
-                                                    <xsl:value-of select="profiledesc/creation/date/@normal"/>
-                                                </xsl:with-param>
-                                            </xsl:call-template>
+                                            <xsl:choose>
+                                                <xsl:when test="contains(profiledesc/creation/date/@normal,'/')">
+                                                    <xsl:call-template name="fixNormalDate">
+                                                        <xsl:with-param name="normalValue">
+                                                            <xsl:value-of select="substring-after(profiledesc/creation/date/@normal,'/')"/>
+                                                        </xsl:with-param>
+                                                    </xsl:call-template>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <xsl:call-template name="fixNormalDate">
+                                                        <xsl:with-param name="normalValue">
+                                                            <xsl:value-of select="profiledesc/creation/date/@normal"/>
+                                                        </xsl:with-param>
+                                                    </xsl:call-template>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
                                         </xsl:attribute>
                                     </xsl:if>
                                     <xsl:value-of select="profiledesc/creation/date"/>
@@ -595,13 +606,25 @@ For these and/or other purposes and motivations, and without any expectation of 
                         <eventdatetime>
                             <xsl:copy-of
                                 select="date/@*[not(local-name()='calendar') and not(local-name()='era') and not(local-name()='certainty') and not(local-name()='type') and not(local-name()='normal')]"/>
-                            <xsl:if test="date/@normal[not(contains(.,'/'))]">
+                            <xsl:if
+                                test="normalize-space(date/@normal)">
                                 <xsl:attribute name="standarddatetime">
-                                    <xsl:call-template name="fixNormalDates">
-                                        <xsl:with-param name="normalValue">
-                                            <xsl:value-of select="date/@normal"/>
-                                        </xsl:with-param>
-                                    </xsl:call-template>
+                                    <xsl:choose>
+                                        <xsl:when test="contains(date/@normal,'/')">
+                                            <xsl:call-template name="fixNormalDate">
+                                                <xsl:with-param name="normalValue">
+                                                    <xsl:value-of select="substring-after(date/@normal,'/')"/>
+                                                </xsl:with-param>
+                                            </xsl:call-template>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:call-template name="fixNormalDate">
+                                                <xsl:with-param name="normalValue">
+                                                    <xsl:value-of select="date/@normal"/>
+                                                </xsl:with-param>
+                                            </xsl:call-template>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
                                 </xsl:attribute>
                             </xsl:if>
                             <xsl:value-of select="date"/>
@@ -655,7 +678,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         </control>
     </xsl:template>
     
-    <xsl:template name="fixNormalDates">
+    <xsl:template name="fixNormalDate">
         <xsl:param name="normalValue"/>
         <xsl:choose>
             <xsl:when test="string-length($normalValue)>4 and not(contains($normalValue,'-'))">
@@ -672,6 +695,25 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:value-of select="$normalValue"/>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="fixNormalDateRange">
+        <xsl:param name="normalRangeValue"/>
+        <xsl:variable name="normalRangeValueBegin">
+            <xsl:call-template name="fixNormalDate">
+                <xsl:with-param name="normalValue">
+                    <xsl:value-of select="substring-before($normalRangeValue,'/')"/>
+                </xsl:with-param>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="normalRangeValueEnd">
+            <xsl:call-template name="fixNormalDate">
+                <xsl:with-param name="normalValue">
+                    <xsl:value-of select="substring-after($normalRangeValue,'/')"/>
+                </xsl:with-param>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:value-of select="concat($normalRangeValueBegin,'/',$normalRangeValueEnd)"/>
     </xsl:template>
 
     <xsl:template match="@countryencoding | @dateencoding | @langencoding | @repositoryencoding | @scriptencoding">
@@ -921,7 +963,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                             <xsl:apply-templates select="@*[not(local-name()='normal')]"/>
                             <xsl:element name="fromdate">
                                 <xsl:attribute name="standarddate">
-                                    <xsl:value-of select="substring-before(@normal,'/')"/>
+                                    <xsl:call-template name="fixNormalDate">
+                                        <xsl:with-param name="normalValue">
+                                            <xsl:value-of select="substring-before(@normal,'/')"/>
+                                        </xsl:with-param>
+                                    </xsl:call-template>
                                 </xsl:attribute>
                                 <xsl:choose>
                                     <xsl:when test="$normalizedDateRangeStringDashCount=1">
@@ -934,7 +980,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                             </xsl:element>
                             <xsl:element name="todate">
                                 <xsl:attribute name="standarddate">
-                                    <xsl:value-of select="substring-after(@normal,'/')"/>
+                                    <xsl:call-template name="fixNormalDate">
+                                        <xsl:with-param name="normalValue">
+                                            <xsl:value-of select="substring-after(@normal,'/')"/>
+                                        </xsl:with-param>
+                                    </xsl:call-template>
                                 </xsl:attribute>
                                 <xsl:if test="$normalizedDateRangeStringDashCount=1">
                                     <xsl:value-of select="substring-after($normalizedDateRangeString,'-')"/>
@@ -950,7 +1000,11 @@ For these and/or other purposes and motivations, and without any expectation of 
                         </xsl:call-template>
                         <xsl:element name="datesingle">
                             <xsl:attribute name="standarddate">
-                                <xsl:value-of select="@normal"/>
+                                <xsl:call-template name="fixNormalDate">
+                                    <xsl:with-param name="normalValue">
+                                        <xsl:value-of select="@normal"/>
+                                    </xsl:with-param>
+                                </xsl:call-template>
                             </xsl:attribute>
                             <xsl:apply-templates select="@*[not(local-name()='normal')]"/>
                             <xsl:apply-templates/>
@@ -1616,6 +1670,27 @@ For these and/or other purposes and motivations, and without any expectation of 
         <date>
             <xsl:apply-templates select="node()"/>
         </date>
+    </xsl:template>
+    
+    <xsl:template match="unitdate/@normal | date[not(parent::change) and not(ancestor::creation) and not(ancestor::chronlist)]/@normal">
+        <xsl:attribute name="normal">
+            <xsl:choose>
+                <xsl:when test="contains(.,'/')">
+                    <xsl:call-template name="fixNormalDateRange">
+                        <xsl:with-param name="normalRangeValue">
+                            <xsl:value-of select="."/>
+                        </xsl:with-param>
+                    </xsl:call-template>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:call-template name="fixNormalDate">
+                        <xsl:with-param name="normalValue">
+                            <xsl:value-of select="."/>
+                        </xsl:with-param>
+                    </xsl:call-template>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:attribute>
     </xsl:template>
 
 
