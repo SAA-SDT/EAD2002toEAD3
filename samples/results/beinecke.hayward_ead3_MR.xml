@@ -211,7 +211,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-10-15T21:16:07.846-04:00">2015-10-15T21:16:07.846-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2015-10-27T23:36:30.484-04:00">2015-10-27T23:36:30.484-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -530,6 +530,7 @@
            encodinganalog="didnote"
            id="didnotetoOdd"
            localtype="didNote">
+         <head>Did Note:</head>
             <p>did note paragraph 1</p>
             <p>did note paragraph 2</p>
             <p>did note addressline 1, did note addressline 2</p>
