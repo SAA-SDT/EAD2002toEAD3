@@ -1262,7 +1262,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <xsl:when test="not(text()[normalize-space(.)]) and not(*[not(local-name()='persname')][not(local-name()='corpname')][not(local-name()='famname')][not(local-name()='name')])">
                         <xsl:apply-templates/>
                     </xsl:when>
-                    <xsl:when test="not(persname | corpname | famname | name)">
+                    <xsl:when test="not(.//persname | .//corpname | .//famname | .//name)">
                         <xsl:call-template name="commentAndMessage">
                             <xsl:with-param name="comment">
                                 <xsl:text>origination ELEMENT VALUE MOVED INTO name ELEMENT</xsl:text>
@@ -1275,7 +1275,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                         </name>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:apply-templates select="*[local-name()='persname' 
+                        <xsl:apply-templates select=".//*[local-name()='persname' 
                             or local-name()='corpname' 
                             or local-name()='famname' 
                             or local-name()='name']"/>
