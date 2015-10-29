@@ -1333,7 +1333,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:when test="not(text()[normalize-space(.)]) and not(*[not(local-name()='corpname')][not(local-name()='name')][not(local-name()='subarea')][not(local-name()='address')])">
                     <xsl:apply-templates/>
                 </xsl:when>
-                <xsl:when test="not(corpname | subarea | name | address)">
+                <xsl:when test="not(.//corpname | .//subarea | .//name)">
                     <xsl:call-template name="commentAndMessage">
                         <xsl:with-param name="comment">
                             <xsl:text>repository ELEMENT VALUE MOVED INTO name ELEMENT</xsl:text>
@@ -1341,15 +1341,18 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </xsl:call-template>
                     <name>
                         <part>
-                            <xsl:apply-templates/>
+                            <xsl:apply-templates select="node()[normalize-space(.)][not(local-name()='address')]"/>
                         </part>
                     </name>
+                    <xsl:if test="address">
+                        <xsl:apply-templates select="address"/>
+                    </xsl:if>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:apply-templates select="*[local-name()='corpname' 
+                    <xsl:apply-templates select=".//*[local-name()='corpname' 
                         or local-name()='subarea' 
                         or local-name()='name' 
-                        or local-name()='address']"/>
+                        or local-name()='address'][not(parent::corpname)]"/>
                     <xsl:call-template name="commentAndMessage">
                         <xsl:with-param name="comment">
                             <xsl:text>ORIGINAL repository VALUE WAS AS FOLLOWS:
