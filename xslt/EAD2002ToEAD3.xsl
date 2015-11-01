@@ -462,7 +462,7 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:call-template>
             <maintenanceagency>
                 <xsl:if test="eadid/@countrycode">
-                    <xsl:copy-of select="eadid/@countrycode"/>
+                    <xsl:apply-templates select="eadid/@countrycode"/>
                     <xsl:call-template name="commentAndMessage">
                         <xsl:with-param name="comment">
                             <xsl:text>ATTRIBUTE eadid/@countrycode REPLACED WITH maintenanceagency/@countrycode</xsl:text>
@@ -676,6 +676,10 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </xsl:for-each>
             </maintenancehistory>
         </control>
+    </xsl:template>
+    
+    <xsl:template match="@countrycode">
+        <xsl:attribute name="{local-name()}" select="upper-case(.)"/>
     </xsl:template>
     
     <xsl:template name="fixNormalDate">
