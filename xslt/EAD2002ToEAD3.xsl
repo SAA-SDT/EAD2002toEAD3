@@ -786,6 +786,11 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:choose>
             <xsl:when test="profiledesc/langusage/language">
                 <xsl:for-each select="profiledesc/langusage/language">
+                    <xsl:variable name="scriptcodeValueUpdated">
+                        <xsl:call-template name="scriptcodeValueUpdate">
+                            <xsl:with-param name="scriptcodeValue" select="@scriptcode"/>
+                        </xsl:call-template>
+                    </xsl:variable>
                     <xsl:call-template name="commentAndMessage">
                         <xsl:with-param name="comment">
                             <xsl:text>ELEMENT langusage REPLACED WITH languagedeclaration</xsl:text>
@@ -806,25 +811,17 @@ For these and/or other purposes and motivations, and without any expectation of 
                             <xsl:value-of select="."/>
                         </language>
                         <script>
-                            <xsl:if test="@scriptcode[normalize-space(.)]">
+                            <xsl:if test="normalize-space($scriptcodeValueUpdated)">
                                 <xsl:attribute name="scriptcode">
-                                    <xsl:value-of select="@scriptcode"/>
+                                    <xsl:value-of select="$scriptcodeValueUpdated"/>
                                 </xsl:attribute>
                             </xsl:if>
-                            <xsl:choose>
-                                <xsl:when test="@scriptcode[normalize-space(.)]">
-                                    <xsl:value-of select="@scriptcode"/>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:call-template name="commentAndMessage">
-                                        <xsl:with-param name="comment">
-                                            <xsl:text>SCRIPT NAME NEEDED</xsl:text>
-                                        </xsl:with-param>
-                                    </xsl:call-template>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                            
-                            </script>
+                            <xsl:call-template name="commentAndMessage">
+                                <xsl:with-param name="comment">
+                                    <xsl:text>SCRIPT NAME NEEDED</xsl:text>
+                                </xsl:with-param>
+                            </xsl:call-template>
+                        </script>
                         <descriptivenote>
                             <p>
                                 <xsl:copy-of select="$langusage"/>
@@ -1407,6 +1404,11 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     <xsl:template match="language" mode="languageset">
+        <xsl:variable name="scriptcodeValueUpdated">
+            <xsl:call-template name="scriptcodeValueUpdate">
+                <xsl:with-param name="scriptcodeValue" select="@scriptcode"/>
+            </xsl:call-template>
+        </xsl:variable>
         <languageset>
             <xsl:element name="language">
                 <xsl:apply-templates select="@* except @scriptcode"/>
@@ -1417,7 +1419,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <xsl:text>ELEMENT script CREATED FROM ATTRIBUTE language/@scriptcode</xsl:text>
                 </xsl:with-param>
             </xsl:call-template>
-            <script scriptcode="{@scriptcode}"/>
+            <script scriptcode="{$scriptcodeValueUpdated}"/>
         </languageset>
     </xsl:template>
     
@@ -1426,6 +1428,13 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:apply-templates select="@* except @scriptcode"/>
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>
+    
+    <xsl:template name="scriptcodeValueUpdate">
+        <xsl:param name="scriptcodeValue"/>
+        <xsl:variable name="scriptcodeValueLength" select="string-length($scriptcodeValue)"/>
+        <xsl:variable name="scriptcodeValueLengthLessOne" select="$scriptcodeValueLength - 1"/>
+        <xsl:value-of select="concat(upper-case(substring($scriptcodeValue,1,1)),substring($scriptcodeValue,2,$scriptcodeValueLengthLessOne))"/>
     </xsl:template>
 
 
