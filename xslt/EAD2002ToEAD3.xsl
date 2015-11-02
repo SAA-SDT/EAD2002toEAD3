@@ -810,7 +810,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                             </xsl:otherwise>
                         </xsl:choose>
                         <language>
-                            <xsl:copy-of select="@* except @scriptcode"/>
+                            <xsl:apply-templates select="@* except @scriptcode"/>
                             <xsl:value-of select="."/>
                         </language>
                         <script>
@@ -1895,8 +1895,12 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="abstract/@langcode">
         <xsl:attribute name="lang">
-            <xsl:value-of select="."/>
+            <xsl:value-of select="lower-case(.)"/>
         </xsl:attribute>
+    </xsl:template>
+    
+    <xsl:template match="language/@langcode">
+        <xsl:attribute name="{local-name()}" select="lower-case(.)"/>
     </xsl:template>
     
     
