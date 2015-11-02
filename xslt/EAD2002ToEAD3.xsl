@@ -693,6 +693,9 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <xsl:when test="string-length($normalValue)=8">
                         <xsl:value-of select="concat(substring($normalValue,1,4),'-',substring($normalValue,5,2),'-',substring($normalValue,7,2))"/>
                     </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$normalValue"/>
+                    </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
