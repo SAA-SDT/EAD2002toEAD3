@@ -1,0 +1,47 @@
+  51506  attribute "score" not allowed here
+  51506  attribute "C-ORDER" not allowed here
+    697  element "title" not allowed here
+    318  attribute "poi" not allowed here
+    305  value of attribute "standarddatetime" is invalid
+    170  attribute "MAX-C-ORDER" not allowed here
+    154  value of attribute "entityref" is invalid
+    127  value of attribute "level" is invalid
+     71  element "date" not allowed here
+     51  element "admininfo" not allowed anywhere
+     47  value of attribute "langencoding" is invalid
+     42  attribute "inline" not allowed here
+     16  element "organization" not allowed anywhere
+     15  element "ref" not allowed yet
+     14  element "genreform" not allowed here
+     13  text not allowed here
+      9  value of attribute "certainty" is invalid
+      9  attribute "langmaterial" not allowed here
+      8  element "scopecontent" incomplete
+      7  element "persname" not allowed here
+      7  element "add" not allowed anywhere
+      6  element "recordid" not allowed here
+      6  element "controlaccess" incomplete
+      5  element "address" not allowed yet
+      5  attribute "LABEL" not allowed here
+      4  element "lb" not allowed here
+      2  element "subject2" not allowed anywhere
+      1  value of attribute "listtype" is invalid
+      1  value of attribute "countryencoding" is invalid
+      1  ID "IDfile00072" has already been defined
+      1  ID "IDfile00051" has already been defined
+      1  first occurrence of ID "IDfile00072"
+      1  first occurrence of ID "IDfile00051"
+      1  element "userestrict" incomplete
+      1  element "scopecontent" not allowed here
+      1  element "processinfo" incomplete
+      1  element "p" not allowed here
+      1  element "origination" incomplete
+      1  element "odd" not allowed here
+      1  element "geogname" not allowed here
+      1  element "footnote" incomplete
+      1  element "em" not allowed anywhere
+      1  element "did" incomplete
+      1  element "c05" not allowed here
+      1  element "c03" not allowed here
+      1  element "bioghist" incomplete
+      1  attribute "encodinganalaog" not allowed here

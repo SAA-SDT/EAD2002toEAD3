@@ -1,0 +1,3 @@
+element "date" not allowed here
+     68 /data/working/converted/142-145262_ead3.xml
+      3 /data/working/converted/422-58070_ead3.xml

@@ -1,0 +1,2682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../ead3_undeprecated.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?oxygen RNGSchema="../../ead3_undeprecated.rng" type="xml"?>
+<ead xmlns="http://ead3.archivists.org/schema/undeprecated/"
+     id="beinecke.hayward"
+     altrender="altrender"
+     audience="external"
+     relatedencoding="enigma">
+   <control xmlns="http://ead3.archivists.org/schema/"
+            langencoding="iso639-2b"
+            scriptencoding="iso15924"
+            countryencoding="iso3166-1"
+            repositoryencoding="iso15511"
+            dateencoding="iso8601"
+            altrender="eadheaderaltrender"
+            audience="internal"
+            encodinganalog="eadheader"
+            id="eadheader"
+            relatedencoding="DC">
+      <recordid encodinganalog="eadid">beinecke.hayward</recordid>
+      <otherrecordid localtype="publicid">-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT (US::CtY-BR::::[ABRAHAM HAYWARD COLLECTION])//EN</otherrecordid>
+      <otherrecordid localtype="identifier">eadid:identifier</otherrecordid>
+      <otherrecordid localtype="url">http://hdl.handle.net/10079/fa/beinecke.hayward</otherrecordid>
+      <otherrecordid localtype="urn">eadid:urn</otherrecordid>
+      <filedesc xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                altrender="filedesc"
+                audience="external"
+                encodinganalog="filedesc"
+                id="filedesc1">
+         <titlestmt id="titlestmt1"
+                    encodinganalog="titlestmt"
+                    audience="external"
+                    altrender="titlestmt">
+            <titleproper localtype="formal"
+                         altrender="formal"
+                         audience="external"
+                         encodinganalog="formal"
+                         id="tpform"
+                         render="bold">Guide to the Abraham Hayward
+               Collection, 1234, November 2014
+            </titleproper>
+            <titleproper localtype="filing"
+                         render="altrender"
+                         altrender="nodisplay"
+                         audience="internal"
+                         id="tpfiling"
+                         encodinganalog="tpfiling"> Hayward (Abraham) Collection </titleproper>
+            <subtitle encodinganalog="subtitle"
+                      id="subtitle"
+                      audience="external"
+                      altrender="subtitle">Hayward Subtitle, 5678,
+               subtitledate</subtitle>
+            <author altrender="author"
+                    audience="external"
+                    id="author1"
+                    encodinganalog="author">by
+               Michael Rush</author>
+            <sponsor encodinganalog="sponsor"
+                     id="sponsor1"
+                     audience="external"
+                     altrender="sponsor">Sponsored by your sponsor</sponsor>
+         </titlestmt>
+         <editionstmt altrender="editionstmt"
+                      audience="external"
+                      id="edstmt1"
+                      encodinganalog="edstmt">
+            <edition altrender="edition"
+                     audience="external"
+                     id="ed1"
+                     encodinganalog="edition">1st
+               edition.</edition>
+            <p id="edp" audience="external" altrender="editionp">Edition statement paragraph.</p>
+            <edition>Another edition.</edition>
+         </editionstmt>
+         <publicationstmt>
+            <publisher>Yale University Library</publisher>
+            <publisher>Beinecke Rare Book and Manuscript Library</publisher>
+            <publisher>General Collection of Modern Books and Manuscripts</publisher>
+            <address>
+               <addressline>Address Line 1</addressline>
+               <addressline>Address Line 2</addressline>
+               <addressline>Address Line 3</addressline>
+            </address>
+            <date localtype="original" normal="2006-10/2007">October, 2006</date>
+            <date localtype="revised" normal="2006-10">October 2006</date>
+            <date localtype="ead" normal="2006/2007">2006-2007</date>
+            <p>
+               <ref xmlns="http://ead3.archivists.org/schema/"
+                    actuate="onrequest"
+                    show="new"
+                    href="http://hdl.handle.net/10079/9p8czk9">Copyright © 1996-2007 by the Yale University
+                  Library.</ref>
+            </p>
+         </publicationstmt>
+         <seriesstmt altrender="seriesstmt"
+                     audience="external"
+                     encodinganalog="seriesstmt"
+                     id="seriesstmt1">
+            <titleproper id="sttp1"
+                         encodinganalog="sttp"
+                         audience="external"
+                         altrender="sttp"
+                         render="bold"
+                         localtype="sttp"> Series Title Proper </titleproper>
+            <num localtype="num"
+                 altrender="num"
+                 audience="external"
+                 encodinganalog="num"
+                 id="num1">12345</num>
+            <p id="stp1" audience="external" altrender="altp1">Paragraph inside series
+               statement.</p>
+         </seriesstmt>
+         <notestmt>
+            <controlnote xmlns="http://ead3.archivists.org/schema/"
+                         localtype="bpg"
+                         id="note1"
+                         audience="external"
+                         altrender="note"
+                         encodinganalog="note">
+               <p xmlns="http://ead3.archivists.org/schema/undeprecated/">This encoded finding aid is compliant with the Yale EAD Best Practice Guidelines,
+                  Version 1.0.</p>
+               <p>address 1, address 2</p>
+               <blockquote xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <p>blockquote</p>
+               </blockquote>
+               <chronlist xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <chronitem>
+                     <datesingle xmlns="http://ead3.archivists.org/schema/">date</datesingle>
+                     <event>event</event>
+                  </chronitem>
+               </chronlist>
+               <list listtype="unordered">
+                  <item xmlns="http://ead3.archivists.org/schema/undeprecated/">list item</item>
+               </list>
+               <table xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <tgroup cols="1">
+                     <tbody>
+                        <row>
+                           <entry>table row entry</entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+               <p>
+                  <footnote show="embed"
+                            id="note2"
+                            audience="external"
+                            altrender="note"
+                            actuate="onload"
+                            localtype="note">
+                     <p xmlns="http://ead3.archivists.org/schema/undeprecated/">recursive note to controlnote</p>
+                  </footnote>
+               </p>
+            </controlnote>
+         </notestmt>
+      </filedesc>
+      <maintenancestatus value="revised"/>
+      <publicationstatus value="published"/>
+      <maintenanceagency countrycode="US">
+         <agencycode>US-CtY-BR</agencycode>
+         <agencyname>Beinecke Library</agencyname>
+      </maintenanceagency>
+      <languagedeclaration altrender="langusage"
+                           audience="external"
+                           encodinganalog="langusage">
+         <language langcode="eng">English</language>
+         <script scriptcode="Latn">Latn</script>
+         <descriptivenote>
+            <p>
+               <emph xmlns="http://ead3.archivists.org/schema/undeprecated/" render="altrender">Finding aid </emph>written in English and French. </p>
+         </descriptivenote>
+      </languagedeclaration>
+      <languagedeclaration altrender="langusage"
+                           audience="external"
+                           encodinganalog="langusage">
+         <language langcode="fre">French</language>
+         <script scriptcode="Latn">Latn</script>
+         <descriptivenote>
+            <p>
+               <emph xmlns="http://ead3.archivists.org/schema/undeprecated/" render="altrender">Finding aid </emph>written in English and French. </p>
+         </descriptivenote>
+      </languagedeclaration>
+      <conventiondeclaration altrender="altrender"
+                             audience="external"
+                             encodinganalog="descrules">
+         <citation>Beinecke Manuscript Unit Archival Processing Manual</citation>
+         <descriptivenote>
+            <p>Finding aid prepared according to the <title xmlns="http://ead3.archivists.org/schema/undeprecated/" render="italic">
+                  <part xmlns="http://ead3.archivists.org/schema/">Beinecke Manuscript Unit Archival Processing Manual</part>
+               </title> and
+               <title xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <part xmlns="http://ead3.archivists.org/schema/">DACS</part>
+               </title>. </p>
+         </descriptivenote>
+      </conventiondeclaration>
+      <conventiondeclaration altrender="altrender"
+                             audience="external"
+                             encodinganalog="descrules">
+         <citation>DACS</citation>
+         <descriptivenote>
+            <p>Finding aid prepared according to the <title xmlns="http://ead3.archivists.org/schema/undeprecated/" render="italic">
+                  <part xmlns="http://ead3.archivists.org/schema/">Beinecke Manuscript Unit Archival Processing Manual</part>
+               </title> and
+               <title xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <part xmlns="http://ead3.archivists.org/schema/">DACS</part>
+               </title>. </p>
+         </descriptivenote>
+      </conventiondeclaration>
+      <localcontrol localtype="findaidstatus">
+         <term>edited-full-draft</term>
+      </localcontrol>
+      <maintenancehistory altrender="revisiondesc"
+                          audience="external"
+                          encodinganalog="revisiondesc"
+                          id="revisiondesc">
+         <maintenanceevent>
+            <eventtype value="updated"/>
+            <eventdatetime standarddatetime="2015-10-15T21:28:06.41-04:00">2015-10-15T21:28:06.41-04:00</eventdatetime>
+            <agenttype value="machine"/>
+            <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
+            <eventdescription>EAD 2002 instanace migrated to EAD3 Undeprecated (http://ead3.archivists.org/schema/undeprecated/).</eventdescription>
+         </maintenanceevent>
+         <maintenanceevent id="creation"
+                           encodinganalog="creation"
+                           audience="external"
+                           altrender="creation">
+            <eventtype value="created"/>
+            <eventdatetime altrender="date"
+                           audience="external"
+                           encodinganalog="eventdate"
+                           id="eventdate"
+                           standarddatetime="2006">2006</eventdatetime>
+            <agenttype value="unknown"/>
+            <agent/>
+            <eventdescription>Finding aid encoded in EAD 1.0 by Manuscript Unit staff, Beinecke
+            Library, with Edix/Wordix macros, 2006. </eventdescription>
+         </maintenanceevent>
+         <maintenanceevent id="defitem" audience="external" altrender="defitem">
+            <eventtype value="unknown"/>
+            <eventdatetime/>
+            <agenttype value="unknown"/>
+            <agent/>
+            <eventdescription altrender="defitemitem" audience="external" id="dii1">def label1: def item1</eventdescription>
+         </maintenanceevent>
+         <maintenanceevent>
+            <eventtype value="unknown"/>
+            <eventdatetime/>
+            <agenttype value="unknown"/>
+            <agent/>
+            <eventdescription>def label2: def item2</eventdescription>
+         </maintenanceevent>
+      </maintenancehistory>
+   </control>
+   <frontmatter>
+      <titlepage>
+         <titleproper>Guide to the Abraham Hayward Papers</titleproper>
+         <author>By John Steinbeck</author>
+         <bibseries>Bib series</bibseries>
+         <blockquote>
+            <p>Block quote</p>
+         </blockquote>
+         <date normal="2014-11-25">November 25, 2014</date>
+         <edition>Ice is back with a brand new edition!</edition>
+         <publisher>Publisher!!!</publisher>
+         <num>Number</num>
+         <sponsor>Sponsored by Dairy Queen</sponsor>
+         <subtitle>Subtitle: Sub Madness</subtitle>
+         <chronlist>
+            <chronitem>
+               <datesingle xmlns="http://ead3.archivists.org/schema/"
+                           id="dateID"
+                           audience="external"
+                           altrender="chronItemDate"
+                           localtype="testDate">Today</datesingle>
+               <event>Something happened</event>
+            </chronitem>
+         </chronlist>
+         <list xmlns="http://ead3.archivists.org/schema/" listtype="ordered">
+            <item xmlns="http://ead3.archivists.org/schema/undeprecated/">Item 1</item>
+            <item xmlns="http://ead3.archivists.org/schema/undeprecated/">Item 2</item>
+         </list>
+         <table>
+            <tgroup cols="2">
+               <tbody>
+                  <row>
+                     <entry>Cell 1</entry>
+                     <entry>Cell 2</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <p xmlns="http://ead3.archivists.org/schema/">Address line 1, Address line 2</p>
+      </titlepage>
+   </frontmatter>
+   <archdesc localtype="register"
+             relatedencoding="MARC21"
+             level="otherlevel"
+             id="archdesc"
+             encodinganalog="archdesc"
+             audience="internal"
+             altrender="archdesc"
+             otherlevel="archdesc">
+      <did xmlns="http://ead3.archivists.org/schema/" id="did">
+         <head xmlns="http://ead3.archivists.org/schema/undeprecated/"
+               althead="View Over"
+               altrender="head"
+               audience="external"
+               id="head1">Overview</head>
+         <materialspec xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                       audience="external"
+                       id="materialspec"
+                       altrender="altrender"
+                       localtype="materialspec"
+                       encodinganalog="999"
+                       label="materialspec">materialspec
+               number
+            recursive materialspec
+         </materialspec>
+         <didnote altrender="didnote"
+                  audience="external"
+                  encodinganalog="didnote"
+                  id="didnote"
+                  label="Did Note:"
+                  localtype="didNote">
+            1 did note paragraph
+         </didnote>
+         <physloc xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                  localtype="physloc"
+                  id="pl1"
+                  encodinganalog="physloc"
+                  audience="external"
+                  altrender="physloc"
+                  label="Physical Location:">On the shelf.</physloc>
+         <unitid xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                 label="Call Number:"
+                 countrycode="US"
+                 repositorycode="US-CtY-BR"
+                 altrender="unitid"
+                 audience="external"
+                 encodinganalog="unitid"
+                 id="ui1"
+                 identifier="unitid"
+                 localtype="unitid">GEN MSS 553</unitid>
+         <origination label="Creator:"
+                      encodinganalog="100"
+                      altrender="altrender"
+                      id="origination1"
+                      audience="external">
+            <persname xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                      encodinganalog="100">
+               <part xmlns="http://ead3.archivists.org/schema/">Hayward, A. (Abraham), 1801-1884.</part>
+            </persname>
+            <corpname xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">corpname</part>
+            </corpname>
+         </origination>
+         <origination>
+            <name>
+               <part> text title
+            <ref>archref</ref>
+                  <ref>bibref</ref>
+                  <abbr xmlns="http://ead3.archivists.org/schema/undeprecated/">abbr</abbr>
+                  <emph xmlns="http://ead3.archivists.org/schema/undeprecated/">emph</emph>
+                  <expan xmlns="http://ead3.archivists.org/schema/undeprecated/">expan</expan>
+                  <ptr/>
+                  <ref>extref</ref>
+                  <lb xmlns="http://ead3.archivists.org/schema/undeprecated/"/>
+                  <ptr xmlns="http://ead3.archivists.org/schema/undeprecated/"/>
+                  <ref xmlns="http://ead3.archivists.org/schema/undeprecated/">ref</ref>
+               </part>
+            </name>
+         </origination>
+         <origination>
+            <persname xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">name</part>
+            </persname>
+         </origination>
+         <unittitle audience="external"
+                    id="unittitle1"
+                    altrender="altrender"
+                    encodinganalog="245"
+                    label="Title:"
+                    localtype="unittitle"> text <abbr xmlns="http://ead3.archivists.org/schema/undeprecated/">abbr</abbr>
+            <ref>archref</ref>
+            <ref>bibref</ref>
+            <bibseries xmlns="http://ead3.archivists.org/schema/undeprecated/">bibseries</bibseries>
+            <corpname xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">corpname</part>
+            </corpname>
+            <date xmlns="http://ead3.archivists.org/schema/undeprecated/">date</date>
+            edition
+            <emph xmlns="http://ead3.archivists.org/schema/undeprecated/">title without link</emph>
+            <emph xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <ref xmlns="http://ead3.archivists.org/schema/" href="http://www.nytimes.com/">title with link</ref>
+            </emph>
+            <expan xmlns="http://ead3.archivists.org/schema/undeprecated/">expan</expan>
+            <ptr/>
+            <ref>extref</ref>
+            <famname xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">famname</part>
+            </famname>
+            <function xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">function</part>
+            </function>
+            <genreform xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">genreform</part>
+            </genreform>
+            <geogname xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">geogname</part>
+            </geogname>
+            <imprint xmlns="http://ead3.archivists.org/schema/undeprecated/">imprint</imprint>
+            <lb xmlns="http://ead3.archivists.org/schema/undeprecated/"/>
+            <name xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">name</part>
+            </name>
+            <num xmlns="http://ead3.archivists.org/schema/undeprecated/">num</num>
+            <occupation xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">occupation</part>
+            </occupation>
+            <persname xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">persname</part>
+            </persname>
+            <ptr xmlns="http://ead3.archivists.org/schema/undeprecated/"/>
+            <ref xmlns="http://ead3.archivists.org/schema/undeprecated/">ref</ref>
+            <subject xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">subject</part>
+            </subject>
+            <title xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <part xmlns="http://ead3.archivists.org/schema/">title</part>
+            </title>
+            <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">unitdate</unitdate>
+         </unittitle>
+         <unittitle label="Title:">Abraham Hayward collection <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                      unitdatetype="inclusive"
+                      datechar="creation"
+                      label="Dates:"
+                      normal="1791/1962"
+                      era="ce"
+                      calendar="gregorian">1791-1962</unitdate> or something</unittitle>
+         <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                   unitdatetype="inclusive"
+                   datechar="creation"
+                   label="Dates:"
+                   normal="1791/1962"
+                   era="ce"
+                   calendar="gregorian">1791-1962</unitdate>
+         <physdesc xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                   label="Physical Description:">
+            <extent>Total Boxes: 7 (incl. 3 oversize boxes)</extent>
+         </physdesc>
+         <physdesc xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                   label="Physical Description:">
+            <extent>Linear Feet: 5.51'</extent>
+         </physdesc>
+         <abstract xmlns="http://ead3.archivists.org/schema/undeprecated/" label="Summary:">Correspondence, printed materials, other papers, and photographs
+            related to Abraham Hayward, as well as the research materials of Hayward biographer
+            Brian Roberts. Outgoing correspondence includes letters to Hayward's sisters Fanny and
+            Mary Anne Hayward, as well as publisher Richard Bentley. Incoming correspondence
+            primarily consists of letters from members of Hayward's literary and political circles,
+            including George Bentley; John Thaddeus Delane; Edward Everett; Alexander William
+            Kinglake; John Murray; Henry Pelham, Duke of Newcastle; Viscountess Emily Lamb
+            Palmerston; Horace Smith, and others. Topics discussed in Hayward's corresondence
+            include contemporary politics; publishing concerns; London society; and invitations to
+            dine. Third party correspondence consists of letters to Fanny Hayward.<lb/>The bulk of
+            the printed materials consists of pamphlets, a petition, and clippings related to a
+            controversy over the Inner Temple's rules for election to the bench, which resulted from
+            a dissenter rejecting Hayward. Printed materials also include title pages inscribed by
+            and to Hayward; a theater program; calling cards; clippings; and a menu from the Café
+            de Paris. Other papers include an account of the estate of Robert Abraham, for whom
+            Hayward was the executor; Hayward's passport (1862-1871); a design for a fruit garden;
+            and whist instructions. Photographs consist of 12 cartes-de-visite, including portraits
+            of Abraham Hayward; Mrs. Cornwallis West; Mrs. Wheeler; Olive Campbell; Florence de
+            Bretton; Madaillae Florian; and Countess Fanny Karolyi.<lb/>Brian Roberts research
+            materials consist of correspondence; typescripts for three chapters of an unfinished
+            biography of Hayward; manuscript and typescript transcriptions of correspondence and
+            writings related to Hayward; a biographical timeline; and other research papers. <ptr xmlns="http://ead3.archivists.org/schema/"
+                 href="http://extptrloc.com"
+                 altrender="extptrloc"
+                 audience="external"
+                 id="a1"
+                 linkrole="xlinkrole"
+                 linktitle="xlinktitle"
+                 xpointer="xpointer"/>, <ptr xmlns="http://ead3.archivists.org/schema/"
+                 href="http://ptrloc.com"
+                 xpointer="xpointer"
+                 linktitle="xlinktitle"
+                 linkrole="xlinkrole"
+                 id="a2"
+                 audience="external"
+                 altrender="ptrloc"
+                 target="OS"/>, <ref xmlns="http://ead3.archivists.org/schema/"
+                 href="http://extrefloc.com"
+                 altrender="altrender"
+                 audience="external"
+                 id="a3"
+                 linkrole="xlinkrole"
+                 linktitle="xlinktitle"
+                 xpointer="xpointer">extrefloc</ref>, <ref xmlns="http://ead3.archivists.org/schema/"
+                 href="http://refloc.com"
+                 xpointer="xpointer"
+                 linktitle="xlinktitle"
+                 linkrole="xlinkrole"
+                 id="a4"
+                 audience="external"
+                 altrender="altrender"
+                 target="RFO">refloc</ref>
+         </abstract>
+         <repository label="Repository:">
+            <name>
+               <part>
+                  <ref xmlns="http://ead3.archivists.org/schema/undeprecated/">ref</ref>
+                  <ptr xmlns="http://ead3.archivists.org/schema/undeprecated/"/>
+                  <lb xmlns="http://ead3.archivists.org/schema/undeprecated/"/>
+                  <ref>extref</ref>
+                  <ptr/>
+                  <abbr xmlns="http://ead3.archivists.org/schema/undeprecated/">abbr</abbr>
+                  <ref>archref</ref>
+                  <ref>bibref</ref>
+                  <emph xmlns="http://ead3.archivists.org/schema/undeprecated/">emph</emph>
+                  <expan xmlns="http://ead3.archivists.org/schema/undeprecated/">expan</expan>
+            title
+            <!--<corpname>Beinecke Rare Book and Manuscript Library</corpname>
+            <subarea>subarea</subarea>
+            TExt text <emph>emph</emph>
+            <name>name name</name>
+            <address>
+               <addressline>P. O. Box 208240</addressline>
+               <addressline>New Haven, CT  06520-8240</addressline>
+               <addressline altrender="email">Email: beinecke.library@yale.edu</addressline>
+               <addressline altrender="phone">Phone: (203) 432-2972</addressline>
+               <addressline altrender="fax">Fax: (203) 432-4047</addressline>
+            </address>-->
+         </part>
+            </name>
+         </repository>
+         <dao daotype="unknown"
+              id="bioghistDao"
+              show="none"
+              actuate="none"
+              href="http://www.nytimes.com/">
+            <descriptivenote>
+               <p xmlns="http://ead3.archivists.org/schema/undeprecated/">daodesc paragraph</p>
+            </descriptivenote>
+         </dao>
+         <dao label="end" href="http://bostonglobe.com" daotype="unknown">
+            <descriptivenote>
+               <p>Resource</p>
+               <p xmlns="http://ead3.archivists.org/schema/undeprecated/">daodesc p</p>
+               <p>Address Line 1, Address Line 2, Address Line 3</p>
+            </descriptivenote>
+         </dao>
+         <dao daotype="unknown"
+              id="scopecontentDao"
+              show="none"
+              actuate="none"
+              href="http://www.nytimes.com/">
+            <descriptivenote>
+               <p xmlns="http://ead3.archivists.org/schema/undeprecated/">daodesc paragraph</p>
+            </descriptivenote>
+         </dao>
+         <dao label="end" href="http://bostonglobe.com" daotype="unknown">
+            <descriptivenote>
+               <p>Resource</p>
+               <p xmlns="http://ead3.archivists.org/schema/undeprecated/">daodesc p</p>
+            </descriptivenote>
+         </dao>
+         <dao daotype="unknown"
+              id="oddDao"
+              show="none"
+              actuate="none"
+              href="http://www.nytimes.com/">
+            <descriptivenote>
+               <p xmlns="http://ead3.archivists.org/schema/undeprecated/">daodesc paragraph</p>
+            </descriptivenote>
+         </dao>
+         <dao label="end" href="http://bostonglobe.com" daotype="unknown">
+            <descriptivenote>
+               <p>Resource</p>
+               <p xmlns="http://ead3.archivists.org/schema/undeprecated/">daodesc p</p>
+            </descriptivenote>
+         </dao>
+      </did>
+      <odd altrender="didnote"
+           audience="external"
+           encodinganalog="didnote"
+           id="didnotetoOdd"
+           localtype="didNote">
+            <p>did note paragraph 1</p>
+            <p>did note paragraph 2</p>
+            <p xmlns="http://ead3.archivists.org/schema/">did note addressline 1, did note addressline 2</p>
+            <blockquote>
+               <p>did note blockquote paragraph</p>
+            </blockquote>
+            <chronlist>
+               <chronitem>
+                  <datesingle xmlns="http://ead3.archivists.org/schema/"
+                           id="dateID2"
+                           audience="external"
+                           altrender="chronItemDate"
+                           localtype="testDate">February 2015</datesingle>
+                  <event>did note chronlist event</event>
+               </chronitem>
+               <chronitem>
+                  <datesingle xmlns="http://ead3.archivists.org/schema/"
+                           standarddate="2015-02"
+                           id="dateID3"
+                           audience="external"
+                           altrender="chronItemDate"
+                           localtype="testDate">February 2015</datesingle>
+                  <event>did note chronlist event</event>
+               </chronitem>
+               <chronitem>
+                  <daterange xmlns="http://ead3.archivists.org/schema/"
+                          id="dateID4"
+                          audience="external"
+                          altrender="chronItemDate"
+                          localtype="testDate">
+                  <fromdate standarddate="2015-02">February 2015</fromdate>
+                  <todate standarddate="2015-06">June 2015</todate>
+               </daterange>
+                  <event>did note chronlist event</event>
+               </chronitem>
+               <chronitem>
+                  <daterange xmlns="http://ead3.archivists.org/schema/"
+                          id="dateID5"
+                          audience="external"
+                          altrender="chronItemDate"
+                          localtype="testDate">
+                  <fromdate standarddate="2015-02">February 2015-–—June 2015</fromdate>
+                  <todate standarddate="2015-06"/>
+               </daterange>
+                  <event>did note chronlist event</event>
+               </chronitem>
+            </chronlist>
+            <list xmlns="http://ead3.archivists.org/schema/" listtype="unordered">
+            <item xmlns="http://ead3.archivists.org/schema/undeprecated/">did note list item 1</item>
+            <item xmlns="http://ead3.archivists.org/schema/undeprecated/">did note list item 2</item>
+         </list>
+            <table>
+               <tgroup cols="2">
+                  <tbody>
+                     <row>
+                        <entry>did note table entry 1</entry>
+                        <entry>did note table entry 2</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </table>
+            <p xmlns="http://ead3.archivists.org/schema/">
+            <footnote localtype="note"
+                      actuate="onload"
+                      altrender="note"
+                      audience="external"
+                      id="note3"
+                      show="embed">
+               <p xmlns="http://ead3.archivists.org/schema/undeprecated/">did/note/note</p>
+            </footnote>
+         </p>
+         </odd>
+      <descgrp type="admininfo" id="ai">
+         <head>Administrative Information</head>
+         <descgrp type="provenance" id="prov">
+            <head>Provenance</head>
+            <acqinfo>
+               <p>The Abraham Hayward Collection was acquired through purchase from Christopher
+                  Edwards on the George Henry Nettleton Fund, 2003.</p>
+               <blockquote altrender="bq" audience="external" id="bq1">
+                  <p>blockquote paragraph</p>
+                  <p xmlns="http://ead3.archivists.org/schema/">blockquote addressline</p>
+                  <chronlist>
+                     <chronitem>
+                        <datesingle xmlns="http://ead3.archivists.org/schema/">2015</datesingle>
+                        <event>blockquote event</event>
+                     </chronitem>
+                  </chronlist>
+                  <list xmlns="http://ead3.archivists.org/schema/" listtype="unordered">
+                     <item xmlns="http://ead3.archivists.org/schema/undeprecated/">blockquote item</item>
+                  </list>
+                  <table>
+                     <tgroup cols="1">
+                        <tbody>
+                           <row>
+                              <entry>blockquote table</entry>
+                           </row>
+                        </tbody>
+                     </tgroup>
+                  </table>
+               </blockquote>
+            </acqinfo>
+            <custodhist>
+               <head>Custodial History</head>
+               <p>paragraph</p>
+               <p>
+                  <quote xmlns="http://ead3.archivists.org/schema/"
+                         altrender="bq"
+                         audience="external"
+                         id="bq2">
+                     blockquote paragraph
+                     blockquote addressline, blockquote addressline 2
+                     
+                     
+                     
+                  </quote>
+               </p>
+               
+                  
+                  <p>custodhist/acqinfo/p</p>
+                  
+                     
+                     <p>custodhist/acqinfo/acqinfo/p</p>
+                  
+               
+            </custodhist>
+            <address>
+               <addressline>Address Line 1</addressline>
+               <addressline>Address Line 2</addressline>
+               <addressline>Address Line 3</addressline>
+            </address>
+            <blockquote altrender="bq" audience="external" id="bq3">
+               <p>blockquote paragraph</p>
+               <p xmlns="http://ead3.archivists.org/schema/">blockquote addressline 1, blockquote addressline 2</p>
+               <chronlist>
+                  <chronitem>
+                     <datesingle xmlns="http://ead3.archivists.org/schema/">2015</datesingle>
+                     <event>blockquote event</event>
+                  </chronitem>
+               </chronlist>
+               <list xmlns="http://ead3.archivists.org/schema/" listtype="unordered">
+                  <item xmlns="http://ead3.archivists.org/schema/undeprecated/">blockquote item</item>
+               </list>
+               <table>
+                  <tgroup cols="1">
+                     <tbody>
+                        <row>
+                           <entry>blockquote table</entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </blockquote>
+         </descgrp>
+         <altformavail encodinganalog="altform"
+                       localtype="altform"
+                       audience="internal"
+                       altrender="altform"
+                       id="altform">
+            <head>Alt Form</head>
+            <p>Alt Form paragraph</p>
+            <p xmlns="http://ead3.archivists.org/schema/">Address Line 1, Address Line 2, Address Line 3</p>
+         </altformavail>
+         <accruals encodinganalog="accruals"
+                   audience="internal"
+                   altrender="accruals"
+                   id="accruals">
+            <head>Accruals</head>
+            <p>Accruals paragraph Address Line 1, Address Line 2, Address Line 3</p>
+
+         </accruals>
+         <appraisal encodinganalog="appraisal"
+                    audience="internal"
+                    altrender="appraisal"
+                    id="appraisal">
+            <head>Appraisal</head>
+            <p>Appraisal paragraph <footnote xmlns="http://ead3.archivists.org/schema/"
+                         show="embed"
+                         id="note30"
+                         audience="external"
+                         altrender="note"
+                         actuate="onload"
+                         localtype="note">
+                  <p xmlns="http://ead3.archivists.org/schema/undeprecated/">appraisal/p/note</p>
+               </footnote>
+            </p>
+         </appraisal>
+         <fileplan encodinganalog="fileplan"
+                   audience="internal"
+                   altrender="fileplan"
+                   id="fileplan">
+            <head>Fileplan</head>
+            <p>Fileplan paragraph</p>
+         </fileplan>
+         <originalsloc localtype="originalsloc"
+                       encodinganalog="originalsloc"
+                       audience="internal"
+                       altrender="originalsloc"
+                       id="originalsloc">
+            <head>Originalsloc</head>
+            <p>Originalsloc paragraph</p>
+         </originalsloc>
+         <phystech localtype="phystech"
+                   encodinganalog="phystech"
+                   audience="internal"
+                   altrender="phystech"
+                   id="phystech">
+            <head>phystech</head>
+            <p>phystech paragraph</p>
+         </phystech>
+         <processinfo localtype="processinfo"
+                      encodinganalog="processinfo"
+                      audience="internal"
+                      altrender="processinfo"
+                      id="processinfo">
+            <head>processinfo</head>
+            <p>processinfo paragraph</p>
+         </processinfo>
+         <userestrict localtype="userestrict" id="urest">
+            <head>Ownership &amp; Copyright</head>
+            <p>The Abraham Hayward Collection is the physical property of the Beinecke Rare Book and
+               Manuscript Library, Yale University. Literary rights, including copyright, belong to
+               the authors or their legal heirs and assigns. For further information, consult the
+               appropriate curator. </p>
+         </userestrict>
+         <separatedmaterial localtype="sepmat">
+            <head>Separated Material</head>
+            <p>blah blah</p>
+            <archref xmlns="http://ead3.archivists.org/schema/">
+               <ref actuate="none"
+                    arcrole="arcrole"
+                    href="href"
+                    linkrole="linkrole"
+                    show="none"
+                    linktitle="linktitle"
+                    xpointer="xpointer">Archref abstract
+               container
+               
+               
+               langmaterial
+               materialspec
+               <footnote localtype="note"
+                            actuate="onload"
+                            altrender="note"
+                            audience="external"
+                            id="note40"
+                            show="embed">
+                     <p xmlns="http://ead3.archivists.org/schema/undeprecated/">note paragraph</p>
+                  </footnote>
+               origination
+               <persname xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                     <part xmlns="http://ead3.archivists.org/schema/">persname</part>
+                  </persname>
+               physdesc
+               physloc
+               <corpname xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                     <part xmlns="http://ead3.archivists.org/schema/">repository</part>
+                  </corpname>
+                  <corpname>
+                     <part localtype="subarea">subarea</part>
+                  </corpname>
+                  <date>unitdate</date>
+               unitid
+               unittitle
+            </ref>
+            </archref>
+            <bibref xmlns="http://ead3.archivists.org/schema/">
+               <ref actuate="none"
+                    arcrole="arcrole"
+                    href="href"
+                    linkrole="linkrole"
+                    show="none"
+                    linktitle="linktitle"
+                    xpointer="xpointer">Bibref <bibseries xmlns="http://ead3.archivists.org/schema/undeprecated/">bib series</bibseries>
+                  <imprint xmlns="http://ead3.archivists.org/schema/undeprecated/">imprint</imprint>
+               edition
+               archref
+               <title xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                     <part xmlns="http://ead3.archivists.org/schema/">title</part>
+                  </title>
+               </ref>
+            </bibref>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <ref>Extref</ref>
+            </p>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <ref xmlns="http://ead3.archivists.org/schema/undeprecated/">Ref</ref>
+            </p>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <title xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <part xmlns="http://ead3.archivists.org/schema/">Title</part>
+               </title>
+            </p>
+         </separatedmaterial>
+         <relatedmaterial localtype="relmat">
+            <head>Related Material</head>
+            <p>blah blah</p>
+            <archref xmlns="http://ead3.archivists.org/schema/">Archref</archref>
+            <bibref xmlns="http://ead3.archivists.org/schema/">Bibref</bibref>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <ref>Extref</ref>
+            </p>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <ref xmlns="http://ead3.archivists.org/schema/undeprecated/">Ref</ref>
+            </p>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <title xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <part xmlns="http://ead3.archivists.org/schema/">Title</part>
+               </title>
+            </p>
+         </relatedmaterial>
+         <otherfindaid>
+            <head>Related Material</head>
+            <p>blah blah</p>
+            <archref xmlns="http://ead3.archivists.org/schema/"
+                     altrender="archref"
+                     audience="internal"
+                     id="archref">
+               <ref actuate="none"
+                    arcrole="arcrole"
+                    href="http://google.com"
+                    linkrole="role"
+                    show="none"
+                    linktitle="title"
+                    xpointer="xpointer">Archref</ref>
+            </archref>
+            <bibref xmlns="http://ead3.archivists.org/schema/">Bibref</bibref>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <ref>Extref</ref>
+            </p>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <ref xmlns="http://ead3.archivists.org/schema/undeprecated/">Ref</ref>
+            </p>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <title xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <part xmlns="http://ead3.archivists.org/schema/">Title</part>
+               </title>
+            </p>
+         </otherfindaid>
+         <bibliography>
+            <head>Related Material</head>
+            <p>blah blah</p>
+            <archref xmlns="http://ead3.archivists.org/schema/">Archref</archref>
+            <bibref xmlns="http://ead3.archivists.org/schema/">Bibref</bibref>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <ref>Extref</ref>
+            </p>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <ref xmlns="http://ead3.archivists.org/schema/undeprecated/">Ref</ref>
+            </p>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <title xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <part xmlns="http://ead3.archivists.org/schema/">Title</part>
+               </title>
+            </p>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <ptr href="http://extptrloc.com"
+                    altrender="extptrloc"
+                    audience="external"
+                    id="a10"
+                    linkrole="xlinkrole"
+                    linktitle="xlinktitle"
+                    xpointer="xpointer"/>, <ptr href="http://ptrloc.com"
+                    xpointer="xpointer"
+                    linktitle="xlinktitle"
+                    linkrole="xlinkrole"
+                    id="a20"
+                    audience="external"
+                    altrender="ptrloc"
+                    target="OS"/>, <ref href="http://extrefloc.com"
+                    altrender="altrender"
+                    audience="external"
+                    id="a30"
+                    linkrole="xlinkrole"
+                    linktitle="xlinktitle"
+                    xpointer="xpointer">extrefloc</ref>, <ref href="http://refloc.com"
+                    xpointer="xpointer"
+                    linktitle="xlinktitle"
+                    linkrole="xlinkrole"
+                    id="a40"
+                    audience="external"
+                    altrender="altrender"
+                    target="RFO">refloc</ref>
+            </p>
+         </bibliography>
+         <prefercite id="cite"
+                     altrender="prefercite"
+                     audience="internal"
+                     encodinganalog="prefercite">
+            <head>Cite As</head>
+            <p>Abraham Hayward Collection. General Collection, Beinecke Rare Book and Manuscript
+               Library, Yale University.</p>
+         </prefercite>
+         <accessrestrict id="arest"
+                         altrender="access"
+                         audience="internal"
+                         localtype="access"
+                         encodinganalog="506">
+            <head>Information about Access</head>
+            <p> This collection is open for research. <title render="italic">
+                  <part xmlns="http://ead3.archivists.org/schema/">Restricted Fragile Oversize</part>
+               </title> in box 7 may only be consulted with
+               permission of the appropriate curator. Preservation photocopies or photographic
+               prints for reference use have been substituted in the main files. </p>
+            <p xmlns="http://ead3.archivists.org/schema/"
+               id="legalstatus"
+               audience="internal"
+               altrender="legalstatus"> Legal Status FOO BAR. </p>
+            <accessrestrict>
+               <head>subhead</head>
+               <p>recursion recursion recursion</p>
+            </accessrestrict>
+         </accessrestrict>
+      </descgrp>
+      <bioghist id="bh1">
+         <head>ABRAHAM HAYWARD (1801-1884) </head>
+         <p>Abraham Hayward, 1801-1884, was an English essayist and translator. Born in Wiltshire,
+            Hayward studied at several schools, including Blundell's School in Tiverton, before
+            moving to London and enrolling at the Inner Temple in 1824. He was called to the bar in
+            1832, but after the success of his 1833 translation of Goethe's <title render="italic">
+               <part xmlns="http://ead3.archivists.org/schema/">Faust</part>
+            </title>, the first translation of <title render="italic">
+               <part xmlns="http://ead3.archivists.org/schema/">Faust</part>
+            </title> into English, he pursued a career
+            in journalism and literature. He never married. </p>
+         
+         
+      </bioghist>
+      <scopecontent id="sc">
+         <head>Description of the Papers</head>
+         <p>The Abraham Hayward Collection consists of correspondence, printed materials,
+            phtographs, and other papers related to Abraham Hayward (1801-1884), a London essayist
+            and translator, as well as the research papers of Brian Roberts, who started but
+            abandoned a biography of Hayward in the 1950s. The papers, which span the years
+            1791-1962, are stored in seven boxes (including 3 oversize), and are organized into five
+            series: <title render="italic">
+               <part xmlns="http://ead3.archivists.org/schema/">Correspondence</part>
+            </title>, <title render="italic">
+               <part xmlns="http://ead3.archivists.org/schema/">Printed Materials</part>
+            </title>, <title render="italic">
+               <part xmlns="http://ead3.archivists.org/schema/">Other Papers</part>
+            </title>, <title render="italic">
+               <part xmlns="http://ead3.archivists.org/schema/">Photographs</part>
+            </title>, and <title render="italic">
+               <part xmlns="http://ead3.archivists.org/schema/">Brian Roberts Research Materials</part>
+            </title>. The papers document Hayward's familial
+            relations, the literary and political circles of mid-nineteeth century London, and a
+            controversy involving Hayward and the Inner Temple. </p>
+         
+            
+            <p>Arrangment paragraph</p>
+            
+               
+               <p>Arrangment paragraph</p>
+            
+         
+         
+         
+      </scopecontent>
+      <arrangement encodinganalog="arrangement"
+                   audience="internal"
+                   altrender="arrangement"
+                   id="arr1234">
+         <head>Arrangement Head</head>
+         <p>Arrangment paragraph</p>
+         <arrangement>
+            <head>Arrangement Head</head>
+            <p>Arrangment paragraph</p>
+         </arrangement>
+         <list xmlns="http://ead3.archivists.org/schema/"
+               altrender="simpleList"
+               audience="external"
+               id="simpleID"
+               listtype="unordered"
+               mark="none">
+            <item xmlns="http://ead3.archivists.org/schema/undeprecated/">simple list item</item>
+         </list>
+         <list xmlns="http://ead3.archivists.org/schema/"
+               altrender="markedList"
+               audience="external"
+               id="markedID"
+               listtype="unordered"
+               mark="disc">
+            <item xmlns="http://ead3.archivists.org/schema/undeprecated/">marked list item</item>
+         </list>
+         <list xmlns="http://ead3.archivists.org/schema/"
+               altrender="orderedList"
+               audience="external"
+               id="orderedID"
+               numeration="decimal"
+               listtype="ordered">
+            <item xmlns="http://ead3.archivists.org/schema/undeprecated/">ordered list item</item>
+         </list>
+         <list xmlns="http://ead3.archivists.org/schema/"
+               altrender="defList"
+               audience="external"
+               id="deflistID"
+               listtype="deflist">
+            <defitem xmlns="http://ead3.archivists.org/schema/undeprecated/">
+               <label>deflist label</label>
+               <item>deflist item</item>
+            </defitem>
+         </list>
+      </arrangement>
+      <odd altrender="odd"
+           id="odd"
+           audience="internal"
+           encodinganalog="odd"
+           localtype="odd">
+         <head>ODD head</head>
+         <p>odd paragraph</p>
+         
+         
+      </odd>
+      <controlaccess id="ca"
+                     altrender="controlaccess"
+                     audience="external"
+                     encodinganalog="controlaccess">
+         <head>Access Terms</head>
+         <p>This collection is indexed under the following access points in <ref xmlns="http://ead3.archivists.org/schema/"
+                 actuate="onrequest"
+                 show="new"
+                 href="http://orbis.library.yale.edu/">Orbis</ref>, the Yale University
+            Library online catalog.</p>
+         <controlaccess encodinganalog="ca" audience="external" altrender="ca" id="ca3">
+            <head>Subjects</head>
+            <name relator="name"
+                  altrender="name"
+                  encodinganalog="name"
+                  id="n1"
+                  audience="external"
+                  source="Name"
+                  rules="Name"
+                  normal="McNamerson, Name"
+                  identifier="123">
+               <part xmlns="http://ead3.archivists.org/schema/">Name
+               McNamerson</part>
+            </name>
+            <geogname identifier="Boston"
+                      normal="Bahstun"
+                      rules="Fenway"
+                      source="RedSox"
+                      audience="external"
+                      id="a617"
+                      encodinganalog="Beantown"
+                      altrender="wickedawesome"
+                      relator="wickedpissah">
+               <part xmlns="http://ead3.archivists.org/schema/">Boston (Massachusetts).</part>
+            </geogname>
+            <genreform altrender="genreform"
+                       encodinganalog="genreform"
+                       id="gf1"
+                       audience="external"
+                       source="genreform"
+                       rules="genreform"
+                       normal="Watercolors"
+                       identifier="123"
+                       localtype="form">
+               <part xmlns="http://ead3.archivists.org/schema/">Watercolors</part>
+            </genreform>
+            <famname encodinganalog="famname"
+                     altrender="famname"
+                     id="fam1"
+                     audience="external"
+                     source="famname"
+                     rules="famname"
+                     normal="Rush family"
+                     identifier="1234"
+                     relator="famname">
+               <part xmlns="http://ead3.archivists.org/schema/"> Rush <emph xmlns="http://ead3.archivists.org/schema/undeprecated/" render="bold">family</emph> of <lb xmlns="http://ead3.archivists.org/schema/undeprecated/"/>New <ptr xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                       href="http://www.rushfamily.com"/>/&gt; Hampshire</part>
+            </famname>
+            <function identifier="function"
+                      normal="Entertaining"
+                      rules="lmnop"
+                      source="zyx"
+                      audience="external"
+                      id="fun1"
+                      altrender="function"
+                      encodinganalog="function">
+               <part xmlns="http://ead3.archivists.org/schema/">
+                  <emph xmlns="http://ead3.archivists.org/schema/undeprecated/" render="bolditalic">Entertaining</emph>
+                  <ptr href="http://function.com"/>
+               </part>
+            </function>
+            <p xmlns="http://ead3.archivists.org/schema/">
+               <ref href="http://www.longform.com"
+                    actuate="none"
+                    arcrole="arcrole"
+                    linkrole="titlexlinkrole"
+                    show="none"
+                    linktitle="titletitle"
+                    xpointer="#title">
+                  <title xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                         identifier="title"
+                         normal="title"
+                         rules="title"
+                         source="title"
+                         audience="external"
+                         altrender="title"
+                         id="title1"
+                         render="altrender"
+                         encodinganalog="title"
+                         localtype="titletype">
+                     <part xmlns="http://ead3.archivists.org/schema/">Moby-Dick, or The Whale</part>
+                  </title>
+               </ref>
+            </p>
+            <persname encodinganalog="600"
+                      relator="subject"
+                      id="pers1"
+                      altrender="persname"
+                      audience="external"
+                      source="persname"
+                      rules="persname"
+                      normal="Pers, Name"
+                      identifier="1234">
+               <part xmlns="http://ead3.archivists.org/schema/">Abraham, Robert, d. 1833 --Estate.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Bentley, George, 1828-1895.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Bentley, Richard, 1794-1871.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Delane, John Thaddeus,
+               1817-1879.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Everett, Edward, 1794-1865.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Hayward, A. (Abraham),
+               1801-1884.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Hayward, Fanny, d. 1904.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Hayward, Mary Anne.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Kinglake, Alexander William,
+               1809-1891.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Murray, John, 1808-1892.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Newcastle, Henry Pelham, Duke of,
+               1811-1864.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Palmerston, Emily Lamb, Viscountess,
+               1787-1869.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Roberts, Brian.</part>
+            </persname>
+            <persname encodinganalog="600" relator="subject">
+               <part xmlns="http://ead3.archivists.org/schema/">Smith, Horace, 1779-1849.</part>
+            </persname>
+            <corpname encodinganalog="610"
+                      relator="subject"
+                      id="cn"
+                      altrender="corpname"
+                      audience="external"
+                      identifier="authfilenumber"
+                      normal="inner temple yall"
+                      rules="aacr2"
+                      source="lcnaf">
+               <part xmlns="http://ead3.archivists.org/schema/"><!-- comment -->Inner Temple <ptr href="http://www.nytimes.com/"/>(London, England)</part>
+            </corpname>
+            <corpname encodinganalog="610"
+                      relator="subject"
+                      id="cn2"
+                      altrender="corpname"
+                      audience="external"
+                      identifier="authfilenumber"
+                      normal="inner temple yall"
+                      rules="aacr2"
+                      source="lcnaf">
+               <part xmlns="http://ead3.archivists.org/schema/">Inner Temple </part>
+               <part xmlns="http://ead3.archivists.org/schema/"
+                     audience="external"
+                     altrender="subarea"
+                     id="sa1"
+                     encodinganalog="subarea"
+                     localtype="subarea">(London, England)</part>
+               <part xmlns="http://ead3.archivists.org/schema/"/>
+               <part xmlns="http://ead3.archivists.org/schema/" localtype="subarea">(Great Britain, Europe)</part>
+               <part xmlns="http://ead3.archivists.org/schema/"> (Earth, <emph xmlns="http://ead3.archivists.org/schema/undeprecated/" render="bold">Solar</emph>
+               System)</part>
+            </corpname>
+            <subject encodinganalog="650"
+                     source="lcsh"
+                     altrender="subject"
+                     id="sub1"
+                     audience="external"
+                     rules="subject"
+                     normal="Authors"
+                     identifier="1234">
+               <part xmlns="http://ead3.archivists.org/schema/">Authors,
+               English --19th century.</part>
+            </subject>
+            <subject encodinganalog="650" source="lcsh">
+               <part xmlns="http://ead3.archivists.org/schema/">Gardens --Design --England.</part>
+            </subject>
+            <subject encodinganalog="650" source="lcsh">
+               <part xmlns="http://ead3.archivists.org/schema/">Politics and culture --England --History
+               --19th century.</part>
+            </subject>
+            <subject encodinganalog="650" source="lcsh">
+               <part xmlns="http://ead3.archivists.org/schema/">Publishers and publishing --England
+               --History --19th century.</part>
+            </subject>
+            <subject encodinganalog="650" source="lcsh">
+               <part xmlns="http://ead3.archivists.org/schema/">Whist.</part>
+            </subject>
+            <genreform encodinganalog="655" source="aat">
+               <part xmlns="http://ead3.archivists.org/schema/">Cartes-de-visite.</part>
+            </genreform>
+            <genreform encodinganalog="655" source="rbgenr">
+               <part xmlns="http://ead3.archivists.org/schema/">Menus --France --Paris.</part>
+            </genreform>
+            <genreform encodinganalog="655" source="aat">
+               <part xmlns="http://ead3.archivists.org/schema/">Passports.</part>
+            </genreform>
+         </controlaccess>
+         <controlaccess>
+            <head>Authors</head>
+            <persname encodinganalog="100">
+               <part xmlns="http://ead3.archivists.org/schema/">Hayward, A. (Abraham), 1801-1884.</part>
+            </persname>
+            <persname encodinganalog="700">
+               <part xmlns="http://ead3.archivists.org/schema/">Roberts, Brian.</part>
+            </persname>
+         </controlaccess>
+         <controlaccess>
+            <head>Occupations and Functions</head>
+            <occupation encodinganalog="656"
+                        source="lcsh"
+                        identifier="1234"
+                        normal="authors"
+                        rules="occ"
+                        audience="external"
+                        id="occ1"
+                        altrender="occupation">
+               <part xmlns="http://ead3.archivists.org/schema/">Authors --England
+               --19th century.</part>
+            </occupation>
+         </controlaccess>
+      </controlaccess>
+      <dsc dsctype="combined"
+           id="dsc"
+           tpattern="tpatterndsc"
+           otherdsctype="otherDSCtype">
+         <head>Collection Contents</head>
+         <p>paragraph</p>
+         <p xmlns="http://ead3.archivists.org/schema/">DSC ADDRESS</p>
+         <blockquote>
+            <p>blockquote paragraph in dsc</p>
+         </blockquote>
+         <p xmlns="http://ead3.archivists.org/schema/">
+            <footnote localtype="notetype"
+                      actuate="onload"
+                      altrender="note"
+                      audience="external"
+                      id="note10"
+                      show="embed">
+               <p xmlns="http://ead3.archivists.org/schema/undeprecated/">DSC Note paragraph</p>
+            </footnote>
+         </p>
+         <table>
+            <tgroup cols="1">
+               <tbody>
+                  <row>
+                     <entry>DSC TABLE</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <thead>
+            <row>
+               <entry>DSC</entry>
+               <entry>THEAD</entry>
+            </row>
+         </thead>
+         <c01 id="SI" level="series" tpattern="tpatternc01">
+            <did xmlns="http://ead3.archivists.org/schema/">
+               <unitid xmlns="http://ead3.archivists.org/schema/undeprecated/">Series I.</unitid>
+               <unittitle localtype="head"> Correspondence </unittitle>
+               <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1833-1896</unitdate>
+               <physdesc xmlns="http://ead3.archivists.org/schema/undeprecated/"
+                         encodinganalog="300"
+                         altrender="physdesc"
+                         audience="external"
+                         id="physdesc1"
+                         label="physdesc">
+                  <abbr>abbr</abbr>
+                  <ref xmlns="http://ead3.archivists.org/schema/">archref</ref>
+                  <ref xmlns="http://ead3.archivists.org/schema/">bibref</ref>
+                  corpname
+                  date
+                  <dimensions>dimensions</dimensions>
+                  <emph>emph</emph>
+                  <expan>expan</expan>
+                  <extent>0.21' (43 folders)</extent>
+                  famname
+                  function
+                  genreform
+                  geogname
+                  name
+                  <lb/>
+                  occupation
+                  persname
+                  <physfacet>physfacet</physfacet>
+                  subject
+                  title
+               </physdesc>
+            </did>
+            <scopecontent>
+               <p> Series I, Correspondence, is arranged into three subseries: Outgoing, Incoming,
+                  and Third Party Correspondence. Each is arranged alphabetically. </p>
+            </scopecontent>
+            <c02 id="d0e205" level="subseries">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <unittitle localtype="head"> OUTGOING </unittitle>
+                  <langmaterial altrender="langmaterial"
+                                audience="external"
+                                encodinganalog="langmat"
+                                id="langmat1"
+                                label="Language">
+                     <languageset>
+                        <language id="languge1"
+                                  encodinganalog="lang"
+                                  audience="external"
+                                  altrender="lang"
+                                  langcode="eng">English</language>
+                        <script scriptcode="Latn"/>
+                     </languageset>
+                     <descriptivenote>
+                        <p>
+                           <abbr xmlns="http://ead3.archivists.org/schema/undeprecated/">abbr</abbr>
+                           <ref>archref</ref>
+                           <ref>bibref</ref>
+                           <emph xmlns="http://ead3.archivists.org/schema/undeprecated/">emph</emph>
+                           <expan xmlns="http://ead3.archivists.org/schema/undeprecated/">expan</expan>
+                           <ptr/>
+                           <ref>extref</ref>
+                     English
+                     <lb xmlns="http://ead3.archivists.org/schema/undeprecated/"/>
+                           <ptr xmlns="http://ead3.archivists.org/schema/undeprecated/"/>
+                           <ref xmlns="http://ead3.archivists.org/schema/undeprecated/">ref</ref>
+                           <title xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                              <part xmlns="http://ead3.archivists.org/schema/">title</part>
+                           </title>
+                        </p>
+                     </descriptivenote>
+                  </langmaterial>
+                  <langmaterial altrender="langmaterial"
+                                audience="external"
+                                encodinganalog="langmat"
+                                id="langmat2"
+                                label="Language">
+                     <language id="languge2"
+                               encodinganalog="lang"
+                               audience="external"
+                               altrender="lang"
+                               langcode="eng">English</language>
+                     <descriptivenote>
+                        <p>
+                           <abbr xmlns="http://ead3.archivists.org/schema/undeprecated/">abbr</abbr>
+                           <ref>archref</ref>
+                           <ref>bibref</ref>
+                           <emph xmlns="http://ead3.archivists.org/schema/undeprecated/">emph</emph>
+                           <expan xmlns="http://ead3.archivists.org/schema/undeprecated/">expan</expan>
+                           <ptr/>
+                           <ref>extref</ref>
+                     English
+                     <lb xmlns="http://ead3.archivists.org/schema/undeprecated/"/>
+                           <ptr xmlns="http://ead3.archivists.org/schema/undeprecated/"/>
+                           <ref xmlns="http://ead3.archivists.org/schema/undeprecated/">ref</ref>
+                           <title xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                              <part xmlns="http://ead3.archivists.org/schema/">title</part>
+                           </title>
+                        </p>
+                     </descriptivenote>
+                  </langmaterial>
+                  <langmaterial>
+                     <languageset>
+                        <language>Dutch</language>
+                        <script scriptcode="Latn"/>
+                     </languageset>
+                     <language langcode="eng">English</language>
+                     <languageset>
+                        <language langcode="fre">French</language>
+                        <script scriptcode="Latn"/>
+                     </languageset>
+                     <language>some language twins
+                        speak</language>
+                     <descriptivenote>
+                        <p> Materials in Dutch,
+                        English, French, and some language twins
+                        speak. </p>
+                     </descriptivenote>
+                  </langmaterial>
+                  <langmaterial>
+                     <languageset>
+                        <language langcode="jpn">Japanese</language>
+                        <script scriptcode="Kana"/>
+                     </languageset>
+                  </langmaterial>
+                  <dao daotype="unknown"
+                       id="didDao"
+                       audience="external"
+                       altrender="didDAO"
+                       actuate="onrequest"
+                       arcrole="diddaoarcrole"
+                       href="http://www.nytimes.com/"
+                       linkrole="diddaorole"
+                       show="new"
+                       linktitle="diddaotitle"
+                       xpointer="didDAOxpointer">
+                     <descriptivenote>
+                        <p xmlns="http://ead3.archivists.org/schema/undeprecated/">did DAO daodeac p</p>
+                     </descriptivenote>
+                  </dao>
+               </did>
+               <c03 id="f1" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">
+                        <ref xmlns="http://ead3.archivists.org/schema/"
+                             actuate="none"
+                             arcrole="arcrole"
+                             href="href"
+                             linkrole="xlinkrole"
+                             show="none"
+                             linktitle="xlinktitle"
+                             xpointer="xpointer">Title</ref>
+                        <ref xmlns="http://ead3.archivists.org/schema/"
+                             xpointer="xpointer"
+                             linktitle="linktitle"
+                             show="none"
+                             linkrole="role"
+                             href="href"
+                             arcrole="arcrole"
+                             actuate="none"
+                             altrender="altrender"
+                             id="title222"
+                             audience="external">archref</ref>
+                        <ref xmlns="http://ead3.archivists.org/schema/"
+                             xpointer="xpointer"
+                             linktitle="linktitle"
+                             show="none"
+                             linkrole="role"
+                             href="href"
+                             arcrole="arcrole"
+                             actuate="none"
+                             altrender="altrender"
+                             id="title333"
+                             audience="external">bibref</ref> 1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">1</container>
+                     <unittitle localtype="genericfolder"> Bentley, [Richard] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1873-83</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f2" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">2</container>
+                     <unittitle localtype="genericfolder"> Boyes, ---- </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.y. Nov 3</unitdate>
+                     <daoset id="daogrp1">
+                        <dao href="href" daotype="unknown"/>
+                        <dao href="http://daoloc.com/" daotype="unknown">
+                           <descriptivenote>
+                              <p xmlns="http://ead3.archivists.org/schema/undeprecated/">daoloc/daodesc/p</p>
+                           </descriptivenote>
+                        </dao>
+                        <descriptivenote>
+                           <p>resource text</p>
+                           <p xmlns="http://ead3.archivists.org/schema/undeprecated/">daogrp daodesc</p>
+                        </descriptivenote>
+                     </daoset>
+                  </did>
+               </c03>
+               <c03 id="f3" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">3-7</container>
+                     <unittitle localtype="genericfolder"> Hayward, Fanny; Hayward, Mary Anne </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1854-82, n.d.</unitdate>
+                  </did>
+               </c03>
+            </c02>
+            <c02 id="d0e246" level="subseries">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <unittitle localtype="head"> INCOMING </unittitle>
+               </did>
+               <c03 id="f8" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">8</container>
+                     <unittitle localtype="genericfolder"> Bancroft, B. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1881 Dec 17</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f9" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">9</container>
+                     <unittitle localtype="genericfolder"> Bentley, George </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.y. Oct 21</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f10" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">10</container>
+                     <unittitle localtype="genericfolder"> Blessington, Marguerite, Countess of </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f11" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">11</container>
+                     <unittitle localtype="genericfolder"> Brougham and Vaux, Henry Brougham, Baron </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f12" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">12</container>
+                     <unittitle localtype="genericfolder"> Caldwell, Anita S. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f13" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">13</container>
+                     <unittitle localtype="genericfolder"> [Cornwallis?], ---- </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1867 Jun 6</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f14" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">14</container>
+                     <unittitle localtype="genericfolder"> Delane, John Thaddeus </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f15" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">15</container>
+                     <unittitle localtype="genericfolder"> Everett, Edward </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1844 Mar 2</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f16" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">16</container>
+                     <unittitle localtype="genericfolder"> Froude, [James Anthony] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.y. Oct 12</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f17" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">17</container>
+                     <unittitle localtype="genericfolder"> Harvey, A. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f18" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">18</container>
+                     <unittitle localtype="genericfolder"> Hawtrey, [Edward Craven] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1833 Dec 28</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f19" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">19</container>
+                     <unittitle localtype="genericfolder"> Hayter, William Goodenough, Sir </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.y. Aug 19</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f20" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">20</container>
+                     <unittitle localtype="genericfolder"> Kinglake, [Alexander William] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1853</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f21" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">21</container>
+                     <unittitle localtype="genericfolder"> Lhwyd, Angharad </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.y. Sep 11</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f22" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">22</container>
+                     <unittitle localtype="genericfolder"> Lowe, [Robert, Viscount Sherbrooke] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1857 Feb 6</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f23" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">23</container>
+                     <unittitle localtype="genericfolder"> Lytton, [Rosina Bulwer Lytton, Baroness?] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1872 Aug 20</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f24" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">24</container>
+                     <unittitle localtype="genericfolder"> Murray, John </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1863 May 4</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f25" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">25</container>
+                     <unittitle localtype="genericfolder"> Newcastle, [Henry Pelham, Duke of] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1858 Nov 6</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f26" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">26</container>
+                     <unittitle localtype="genericfolder"> Palmerston, [Emily Lamb, Viscountess] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f27" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">27</container>
+                     <unittitle localtype="genericfolder"> Peel, Emily, Lady </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1859 Feb 6</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f28" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">28</container>
+                     <unittitle localtype="genericfolder"> Platt, Thomas Joshua, Sir </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1846 May 25</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f29" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">29</container>
+                     <unittitle localtype="genericfolder"> Smith, Horace </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1840 Jan 22</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f30" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">30</container>
+                     <unittitle localtype="genericfolder"> Stirling-Maxwell, William, Sir </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1868 Nov 8</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f31" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">31</container>
+                     <unittitle localtype="genericfolder"> Wellesley, [Henry] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1861 Mar 7</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f32" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">32</container>
+                     <unittitle localtype="genericfolder"> Unidentified </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1834-80</unitdate>
+                  </did>
+               </c03>
+            </c02>
+            <c02 id="d0e475" level="subseries">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <unittitle localtype="head"> THIRD PARTY </unittitle>
+               </did>
+               <c03 id="f33" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">33</container>
+                     <unittitle localtype="genericfolder"> De Limberg Hiram, S. J., to Fanny Hayward </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1894 Dec 22</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f34" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">34</container>
+                     <unittitle localtype="genericfolder"> Eaton, Alfred E., to [Fanny] Hayward </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1896 Dec 18</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f35" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">35</container>
+                     <unittitle localtype="genericfolder"> Escott, T. H. S. (Thomas Hay Sweet) to [Fanny
+                        Hayward] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1895</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f36" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">36</container>
+                     <unittitle localtype="genericfolder"> Farmer, E., to [Fanny] Hayward </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1893 Aug 12</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f37" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">37</container>
+                     <unittitle localtype="genericfolder"> Hayward, J., to Mr. Pearce </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1896 Mar 31</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f38" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">38</container>
+                     <unittitle localtype="genericfolder"> Mills, Dudley, to Fanny Hayward </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.y. Mar 27</unitdate>
+                  </did>
+               </c03>
+               <c03 id="d0e533" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <unittitle localtype="genericfolder"> Shearer, George, to Herman Merivale and Henry
+                        Davison </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1846 Jan</unitdate>
+                  </did>
+                  <relatedmaterial>
+                     <p>
+                        <ref actuate="onrequest" show="replace" target="f44"> See: Series II. <title render="italic">
+                              <part xmlns="http://ead3.archivists.org/schema/">Printed Materials</part>
+                           </title>, Petition, Box 1, folder 44 </ref>
+                     </p>
+                  </relatedmaterial>
+               </c03>
+               <c03 id="f39" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">39</container>
+                     <unittitle localtype="genericfolder"> Unidentified niece to [Fanny] Hayward </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1893</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f40" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">40</container>
+                     <unittitle localtype="genericfolder"> Unidentified to [L. Waldgren?] </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+            </c02>
+         </c01>
+         <c01 id="SII" level="series">
+            <did xmlns="http://ead3.archivists.org/schema/">
+               <unitid xmlns="http://ead3.archivists.org/schema/undeprecated/">Series II.</unitid>
+               <unittitle localtype="head"> Printed Materials </unittitle>
+               <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1791-1896</unitdate>
+               <physdesc xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <extent>0.21' (11 folders)</extent>
+               </physdesc>
+            </did>
+            <scopecontent>
+               <p> Series II, Printed Materials, is arranged into two subseries: Inner Temple Affair
+                  and Other Printed Materials. Each is arranged chronologically. </p>
+            </scopecontent>
+            <c02 id="d0e592" level="subseries">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <unittitle localtype="head"> INNER TEMPLE AFFAIR </unittitle>
+               </did>
+               <c03 id="f41" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">41</container>
+                     <unittitle localtype="genericfolder"> Pamphlet, "Remarks on the Mode of Electing
+                        Benchers at the Inner Temple," annotated </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1845</unitdate>
+                  </did>
+                  <scopecontent>
+                     <p> London: Owen Richards, Law Bookseller, 194 Fleet Street </p>
+                  </scopecontent>
+               </c03>
+               <c03 id="f42" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">42</container>
+                     <unittitle localtype="genericfolder"> Untitled pamphlet by Abraham Hayward
+                        concerning the Inner Temple Affair </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1845</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f43" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">43</container>
+                     <unittitle localtype="genericfolder"> Clippings related to the Inner Temple Affair </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">[ca. 1845]</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f44" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">44</container>
+                     <unittitle localtype="genericfolder"> Petition, "To The Benchers of the Honorable
+                        Society of the Inner Temple," signed </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1846 Jan</unitdate>
+                  </did>
+                  <scopecontent>
+                     <p> Includes manuscript copy of George [Shearer?] to Herman Merivale and Henry
+                        Davison, Jan 31, 1846 </p>
+                  </scopecontent>
+               </c03>
+            </c02>
+            <c02 id="d0e655" level="subseries">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <unittitle localtype="head"> OTHER PRINTED MATERIALS </unittitle>
+               </did>
+               <c03 id="f45" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">45</container>
+                     <unittitle localtype="genericfolder"> Titlepage, <title xmlns="http://ead3.archivists.org/schema/undeprecated/" render="italic">
+                           <part xmlns="http://ead3.archivists.org/schema/">Commentaries on the Laws of England</part>
+                        </title>, by Sir
+                        William Blackstone, signed "A. Hayward" </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1791</unitdate>
+                  </did>
+                  <scopecontent>
+                     <p> London: Printed by A. Strahan and W. Woodfall, for T. Cadell, in the Strand
+                     </p>
+                  </scopecontent>
+                  <scopecontent>
+                     <p> Includes engraving of Blackstone </p>
+                  </scopecontent>
+               </c03>
+               <c03 id="f46" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">46</container>
+                     <unittitle localtype="genericfolder"> Titlepage, <title xmlns="http://ead3.archivists.org/schema/undeprecated/" render="italic">
+                           <part xmlns="http://ead3.archivists.org/schema/">Discours de M. Thiers sur le Régime Commercial de la
+                           France</part>
+                        </title>, signed "Monsier Hayward" by M. Thiers </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1851</unitdate>
+                  </did>
+                  <scopecontent>
+                     <p> Paris: Paulin, Lheureux et cie, Éditeurs, Rue Richelieu, 60 </p>
+                  </scopecontent>
+               </c03>
+               <c03 id="f47" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">47</container>
+                     <unittitle localtype="genericfolder"> Theater program, "87 Eaton Place" </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1867 Jun 20</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f48" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">48</container>
+                     <unittitle localtype="genericfolder"> Calling and invitation cards </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1873, n.d.</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f49" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">49-52</container>
+                     <unittitle localtype="genericfolder"> Clippings related to Hayward </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1863-[74]</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f53" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">53</container>
+                     <unittitle localtype="genericfolder"> Menu, "Café de Paris, Angilbert et Guerraz,
+                        Glaciers-Restauranteurs," signed "A. Hayward" </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+                  <scopecontent>
+                     <p> Paris: De l'Imprimerie de Gondelier Moorisset, Rue Saint-Denis, no. 350, et
+                        passage du Caire, no. 110 </p>
+                  </scopecontent>
+               </c03>
+               <c03 id="f54" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">1</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">54</container>
+                     <unittitle localtype="genericfolder"> Circular, "John Stuart Mill's Antipopulation
+                        Theory the result of paternal teaching..." </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+                  <scopecontent>
+                     <p> The full title is "John Stuart Mill's Antipopulation theory the result of
+                        paternal teaching and an essential part of the philosophy of the school."
+                     </p>
+                  </scopecontent>
+               </c03>
+               <c03 id="d0e763" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <unittitle localtype="genericfolder"> Broadside, "Men of the Day, No. 117, Mr.
+                        Abraham Hayward, Q.C." </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                     <physloc xmlns="http://ead3.archivists.org/schema/undeprecated/"> Stored in: Oversize, Box 5, folder 101 </physloc>
+                  </did>
+               </c03>
+            </c02>
+         </c01>
+         <c01 id="SIII" level="series">
+            <did xmlns="http://ead3.archivists.org/schema/">
+               <unitid xmlns="http://ead3.archivists.org/schema/undeprecated/">Series III.</unitid>
+               <unittitle localtype="head"> Other Papers </unittitle>
+               <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1833-1885</unitdate>
+               <physdesc xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <extent>0.21' (1 box)</extent>
+               </physdesc>
+            </did>
+            <arrangement>
+               <p> Series III, Other Papers, is arranged chronologically. </p>
+            </arrangement>
+            <c02 id="d0e809" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <unittitle localtype="psh1"> Account of the estate of Robert Abraham </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1833-38</unitdate>
+                  <physloc xmlns="http://ead3.archivists.org/schema/undeprecated/"> Stored in: Oversize, Box 5, folder 102 </physloc>
+               </did>
+            </c02>
+            <c02 id="f55" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">2</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">55</container>
+                  <unittitle localtype="genericfolder"> Walland and Son timber account </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1841 Jan 25</unitdate>
+               </did>
+            </c02>
+            <c02 id="f56" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">2</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">56</container>
+                  <unittitle localtype="genericfolder"> Abraham Hayward passport </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1862-71</unitdate>
+               </did>
+               <scopecontent>
+                  <p> Includes endorsements from Turkey, Italy, Russia, France, and Germany </p>
+               </scopecontent>
+            </c02>
+            <c02 id="f57" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">2</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">57</container>
+                  <unittitle localtype="genericfolder"> Blundell's School, Tiverton. Manuscript copy of
+                     Abraham Hayward's entry in the school registry </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1885 May 18</unitdate>
+               </did>
+            </c02>
+            <c02 id="f58" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">2</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">58</container>
+                  <unittitle localtype="genericfolder"> Garden plan, "A Sketch or design for an orchard
+                     and Fruit Garden" </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f59" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">2</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">59</container>
+                  <unittitle localtype="genericfolder"> Manuscript copies of poems </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+               <scopecontent>
+                  <p> Includes poems by Caroline Sheridan Norton, Rev. E. D. Rhodes, and others </p>
+               </scopecontent>
+            </c02>
+            <c02 id="f60" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">2</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">60</container>
+                  <unittitle localtype="genericfolder"> Manuscript whist instructions </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f61" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">2</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">61</container>
+                  <unittitle localtype="genericfolder"> Note enclosing feathers </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+         </c01>
+         <c01 id="SIV" level="series">
+            <did xmlns="http://ead3.archivists.org/schema/">
+               <unitid xmlns="http://ead3.archivists.org/schema/undeprecated/">Series IV.</unitid>
+               <unittitle localtype="head"> Photographs </unittitle>
+               <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1875-1878</unitdate>
+               <physdesc xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <extent>0.21' (1 box)</extent>
+               </physdesc>
+            </did>
+            <c02 id="f62" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">3</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">62</container>
+                  <unittitle localtype="genericfolder"> Carte-de-visite album </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1875-78</unitdate>
+               </did>
+               <scopecontent>
+                  <p> Contains 12 carte-de-visite portraits, showing Abraham Hayward and eleven
+                     women, including Mrs. Cornwallis West, Mrs. Wheeler, Olive Campbell, Florence
+                     de Bretton, Madaillae Florian, and Countess Fanny Karolyi </p>
+               </scopecontent>
+            </c02>
+         </c01>
+         <c01 id="SV" level="series">
+            <did xmlns="http://ead3.archivists.org/schema/">
+               <unitid xmlns="http://ead3.archivists.org/schema/undeprecated/">Series V.</unitid>
+               <unittitle localtype="head"> Brian Roberts Research Materials </unittitle>
+               <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1943-1962</unitdate>
+               <physdesc xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <extent>0.42' (1 box)</extent>
+               </physdesc>
+            </did>
+            <arrangement>
+               <p> Series V, Brian Roberts Research Materials, is arranged into four subseries:
+                  Correspondence, Writings, Notes, and Other Papers. Correspondence is arranged
+                  alphabetically. Manuscript notes are arranged roughly by the decade of the
+                  original materials. </p>
+            </arrangement>
+            <c02 id="d0e965" level="subseries">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <unittitle localtype="head"> CORRESPONDENCE </unittitle>
+               </did>
+               <c03 id="f63" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">63-64</container>
+                     <unittitle localtype="genericfolder"> Abbot-Anderson, Muriel </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958-59</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f65" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">65</container>
+                     <unittitle localtype="genericfolder"> Beale, Colin </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 May</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f66" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">66</container>
+                     <unittitle localtype="genericfolder"> Blake, Humphrey </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 Oct 16</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f67" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">67</container>
+                     <unittitle localtype="genericfolder"> Elliot, Inez R. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1959 Jan 7</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f68" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">68</container>
+                     <unittitle localtype="genericfolder"> Hart, E. A. P. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 Aug 27</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f69" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">69</container>
+                     <unittitle localtype="genericfolder"> Hayward, J. C. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 Jun 4</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f70" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">70</container>
+                     <unittitle localtype="genericfolder"> Hayward, John </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958-59</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f71" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">71</container>
+                     <unittitle localtype="genericfolder"> Hayward, Margaret </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f72" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">72</container>
+                     <unittitle localtype="genericfolder"> Hayward, Mary M. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 Oct</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f73" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">73</container>
+                     <unittitle localtype="genericfolder"> Holden, Bill </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f74" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">74</container>
+                     <unittitle localtype="genericfolder"> Long, L. J. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 May 20</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f75" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">75</container>
+                     <unittitle localtype="genericfolder"> Mahood, A. S. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1957 Nov 6</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f76" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">76</container>
+                     <unittitle localtype="genericfolder"> Mineka, Francis E. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 Aug 19</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f77" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">77</container>
+                     <unittitle localtype="genericfolder"> Moody, Graham C. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f78" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">78</container>
+                     <unittitle localtype="genericfolder"> [Pauly?], C. F. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 Mar 26</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f79" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">79</container>
+                     <unittitle localtype="genericfolder"> Pauly, Michael St. John </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 May 29</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f80" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">80</container>
+                     <unittitle localtype="genericfolder"> Rathbone, Maurice G. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 Aug 29</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f81" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">81</container>
+                     <unittitle localtype="genericfolder"> Roberts, T. V. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1961-62</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f82" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">82</container>
+                     <unittitle localtype="genericfolder"> Sandell, Richard E. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1957 Dec 9</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f83" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">83</container>
+                     <unittitle localtype="genericfolder"> Scott, Joseph W. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 May 19</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f84" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">84</container>
+                     <unittitle localtype="genericfolder"> Steele, Edwin H. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 Dec 5</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f85" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">85</container>
+                     <unittitle localtype="genericfolder"> Stuart, D. W. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 May 10</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f86" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">86</container>
+                     <unittitle localtype="genericfolder"> Walker, E. </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 Apr 17</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f87" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">87</container>
+                     <unittitle localtype="genericfolder"> Wyck, ---- </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958 Feb 4</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f88" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">88</container>
+                     <unittitle localtype="genericfolder"> ----, Donald </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f89" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">89</container>
+                     <unittitle localtype="genericfolder"> Unidentified </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1958</unitdate>
+                  </did>
+               </c03>
+            </c02>
+            <c02 id="d0e1213" level="subseries">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <unittitle localtype="head"> WRITINGS </unittitle>
+               </did>
+               <c03 id="d0e1217" level="subseries">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <unittitle localtype="head"> Biography of Abraham Hayward </unittitle>
+                  </did>
+                  <c04 id="f90" level="file">
+                     <did xmlns="http://ead3.archivists.org/schema/">
+                        <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                        <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">90</container>
+                        <unittitle localtype="genericfolder"> Typescript, "Chapter 1" </unittitle>
+                        <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                     </did>
+                  </c04>
+                  <c04 id="f91" level="file">
+                     <did xmlns="http://ead3.archivists.org/schema/">
+                        <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                        <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">91</container>
+                        <unittitle localtype="genericfolder"> Typescript, "Chapter 2" </unittitle>
+                        <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                     </did>
+                  </c04>
+                  <c04 id="f92" level="file">
+                     <did xmlns="http://ead3.archivists.org/schema/">
+                        <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                        <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">92</container>
+                        <unittitle localtype="genericfolder"> Typescript, "Chapter 2" </unittitle>
+                        <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                     </did>
+                  </c04>
+                  <c04 id="f93" level="file">
+                     <did xmlns="http://ead3.archivists.org/schema/">
+                        <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                        <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">93</container>
+                        <unittitle localtype="genericfolder"> Typescript, "Chapter 3" </unittitle>
+                        <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                     </did>
+                  </c04>
+               </c03>
+            </c02>
+            <c02 id="d0e1257" level="subseries">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <unittitle localtype="head"> NOTES </unittitle>
+               </did>
+               <scopecontent>
+                  <p> Manuscript transcriptions </p>
+               </scopecontent>
+               <c03 id="d0e1268" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <unittitle localtype="psh1"> Writings and correspondence related to Hayward
+                        (1820s-1950s, n.d.) </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                     <physloc xmlns="http://ead3.archivists.org/schema/undeprecated/"> Stored in: Oversize, Box 6, folders 103-116 </physloc>
+                  </did>
+               </c03>
+               <c03 id="f94" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">94</container>
+                     <unittitle localtype="genericfolder"> Typescript transcriptions of writings and
+                        correspondence related to Hayward </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f95" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">95</container>
+                     <unittitle localtype="genericfolder"> Hayward timeline notes (1834-72) </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f96" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">96</container>
+                     <unittitle localtype="genericfolder"> Research notebook </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+                  <scopecontent>
+                     <p> Includes manuscript transcriptions of letters in Series I, Correspondence
+                     </p>
+                  </scopecontent>
+               </c03>
+               <c03 id="f97" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">97</container>
+                     <unittitle localtype="genericfolder"> Note cards </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+            </c02>
+            <c02 id="d0e1326" level="subseries">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <unittitle localtype="head"> OTHER PAPERS </unittitle>
+               </did>
+               <c03 id="f98" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">98</container>
+                     <unittitle localtype="genericfolder"> British Museum application for photography of
+                           <title xmlns="http://ead3.archivists.org/schema/undeprecated/" render="italic">
+                           <part xmlns="http://ead3.archivists.org/schema/">Vanity Fair</part>
+                        </title> cartoons </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1943 Nov 13</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f99" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">99</container>
+                     <unittitle localtype="genericfolder"> Invoice for purchase of "Hayward colln" </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1959 Dec 15</unitdate>
+                  </did>
+               </c03>
+               <c03 id="f100" level="file">
+                  <did xmlns="http://ead3.archivists.org/schema/">
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">4</container>
+                     <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">100</container>
+                     <unittitle localtype="genericfolder"> Prints of a portrait of Laura Bell </unittitle>
+                     <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+                  </did>
+               </c03>
+            </c02>
+         </c01>
+         <c01 id="OS" level="series">
+            <did xmlns="http://ead3.archivists.org/schema/">
+               <unittitle localtype="head"> Oversize </unittitle>
+               <physdesc xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <extent>1.67' (1 box)</extent>
+               </physdesc>
+            </did>
+            <c02 id="f101" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">5</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">101</container>
+                  <unittitle localtype="genericfolder"> Broadside, "Men of the Day, No. 117, Mr. Abraham
+                     Hayward, Q.C." (in Series II) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f102" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">5</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">102</container>
+                  <unittitle localtype="genericfolder"> Account of the estate of Robert Abraham (in
+                     Series III) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">1833-38</unitdate>
+               </did>
+            </c02>
+            <c02 id="f103" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">6</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">103</container>
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
+                     (1820s-30s) (in Series V) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f104" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">6</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">104-106</container>
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
+                     (1840s) (in Series V) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f107" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">6</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">107</container>
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
+                     (1850s) (in Series V) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f108" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">6</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">108</container>
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
+                     (1860s) (in Series V) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f109" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">6</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">109-110</container>
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
+                     (1870s) (in Series V) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f111" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">6</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">111</container>
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
+                     (1880s) (in Series V) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f112" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">6</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">112</container>
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
+                     (1890s) (in Series V) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f113" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">6</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">113</container>
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
+                     (1900s-10s) (in Series V) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f114" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">6</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">114</container>
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
+                     (1920s-50s) (in Series V) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+            <c02 id="f115" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">6</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">115-116</container>
+                  <unittitle localtype="genericfolder"> Writings and correspondence related to Hayward
+                     (n.d.) (in Series V) </unittitle>
+                  <unitdate xmlns="http://ead3.archivists.org/schema/undeprecated/">n.d.</unitdate>
+               </did>
+            </c02>
+         </c01>
+         <c01 id="RFO" level="series">
+            <did xmlns="http://ead3.archivists.org/schema/">
+               <unittitle localtype="head"> Restricted Fragile Oversize </unittitle>
+               <physdesc xmlns="http://ead3.archivists.org/schema/undeprecated/">
+                  <extent>1.67' (1 box)</extent>
+               </physdesc>
+            </did>
+            <scopecontent>
+               <p> Box 7, Restricted Fragile Oversize, contains fragile originals. The material is
+                  arranged in folder order and may only be seen with the permission of the
+                  appropriate curator. Preservattion photocopies have been substituted in the main
+                  files for reference use. </p>
+            </scopecontent>
+            <c02 id="f117" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">7</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">117</container>
+                  <unittitle localtype="genericfolder"> Box 1, folder 49 </unittitle>
+               </did>
+            </c02>
+            <c02 id="f118" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">7</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">118</container>
+                  <unittitle localtype="genericfolder"> Box 1, folder 50 </unittitle>
+               </did>
+            </c02>
+            <c02 id="f119" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">7</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">119</container>
+                  <unittitle localtype="genericfolder"> Box 1, folder 51 </unittitle>
+               </did>
+            </c02>
+            <c02 id="f120" level="file">
+               <did xmlns="http://ead3.archivists.org/schema/">
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Box">7</container>
+                  <container xmlns="http://ead3.archivists.org/schema/undeprecated/" localtype="Folder">120</container>
+                  <unittitle localtype="genericfolder"> Box 1, folder 52 </unittitle>
+               </did>
+            </c02>
+         </c01>
+      </dsc>
+      <index encodinganalog="index"
+             audience="internal"
+             id="index"
+             altrender="index">
+         <head>Index</head>
+         <indexentry>
+            <famname>
+               <part xmlns="http://ead3.archivists.org/schema/">Partridge Family</part>
+            </famname>
+            <ref target="f120">reference</ref>
+         </indexentry>
+         <indexentry>
+            <persname>
+               <part xmlns="http://ead3.archivists.org/schema/">Alan Ginsberg</part>
+            </persname>
+            <ptr target="f119"/>
+         </indexentry>
+         <indexentry>
+            <corpname>
+               <part xmlns="http://ead3.archivists.org/schema/">EON Productions</part>
+            </corpname>
+            <ptrgrp>
+               <ptr target="f113"/>
+               <ptr target="f112"/>
+            </ptrgrp>
+         </indexentry>
+      </index>
+   </archdesc>
+</ead>
