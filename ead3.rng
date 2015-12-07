@@ -695,7 +695,9 @@
         </choice>
       </attribute>
       <optional>
-        <attribute name="otherdaotype"/>
+        <attribute name="otherdaotype">
+          <data type="token"/>
+        </attribute>
       </optional>
       <optional>
         <ref name="a.coverage"/>
@@ -878,7 +880,9 @@
         </choice>
       </attribute>
       <optional>
-        <attribute name="otherphysdescstructuredtype"/>
+        <attribute name="otherphysdescstructuredtype">
+          <data type="token"/>
+        </attribute>
       </optional>
       <ref name="a.coverage"/>
       <element name="quantity">
@@ -1840,6 +1844,14 @@
             <value>disc</value>
             <value>circle</value>
             <value>square</value>
+            <value>none</value>
+            <value>inherit</value>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="numeration">
+          <choice>
             <value>decimal</value>
             <value>decimal-leading-zero</value>
             <value>lower-roman</value>
@@ -1851,19 +1863,7 @@
             <value>georgian</value>
             <value>lower-alpha</value>
             <value>upper-alpha</value>
-            <value>none</value>
             <value>inherit</value>
-          </choice>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute name="numeration">
-          <choice>
-            <value>arabic</value>
-            <value>upperalpha</value>
-            <value>loweralpha</value>
-            <value>upperroman</value>
-            <value>lowerroman</value>
           </choice>
         </attribute>
       </optional>
@@ -2430,7 +2430,7 @@
       </optional>
       <optional>
         <attribute name="otherdsctype">
-          <data type="NMTOKEN"/>
+          <data type="token"/>
         </attribute>
       </optional>
       <optional>
@@ -2642,7 +2642,7 @@
           </attribute>
           <optional>
             <attribute name="otherrelationtype">
-              <data type="string"/>
+              <data type="token"/>
             </attribute>
           </optional>
           <optional>
@@ -2767,47 +2767,17 @@
   <rng:define name="m.datesingle">
     <optional>
       <attribute name="standarddate">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+          <data type="token"/>
       </attribute>
     </optional>
     <optional>
       <attribute name="notbefore">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+        <data type="token"/> 
       </attribute>
     </optional>
     <optional>
       <attribute name="notafter">
-        <choice>
-          <data type="date">
-            <param name="maxInclusive">2099-12-31</param>
-          </data>
-          <data type="gYear">
-            <param name="maxInclusive">2099</param>
-          </data>
-          <data type="gYearMonth">
-            <param name="maxInclusive">2099-12</param>
-          </data>
-        </choice>
+        <data type="token"/>
       </attribute>
     </optional>
     <ref name="m.mixed.basic"/>
@@ -2987,7 +2957,7 @@
   <rng:define name="am.desc.base">
     <optional>
       <attribute name="otherlevel">
-        <data type="NMTOKEN"/>
+        <data type="token"/>
       </attribute>
     </optional>
     <optional>
