@@ -63,6 +63,6 @@ Note that the oXygen XML Editor (http://www.oxygenxml.com/) comes bundled with S
 
 For descriptions of outstanding issues see: https://github.com/SAA-SDT/EAD2002toEAD3/issues/
 
-Given an EAD2002-valid source. in most cases ead2002toEAD3.xsl should produce valid EAD3 instances with little or no data loss, especially for source files valid agains the EAD2002 W3C XML Schema a RelaxNG schemas. However, instances valid against the EAD 2002 DTD which make use of external entity references may fail .
+Given an EAD2002-valid source, in most cases ead2002toEAD3.xsl should produce valid EAD3 instances with little or no data loss, especially for source files valid agains the EAD2002 W3C XML Schema a RelaxNG schemas. However, instances valid against the EAD 2002 DTD which make use of external entity references may fail .
 
 Please report any bugs or other issues at the issue tracker for this project https://github.com/SAA-SDT/EAD2002toEAD3/issues/new
