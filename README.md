@@ -56,6 +56,10 @@ Note that the oXygen XML Editor (http://www.oxygenxml.com/) comes bundled with S
   * default: machine
 * **agent**: supplies value for /ead/control/maintenancehistory/maintenanceevent/agent
   * value: Default Value or Value Supplied by User
-  * default: 'EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl'
+  * default: 'EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)'
 
 ## Known Issues
+
+Given an EAD2002-valid source. in most cases ead2002toEAD3.xsl should produce valid EAD3 instances with little or no data loss, especially for source files valid agains the EAD2002 W3C XML Schema a RelaxNG schemas. However, instances valid against the EAD 2002 DTD which make use of external entity references may fail.
+
+Please report any bugs or other issues at the issue tracker for this project: 
