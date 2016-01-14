@@ -30,6 +30,10 @@ Note that the oXygen XML Editor (http://www.oxygenxml.com/) comes bundled with S
 
 ## Parameters
 
+A number of parameters may be set by the user. The default value should be suitable for most. To set a parameter using saxon on the command line, append param="value" to the commands described above. For example:
+
+`$ java -jar \PATH\TO/saxon9he.jar -o:[OUTPUT FILENAME] -xsl:[\PATH\TO\ead2002toEAD3.xsl] -s:[\PATH\TO\source EAD2002 file] addMigrationMessages=false()`
+
 * **outputUndeprecatedEAD3**: set to true() to produce an instance *with* elements deprecated in EAD3  
   * values: true() | false()
   * default: false()
