@@ -30,13 +30,13 @@ Note that the oXygen XML Editor (http://www.oxygenxml.com/) comes bundled with S
 
 ## Parameters
 
-* **outputUndeprecatedEAD3**
+* **outputUndeprecatedEAD3**: set to true() to produce an instance *with* elements deprecated in EAD3  
   * values: true() | false()
   * default: false()
-* **addMigrationComments**
+* **addMigrationComments**: set to false() to suppress comments in converted instance recording actions performed in the transformation 
   * values: true() | false()
   * default: true()
-* **addMigrationMessages**
+* **addMigrationMessages**: set to false() to suppress messages sent to stderr reporting actions performed in the transformation
   * values: true() | false()
   * default: true()
 * **maintenancestatusValue**: supplies value for /ead/control/maintenancestatus
