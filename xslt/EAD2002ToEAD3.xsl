@@ -72,9 +72,9 @@ For these and/or other purposes and motivations, and without any expectation of 
     
     <!-- user parameter to control validation schema of output -->
     <xsl:param name="outputValidation">
-        <!--<xsl:value-of select="'dtd'"/>-->
-        <xsl:value-of select="'rng'"/>
+        <!--<xsl:value-of select="'rng'"/>-->
         <!--<xsl:value-of select="'xsd'"/>-->
+        <xsl:value-of select="'dtd'"/>
     </xsl:param>
     
     <!-- user parameter to specify path to schema -->
@@ -88,30 +88,30 @@ For these and/or other purposes and motivations, and without any expectation of 
             <xsl:when test="$outputValidation='rng'">
                 <xsl:choose>
                     <xsl:when test="$outputUndeprecatedEAD3 = false()">
-                        <xsl:value-of select="ead3.rng"/>
+                        <xsl:value-of select="'ead3.rng'"/>
                     </xsl:when>
                     <xsl:when test="$outputUndeprecatedEAD3 = true()">
-                        <xsl:value-of select="ead3_undeprecated.rng"/>
+                        <xsl:value-of select="'ead3_undeprecated.rng'"/>
                     </xsl:when>
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="$outputValidation='xsd'">
                 <xsl:choose>
                     <xsl:when test="$outputUndeprecatedEAD3 = false()">
-                        <xsl:value-of select="ead3.xsd"/>
+                        <xsl:value-of select="'ead3.xsd'"/>
                     </xsl:when>
                     <xsl:when test="$outputUndeprecatedEAD3 = true()">
-                        <xsl:value-of select="ead3_undeprecated.xsd"/>
+                        <xsl:value-of select="'ead3_undeprecated.xsd'"/>
                     </xsl:when>
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="$outputValidation='rng'">
                 <xsl:choose>
                     <xsl:when test="$outputUndeprecatedEAD3 = false()">
-                        <xsl:value-of select="ead3.dtd"/>
+                        <xsl:value-of select="'ead3.dtd'"/>
                     </xsl:when>
                     <xsl:when test="$outputUndeprecatedEAD3 = true()">
-                        <xsl:value-of select="ead3_undeprecated.dtd"/>
+                        <xsl:value-of select="'ead3_undeprecated.dtd'"/>
                     </xsl:when>
                 </xsl:choose>
             </xsl:when>
@@ -177,24 +177,12 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="/">
         <xsl:choose>
             <xsl:when test="$outputValidation='rng'">
-                <xsl:choose>
-                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
-                        <xsl:processing-instruction name="xml-model">
-            <xsl:text>href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
-        </xsl:processing-instruction>
-                        <xsl:processing-instruction name="oxygen">
-            <xsl:text>RNGSchema="../../ead3.rng" type="xml"</xsl:text>
-        </xsl:processing-instruction>
-                    </xsl:when>
-                    <xsl:when test="$outputUndeprecatedEAD3=true()">
-                        <xsl:processing-instruction name="xml-model">
-            <xsl:text>href="../../ead3_undeprecated.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
-        </xsl:processing-instruction>
-                        <xsl:processing-instruction name="oxygen">
-            <xsl:text>RNGSchema="../../ead3_undeprecated.rng" type="xml"</xsl:text>
-        </xsl:processing-instruction>
-                    </xsl:when>
-                </xsl:choose>
+                <xsl:processing-instruction name="xml-model">
+                     <xsl:value-of select="concat('href=&quot;',$schemaPath,$schemaName,'&quot; type=&quot;application/xml&quot; schematypens=&quot;http://relaxng.org/ns/structure/1.0&quot;')"/>
+                </xsl:processing-instruction>
+                <xsl:processing-instruction name="oxygen">
+                    <xsl:value-of select="concat('RNGSchema=&quot;',$schemaPath,$schemaName,' type=&quot;xml&quot;')"/>
+                </xsl:processing-instruction>
             </xsl:when>
             <xsl:when test="$outputValidation='xsd'"/>
             <xsl:when test="$outputValidation='dtd'">
@@ -243,16 +231,9 @@ For these and/or other purposes and motivations, and without any expectation of 
          <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
              <xsl:apply-templates select="@id, @altrender, @audience, @relatedencoding"/>
              <xsl:if test="$outputValidation='xsd'">
-                <xsl:choose>
-                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
-                        <xsl:attribute name="xsl:schemaLocation">
-                            <xsl:value-of select="concat($eadxmlns, ' ', )"/>
-                        </xsl:attribute>
-                    </xsl:when>
-                    <xsl:when test="$outputUndeprecatedEAD3=true()">
-                        
-                    </xsl:when>
-                </xsl:choose>
+                 <xsl:attribute name="schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance">
+                     <xsl:value-of select="concat($eadxmlns, ' ', $schemaPath, $schemaName)"/>
+                 </xsl:attribute>
             </xsl:if>
              <xsl:apply-templates/>
         </xsl:element>
