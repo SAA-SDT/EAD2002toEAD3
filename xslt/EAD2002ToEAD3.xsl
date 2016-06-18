@@ -69,6 +69,13 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- user parameter to control migration messages -->
     <xsl:param name="addMigrationMessages" select="true()"/>
+    
+    <!-- user parameter to control validation schema of output -->
+    <xsl:param name="outputValidation">
+        <!--<xsl:value-of select="'dtd'"/>-->
+        <xsl:value-of select="'rng'"/>
+        <!--<xsl:value-of select="'xsd'"/>-->
+    </xsl:param>
 
     <!-- user parameter for control/maintenancestatus -->
     <!-- maintenancestatus enumeration '[revised, deleted, new, 
