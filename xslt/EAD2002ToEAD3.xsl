@@ -9,7 +9,7 @@
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
             <xd:p>
-                <xd:b>Last Updated: 2015-10-22</xd:b>
+                <xd:b>Last Updated: 2016-06</xd:b>
             </xd:p>
             <xd:p><xd:b>Authors:</xd:b> Terry Catapano and Mike Rush</xd:p>
             <xd:p>Convert EAD2002 instance to EAD3</xd:p>
@@ -105,7 +105,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     </xsl:when>
                 </xsl:choose>
             </xsl:when>
-            <xsl:when test="$outputValidation='rng'">
+            <xsl:when test="$outputValidation='dtd'">
                 <xsl:choose>
                     <xsl:when test="$outputUndeprecatedEAD3 = false()">
                         <xsl:value-of select="'ead3.dtd'"/>
@@ -186,14 +186,10 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:when>
             <xsl:when test="$outputValidation='xsd'"/>
             <xsl:when test="$outputValidation='dtd'">
-                <xsl:choose>
-                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
-                        
-                    </xsl:when>
-                    <xsl:when test="$outputUndeprecatedEAD3=true()">
-                        
-                    </xsl:when>
-                </xsl:choose>
+                <xsl:value-of select=""/>
+                <xsl:processing-instruction name="DOCTYPE">
+                     <xsl:value-of select="concat('ead PUBLIC &quot;+//ISBN 1-931666-00-8//DTD ',$schemaName, ' (Encoded Archival Description (EAD) Version 3)//EN&quot; &quot;', $schemaPath,$schemaName,'&quot;')"/>
+                </xsl:processing-instruction>
             </xsl:when>
         </xsl:choose>
 
