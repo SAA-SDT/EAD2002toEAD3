@@ -43,6 +43,15 @@ A number of parameters may be set by the user. The default value should be suita
 * **addMigrationMessages**: set to false() to suppress messages sent to stderr reporting actions performed in the transformation
   * values: true() | false()
   * default: true()
+* **outputValidation** set to rng, xsd, or dtd to indicate the desired type of validation schema for the output file
+  * values: rng | xsd | dtd
+  * default: rng
+* **schemaPath** supplies path to the schema
+  * value: Default Value or Value Supplied by User
+  * default: ../../
+* **schemaName** supplies schema filename
+  * values: ead3.rng | ead3_undeprecated.rng | ead3.xsd | ead3_undeprecated.xsd | ead3.dtd | ead3_undeprecated.dtd
+  * default: Determined by values of $outputValidation and #outputUndeprecatedEAD3
 * **maintenancestatusValue**: supplies value for /ead/control/maintenancestatus
   * values: revised | deleted | new | deletedsplit | deletedmerged | deletedreplaced | cancelled | derived
   * default: revised
