@@ -82,7 +82,41 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:value-of select="'../../'"/>
     </xsl:param>
     
-    
+    <!-- user parameter to specify the schema filename -->
+    <xsl:param name="schemaName">
+        <xsl:choose>
+            <xsl:when test="$outputValidation='rng'">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
+                        <xsl:value-of select="ead3.rng"/>
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3 = true()">
+                        <xsl:value-of select="ead3_undeprecated.rng"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$outputValidation='xsd'">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
+                        <xsl:value-of select="ead3.xsd"/>
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3 = true()">
+                        <xsl:value-of select="ead3_undeprecated.xsd"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$outputValidation='rng'">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
+                        <xsl:value-of select="ead3.dtd"/>
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3 = true()">
+                        <xsl:value-of select="ead3_undeprecated.dtd"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:param>
 
     <!-- user parameter for control/maintenancestatus -->
     <!-- maintenancestatus enumeration '[revised, deleted, new, 
