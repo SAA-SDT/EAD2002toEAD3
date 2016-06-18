@@ -1842,7 +1842,14 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:with-param>
         </xsl:call-template>-->
         <xsl:attribute name="{substring-after(name(), ':')}">
-            <xsl:value-of select="normalize-space(lower-case(.))"/>
+            <xsl:choose>
+                <xsl:when test="local-name(.)='href'">
+                    <xsl:value-of select="."/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="normalize-space(lower-case(.))"/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:attribute>
     </xsl:template>
     
