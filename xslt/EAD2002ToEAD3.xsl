@@ -76,6 +76,13 @@ For these and/or other purposes and motivations, and without any expectation of 
         <xsl:value-of select="'rng'"/>
         <!--<xsl:value-of select="'xsd'"/>-->
     </xsl:param>
+    
+    <!-- user parameter to specify path to schema -->
+    <xsl:param name="schemaPath">
+        <xsl:value-of select="'../../'"/>
+    </xsl:param>
+    
+    
 
     <!-- user parameter for control/maintenancestatus -->
     <!-- maintenancestatus enumeration '[revised, deleted, new, 
