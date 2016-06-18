@@ -135,21 +135,36 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="/">
         <xsl:choose>
-            <xsl:when test="$outputUndeprecatedEAD3=false()">
-                <xsl:processing-instruction name="xml-model">
+            <xsl:when test="$outputValidation='rng'">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
+                        <xsl:processing-instruction name="xml-model">
             <xsl:text>href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
         </xsl:processing-instruction>
-                <xsl:processing-instruction name="oxygen">
+                        <xsl:processing-instruction name="oxygen">
             <xsl:text>RNGSchema="../../ead3.rng" type="xml"</xsl:text>
         </xsl:processing-instruction>
-            </xsl:when>
-            <xsl:when test="$outputUndeprecatedEAD3=true()">
-                <xsl:processing-instruction name="xml-model">
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3=true()">
+                        <xsl:processing-instruction name="xml-model">
             <xsl:text>href="../../ead3_undeprecated.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
         </xsl:processing-instruction>
-                <xsl:processing-instruction name="oxygen">
+                        <xsl:processing-instruction name="oxygen">
             <xsl:text>RNGSchema="../../ead3_undeprecated.rng" type="xml"</xsl:text>
         </xsl:processing-instruction>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$outputValidation='xsd'"/>
+            <xsl:when test="$outputValidation='dtd'">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
+                        
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3=true()">
+                        
+                    </xsl:when>
+                </xsl:choose>
             </xsl:when>
         </xsl:choose>
 
@@ -181,13 +196,26 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="attribute()|text()|comment()|processing-instruction()">
         <xsl:copy/>
     </xsl:template>
-
-    <!--  need to add in the new xmlns, starting with the root ead element -->
-    <!-- xsl:template match="ead">
-        <ead>
-            <xsl:apply-templates select="@*|node()"/> 
-        </ead>
-    </xsl:template -->
+    
+     <!-- Root EAD element -->
+     <xsl:template match="ead">
+         <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+             <xsl:apply-templates select="@id, @altrender, @audience, @relatedencoding"/>
+             <xsl:if test="$outputValidation='xsd'">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
+                        <xsl:attribute name="xsl:schemaLocation">
+                            <xsl:value-of select="concat($eadxmlns, ' ', )"/>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3=true()">
+                        
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:if>
+             <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template> 
 
     <!-- ############################################### -->
     <!-- DEPRECATED ELEMENTS                             -->
