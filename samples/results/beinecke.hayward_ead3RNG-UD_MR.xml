@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ead xmlns="http://ead3.archivists.org/schema/"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml-model href="../../ead3_undeprecated.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?oxygen RNGSchema="../../ead3_undeprecated.rng type="xml"?>
+<ead xmlns="http://ead3.archivists.org/schema/undeprecated/"
      id="beinecke.hayward"
      altrender="altrender"
      audience="external"
-     relatedencoding="enigma"
-     xsi:schemaLocation="http://ead3.archivists.org/schema/ ../../ead3.xsd">
+     relatedencoding="enigma">
    <control langencoding="iso639-2b"
             scriptencoding="iso15924"
             countryencoding="iso3166-1"
@@ -211,10 +211,10 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2016-06-21T22:42:39.842-04:00">2016-06-21T22:42:39.842-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2016-06-21T23:56:23.281-04:00">2016-06-21T23:56:23.281-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
-            <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
+            <eventdescription>EAD 2002 instanace migrated to EAD3 Undeprecated (http://ead3.archivists.org/schema/undeprecated/).</eventdescription>
          </maintenanceevent>
          <maintenanceevent id="creation"
                            encodinganalog="creation"
@@ -247,7 +247,46 @@
          </maintenanceevent>
       </maintenancehistory>
    </control>
-   
+   <frontmatter>
+      <titlepage>
+         <titleproper>Guide to the Abraham Hayward Papers</titleproper>
+         <author>By John Steinbeck</author>
+         <bibseries>Bib series</bibseries>
+         <blockquote>
+            <p>Block quote</p>
+         </blockquote>
+         <date normal="2014-11-25">November 25, 2014</date>
+         <edition>Ice is back with a brand new edition!</edition>
+         <publisher>Publisher!!!</publisher>
+         <num>Number</num>
+         <sponsor>Sponsored by Dairy Queen</sponsor>
+         <subtitle>Subtitle: Sub Madness</subtitle>
+         <chronlist>
+            <chronitem>
+               <datesingle id="dateID"
+                           audience="external"
+                           altrender="chronItemDate"
+                           localtype="testDate">Today</datesingle>
+               <event>Something happened</event>
+            </chronitem>
+         </chronlist>
+         <list listtype="ordered">
+            <item>Item 1</item>
+            <item>Item 2</item>
+         </list>
+         <table>
+            <tgroup cols="2">
+               <tbody>
+                  <row>
+                     <entry>Cell 1</entry>
+                     <entry>Cell 2</entry>
+                  </row>
+               </tbody>
+            </tgroup>
+         </table>
+         <p>Address line 1, Address line 2</p>
+      </titlepage>
+   </frontmatter>
    <archdesc localtype="register"
              relatedencoding="MARC21"
              level="otherlevel"
@@ -334,7 +373,7 @@
                     localtype="unittitle"> text <abbr>abbr</abbr>
             <ref>archref</ref>
             <ref>bibref</ref>
-            bibseries
+            <bibseries>bibseries</bibseries>
             <corpname>
                <part>corpname</part>
             </corpname>
@@ -359,7 +398,7 @@
             <geogname>
                <part>geogname</part>
             </geogname>
-            imprint
+            <imprint>imprint</imprint>
             <lb/>
             <name>
                <part>name</part>
@@ -379,16 +418,14 @@
             <title>
                <part>title</part>
             </title>
-            unitdate
+            <unitdate>unitdate</unitdate>
          </unittitle>
-         <unitdate>unitdate</unitdate>
-         <unittitle label="Title:">Abraham Hayward collection 1791-1962 or something</unittitle>
-         <unitdate unitdatetype="inclusive"
-                   datechar="creation"
-                   label="Dates:"
-                   normal="1791/1962"
-                   era="ce"
-                   calendar="gregorian">1791-1962</unitdate>
+         <unittitle label="Title:">Abraham Hayward collection <unitdate unitdatetype="inclusive"
+                      datechar="creation"
+                      label="Dates:"
+                      normal="1791/1962"
+                      era="ce"
+                      calendar="gregorian">1791-1962</unitdate> or something</unittitle>
          <unitdate unitdatetype="inclusive"
                    datechar="creation"
                    label="Dates:"
@@ -396,10 +433,10 @@
                    era="ce"
                    calendar="gregorian">1791-1962</unitdate>
          <physdesc label="Physical Description:">
-            Total Boxes: 7 (incl. 3 oversize boxes)
+            <extent>Total Boxes: 7 (incl. 3 oversize boxes)</extent>
          </physdesc>
          <physdesc label="Physical Description:">
-            Linear Feet: 5.51'
+            <extent>Linear Feet: 5.51'</extent>
          </physdesc>
          <abstract label="Summary:">Correspondence, printed materials, other papers, and photographs
             related to Abraham Hayward, as well as the research materials of Hayward biographer
@@ -593,10 +630,10 @@
             </footnote>
          </p>
          </odd>
-      
-         
-         
-            
+      <descgrp localtype="admininfo" id="ai">
+         <head>Administrative Information</head>
+         <descgrp localtype="provenance" id="prov">
+            <head>Provenance</head>
             <acqinfo>
                <p>The Abraham Hayward Collection was acquired through purchase from Christopher
                   Edwards on the George Henry Nettleton Fund, 2003.</p>
@@ -610,8 +647,8 @@
                      </chronitem>
                   </chronlist>
                   <list listtype="unordered">
-               <item>blockquote item</item>
-            </list>
+                     <item>blockquote item</item>
+                  </list>
                   <table>
                      <tgroup cols="1">
                         <tbody>
@@ -627,14 +664,14 @@
                <head>Custodial History</head>
                <p>paragraph</p>
                <p>
-            <quote altrender="bq" audience="external" id="bq2">
+                  <quote altrender="bq" audience="external" id="bq2">
                      blockquote paragraph
                      blockquote addressline, blockquote addressline 2
                      
                      
                      
                   </quote>
-         </p>
+               </p>
                
                   
                   <p>custodhist/acqinfo/p</p>
@@ -644,69 +681,94 @@
                   
                
             </custodhist>
-            
-            
-         
+            <address>
+               <addressline>Address Line 1</addressline>
+               <addressline>Address Line 2</addressline>
+               <addressline>Address Line 3</addressline>
+            </address>
+            <blockquote altrender="bq" audience="external" id="bq3">
+               <p>blockquote paragraph</p>
+               <p>blockquote addressline 1, blockquote addressline 2</p>
+               <chronlist>
+                  <chronitem>
+                     <datesingle>2015</datesingle>
+                     <event>blockquote event</event>
+                  </chronitem>
+               </chronlist>
+               <list listtype="unordered">
+                  <item>blockquote item</item>
+               </list>
+               <table>
+                  <tgroup cols="1">
+                     <tbody>
+                        <row>
+                           <entry>blockquote table</entry>
+                        </row>
+                     </tbody>
+                  </tgroup>
+               </table>
+            </blockquote>
+         </descgrp>
          <altformavail encodinganalog="altform"
-                    localtype="altform"
-                    audience="internal"
-                    altrender="altform"
-                    id="altform">
+                       localtype="altform"
+                       audience="internal"
+                       altrender="altform"
+                       id="altform">
             <head>Alt Form</head>
             <p>Alt Form paragraph</p>
             <p>Address Line 1, Address Line 2, Address Line 3</p>
          </altformavail>
          <accruals encodinganalog="accruals"
-                audience="internal"
-                altrender="accruals"
-                id="accruals">
+                   audience="internal"
+                   altrender="accruals"
+                   id="accruals">
             <head>Accruals</head>
             <p>Accruals paragraph Address Line 1, Address Line 2, Address Line 3</p>
 
          </accruals>
          <appraisal encodinganalog="appraisal"
-                 audience="internal"
-                 altrender="appraisal"
-                 id="appraisal">
+                    audience="internal"
+                    altrender="appraisal"
+                    id="appraisal">
             <head>Appraisal</head>
             <p>Appraisal paragraph <footnote show="embed"
-                      id="note30"
-                      audience="external"
-                      altrender="note"
-                      actuate="onload"
-                      localtype="note">
+                         id="note30"
+                         audience="external"
+                         altrender="note"
+                         actuate="onload"
+                         localtype="note">
                   <p>appraisal/p/note</p>
                </footnote>
-         </p>
+            </p>
          </appraisal>
          <fileplan encodinganalog="fileplan"
-                audience="internal"
-                altrender="fileplan"
-                id="fileplan">
+                   audience="internal"
+                   altrender="fileplan"
+                   id="fileplan">
             <head>Fileplan</head>
             <p>Fileplan paragraph</p>
          </fileplan>
          <originalsloc localtype="originalsloc"
-                    encodinganalog="originalsloc"
-                    audience="internal"
-                    altrender="originalsloc"
-                    id="originalsloc">
+                       encodinganalog="originalsloc"
+                       audience="internal"
+                       altrender="originalsloc"
+                       id="originalsloc">
             <head>Originalsloc</head>
             <p>Originalsloc paragraph</p>
          </originalsloc>
          <phystech localtype="phystech"
-                encodinganalog="phystech"
-                audience="internal"
-                altrender="phystech"
-                id="phystech">
+                   encodinganalog="phystech"
+                   audience="internal"
+                   altrender="phystech"
+                   id="phystech">
             <head>phystech</head>
             <p>phystech paragraph</p>
          </phystech>
          <processinfo localtype="processinfo"
-                   encodinganalog="processinfo"
-                   audience="internal"
-                   altrender="processinfo"
-                   id="processinfo">
+                      encodinganalog="processinfo"
+                      audience="internal"
+                      altrender="processinfo"
+                      id="processinfo">
             <head>processinfo</head>
             <p>processinfo paragraph</p>
          </processinfo>
@@ -721,70 +783,70 @@
             <head>Separated Material</head>
             <p>blah blah</p>
             <archref>
-            <ref actuate="none"
-                 arcrole="arcrole"
-                 href="href"
-                 linkrole="linkrole"
-                 show="none"
-                 linktitle="linktitle"
-                 xpointer="xpointer">Archref abstract
+               <ref actuate="none"
+                    arcrole="arcrole"
+                    href="href"
+                    linkrole="linkrole"
+                    show="none"
+                    linktitle="linktitle"
+                    xpointer="xpointer">Archref abstract
                container
                
                
                langmaterial
                materialspec
                <footnote localtype="note"
-                         actuate="onload"
-                         altrender="note"
-                         audience="external"
-                         id="note40"
-                         show="embed">
-                  <p>note paragraph</p>
-               </footnote>
+                            actuate="onload"
+                            altrender="note"
+                            audience="external"
+                            id="note40"
+                            show="embed">
+                     <p>note paragraph</p>
+                  </footnote>
                origination
                <persname>
-                  <part>persname</part>
-               </persname>
+                     <part>persname</part>
+                  </persname>
                physdesc
                physloc
                <corpname>
-                  <part>repository</part>
-               </corpname>
+                     <part>repository</part>
+                  </corpname>
                   <corpname>
-                  <part localtype="subarea">subarea</part>
-               </corpname>
-               <date>unitdate</date>
+                     <part localtype="subarea">subarea</part>
+                  </corpname>
+                  <date>unitdate</date>
                unitid
                unittitle
             </ref>
-         </archref>
+            </archref>
             <bibref>
-            <ref actuate="none"
-                 arcrole="arcrole"
-                 href="href"
-                 linkrole="linkrole"
-                 show="none"
-                 linktitle="linktitle"
-                 xpointer="xpointer">Bibref bib series
-               imprint
+               <ref actuate="none"
+                    arcrole="arcrole"
+                    href="href"
+                    linkrole="linkrole"
+                    show="none"
+                    linktitle="linktitle"
+                    xpointer="xpointer">Bibref <bibseries>bib series</bibseries>
+                  <imprint>imprint</imprint>
                edition
                archref
                <title>
-                  <part>title</part>
+                     <part>title</part>
+                  </title>
+               </ref>
+            </bibref>
+            <p>
+               <ref>Extref</ref>
+            </p>
+            <p>
+               <ref>Ref</ref>
+            </p>
+            <p>
+               <title>
+                  <part>Title</part>
                </title>
-            </ref>
-         </bibref>
-            <p>
-            <ref>Extref</ref>
-         </p>
-            <p>
-            <ref>Ref</ref>
-         </p>
-            <p>
-            <title>
-               <part>Title</part>
-            </title>
-         </p>
+            </p>
          </separatedmaterial>
          <relatedmaterial localtype="relmat">
             <head>Related Material</head>
@@ -792,41 +854,41 @@
             <archref>Archref</archref>
             <bibref>Bibref</bibref>
             <p>
-            <ref>Extref</ref>
-         </p>
+               <ref>Extref</ref>
+            </p>
             <p>
-            <ref>Ref</ref>
-         </p>
+               <ref>Ref</ref>
+            </p>
             <p>
-            <title>
-               <part>Title</part>
-            </title>
-         </p>
+               <title>
+                  <part>Title</part>
+               </title>
+            </p>
          </relatedmaterial>
          <otherfindaid>
             <head>Related Material</head>
             <p>blah blah</p>
             <archref altrender="archref" audience="internal" id="archref">
-            <ref actuate="none"
-                 arcrole="arcrole"
-                 href="http://google.com"
-                 linkrole="role"
-                 show="none"
-                 linktitle="title"
-                 xpointer="xpointer">Archref</ref>
-         </archref>
+               <ref actuate="none"
+                    arcrole="arcrole"
+                    href="http://google.com"
+                    linkrole="role"
+                    show="none"
+                    linktitle="title"
+                    xpointer="xpointer">Archref</ref>
+            </archref>
             <bibref>Bibref</bibref>
             <p>
-            <ref>Extref</ref>
-         </p>
+               <ref>Extref</ref>
+            </p>
             <p>
-            <ref>Ref</ref>
-         </p>
+               <ref>Ref</ref>
+            </p>
             <p>
-            <title>
-               <part>Title</part>
-            </title>
-         </p>
+               <title>
+                  <part>Title</part>
+               </title>
+            </p>
          </otherfindaid>
          <bibliography>
             <head>Related Material</head>
@@ -834,63 +896,63 @@
             <archref>Archref</archref>
             <bibref>Bibref</bibref>
             <p>
-            <ref>Extref</ref>
-         </p>
+               <ref>Extref</ref>
+            </p>
             <p>
-            <ref>Ref</ref>
-         </p>
+               <ref>Ref</ref>
+            </p>
             <p>
-            <title>
-               <part>Title</part>
-            </title>
-         </p>
+               <title>
+                  <part>Title</part>
+               </title>
+            </p>
             <p>
-            <ptr href="http://extptrloc.com"
-                 altrender="extptrloc"
-                 audience="external"
-                 id="a10"
-                 linkrole="xlinkrole"
-                 linktitle="xlinktitle"
-                 xpointer="xpointer"/>, <ptr href="http://ptrloc.com"
-                 xpointer="xpointer"
-                 linktitle="xlinktitle"
-                 linkrole="xlinkrole"
-                 id="a20"
-                 audience="external"
-                 altrender="ptrloc"
-                 target="OS"/>, <ref href="http://extrefloc.com"
-                 altrender="altrender"
-                 audience="external"
-                 id="a30"
-                 linkrole="xlinkrole"
-                 linktitle="xlinktitle"
-                 xpointer="xpointer">extrefloc</ref>, <ref href="http://refloc.com"
-                 xpointer="xpointer"
-                 linktitle="xlinktitle"
-                 linkrole="xlinkrole"
-                 id="a40"
-                 audience="external"
-                 altrender="altrender"
-                 target="RFO">refloc</ref>
-         </p>
+               <ptr href="http://extptrloc.com"
+                    altrender="extptrloc"
+                    audience="external"
+                    id="a10"
+                    linkrole="xlinkrole"
+                    linktitle="xlinktitle"
+                    xpointer="xpointer"/>, <ptr href="http://ptrloc.com"
+                    xpointer="xpointer"
+                    linktitle="xlinktitle"
+                    linkrole="xlinkrole"
+                    id="a20"
+                    audience="external"
+                    altrender="ptrloc"
+                    target="OS"/>, <ref href="http://extrefloc.com"
+                    altrender="altrender"
+                    audience="external"
+                    id="a30"
+                    linkrole="xlinkrole"
+                    linktitle="xlinktitle"
+                    xpointer="xpointer">extrefloc</ref>, <ref href="http://refloc.com"
+                    xpointer="xpointer"
+                    linktitle="xlinktitle"
+                    linkrole="xlinkrole"
+                    id="a40"
+                    audience="external"
+                    altrender="altrender"
+                    target="RFO">refloc</ref>
+            </p>
          </bibliography>
          <prefercite id="cite"
-                  altrender="prefercite"
-                  audience="internal"
-                  encodinganalog="prefercite">
+                     altrender="prefercite"
+                     audience="internal"
+                     encodinganalog="prefercite">
             <head>Cite As</head>
             <p>Abraham Hayward Collection. General Collection, Beinecke Rare Book and Manuscript
                Library, Yale University.</p>
          </prefercite>
          <accessrestrict id="arest"
-                      altrender="access"
-                      audience="internal"
-                      localtype="access"
-                      encodinganalog="506">
+                         altrender="access"
+                         audience="internal"
+                         localtype="access"
+                         encodinganalog="506">
             <head>Information about Access</head>
             <p> This collection is open for research. <title render="italic">
-               <part>Restricted Fragile Oversize</part>
-            </title> in box 7 may only be consulted with
+                  <part>Restricted Fragile Oversize</part>
+               </title> in box 7 may only be consulted with
                permission of the appropriate curator. Preservation photocopies or photographic
                prints for reference use have been substituted in the main files. </p>
             <p id="legalstatus" audience="internal" altrender="legalstatus"> Legal Status FOO BAR. </p>
@@ -899,7 +961,7 @@
                <p>recursion recursion recursion</p>
             </accessrestrict>
          </accessrestrict>
-      
+      </descgrp>
       <bioghist id="bh1">
          <head>ABRAHAM HAYWARD (1801-1884) </head>
          <p>Abraham Hayward, 1801-1884, was an English essayist and translator. Born in Wiltshire,
@@ -1232,7 +1294,10 @@
             </occupation>
          </controlaccess>
       </controlaccess>
-      <dsc dsctype="combined" id="dsc" otherdsctype="otherDSCtype">
+      <dsc dsctype="combined"
+           id="dsc"
+           tpattern="tpatterndsc"
+           otherdsctype="otherDSCtype">
          <head>Collection Contents</head>
          <p>paragraph</p>
          <p>DSC ADDRESS</p>
@@ -1264,7 +1329,7 @@
                <entry>THEAD</entry>
             </row>
          </thead>
-         <c01 id="SI" level="series">
+         <c01 id="SI" level="series" tpattern="tpatternc01">
             <did>
                <unitid>Series I.</unitid>
                <unittitle localtype="head"> Correspondence </unittitle>
@@ -1279,10 +1344,10 @@
                   <ref>bibref</ref>
                   corpname
                   date
-                  dimensions
+                  <dimensions>dimensions</dimensions>
                   <emph>emph</emph>
                   <expan>expan</expan>
-                  0.21' (43 folders)
+                  <extent>0.21' (43 folders)</extent>
                   famname
                   function
                   genreform
@@ -1291,7 +1356,7 @@
                   <lb/>
                   occupation
                   persname
-                  physfacet
+                  <physfacet>physfacet</physfacet>
                   subject
                   title
                </physdesc>
@@ -1764,7 +1829,7 @@
                <unittitle localtype="head"> Printed Materials </unittitle>
                <unitdate>1791-1896</unitdate>
                <physdesc>
-                  0.21' (11 folders)
+                  <extent>0.21' (11 folders)</extent>
                </physdesc>
             </did>
             <scopecontent>
@@ -1921,7 +1986,7 @@
                <unittitle localtype="head"> Other Papers </unittitle>
                <unitdate>1833-1885</unitdate>
                <physdesc>
-                  0.21' (1 box)
+                  <extent>0.21' (1 box)</extent>
                </physdesc>
             </did>
             <arrangement>
@@ -2005,7 +2070,7 @@
                <unittitle localtype="head"> Photographs </unittitle>
                <unitdate>1875-1878</unitdate>
                <physdesc>
-                  0.21' (1 box)
+                  <extent>0.21' (1 box)</extent>
                </physdesc>
             </did>
             <c02 id="f62" level="file">
@@ -2028,7 +2093,7 @@
                <unittitle localtype="head"> Brian Roberts Research Materials </unittitle>
                <unitdate>1943-1962</unitdate>
                <physdesc>
-                  0.42' (1 box)
+                  <extent>0.42' (1 box)</extent>
                </physdesc>
             </did>
             <arrangement>
@@ -2382,7 +2447,7 @@
             <did>
                <unittitle localtype="head"> Oversize </unittitle>
                <physdesc>
-                  1.67' (1 box)
+                  <extent>1.67' (1 box)</extent>
                </physdesc>
             </did>
             <c02 id="f101" level="file">
@@ -2498,7 +2563,7 @@
             <did>
                <unittitle localtype="head"> Restricted Fragile Oversize </unittitle>
                <physdesc>
-                  1.67' (1 box)
+                  <extent>1.67' (1 box)</extent>
                </physdesc>
             </did>
             <scopecontent>

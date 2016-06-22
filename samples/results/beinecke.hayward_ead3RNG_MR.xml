@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?oxygen RNGSchema="../../ead3.rng type="xml"?>
 <ead xmlns="http://ead3.archivists.org/schema/"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      id="beinecke.hayward"
      altrender="altrender"
      audience="external"
-     relatedencoding="enigma"
-     xsi:schemaLocation="http://ead3.archivists.org/schema/ ../../ead3.xsd">
+     relatedencoding="enigma">
    <control langencoding="iso639-2b"
             scriptencoding="iso15924"
             countryencoding="iso3166-1"
@@ -211,7 +211,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2016-06-21T22:42:39.842-04:00">2016-06-21T22:42:39.842-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2016-06-21T23:56:17.594-04:00">2016-06-21T23:56:17.594-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
