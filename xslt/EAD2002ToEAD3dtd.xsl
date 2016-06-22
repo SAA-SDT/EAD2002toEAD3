@@ -57,26 +57,24 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xd:doc>
     
     <xsl:output encoding="UTF-8" indent="yes" method="xml" doctype-public="+// http://ead3.archivists.org/schema/ //DTD ead3 (Encoded Archival Description (EAD) Version 3)//EN" doctype-system="../../ead3.dtd"/>
-
+    
     <!-- ############################################### -->
     <!-- TOP LEVEL PARAMETERS                            -->
     <!-- ############################################### -->
 
+    <!-- user parameter to control validation schema of output -->
+    <xsl:param name="outputValidation">
+        <xsl:value-of select="'dtd'"/>
+    </xsl:param>
+    
     <!-- user parameter to control deprecation -->
     <xsl:param name="outputUndeprecatedEAD3" select="false()"/>
-
+    
     <!-- user parameter to control migration comments -->
     <xsl:param name="addMigrationComments" select="true()"/>
 
     <!-- user parameter to control migration messages -->
     <xsl:param name="addMigrationMessages" select="true()"/>
-    
-    <!-- user parameter to control validation schema of output -->
-    <xsl:param name="outputValidation">
-        <!--<xsl:value-of select="'rng'"/>-->
-        <!--<xsl:value-of select="'xsd'"/>-->
-        <xsl:value-of select="'dtd'"/>
-    </xsl:param>
     
     <!-- user parameter to specify path to schema -->
     <xsl:param name="schemaPath">
@@ -225,15 +223,26 @@ For these and/or other purposes and motivations, and without any expectation of 
     
      <!-- Root EAD element -->
      <xsl:template match="ead">
-         <xsl:element name="{local-name()}">
-             <xsl:apply-templates select="@id, @altrender, @audience, @relatedencoding"/>
-             <xsl:if test="$outputValidation='xsd'">
-                 <xsl:attribute name="schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance">
-                     <xsl:value-of select="concat($eadxmlns, ' ', $schemaPath, $schemaName)"/>
-                 </xsl:attribute>
-            </xsl:if>
-             <xsl:apply-templates/>
-        </xsl:element>
+         <xsl:choose>
+             <xsl:when test="$outputValidation='dtd'">
+                 <xsl:element name="{local-name()}">
+                     <xsl:apply-templates select="@id, @altrender, @audience, @relatedencoding"/>
+                     <xsl:apply-templates/>
+                 </xsl:element>
+             </xsl:when>
+             <xsl:otherwise>
+                 <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                     <xsl:apply-templates select="@id, @altrender, @audience, @relatedencoding"/>
+                     <xsl:if test="$outputValidation='xsd'">
+                         <xsl:attribute name="schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance">
+                             <xsl:value-of select="concat($eadxmlns, ' ', $schemaPath, $schemaName)"/>
+                         </xsl:attribute>
+                     </xsl:if>
+                     <xsl:apply-templates/>
+                 </xsl:element>
+             </xsl:otherwise>
+         </xsl:choose>
+         
     </xsl:template> 
 
     <!-- ############################################### -->
@@ -1943,7 +1952,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
         originalsloc/@type | phystech/@type | processinfo/@type | relatedmaterial/@type | separatedmaterial/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
         userestrict/@type | odd/@type | note/@type | date/@type | name/@type |  persname/@type | famname/@type |
-        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type | extent/@type">
+        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type | extent/@type | descgrp/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -2281,4 +2290,6 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:element>
     </xsl:template>
 
-</xsl:stylesheet>
+    
+
+    </xsl:stylesheet>

@@ -3,7 +3,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd xlink"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ead3.archivists.org/schema/"
     version="2.0">
     <xd:doc scope="stylesheet">
         <xd:desc>
@@ -55,15 +55,19 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xd:pre>
         </xd:desc>
     </xd:doc>
-    <!--<xsl:output encoding="UTF-8" indent="yes" method="xml"/>-->
-    <xsl:output encoding="UTF-8" indent="yes" method="xml" 
-        doctype-public="+// http://ead3.archivists.org/schema/ //DTD ead3 (Encoded Archival Description (EAD) Version 3)//EN" 
-        doctype-system="../../ead3.dtd" />
-
+    
+    <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
+    
     <!-- ############################################### -->
     <!-- TOP LEVEL PARAMETERS                            -->
     <!-- ############################################### -->
-
+    
+    <!-- user parameter to control validation schema of output -->
+    <xsl:param name="outputValidation">
+        <xsl:value-of select="'rng'"/>
+        <!--<xsl:value-of select="'xsd'"/>-->
+    </xsl:param>
+    
     <!-- user parameter to control deprecation -->
     <xsl:param name="outputUndeprecatedEAD3" select="false()"/>
 
@@ -72,13 +76,6 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- user parameter to control migration messages -->
     <xsl:param name="addMigrationMessages" select="true()"/>
-    
-    <!-- user parameter to control validation schema of output -->
-    <xsl:param name="outputValidation">
-        <!--<xsl:value-of select="'rng'"/>-->
-        <!--<xsl:value-of select="'xsd'"/>-->
-        <xsl:value-of select="'dtd'"/>
-    </xsl:param>
     
     <!-- user parameter to specify path to schema -->
     <xsl:param name="schemaPath">
@@ -1956,7 +1953,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
         originalsloc/@type | phystech/@type | processinfo/@type | relatedmaterial/@type | separatedmaterial/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
         userestrict/@type | odd/@type | note/@type | date/@type | name/@type |  persname/@type | famname/@type |
-        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type | extent/@type">
+        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type | extent/@type | descgrp/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -2294,4 +2291,5 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xsl:element>
     </xsl:template>
 
+    
 </xsl:stylesheet>
