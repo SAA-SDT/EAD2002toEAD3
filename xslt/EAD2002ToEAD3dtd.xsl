@@ -55,10 +55,8 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xd:pre>
         </xd:desc>
     </xd:doc>
-    <!--<xsl:output encoding="UTF-8" indent="yes" method="xml"/>-->
-    <xsl:output encoding="UTF-8" indent="yes" method="xml" 
-        doctype-public="+// http://ead3.archivists.org/schema/ //DTD ead3 (Encoded Archival Description (EAD) Version 3)//EN" 
-        doctype-system="../../ead3.dtd" />
+    
+    <xsl:output encoding="UTF-8" indent="yes" method="xml" doctype-public="+// http://ead3.archivists.org/schema/ //DTD ead3 (Encoded Archival Description (EAD) Version 3)//EN" doctype-system="../../ead3.dtd"/>
 
     <!-- ############################################### -->
     <!-- TOP LEVEL PARAMETERS                            -->
@@ -227,26 +225,15 @@ For these and/or other purposes and motivations, and without any expectation of 
     
      <!-- Root EAD element -->
      <xsl:template match="ead">
-         <xsl:choose>
-             <xsl:when test="$outputValidation='dtd'">
-                 <xsl:element name="{local-name()}">
-                     <xsl:apply-templates select="@id, @altrender, @audience, @relatedencoding"/>
-                     <xsl:apply-templates/>
-                 </xsl:element>
-             </xsl:when>
-             <xsl:otherwise>
-                 <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
-                     <xsl:apply-templates select="@id, @altrender, @audience, @relatedencoding"/>
-                     <xsl:if test="$outputValidation='xsd'">
-                         <xsl:attribute name="schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance">
-                             <xsl:value-of select="concat($eadxmlns, ' ', $schemaPath, $schemaName)"/>
-                         </xsl:attribute>
-                     </xsl:if>
-                     <xsl:apply-templates/>
-                 </xsl:element>
-             </xsl:otherwise>
-         </xsl:choose>
-         
+         <xsl:element name="{local-name()}">
+             <xsl:apply-templates select="@id, @altrender, @audience, @relatedencoding"/>
+             <xsl:if test="$outputValidation='xsd'">
+                 <xsl:attribute name="schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance">
+                     <xsl:value-of select="concat($eadxmlns, ' ', $schemaPath, $schemaName)"/>
+                 </xsl:attribute>
+            </xsl:if>
+             <xsl:apply-templates/>
+        </xsl:element>
     </xsl:template> 
 
     <!-- ############################################### -->

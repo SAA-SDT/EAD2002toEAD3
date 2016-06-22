@@ -56,9 +56,9 @@ For these and/or other purposes and motivations, and without any expectation of 
         </xd:desc>
     </xd:doc>
     <!--<xsl:output encoding="UTF-8" indent="yes" method="xml"/>-->
-    <xsl:output encoding="UTF-8" indent="yes" method="xml" 
+    <!--<xsl:output encoding="UTF-8" indent="yes" method="xml" 
         doctype-public="+// http://ead3.archivists.org/schema/ //DTD ead3 (Encoded Archival Description (EAD) Version 3)//EN" 
-        doctype-system="../../ead3.dtd" />
+        doctype-system="../../ead3.dtd" />-->
 
     <!-- ############################################### -->
     <!-- TOP LEVEL PARAMETERS                            -->
