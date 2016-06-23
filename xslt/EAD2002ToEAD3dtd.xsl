@@ -251,9 +251,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- REMOVE ELEMENT COMPLETELY IF NOT UNDEPRECATED -->
     <xsl:template
-        match="frontmatter | runner | descgrp/address | descgrp/blockquote | 
+        match="frontmatter | runner | descgrp/blockquote | 
         descgrp/chronlist | descgp/descgrp | descgrp/head  | descgrp/list | 
-        descgrp/p | descgrp/table | descgrp/address | descgrp/blockquote | 
+        descgrp/p | descgrp/table | descgrp/blockquote | 
         descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">
@@ -1979,7 +1979,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="address[not(parent::repository) and not(parent::publicationstmt) and not(parent::descgrp)]">
+        match="address[not(parent::repository) and not(parent::publicationstmt)]">
         <xsl:choose>
             <xsl:when
                 test="not(parent::entry) 
@@ -1996,7 +1996,8 @@ For these and/or other purposes and motivations, and without any expectation of 
                 and not(parent::blockquote[parent::item])
                 and not(parent::blockquote[parent::p])
                 and not(parent::blockquote[parent::ref])
-                and not(parent::blockquote[parent::refloc])">
+                and not(parent::blockquote[parent::refloc])
+                and not(parent::descgrp)">
                 <xsl:element name="p">
                     <xsl:for-each select="addressline">
                         <xsl:apply-templates/>
@@ -2006,6 +2007,28 @@ For these and/or other purposes and motivations, and without any expectation of 
                         </xsl:if>
                     </xsl:for-each>
                 </xsl:element>
+            </xsl:when>
+            <xsl:when test="parent::descgrp">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3=false()">
+                        <xsl:call-template name="commentAndMessage">
+                            <xsl:with-param name="comment">
+                                <xsl:call-template name="removedElement"/>
+                            </xsl:with-param>
+                        </xsl:call-template>
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3=true()">
+                        <xsl:element name="p">
+                            <xsl:for-each select="addressline">
+                                <xsl:apply-templates/>
+                                <xsl:if test="position()!=last()">
+                                    <xsl:text>, </xsl:text>
+                                    <!--<xsl:element name="lb"/>-->
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:element>
+                    </xsl:when>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:for-each select="addressline">
