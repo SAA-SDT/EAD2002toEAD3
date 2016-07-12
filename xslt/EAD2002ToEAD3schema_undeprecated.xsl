@@ -181,7 +181,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                      <xsl:value-of select="concat('href=&quot;',$schemaPath,$schemaName,'&quot; type=&quot;application/xml&quot; schematypens=&quot;http://relaxng.org/ns/structure/1.0&quot;')"/>
                 </xsl:processing-instruction>
                 <xsl:processing-instruction name="oxygen">
-                    <xsl:value-of select="concat('RNGSchema=&quot;',$schemaPath,$schemaName,' type=&quot;xml&quot;')"/>
+                    <xsl:value-of select="concat('RNGSchema=&quot;',$schemaPath,$schemaName,'&quot; type=&quot;xml&quot;')"/>
                 </xsl:processing-instruction>
             </xsl:when>
             <xsl:when test="$outputValidation='xsd'"/>
