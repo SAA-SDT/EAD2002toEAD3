@@ -392,7 +392,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         descrules |
         unittitle/edition | did/note[not(p[2])][not(*[local-name()!='p'])][not(p[title | persname | corpname | famname | name | geogname | genreform | subject | function | occupation | date | unitdate | blockqoute | chronlist | list | num | table])]/p | 
         event/blockquote/p | extref/blockquote/p | extrefloc/blockquote/p | 
-        item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p">
+        item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p | 
+        physfacet/@unit | physfacet/@label">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
@@ -1379,8 +1380,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="unitdate[parent::unittitle]">
         <xsl:choose>
-            <xsl:when test="$outputUndeprecatedEAD3=true()">
+            <xsl:when test="$outputUndeprecatedEAD3=true() and not(parent::unittitle[not(parent::did)])">
                 <xsl:call-template name="copyElement"/>
+            </xsl:when>
+            <xsl:when test="$outputUndeprecatedEAD3=true() and parent::unittitle[not(parent::did)]">
+                <xsl:apply-templates/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
@@ -1704,12 +1708,19 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     
     <xsl:template match="imprint/publisher">
-        <corpname relator="publisher">
-            <xsl:apply-templates select="@*"/>
-            <part>
-                <xsl:apply-templates/>
-            </part>
-        </corpname>
+        <xsl:choose>
+            <xsl:when test="$outputUndeprecatedEAD3=false()">
+                <corpname relator="publisher">
+                    <xsl:apply-templates select="@*"/>
+                    <part>
+                        <xsl:apply-templates/>
+                    </part>
+                </corpname>
+            </xsl:when>
+            <xsl:when test="$outputUndeprecatedEAD3=true()">
+                <xsl:call-template name="copyElement"/>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
 
 
@@ -1952,7 +1963,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
         originalsloc/@type | phystech/@type | processinfo/@type | relatedmaterial/@type | separatedmaterial/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
         userestrict/@type | odd/@type | note/@type | date/@type | name/@type |  persname/@type | famname/@type |
-        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type | extent/@type | descgrp/@type">
+        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type | extent/@type | physfacet/@type | descgrp/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -2314,5 +2325,4 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
 
     
-
-    </xsl:stylesheet>
+</xsl:stylesheet>
