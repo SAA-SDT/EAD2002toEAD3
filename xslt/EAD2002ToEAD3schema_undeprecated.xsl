@@ -3,13 +3,13 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs xsi xd xlink"
     xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ead3.archivists.org/schema/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ead3.archivists.org/schema/undeprecated/"
     version="2.0">
     <xd:doc scope="stylesheet">
         <xd:desc>
             <xd:p><xd:b>Created on:</xd:b> Feb 27, 2012</xd:p>
             <xd:p>
-                <xd:b>Last Updated: 2015-10-22</xd:b>
+                <xd:b>Last Updated: 2016-06</xd:b>
             </xd:p>
             <xd:p><xd:b>Authors:</xd:b> Terry Catapano and Mike Rush</xd:p>
             <xd:p>Convert EAD2002 instance to EAD3</xd:p>
@@ -55,20 +55,68 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xd:pre>
         </xd:desc>
     </xd:doc>
+    
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
-
+    
     <!-- ############################################### -->
     <!-- TOP LEVEL PARAMETERS                            -->
     <!-- ############################################### -->
-
+    
+    <!-- user parameter to control validation schema of output -->
+    <xsl:param name="outputValidation">
+        <xsl:value-of select="'rng'"/>
+        <!--<xsl:value-of select="'xsd'"/>-->
+    </xsl:param>
+    
     <!-- user parameter to control deprecation -->
-    <xsl:param name="outputUndeprecatedEAD3" select="false()"/>
+    <xsl:param name="outputUndeprecatedEAD3" select="true()"/>
 
     <!-- user parameter to control migration comments -->
     <xsl:param name="addMigrationComments" select="true()"/>
 
     <!-- user parameter to control migration messages -->
     <xsl:param name="addMigrationMessages" select="true()"/>
+    
+    <!-- user parameter to specify path to schema -->
+    <xsl:param name="schemaPath">
+        <xsl:value-of select="'../../'"/>
+    </xsl:param>
+    
+    <!-- user parameter to specify the schema filename -->
+    <xsl:param name="schemaName">
+        <xsl:choose>
+            <xsl:when test="$outputValidation='rng'">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
+                        <xsl:value-of select="'ead3.rng'"/>
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3 = true()">
+                        <xsl:value-of select="'ead3_undeprecated.rng'"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$outputValidation='xsd'">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
+                        <xsl:value-of select="'ead3.xsd'"/>
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3 = true()">
+                        <xsl:value-of select="'ead3_undeprecated.xsd'"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$outputValidation='dtd'">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3 = false()">
+                        <xsl:value-of select="'ead3.dtd'"/>
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3 = true()">
+                        <xsl:value-of select="'ead3_undeprecated.dtd'"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:param>
 
     <!-- user parameter for control/maintenancestatus -->
     <!-- maintenancestatus enumeration '[revised, deleted, new, 
@@ -128,22 +176,21 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="/">
         <xsl:choose>
-            <xsl:when test="$outputUndeprecatedEAD3=false()">
+            <xsl:when test="$outputValidation='rng'">
                 <xsl:processing-instruction name="xml-model">
-            <xsl:text>href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
-        </xsl:processing-instruction>
+                     <xsl:value-of select="concat('href=&quot;',$schemaPath,$schemaName,'&quot; type=&quot;application/xml&quot; schematypens=&quot;http://relaxng.org/ns/structure/1.0&quot;')"/>
+                </xsl:processing-instruction>
                 <xsl:processing-instruction name="oxygen">
-            <xsl:text>RNGSchema="../../ead3.rng" type="xml"</xsl:text>
-        </xsl:processing-instruction>
+                    <xsl:value-of select="concat('RNGSchema=&quot;',$schemaPath,$schemaName,'&quot; type=&quot;xml&quot;')"/>
+                </xsl:processing-instruction>
             </xsl:when>
-            <xsl:when test="$outputUndeprecatedEAD3=true()">
-                <xsl:processing-instruction name="xml-model">
-            <xsl:text>href="../../ead3_undeprecated.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
-        </xsl:processing-instruction>
-                <xsl:processing-instruction name="oxygen">
-            <xsl:text>RNGSchema="../../ead3_undeprecated.rng" type="xml"</xsl:text>
-        </xsl:processing-instruction>
-            </xsl:when>
+            <xsl:when test="$outputValidation='xsd'"/>
+            <!--<xsl:when test="$outputValidation='dtd'">
+                <xsl:value-of select=""/>
+                <xsl:processing-instruction name="DOCTYPE">
+                     <xsl:value-of select="concat('ead PUBLIC &quot;+//ISBN 1-931666-00-8//DTD ',$schemaName, ' (Encoded Archival Description (EAD) Version 3)//EN&quot; &quot;', $schemaPath,$schemaName,'&quot;')"/>
+                </xsl:processing-instruction>
+            </xsl:when>-->
         </xsl:choose>
 
         <!--<xsl:copy-of select="$instance-ns-stripped"/>
@@ -160,7 +207,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template name="copyElement">
-        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+        <xsl:element name="{local-name()}">
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
         </xsl:element>
@@ -174,13 +221,30 @@ For these and/or other purposes and motivations, and without any expectation of 
     <xsl:template match="attribute()|text()|comment()|processing-instruction()">
         <xsl:copy/>
     </xsl:template>
-
-    <!--  need to add in the new xmlns, starting with the root ead element -->
-    <!-- xsl:template match="ead">
-        <ead>
-            <xsl:apply-templates select="@*|node()"/> 
-        </ead>
-    </xsl:template -->
+    
+     <!-- Root EAD element -->
+     <xsl:template match="ead">
+         <xsl:choose>
+             <xsl:when test="$outputValidation='dtd'">
+                 <xsl:element name="{local-name()}">
+                     <xsl:apply-templates select="@id, @altrender, @audience, @relatedencoding"/>
+                     <xsl:apply-templates/>
+                 </xsl:element>
+             </xsl:when>
+             <xsl:otherwise>
+                 <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                     <xsl:apply-templates select="@id, @altrender, @audience, @relatedencoding"/>
+                     <xsl:if test="$outputValidation='xsd'">
+                         <xsl:attribute name="schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance">
+                             <xsl:value-of select="concat($eadxmlns, ' ', $schemaPath, $schemaName)"/>
+                         </xsl:attribute>
+                     </xsl:if>
+                     <xsl:apply-templates/>
+                 </xsl:element>
+             </xsl:otherwise>
+         </xsl:choose>
+         
+    </xsl:template> 
 
     <!-- ############################################### -->
     <!-- DEPRECATED ELEMENTS                             -->
@@ -188,9 +252,9 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <!-- REMOVE ELEMENT COMPLETELY IF NOT UNDEPRECATED -->
     <xsl:template
-        match="frontmatter | runner | descgrp/address | descgrp/blockquote | 
+        match="frontmatter | runner | descgrp/blockquote | 
         descgrp/chronlist | descgp/descgrp | descgrp/head  | descgrp/list | 
-        descgrp/p | descgrp/table | descgrp/address | descgrp/blockquote | 
+        descgrp/p | descgrp/table | descgrp/blockquote | 
         descgp/descgrp | descgrp/head  | descgrp/list | descgrp/p">
         <xsl:choose>
             <xsl:when test="$outputUndeprecatedEAD3=false()">
@@ -329,7 +393,8 @@ For these and/or other purposes and motivations, and without any expectation of 
         descrules |
         unittitle/edition | did/note[not(p[2])][not(*[local-name()!='p'])][not(p[title | persname | corpname | famname | name | geogname | genreform | subject | function | occupation | date | unitdate | blockqoute | chronlist | list | num | table])]/p | 
         event/blockquote/p | extref/blockquote/p | extrefloc/blockquote/p | 
-        item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p">
+        item/blockquote/p | p/blockquote/p | ref/blockquote/p | refloc/blockquote/p | 
+        physfacet/@unit | physfacet/@label">
         <xsl:if test="node()=element()">
             <xsl:call-template name="commentAndMessage">
                 <xsl:with-param name="comment">
@@ -1316,8 +1381,11 @@ For these and/or other purposes and motivations, and without any expectation of 
 
     <xsl:template match="unitdate[parent::unittitle]">
         <xsl:choose>
-            <xsl:when test="$outputUndeprecatedEAD3=true()">
+            <xsl:when test="$outputUndeprecatedEAD3=true() and not(parent::unittitle[not(parent::did)])">
                 <xsl:call-template name="copyElement"/>
+            </xsl:when>
+            <xsl:when test="$outputUndeprecatedEAD3=true() and parent::unittitle[not(parent::did)]">
+                <xsl:apply-templates/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
@@ -1456,7 +1524,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:value-of select="local-name()"/>
             </xsl:with-param>
         </xsl:call-template>
-        <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+        <xsl:element name="{local-name()}">
             <xsl:apply-templates select="@*"/>
             <part>
                 <xsl:apply-templates/>
@@ -1522,7 +1590,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                         | @show
                         | @title
                         | @entityref | @xpointer"/>
-                    <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                    <xsl:element name="{local-name()}">
                         <xsl:apply-templates
                             select="@altrender | @audience
                             | @authfilenumber | @encodinganalog
@@ -1548,7 +1616,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                         | @show
                         | @title
                         | @entityref | @xpointer"/>
-                    <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                    <xsl:element name="{local-name()}">
                         <xsl:apply-templates
                             select="@altrender | @audience
                             | @authfilenumber | @encodinganalog
@@ -1563,7 +1631,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                 </p>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+                <xsl:element name="{local-name()}">
                     <xsl:apply-templates
                         select="@altrender | @audience
                         | @authfilenumber | @encodinganalog
@@ -1586,7 +1654,7 @@ For these and/or other purposes and motivations, and without any expectation of 
                     <xsl:value-of select="local-name()"/>
                 </xsl:with-param>
             </xsl:call-template>
-            <xsl:element name="{local-name()}" namespace="{$eadxmlns}">
+            <xsl:element name="{local-name()}">
                 <xsl:apply-templates select="@*"/>
                 <xsl:for-each select="node()[position() = 1]">
                     <xsl:call-template name="corpnamePart"/>
@@ -1641,12 +1709,19 @@ For these and/or other purposes and motivations, and without any expectation of 
     </xsl:template>
     
     <xsl:template match="imprint/publisher">
-        <corpname relator="publisher">
-            <xsl:apply-templates select="@*"/>
-            <part>
-                <xsl:apply-templates/>
-            </part>
-        </corpname>
+        <xsl:choose>
+            <xsl:when test="$outputUndeprecatedEAD3=false()">
+                <corpname relator="publisher">
+                    <xsl:apply-templates select="@*"/>
+                    <part>
+                        <xsl:apply-templates/>
+                    </part>
+                </corpname>
+            </xsl:when>
+            <xsl:when test="$outputUndeprecatedEAD3=true()">
+                <xsl:call-template name="copyElement"/>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
 
 
@@ -1842,7 +1917,14 @@ For these and/or other purposes and motivations, and without any expectation of 
             </xsl:with-param>
         </xsl:call-template>-->
         <xsl:attribute name="{substring-after(name(), ':')}">
-            <xsl:value-of select="normalize-space(lower-case(.))"/>
+            <xsl:choose>
+                <xsl:when test="local-name(.)='href'">
+                    <xsl:value-of select="."/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="normalize-space(lower-case(.))"/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:attribute>
     </xsl:template>
     
@@ -1882,7 +1964,7 @@ For these and/or other purposes and motivations, and without any expectation of 
         accessrestrict/@type | altformavail/@type | archdesc/@type | container/@type |
         originalsloc/@type | phystech/@type | processinfo/@type | relatedmaterial/@type | separatedmaterial/@type | titleproper/@type | title/@type | unitid/@type | unittitle/@type |
         userestrict/@type | odd/@type | note/@type | date/@type | name/@type |  persname/@type | famname/@type |
-        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type | extent/@type">
+        corpname/@type |  subject/@type |  occupation/@type | genreform/@type | function/@type | num/@type | physloc/@type | extent/@type | physfacet/@type | descgrp/@type">
         <xsl:attribute name="localtype">
             <xsl:value-of select="."/>
         </xsl:attribute>
@@ -1909,7 +1991,7 @@ For these and/or other purposes and motivations, and without any expectation of 
     <!-- ############################################### -->
 
     <xsl:template
-        match="address[not(parent::repository) and not(parent::publicationstmt) and not(parent::descgrp)]">
+        match="address[not(parent::repository) and not(parent::publicationstmt)]">
         <xsl:choose>
             <xsl:when
                 test="not(parent::entry) 
@@ -1926,7 +2008,8 @@ For these and/or other purposes and motivations, and without any expectation of 
                 and not(parent::blockquote[parent::item])
                 and not(parent::blockquote[parent::p])
                 and not(parent::blockquote[parent::ref])
-                and not(parent::blockquote[parent::refloc])">
+                and not(parent::blockquote[parent::refloc])
+                and not(parent::descgrp)">
                 <xsl:element name="p">
                     <xsl:for-each select="addressline">
                         <xsl:apply-templates/>
@@ -1936,6 +2019,28 @@ For these and/or other purposes and motivations, and without any expectation of 
                         </xsl:if>
                     </xsl:for-each>
                 </xsl:element>
+            </xsl:when>
+            <xsl:when test="parent::descgrp">
+                <xsl:choose>
+                    <xsl:when test="$outputUndeprecatedEAD3=false()">
+                        <xsl:call-template name="commentAndMessage">
+                            <xsl:with-param name="comment">
+                                <xsl:call-template name="removedElement"/>
+                            </xsl:with-param>
+                        </xsl:call-template>
+                    </xsl:when>
+                    <xsl:when test="$outputUndeprecatedEAD3=true()">
+                        <xsl:element name="p">
+                            <xsl:for-each select="addressline">
+                                <xsl:apply-templates/>
+                                <xsl:if test="position()!=last()">
+                                    <xsl:text>, </xsl:text>
+                                    <!--<xsl:element name="lb"/>-->
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:element>
+                    </xsl:when>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:for-each select="addressline">
@@ -2213,11 +2318,12 @@ For these and/or other purposes and motivations, and without any expectation of 
                 <xsl:text>&#10;</xsl:text>
             </xsl:with-param>
         </xsl:call-template>
-        <xsl:element name="odd" namespace="{$eadxmlns}" xmlns="urn:isbn:1-931666-22-9">
+        <xsl:element name="odd">
             <xsl:copy-of select="@* except @type"/>
             <xsl:attribute name="localtype" select="@type"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
 
+    
 </xsl:stylesheet>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../ead3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?oxygen RNGSchema="../../ead3.rng" type="xml"?>
-<ead xmlns="http://ead3.archivists.org/schema/"
-     id="beinecke.hayward"
+<!DOCTYPE ead
+  PUBLIC "+// http://ead3.archivists.org/schema/ //DTD ead3 (Encoded Archival Description (EAD) Version 3)//EN" "../../ead3.dtd">
+<ead id="beinecke.hayward"
      altrender="altrender"
      audience="external"
      relatedencoding="enigma">
@@ -19,7 +18,7 @@
       <recordid encodinganalog="eadid">beinecke.hayward</recordid>
       <otherrecordid localtype="publicid">-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT (US::CtY-BR::::[ABRAHAM HAYWARD COLLECTION])//EN</otherrecordid>
       <otherrecordid localtype="identifier">eadid:identifier</otherrecordid>
-      <otherrecordid localtype="url">http://hdl.handle.net/10079/fa/beinecke.hayward</otherrecordid>
+      <otherrecordid localtype="url">http://HDL.handle.net/10079/fa/beinecke.hayward</otherrecordid>
       <otherrecordid localtype="urn">eadid:urn</otherrecordid>
       <filedesc altrender="filedesc"
                 audience="external"
@@ -85,7 +84,7 @@
             <p>
                <ref actuate="onrequest"
                     show="new"
-                    href="http://hdl.handle.net/10079/9p8czk9">Copyright © 1996-2007 by the Yale University
+                    href="http://HDL.HANDLE.net/10079/9p8czk9">Copyright © 1996-2007 by the Yale University
                   Library.</ref>
             </p>
          </publicationstmt>
@@ -160,7 +159,7 @@
                            audience="external"
                            encodinganalog="langusage">
          <language langcode="eng">English</language>
-         <script scriptcode="Latn">Latn</script>
+         <script scriptcode="Latn"/>
          <descriptivenote>
             <p>
                <emph render="altrender">Finding aid </emph>written in English and French. </p>
@@ -170,7 +169,7 @@
                            audience="external"
                            encodinganalog="langusage">
          <language langcode="fre">French</language>
-         <script scriptcode="Latn">Latn</script>
+         <script scriptcode="Latn"/>
          <descriptivenote>
             <p>
                <emph render="altrender">Finding aid </emph>written in English and French. </p>
@@ -211,7 +210,7 @@
                           id="revisiondesc">
          <maintenanceevent>
             <eventtype value="updated"/>
-            <eventdatetime standarddatetime="2015-10-27T23:36:30.484-04:00">2015-10-27T23:36:30.484-04:00</eventdatetime>
+            <eventdatetime standarddatetime="2016-06-22T22:52:25.45-04:00">2016-06-22T22:52:25.45-04:00</eventdatetime>
             <agenttype value="machine"/>
             <agent>EAD 2002 to EAD3 Migration Style Sheet(EAD2002ToEAD3.xsl)</agent>
             <eventdescription>EAD 2002 instanace migrated to EAD3 (http://ead3.archivists.org/schema/).</eventdescription>
@@ -454,17 +453,12 @@
             <name>
                <part>
                   <ref>ref</ref>
-                  <ptr/>
-                  <lb/>
                   <ref>extref</ref>
-                  <ptr/>
                   <abbr>abbr</abbr>
                   <ref>archref</ref>
                   <ref>bibref</ref>
                   <emph>emph</emph>
-                  <expan>expan</expan>
-            title
-            <!--<corpname>Beinecke Rare Book and Manuscript Library</corpname>
+                  <expan>expan</expan>title<!--<corpname>Beinecke Rare Book and Manuscript Library</corpname>
             <subarea>subarea</subarea>
             TExt text <emph>emph</emph>
             <name>name name</name>
@@ -474,8 +468,7 @@
                <addressline altrender="email">Email: beinecke.library@yale.edu</addressline>
                <addressline altrender="phone">Phone: (203) 432-2972</addressline>
                <addressline altrender="fax">Fax: (203) 432-4047</addressline>
-            </address>-->
-         </part>
+            </address>--></part>
             </name>
          </repository>
          <dao daotype="unknown"

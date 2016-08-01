@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink"
+<ead xmlns="urn:isbn:1-931666-22-9" 
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.library.yale.edu/facc/schemas/ead/ead.xsd"
    id="beinecke.hayward" altrender="altrender" audience="external" relatedencoding="enigma">
@@ -9,7 +10,7 @@
       relatedencoding="DC">
       <eadid countrycode="US" mainagencycode="US-CtY-BR"
          publicid="-//Yale University::Beinecke Rare Book and Manuscript Library//TEXT (US::CtY-BR::::[ABRAHAM HAYWARD COLLECTION])//EN"
-         url="http://hdl.handle.net/10079/fa/beinecke.hayward" encodinganalog="eadid"
+         url="http://HDL.handle.net/10079/fa/beinecke.hayward" encodinganalog="eadid"
          identifier="eadid:identifier" urn="eadid:urn">beinecke.hayward</eadid>
       <filedesc altrender="filedesc" audience="external" encodinganalog="filedesc" id="filedesc1">
          <titlestmt id="titlestmt1" encodinganalog="titlestmt" audience="external"
@@ -49,7 +50,7 @@
             <date type="ead" normal="2006/2007">2006-2007</date>
             <p>
                <extref xlink:type="simple" xlink:actuate="onRequest" xlink:show="new"
-                  xlink:href="http://hdl.handle.net/10079/9p8czk9">Copyright © <date
+                  xlink:href="http://HDL.HANDLE.net/10079/9p8czk9">Copyright © <date
                      type="copyright" normal="1996/2007">1996-2007</date> by the Yale University
                   Library.</extref>
             </p>
