@@ -19,11 +19,12 @@ To transform your EAD 2002 instances to DTD-valid undeprecated EAD3, use EAD2002
 
 ## Requirements
 
-EAD2002ToEAD3schema.xsl, EAD2002ToEAD3schema_undeprecated.xsl, EAD2002ToEAD3dtd.xsl, and EAD2002ToEAD3dtd_undeprecated.xsl are XSLT 2.0 transformations and therefore requires an XSLT 2.0 capable processor. Any 9.x version of Saxon should work. The latest stable free of charge and open source and release of Saxon, Saxon-HE 9.6.0.8 (for Java), is available for download at: http://sourceforge.net/projects/saxon/files/Saxon-HE/9.6/SaxonHE9-6-0-8J.zip/download.
+EAD2002ToEAD3schema.xsl, EAD2002ToEAD3schema_undeprecated.xsl, EAD2002ToEAD3dtd.xsl, and EAD2002ToEAD3dtd_undeprecated.xsl are XSLT 2.0 transformations and therefore requires an XSLT 2.0 capable processor. Any 9.x version of Saxon should work. The latest stable free of charge and open source and release of Saxon, Saxon-HE 9.7.0.7 (for Java), is available for download at: 
+https://sourceforge.net/projects/saxon/files/Saxon-HE/9.7/SaxonHE9-7-0-7J.zip/download
 
-Saxon requires JDK 1.5 (Java 2 Platform, Standard Edition 5.0) or later
+Saxon 9.7 requires at least Java SE 6 (also known as JDK 1.6). It also runs under later Java versions. 
 
-Full documentation for Saxon may be found at: http://www.saxonica.com/html/documentation9.6/about/
+Full documentation for Saxon may be found at: http://www.saxonica.com/html/about/
 
 ## To Run
 
