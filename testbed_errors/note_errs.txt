@@ -1,5 +1,0 @@
-element "note" not allowed anywhere
-     86 /data/working/converted/422-58125_ead3.xml
-     76 /data/working/converted/422-58070_ead3.xml
-     14 /data/working/converted/422-58110_ead3.xml
-      8 /data/working/converted/422-58079_ead3.xml

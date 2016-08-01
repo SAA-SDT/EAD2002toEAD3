@@ -1,4 +1,0 @@
-attribute "poi" not allowed here
-    267 /data/working/converted/143-111161_ead3.xml
-     27 /data/working/converted/143-111348_ead3.xml
-     24 /data/working/converted/143-111831_ead3.xml

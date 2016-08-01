@@ -1,3 +1,0 @@
-element "title" not allowed here
-    693 /data/working/converted/300-110389_ead3.xml
-      4 /data/working/converted/422-58070_ead3.xml
